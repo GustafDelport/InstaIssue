@@ -12,9 +12,37 @@ namespace InstaIssue.AdminCenter.UILayer
 {
     public partial class ServiceCenter : Form
     {
+        private String staffID;
+
         public ServiceCenter()
         {
             InitializeComponent();
         }
+
+        private void ServiceCenter_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void GetAllRequest()
+        {
+
+        }
+
+        public void ViewRequestOnDate()
+        {
+
+        }
+
+        public void ViewClientRequests()
+        {
+
+        }
+
+        public void ScheduleAllJobs()
+        {
+
+        }
+
     }
 }
