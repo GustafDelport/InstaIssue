@@ -8,5 +8,28 @@ namespace InstaIssue.CallCenter.LogicLayer
 {
     class ClientSatisfaction
     {
+        private String nationalID;
+        private DateTime timeStamp;
+
+        public ClientSatisfaction()
+        {
+        }
+
+        public string NationalID { get => nationalID; set => nationalID = value; }
+
+        public Boolean SetJobRecords(String nationalID, String description, String status)
+        {
+            return false;
+        }
+
+        public Boolean SetReview(String nationalID, String description, String status, DateTime timeStamp)
+        {
+            return false;
+        }
+
+        public Boolean SetCallRecords(String nationalID, DateTime startTimestamp, DateTime endTimestamp, String staffID)
+        {
+            return false;
+        }
     }
 }

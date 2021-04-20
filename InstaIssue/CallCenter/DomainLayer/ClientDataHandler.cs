@@ -8,6 +8,12 @@ namespace InstaIssue.CallCenter.DomainLayer
 {
     class ClientDataHandler
     {
+
+        /// <summary>
+        /// Sql happens in this class
+        /// </summary>
+        
+
         private String connection;
 
         public ClientDataHandler()
@@ -50,7 +56,20 @@ namespace InstaIssue.CallCenter.DomainLayer
         //Client Data Setting
         #region
 
+        public Boolean SetCallRecords(String nationalID, DateTime startTimestamp, DateTime endTimestamp, String staffID)
+        {
+            return false;
+        }
 
+        public Boolean SetReview(String nationalID, String description, String status, DateTime timeStamp)
+        {
+            return false;
+        }
+
+        public Boolean SetJobRecords(String nationalID,String description,String status)
+        {
+            return false;
+        }
 
         #endregion
 
