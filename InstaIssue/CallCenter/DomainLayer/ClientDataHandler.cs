@@ -8,6 +8,12 @@ namespace InstaIssue.CallCenter.DomainLayer
 {
     class ClientDataHandler
     {
+
+        /// <summary>
+        /// Sql happens in this class
+        /// </summary>
+        
+
         private String connection;
 
         public ClientDataHandler()
