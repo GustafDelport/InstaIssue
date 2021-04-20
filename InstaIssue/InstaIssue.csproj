@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ServiceCenter\DomainLayer\" />
-    <Folder Include="ServiceCenter\LogicLayer\" />
-    <Folder Include="ServiceCenter\UILayer\" />
+    <Folder Include="AdminCenter\DomainLayer\" />
+    <Folder Include="AdminCenter\LogicLayer\" />
+    <Folder Include="AdminCenter\UILayer\" />
   </ItemGroup>
 
 </Project>
