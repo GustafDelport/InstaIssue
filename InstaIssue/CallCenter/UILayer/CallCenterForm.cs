@@ -37,7 +37,7 @@ namespace InstaIssue.CallCenter.UILayer
             //Delegate goes here
         }
 
-        public void LogIssue(String staffID, String status)
+        public void LogIssue(Clients client, String staffID, String status)
         {
             //Use client.prop to pass data becuase CLients is not public
         }

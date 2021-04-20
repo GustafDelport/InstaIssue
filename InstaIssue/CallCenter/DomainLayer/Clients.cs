@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InstaIssue.CallCenter.DomainLayer
 {
-    class Clients
+    public class Clients
     {
         private String clientID;
         private String name;
