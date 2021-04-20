@@ -6,13 +6,4 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="AdminCenter\LogicLayer\" />
-    <Folder Include="AdminCenter\DomainLayer\" />
-    <Folder Include="AdminCenter\UILayer\" />
-    <Folder Include="ServiceCenter\DomainLayer\" />
-    <Folder Include="ServiceCenter\LogicLayer\" />
-    <Folder Include="ServiceCenter\UILayer\" />
-  </ItemGroup>
-
 </Project>

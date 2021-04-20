@@ -80,7 +80,7 @@ namespace InstaIssue.CallCenter.DomainLayer
         {
             return false;
         }
-        public Boolean AddClient()
+        public Boolean RegisterClient()
         {
             return false;
         }

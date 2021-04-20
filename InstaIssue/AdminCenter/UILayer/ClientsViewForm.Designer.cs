@@ -1,7 +1,7 @@
 ﻿
-namespace InstaIssue.CallCenter.UILayer
+namespace InstaIssue.AdminCenter.UILayer
 {
-    partial class CallCenterForm
+    partial class ClientsViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,14 @@ namespace InstaIssue.CallCenter.UILayer
         {
             this.SuspendLayout();
             // 
-            // CallCenterForm
+            // ClientsViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "CallCenterForm";
-            this.Text = "CallCenterForm";
-            this.Load += new System.EventHandler(this.CallCenterForm_Load);
+            this.Name = "ClientsViewForm";
+            this.Text = "ClientsViewForm";
+            this.Load += new System.EventHandler(this.ClientsViewForm_Load);
             this.ResumeLayout(false);
 
         }
