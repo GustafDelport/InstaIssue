@@ -50,7 +50,20 @@ namespace InstaIssue.CallCenter.DomainLayer
         //Client Data Setting
         #region
 
+        public Boolean SetCallRecords(String nationalID, DateTime startTimestamp, DateTime endTimestamp, String staffID)
+        {
+            return false;
+        }
 
+        public Boolean SetReview(String nationalID, String description, String status, DateTime timeStamp)
+        {
+            return false;
+        }
+
+        public Boolean SetJobRecords(String nationalID,String description,String status)
+        {
+            return false;
+        }
 
         #endregion
 
