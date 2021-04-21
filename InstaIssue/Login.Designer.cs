@@ -1,7 +1,7 @@
 ﻿
 namespace InstaIssue
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,13 +31,14 @@ namespace InstaIssue
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 406);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
 
         }

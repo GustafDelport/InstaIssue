@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace InstaIssue
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
