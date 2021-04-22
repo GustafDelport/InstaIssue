@@ -31,6 +31,7 @@ namespace InstaIssue.CallCenter.UILayer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@ namespace InstaIssue.CallCenter.UILayer
             // pnlControls
             // 
             this.pnlControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlControls.Controls.Add(this.button1);
             this.pnlControls.Controls.Add(this.btnClients);
             this.pnlControls.Controls.Add(this.btnDashboard);
             this.pnlControls.Controls.Add(this.pnlLogo);
@@ -67,6 +69,24 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlControls.TabIndex = 0;
             this.pnlControls.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlControls_Paint);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Image = global::InstaIssue.Properties.Resources.Issues;
+            this.button1.Location = new System.Drawing.Point(0, 327);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 82);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Issues";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnClients
             // 
             this.btnClients.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -74,7 +94,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnClients.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClients.ForeColor = System.Drawing.Color.White;
+            this.btnClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnClients.Image = global::InstaIssue.Properties.Resources.Clients;
             this.btnClients.Location = new System.Drawing.Point(0, 239);
             this.btnClients.Name = "btnClients";
@@ -83,7 +103,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnClients.Text = "Clients";
             this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClients.UseVisualStyleBackColor = true;
-            this.btnClients.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnDashboard
             // 
@@ -92,7 +112,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
             this.btnDashboard.Location = new System.Drawing.Point(0, 151);
             this.btnDashboard.Name = "btnDashboard";
@@ -101,11 +121,12 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.button1_Click);
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // pnlLogo
             // 
-            this.pnlLogo.BackColor = System.Drawing.Color.DimGray;
+            this.pnlLogo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.pnlLogo.Controls.Add(this.imgLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
@@ -116,8 +137,8 @@ namespace InstaIssue.CallCenter.UILayer
             // imgLogo
             // 
             this.imgLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.imgLogo.Image = global::InstaIssue.Properties.Resources.Logo;
-            this.imgLogo.Location = new System.Drawing.Point(39, 0);
+            this.imgLogo.Image = global::InstaIssue.Properties.Resources.LogoGreen;
+            this.imgLogo.Location = new System.Drawing.Point(39, 1);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(78, 78);
             this.imgLogo.TabIndex = 0;
@@ -126,17 +147,16 @@ namespace InstaIssue.CallCenter.UILayer
             // lblCID
             // 
             this.lblCID.AutoSize = true;
-            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCID.ForeColor = System.Drawing.Color.White;
+            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblCID.Location = new System.Drawing.Point(5, 8);
             this.lblCID.Name = "lblCID";
-            this.lblCID.Size = new System.Drawing.Size(63, 17);
+            this.lblCID.Size = new System.Drawing.Size(77, 21);
             this.lblCID.TabIndex = 2;
             this.lblCID.Text = "Client ID";
             // 
             // pnlInfo
             // 
-            this.pnlInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlInfo.Controls.Add(this.pnlSeperator);
             this.pnlInfo.Controls.Add(this.lblContract);
             this.pnlInfo.Controls.Add(this.lblName);
@@ -156,30 +176,30 @@ namespace InstaIssue.CallCenter.UILayer
             // pnlSeperator
             // 
             this.pnlSeperator.BackColor = System.Drawing.Color.White;
-            this.pnlSeperator.Location = new System.Drawing.Point(122, 8);
+            this.pnlSeperator.Location = new System.Drawing.Point(149, 8);
             this.pnlSeperator.Name = "pnlSeperator";
-            this.pnlSeperator.Size = new System.Drawing.Size(10, 52);
+            this.pnlSeperator.Size = new System.Drawing.Size(10, 59);
             this.pnlSeperator.TabIndex = 0;
             // 
             // lblContract
             // 
             this.lblContract.AutoSize = true;
-            this.lblContract.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContract.ForeColor = System.Drawing.Color.White;
-            this.lblContract.Location = new System.Drawing.Point(138, 43);
+            this.lblContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblContract.Location = new System.Drawing.Point(165, 48);
             this.lblContract.Name = "lblContract";
-            this.lblContract.Size = new System.Drawing.Size(40, 17);
+            this.lblContract.Size = new System.Drawing.Size(48, 21);
             this.lblContract.TabIndex = 11;
             this.lblContract.Text = "Gold";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(138, 25);
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblName.Location = new System.Drawing.Point(165, 28);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 17);
+            this.lblName.Size = new System.Drawing.Size(125, 21);
             this.lblName.TabIndex = 10;
             this.lblName.Text = "Gustaf Delport";
             // 
@@ -187,35 +207,36 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.lblID.AutoSize = true;
             this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(138, 8);
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblID.Location = new System.Drawing.Point(165, 8);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(99, 17);
+            this.lblID.Size = new System.Drawing.Size(127, 21);
             this.lblID.TabIndex = 9;
             this.lblID.Text = "0004175144080";
+            this.lblID.Click += new System.EventHandler(this.lblID_Click);
             this.lblID.MouseLeave += new System.EventHandler(this.lblID_MouseLeave);
             this.lblID.MouseHover += new System.EventHandler(this.label6_MouseHover);
             // 
             // lblCContract
             // 
             this.lblCContract.AutoSize = true;
-            this.lblCContract.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCContract.ForeColor = System.Drawing.Color.White;
-            this.lblCContract.Location = new System.Drawing.Point(5, 43);
+            this.lblCContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCContract.Location = new System.Drawing.Point(5, 48);
             this.lblCContract.Name = "lblCContract";
-            this.lblCContract.Size = new System.Drawing.Size(109, 17);
+            this.lblCContract.Size = new System.Drawing.Size(133, 21);
             this.lblCContract.TabIndex = 8;
             this.lblCContract.Text = "Client Contract";
             // 
             // lblCName
             // 
             this.lblCName.AutoSize = true;
-            this.lblCName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCName.ForeColor = System.Drawing.Color.White;
-            this.lblCName.Location = new System.Drawing.Point(5, 25);
+            this.lblCName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCName.Location = new System.Drawing.Point(5, 28);
             this.lblCName.Name = "lblCName";
-            this.lblCName.Size = new System.Drawing.Size(90, 17);
+            this.lblCName.Size = new System.Drawing.Size(108, 21);
             this.lblCName.TabIndex = 7;
             this.lblCName.Text = "Client Name";
             // 
@@ -232,7 +253,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblDate.Location = new System.Drawing.Point(635, 8);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(120, 24);
@@ -243,7 +264,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblTime.Location = new System.Drawing.Point(635, 43);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(63, 24);
@@ -257,7 +278,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(768, 449);
             this.pnlBody.TabIndex = 4;
-            this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             // 
             // CallCenterForm
             // 
@@ -303,5 +323,6 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Panel pnlSeperator;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnClients;
+        private System.Windows.Forms.Button button1;
     }
 }

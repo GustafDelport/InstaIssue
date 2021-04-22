@@ -76,26 +76,31 @@ namespace InstaIssue.CallCenter.UILayer
 
         private void label6_MouseHover(object sender, EventArgs e)
         {
-            lblID.Font = new Font("Arial", 12);
+            lblID.Font = new Font("Arial", 13);
         }
 
         private void lblID_MouseLeave(object sender, EventArgs e)
         {
-            lblID.Font = new Font("Century Gothic", 10);
+            lblID.Font = new Font("Century Gothic", 12);
         }
         #endregion
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pnlBody_Paint(object sender, PaintEventArgs e)
+        private void btnClients_Click(object sender, EventArgs e)
         {
 
         }
