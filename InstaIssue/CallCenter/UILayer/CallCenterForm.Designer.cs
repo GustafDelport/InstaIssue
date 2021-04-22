@@ -31,6 +31,8 @@ namespace InstaIssue.CallCenter.UILayer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.btnClients = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblCID = new System.Windows.Forms.Label();
@@ -54,13 +56,52 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlControls
             // 
-            this.pnlControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlControls.Controls.Add(this.btnClients);
+            this.pnlControls.Controls.Add(this.btnDashboard);
             this.pnlControls.Controls.Add(this.pnlLogo);
             this.pnlControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlControls.Location = new System.Drawing.Point(0, 0);
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(159, 530);
             this.pnlControls.TabIndex = 0;
+            this.pnlControls.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlControls_Paint);
+            // 
+            // btnClients
+            // 
+            this.btnClients.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClients.FlatAppearance.BorderSize = 0;
+            this.btnClients.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClients.ForeColor = System.Drawing.Color.White;
+            this.btnClients.Image = global::InstaIssue.Properties.Resources.Clients;
+            this.btnClients.Location = new System.Drawing.Point(0, 239);
+            this.btnClients.Name = "btnClients";
+            this.btnClients.Size = new System.Drawing.Size(159, 82);
+            this.btnClients.TabIndex = 6;
+            this.btnClients.Text = "Clients";
+            this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClients.UseVisualStyleBackColor = true;
+            this.btnClients.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 151);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(159, 82);
+            this.btnDashboard.TabIndex = 5;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlLogo
             // 
@@ -69,7 +110,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(157, 81);
+            this.pnlLogo.Size = new System.Drawing.Size(159, 81);
             this.pnlLogo.TabIndex = 1;
             // 
             // imgLogo
@@ -145,6 +186,7 @@ namespace InstaIssue.CallCenter.UILayer
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(138, 8);
@@ -210,12 +252,12 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlBody
             // 
-            this.pnlBody.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBody.Location = new System.Drawing.Point(159, 81);
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(768, 449);
             this.pnlBody.TabIndex = 4;
+            this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             // 
             // CallCenterForm
             // 
@@ -259,5 +301,7 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblContract;
         private System.Windows.Forms.Panel pnlSeperator;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnClients;
     }
 }
