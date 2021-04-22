@@ -69,5 +69,15 @@ namespace InstaIssue.CallCenter.UILayer
         {
             //Add fields later in param
         }
+
+        private void label6_MouseHover(object sender, EventArgs e)
+        {
+            lblID.Font = new Font("Arial", lblID.Font.Size+1);
+        }
+
+        private void lblID_MouseLeave(object sender, EventArgs e)
+        {
+            lblID.Font = new Font("Century Gothic", lblID.Font.Size);
+        }
     }
 }
