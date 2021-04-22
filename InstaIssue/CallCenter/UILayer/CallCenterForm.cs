@@ -16,6 +16,7 @@ namespace InstaIssue.CallCenter.UILayer
         private String staffID;
         private Clients client;
         private String Status;
+        private Panel activePanel;
 
         public CallCenterForm()
         {
@@ -24,7 +25,9 @@ namespace InstaIssue.CallCenter.UILayer
 
         private void CallCenterForm_Load(object sender, EventArgs e)
         {
-
+            imgStatus.Image = Properties.Resources.RedStatus;
+            activePanel = pnlDash;
+            activePanel.Visible = true;
         }
 
         public void BeginCall()
@@ -85,27 +88,40 @@ namespace InstaIssue.CallCenter.UILayer
         }
         #endregion
 
-        private void lblID_Click(object sender, EventArgs e)
+        private void pnlControls_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            activePanel.Visible = false;
+            pnlReviews.Visible = true;
+            activePanel = pnlReviews;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-
+            activePanel.Visible = false;
+            pnlDash.Visible = true;
+            activePanel = pnlDash;
         }
 
         private void btnClients_Click(object sender, EventArgs e)
         {
-
+            activePanel.Visible = false;
+            pnlClients.Visible = true;
+            activePanel = pnlClients;
         }
 
-        private void pnlControls_Paint(object sender, PaintEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlIssues.Visible = true;
+            activePanel = pnlIssues;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
