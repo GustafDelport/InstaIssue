@@ -16,7 +16,10 @@ namespace InstaIssue.CallCenter.UILayer
         private String staffID;
         private Clients client;
         private String Status;
+        private Boolean callStatus;
         private Panel activePanel;
+
+        private delegate void CallEvent();
 
         public CallCenterForm()
         {
@@ -28,6 +31,9 @@ namespace InstaIssue.CallCenter.UILayer
             imgStatus.Image = Properties.Resources.RedStatus;
             activePanel = pnlDash;
             activePanel.Visible = true;
+
+            callStatus = false;
+            CallTest();
         }
 
         public void BeginCall()
@@ -123,7 +129,30 @@ namespace InstaIssue.CallCenter.UILayer
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            callStatus = false;
+            CallTest();
+            imgStatus.Image = Properties.Resources.RedStatus;
+        }
 
+        private void picGreenPhone_Click(object sender, EventArgs e)
+        {
+            callStatus = true;
+            CallTest();
+            imgStatus.Image = Properties.Resources.GreenStatus;
+        }
+
+        public void CallTest()
+        {
+            if (callStatus)
+            {
+                picRedPhone.Visible = true;
+                picGreenPhone.Visible = false;
+            }
+            else
+            {
+                picGreenPhone.Visible = true;
+                picRedPhone.Visible = false;
+            }
         }
     }
 }

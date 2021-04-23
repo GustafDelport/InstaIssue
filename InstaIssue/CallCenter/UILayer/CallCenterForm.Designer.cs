@@ -49,21 +49,21 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlDash = new System.Windows.Forms.Panel();
+            this.picRedPhone = new System.Windows.Forms.PictureBox();
+            this.picGreenPhone = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlClients = new System.Windows.Forms.Panel();
             this.pnlIssues = new System.Windows.Forms.Panel();
             this.pnlReviews = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatus)).BeginInit();
             this.pnlDash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRedPhone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGreenPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlControls
@@ -302,14 +302,34 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlDash
             // 
-            this.pnlDash.Controls.Add(this.pictureBox3);
-            this.pnlDash.Controls.Add(this.pictureBox2);
+            this.pnlDash.Controls.Add(this.picRedPhone);
+            this.pnlDash.Controls.Add(this.picGreenPhone);
             this.pnlDash.Controls.Add(this.pictureBox1);
             this.pnlDash.Location = new System.Drawing.Point(165, 87);
             this.pnlDash.Name = "pnlDash";
             this.pnlDash.Size = new System.Drawing.Size(749, 416);
             this.pnlDash.TabIndex = 4;
             this.pnlDash.Visible = false;
+            // 
+            // picRedPhone
+            // 
+            this.picRedPhone.Image = global::InstaIssue.Properties.Resources.End;
+            this.picRedPhone.Location = new System.Drawing.Point(553, 242);
+            this.picRedPhone.Name = "picRedPhone";
+            this.picRedPhone.Size = new System.Drawing.Size(75, 75);
+            this.picRedPhone.TabIndex = 2;
+            this.picRedPhone.TabStop = false;
+            this.picRedPhone.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // picGreenPhone
+            // 
+            this.picGreenPhone.Image = global::InstaIssue.Properties.Resources.Awnser;
+            this.picGreenPhone.Location = new System.Drawing.Point(117, 242);
+            this.picGreenPhone.Name = "picGreenPhone";
+            this.picGreenPhone.Size = new System.Drawing.Size(75, 75);
+            this.picGreenPhone.TabIndex = 1;
+            this.picGreenPhone.TabStop = false;
+            this.picGreenPhone.Click += new System.EventHandler(this.picGreenPhone_Click);
             // 
             // pictureBox1
             // 
@@ -344,25 +364,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlReviews.TabIndex = 6;
             this.pnlReviews.Visible = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::InstaIssue.Properties.Resources.Awnser;
-            this.pictureBox2.Location = new System.Drawing.Point(117, 242);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 75);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::InstaIssue.Properties.Resources.End;
-            this.pictureBox3.Location = new System.Drawing.Point(553, 242);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 75);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // CallCenterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -388,9 +389,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatus)).EndInit();
             this.pnlDash.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRedPhone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGreenPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,6 +422,7 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Panel pnlReviews;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picGreenPhone;
+        private System.Windows.Forms.PictureBox picRedPhone;
     }
 }
