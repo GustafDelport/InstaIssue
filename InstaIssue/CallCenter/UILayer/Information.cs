@@ -12,16 +12,41 @@ namespace InstaIssue.CallCenter.UILayer
 {
     public partial class Information : Form
     {
+
+        private Panel activePanel;
+
         public Information()
         {
             InitializeComponent();
+            activePanel = pnlBlank;
+            activePanel.Visible = true;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            CallCenterForm centerForm = new CallCenterForm();
-            this.Hide();
-            centerForm.Show();
+            Globals.callCenterForm.Show();
+            Globals.informationForm.Hide();
+
+            activePanel.Visible = false;
+            pnlBlank.Visible = true;
+            activePanel = pnlBlank;
         }
+
+        //Fancy animations
+        #region
+        private void button2_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlReviews.Visible = true;
+            activePanel = pnlReviews;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlIssues.Visible = true;
+            activePanel = pnlIssues;
+        }
+        #endregion
     }
 }
