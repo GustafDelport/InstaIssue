@@ -6,8 +6,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaIssue", "InstaIssue\In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authentication", "Authentication\Authentication.csproj", "{B52F8478-1EA4-4F09-A7DF-3F7D128A70F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{7960B4EC-8536-453D-BFCF-B416894CFF1C}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{4EDBA13B-467C-4232-AF57-FD591A346A13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csproj", "{7960B4EC-8536-453D-BFCF-B416894CFF1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{4EDBA13B-467C-4232-AF57-FD591A346A13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +24,14 @@ Global
 		{B52F8478-1EA4-4F09-A7DF-3F7D128A70F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B52F8478-1EA4-4F09-A7DF-3F7D128A70F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B52F8478-1EA4-4F09-A7DF-3F7D128A70F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7960B4EC-8536-453D-BFCF-B416894CFF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7960B4EC-8536-453D-BFCF-B416894CFF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7960B4EC-8536-453D-BFCF-B416894CFF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7960B4EC-8536-453D-BFCF-B416894CFF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDBA13B-467C-4232-AF57-FD591A346A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDBA13B-467C-4232-AF57-FD591A346A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDBA13B-467C-4232-AF57-FD591A346A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDBA13B-467C-4232-AF57-FD591A346A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
