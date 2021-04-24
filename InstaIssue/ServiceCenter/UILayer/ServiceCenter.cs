@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstaIssue.AdminCenter.DomainLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace InstaIssue.AdminCenter.UILayer
     public partial class ServiceCenter : Form
     {
         private String staffID;
+        private Panel activePanel;
+        private List<Jobs> jobs;
 
         public ServiceCenter()
         {
@@ -21,7 +24,8 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void ServiceCenter_Load(object sender, EventArgs e)
         {
-
+            activePanel = pnlRequests;
+            activePanel.Visible = true;
         }
 
         public void GetAllRequest()
@@ -44,5 +48,54 @@ namespace InstaIssue.AdminCenter.UILayer
 
         }
 
+        //Fancy Animations
+        #region
+        private void btnRequests_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlRequests.Visible = true;
+            activePanel = pnlRequests;
+        }
+
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlJobs.Visible = true;
+            activePanel = pnlJobs;
+        }
+        #endregion
+
+        private void btnROD_Click(object sender, EventArgs e)
+        {
+            //Request on date
+
+        }
+
+        private void btnLatestReq_Click(object sender, EventArgs e)
+        {
+            //Latest Req
+
+        }
+
+        private void btnCReq_Click(object sender, EventArgs e)
+        {
+            //CLient Req
+
+        }
+
+        private void btnAReq_Click(object sender, EventArgs e)
+        {
+            //All Reqs
+        }
+
+        private void btnViewJobs_Click(object sender, EventArgs e)
+        {
+            //View All Jobs
+        }
+
+        private void btnSchedJobs_Click(object sender, EventArgs e)
+        {
+            //Schedule Jobs
+        }
     }
 }

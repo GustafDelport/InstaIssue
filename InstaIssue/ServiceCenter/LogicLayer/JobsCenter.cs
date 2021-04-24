@@ -9,8 +9,8 @@ namespace InstaIssue.AdminCenter.LogicLayer
 {
     class JobsCenter
     {
-        private String staffID;
-        private List<Jobs> jobs;
+        //private String staffID;
+        //private List<Jobs> jobs;
 
         public JobsCenter()
         {
@@ -21,10 +21,10 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return false;
         }
 
-        public Boolean CreateJob(Jobs job)
+        public Jobs CreateJob(String nationalID)
         {
             //Add Fields later
-            return false;
+            return null;
 
         }
         public List<Jobs> GetJobs()
