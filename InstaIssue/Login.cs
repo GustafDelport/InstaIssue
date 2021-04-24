@@ -45,7 +45,7 @@ namespace InstaIssue
 
 
             //Shortcut
-            Globals.loginForm.Hide();
+            this.Hide();
             Globals.serviceCenterForm.Show();
         }
 
