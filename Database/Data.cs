@@ -16,24 +16,49 @@ namespace Database
         // Check whether an ID already exists in the given table & col
         public Boolean CheckExist(string id, string tblName, string idCol)
         {
-            try
+            if (tblName == "tblusers")
             {
-                string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = " + id + ")";
-                connection.database.Open();
-                int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
-
-                if (Exist > 1)
+                try
                 {
-                    return true;
+                    string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = " + id + ")";
+                    connection.database.Open();
+                    int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                    connection.database.Close();
+                    if (Exist > 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    return false;
+                    throw e;
                 }
             }
-            catch (Exception e)
+            else
             {
-                throw e;
+                try
+                {
+                    string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = \'" + id + "\')";
+                    connection.database.Open();
+                    int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                    connection.database.Close();
+                    if (Exist > 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
             }
         }
 
