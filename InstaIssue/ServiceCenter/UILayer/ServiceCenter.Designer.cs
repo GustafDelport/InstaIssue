@@ -41,14 +41,22 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblCID = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlRequests = new System.Windows.Forms.Panel();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlJobs = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnROD = new System.Windows.Forms.Button();
+            this.btnLatestReq = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnCReq = new System.Windows.Forms.Button();
+            this.btnAReq = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlRequests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlJobs.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,12 +195,35 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlRequests
             // 
+            this.pnlRequests.Controls.Add(this.btnAReq);
+            this.pnlRequests.Controls.Add(this.btnCReq);
+            this.pnlRequests.Controls.Add(this.textBox1);
+            this.pnlRequests.Controls.Add(this.btnLatestReq);
+            this.pnlRequests.Controls.Add(this.btnROD);
+            this.pnlRequests.Controls.Add(this.metroDateTime1);
+            this.pnlRequests.Controls.Add(this.dataGridView1);
             this.pnlRequests.Controls.Add(this.label1);
             this.pnlRequests.Location = new System.Drawing.Point(167, 90);
             this.pnlRequests.Name = "pnlRequests";
             this.pnlRequests.Size = new System.Drawing.Size(750, 411);
             this.pnlRequests.TabIndex = 2;
             this.pnlRequests.Visible = false;
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Location = new System.Drawing.Point(14, 38);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(159, 29);
+            this.metroDateTime1.TabIndex = 14;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(181, 11);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(555, 389);
+            this.dataGridView1.TabIndex = 13;
             // 
             // label1
             // 
@@ -225,6 +256,83 @@ namespace InstaIssue.AdminCenter.UILayer
             this.label2.TabIndex = 12;
             this.label2.Text = "Jobs";
             // 
+            // btnROD
+            // 
+            this.btnROD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnROD.FlatAppearance.BorderSize = 0;
+            this.btnROD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnROD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnROD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnROD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnROD.Image = global::InstaIssue.Properties.Resources.Date;
+            this.btnROD.Location = new System.Drawing.Point(14, 73);
+            this.btnROD.Name = "btnROD";
+            this.btnROD.Size = new System.Drawing.Size(159, 80);
+            this.btnROD.TabIndex = 15;
+            this.btnROD.Text = "Requests On Date";
+            this.btnROD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnROD.UseVisualStyleBackColor = true;
+            // 
+            // btnLatestReq
+            // 
+            this.btnLatestReq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLatestReq.FlatAppearance.BorderSize = 0;
+            this.btnLatestReq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnLatestReq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnLatestReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLatestReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnLatestReq.Image = global::InstaIssue.Properties.Resources.RequestsS;
+            this.btnLatestReq.Location = new System.Drawing.Point(14, 159);
+            this.btnLatestReq.Name = "btnLatestReq";
+            this.btnLatestReq.Size = new System.Drawing.Size(159, 80);
+            this.btnLatestReq.TabIndex = 16;
+            this.btnLatestReq.Text = "Latest Request";
+            this.btnLatestReq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLatestReq.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 245);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 27);
+            this.textBox1.TabIndex = 17;
+            this.textBox1.Text = "National ID";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnCReq
+            // 
+            this.btnCReq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCReq.FlatAppearance.BorderSize = 0;
+            this.btnCReq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnCReq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnCReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCReq.Image = global::InstaIssue.Properties.Resources.LatestReq;
+            this.btnCReq.Location = new System.Drawing.Point(14, 278);
+            this.btnCReq.Name = "btnCReq";
+            this.btnCReq.Size = new System.Drawing.Size(159, 57);
+            this.btnCReq.TabIndex = 18;
+            this.btnCReq.Text = "Client Request";
+            this.btnCReq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCReq.UseVisualStyleBackColor = true;
+            // 
+            // btnAReq
+            // 
+            this.btnAReq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAReq.FlatAppearance.BorderSize = 0;
+            this.btnAReq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAReq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAReq.Image = global::InstaIssue.Properties.Resources.RequestsS;
+            this.btnAReq.Location = new System.Drawing.Point(16, 341);
+            this.btnAReq.Name = "btnAReq";
+            this.btnAReq.Size = new System.Drawing.Size(159, 57);
+            this.btnAReq.TabIndex = 19;
+            this.btnAReq.Text = "All Request";
+            this.btnAReq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAReq.UseVisualStyleBackColor = true;
+            // 
             // ServiceCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -248,6 +356,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.PerformLayout();
             this.pnlRequests.ResumeLayout(false);
             this.pnlRequests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlJobs.ResumeLayout(false);
             this.pnlJobs.PerformLayout();
             this.ResumeLayout(false);
@@ -271,5 +380,12 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel pnlJobs;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnROD;
+        private System.Windows.Forms.Button btnLatestReq;
+        private System.Windows.Forms.Button btnCReq;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAReq;
     }
 }

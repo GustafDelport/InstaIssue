@@ -73,6 +73,16 @@ namespace InstaIssue.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AllReqs {
+            get {
+                object obj = ResourceManager.GetObject("AllReqs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Awnser {
             get {
                 object obj = ResourceManager.GetObject("Awnser", resourceCulture);
@@ -173,6 +183,16 @@ namespace InstaIssue.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Date {
+            get {
+                object obj = ResourceManager.GetObject("Date", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap End {
             get {
                 object obj = ResourceManager.GetObject("End", resourceCulture);
@@ -256,6 +276,16 @@ namespace InstaIssue.Properties {
         internal static System.Drawing.Bitmap LargeUserIcon {
             get {
                 object obj = ResourceManager.GetObject("LargeUserIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LatestReq {
+            get {
+                object obj = ResourceManager.GetObject("LatestReq", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
