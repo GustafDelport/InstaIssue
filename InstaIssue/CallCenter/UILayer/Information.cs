@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InstaIssue.ServiceCenter.UILayer
+namespace InstaIssue.CallCenter.UILayer
 {
     public partial class Information : Form
     {
         public Information()
         {
             InitializeComponent();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            CallCenterForm centerForm = new CallCenterForm();
+            this.Hide();
+            centerForm.Show();
         }
     }
 }
