@@ -118,40 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="YellowStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\YellowStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LogoGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Review" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Review.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Awnser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Awnser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RequestsB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RequestsB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GreenStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GreenStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RequestsS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RequestsS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clients" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="JobsS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JobsS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RedStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RedStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ClientAddL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientAddL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Date" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Date.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddClient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddClient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrackS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrackS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JobsB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JobsB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LargeUserIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LargeUserIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ClientAddS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientAddS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientReviewS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientReviewS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrackB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrackB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Review" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Review.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientReviewL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientReviewL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="End" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\End.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YellowStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YellowStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StarYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StarYellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientJobS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientJobS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GreenStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GreenStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientJobL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientJobL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Issues" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Issues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="End" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\End.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Awnser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Awnser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Find 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Find 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AllReqs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AllReqs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LatestReq" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LatestReq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
