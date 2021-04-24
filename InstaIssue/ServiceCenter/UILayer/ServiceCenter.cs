@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstaIssue.AdminCenter.DomainLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,8 @@ namespace InstaIssue.AdminCenter.UILayer
     {
         private String staffID;
         private Panel activePanel;
+        private List<Jobs> jobs;
+
         public ServiceCenter()
         {
             InitializeComponent();
@@ -61,5 +64,38 @@ namespace InstaIssue.AdminCenter.UILayer
             activePanel = pnlJobs;
         }
         #endregion
+
+        private void btnROD_Click(object sender, EventArgs e)
+        {
+            //Request on date
+
+        }
+
+        private void btnLatestReq_Click(object sender, EventArgs e)
+        {
+            //Latest Req
+
+        }
+
+        private void btnCReq_Click(object sender, EventArgs e)
+        {
+            //CLient Req
+
+        }
+
+        private void btnAReq_Click(object sender, EventArgs e)
+        {
+            //All Reqs
+        }
+
+        private void btnViewJobs_Click(object sender, EventArgs e)
+        {
+            //View All Jobs
+        }
+
+        private void btnSchedJobs_Click(object sender, EventArgs e)
+        {
+            //Schedule Jobs
+        }
     }
 }
