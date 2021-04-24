@@ -35,6 +35,9 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
+            this.pnlSeperator = new System.Windows.Forms.Panel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblCID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -52,7 +55,10 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pnlSeperator);
+            this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.lblDate);
+            this.panel2.Controls.Add(this.lblCID);
             this.panel2.Controls.Add(this.lblTime);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(159, 0);
@@ -102,6 +108,37 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "14:23";
             // 
+            // pnlSeperator
+            // 
+            this.pnlSeperator.BackColor = System.Drawing.Color.White;
+            this.pnlSeperator.Location = new System.Drawing.Point(149, 9);
+            this.pnlSeperator.Name = "pnlSeperator";
+            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
+            this.pnlSeperator.TabIndex = 10;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblID.Location = new System.Drawing.Point(165, 9);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(67, 21);
+            this.lblID.TabIndex = 12;
+            this.lblID.Text = "JA0221";
+            // 
+            // lblCID
+            // 
+            this.lblCID.AutoSize = true;
+            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCID.Location = new System.Drawing.Point(5, 9);
+            this.lblCID.Name = "lblCID";
+            this.lblCID.Size = new System.Drawing.Size(67, 21);
+            this.lblCID.TabIndex = 11;
+            this.lblCID.Text = "Staff ID";
+            // 
             // ServiceCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -132,5 +169,8 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Panel pnlSeperator;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblCID;
     }
 }
