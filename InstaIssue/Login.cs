@@ -45,8 +45,13 @@ namespace InstaIssue
 
 
             //Shortcut
-            Globals.informationForm.Show();
             Globals.loginForm.Hide();
+            Globals.serviceCenterForm.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
