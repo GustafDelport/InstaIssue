@@ -12,13 +12,37 @@ namespace Database
         {
             connection.Connect();
         }
+        
+        // Check whether an ID already exists in the given table & col
+        public Boolean CheckExist(string id, string tblName, string idCol)
+        {
+            try
+            {
+                string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = " + id + ")";
+                connection.database.Open();
+                int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+
+                if (Exist > 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         // Add login user
         public Boolean AddUser(string username, string password)
         {
             try
             {
-                // Add some logic here to first check whether the role already exists, if the role already exists then update, otherwise add new role and return true
+                // Add some logic here to first check whether the user already exists, if the role already exists then update, otherwise add new role and return true
                 // code
 
                 // Run add user code
