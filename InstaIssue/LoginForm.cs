@@ -3,6 +3,8 @@ using InstaIssue.CallCenter.UILayer;
 using Authentication;
 using System;
 using System.Windows.Forms;
+using Database;
+using InstaIssue.AdminCenter.DomainLayer;
 
 namespace InstaIssue
 {
@@ -41,11 +43,28 @@ namespace InstaIssue
             //Shortcut
             this.Hide();
             Globals.callCenterForm.Show();
+
+            //Events 
+            //EventsHandler eventsHandler = new EventsHandler();
+            //eventsHandler.IntialLaunch += assignStaff;
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            String username = "", password = "";
+
             Login login = new Login();
+            if (login.LoginUser("username", "password"))
+            {
+
+                StaffDataHandler handler = new StaffDataHandler();
+                Globals.StaffID = handler.ReturnStaffID(username);
+            }
+            else
+            {
+                //Wrong password
+            }  
         }
     }
 }
