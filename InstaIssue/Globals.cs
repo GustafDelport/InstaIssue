@@ -32,7 +32,13 @@ namespace InstaIssue
         public static StaffDeleteForm staffDeleteForm;
         public static StaffEditForm staffEditForm;
         public static StaffViewForm staffViewForm;
+
         //==========================================================================
+
+        //Tracking
+        //==========================================================================
+        public static String StaffID;
+        public static String nationalID;
 
     }
 }
