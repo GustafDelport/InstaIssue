@@ -67,14 +67,23 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the user already exists, if the role already exists then update, otherwise add new role and return true
-                // code
-
-                // Run add user code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblusers(username, password, createdAt, updatedAt) VALUES(\'" + username + "\',\'" + password + "\'," + DateTime.Now + "," + DateTime.Now + ")").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if user exists, if exist then update, otherwise add
+                if (CheckExist(username, "tblusers", "username"))
+                {
+                    // Run update user code
+                    connection.RunCommand("UPDATE tblusers SET username = \'" + username + "\', password = \'" + password + "\', updatedAt = " + DateTime.Now + " WHERE username = \'" + username + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add user code
+                    connection.RunCommand("INSERT INTO dbo.tblusers(username, password, createdAt, updatedAt) VALUES(\'" + username + "\',\'" + password + "\'," + DateTime.Now + "," + DateTime.Now + ")").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
             }
             catch (Exception e)
             {
@@ -87,26 +96,36 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the client already exists, if the client already exists then update, otherwise add new client and return true
-                // code
-
-                // Run add client code
                 connection.database.Open();
-                if (userID != -1)
+                // Check if client exists, if exist then update, otherwise add
+                if (CheckExist(clientID, "tblclients", "clientID"))
                 {
-                    connection.RunCommand("INSERT INTO dbo.tblclients VALUES(\'" + clientID + "\'," + userID + ",\'" +
-                                          name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
-                                          phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                    // Run update client code
+                    connection.RunCommand("UPDATE tblclients SET clientID = \'" + clientID + "\', name = \'" + name + "\', surname = \'" + surname + "\', nationalID = " + 
+                                          nationalID + "\', phoneNumber = \'" + phoneNumber + "\', email = \'" + email + "\', address = \'" + address + "\' WHERE clientID = \'" + clientID + "\'");
+                    connection.database.Close();
+                    return true;
                 }
                 else
                 {
-                    connection.RunCommand(
-                        "INSERT INTO dbo.tblclients(clientID, name, surname, nationalID, phoneNumber, email, address) " +
-                        "VALUES(\'" + clientID + "\',\'" + name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
-                        phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                    // Run add client code
+                    if (userID != -1)
+                    {
+                        connection.RunCommand("INSERT INTO dbo.tblclients VALUES(\'" + clientID + "\'," + userID + ",\'" +
+                                              name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
+                                              phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        connection.RunCommand(
+                            "INSERT INTO dbo.tblclients(clientID, name, surname, nationalID, phoneNumber, email, address) " +
+                            "VALUES(\'" + clientID + "\',\'" + name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
+                            phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                    }
+                    connection.database.Close();
+                    return true;
                 }
-                connection.database.Close();
-                return true;
+
             }
             catch (Exception e)
             {
@@ -119,26 +138,36 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the staff account already exists, if the account already exists then update, otherwise add new account and return true
-                // code
-
-                // Run add staff code
                 connection.database.Open();
-                if (userID != -1)
+                // Check if staff exists, if exist then update, otherwise add
+                if (CheckExist(staffID, "tblstaff", "staffID"))
                 {
-                    connection.RunCommand("INSERT INTO dbo.tblstaff VALUES(\'" + staffID + "\'," + userID + ",\'" +
-                                          name + "\',\'" + surname + "\',\'" + status + "\',\'" +
-                                          skills + "\',\'" + address + "\')").ExecuteNonQuery();
+                    // Run update staff code
+                    connection.RunCommand("UPDATE tblstaff SET staffID = \'" + staffID + "\', name = \'" + name + "\', surname = \'" + surname + "\', status = \'" +
+                                          status + "\', skills = \'" + skills + "\', address = \'" + address + "\' WHERE staffID = \'" + staffID + "\'");
+                    connection.database.Close();
+                    return true;
                 }
                 else
                 {
-                    connection.RunCommand(
-                        "INSERT INTO dbo.tblstaff(staffID, name, surname, status, skills, address) " +
-                        "VALUES(\'" + staffID + "\',\'" + name + "\',\'" + surname + "\',\'" + status + "\',\'" +
-                        skills + "\',\'" + address + "\')").ExecuteNonQuery();
+                    // Run add staff code
+                    if (userID != -1)
+                    {
+                        connection.RunCommand("INSERT INTO dbo.tblstaff VALUES(\'" + staffID + "\'," + userID + ",\'" +
+                                              name + "\',\'" + surname + "\',\'" + status + "\',\'" +
+                                              skills + "\',\'" + address + "\')").ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        connection.RunCommand(
+                            "INSERT INTO dbo.tblstaff(staffID, name, surname, status, skills, address) " +
+                            "VALUES(\'" + staffID + "\',\'" + name + "\',\'" + surname + "\',\'" + status + "\',\'" +
+                            skills + "\',\'" + address + "\')").ExecuteNonQuery();
+                    }
+                    connection.database.Close();
+                    return true;
                 }
-                connection.database.Close();
-                return true;
+
             }
             catch (Exception e)
             {
@@ -151,15 +180,24 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the SLA already exists, if the SLA already exists then update, otherwise add new SLA and return true
-                // code
-
-                // Run add sla code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblsla VALUES(\'" + slaID + "\'," + name + ",\'" +
-                                      description + "\'," + tarif + ")").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if SLA exists, if exist then update, otherwise add
+                if (CheckExist(slaID, "tblsla", "slaID"))
+                {
+                    // Run update SLA code
+                    connection.RunCommand("UPDATE tblsla SET slaID = \'" + slaID + "\', name = \'" + name + "\', description = \'" + description + "\', tarif = " +
+                                          tarif + " WHERE slaID = \'" + slaID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add sla code
+                    connection.RunCommand("INSERT INTO dbo.tblsla VALUES(\'" + slaID + "\'," + name + ",\'" +
+                                          description + "\'," + tarif + ")").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
             }
             catch (Exception e)
             {
@@ -168,19 +206,29 @@ namespace Database
         }
 
         // Add Review Record
-        public Boolean AddReview(string reviewID, string clientID, DateTime startTimestamp, DateTime endTimestamp)
+        public Boolean AddReview(string reviewID, string clientID, DateTime startTimestamp, DateTime endTimestamp, string staffID)
         {
             try
             {
-                // Add some logic here to first check whether the Review already exists, if the Review already exists then update, otherwise add new Review and return true
-                // code
-
-                // Run add review code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblreviewRecords VALUES(\'" + reviewID + "\'," + clientID + "," +
-                                      startTimestamp + "," + endTimestamp + ")").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if record exists, if exist then update, otherwise add
+                if (CheckExist(reviewID, "tblreviewRecords", "reviewID"))
+                {
+                    // Run update Review Record code
+                    connection.RunCommand("UPDATE tblreviewRecords SET reviewID = \'" + reviewID + "\', clientID = \'" + clientID + "\', startTimestamp = " + startTimestamp + ", endTimestamp = " +
+                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE reviewID = \'" + reviewID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add review code
+                    connection.RunCommand("INSERT INTO dbo.tblreviewRecords VALUES(\'" + reviewID + "\'," + clientID + "," +
+                                          startTimestamp + "," + endTimestamp + ",\'" + staffID + "\')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
             }
             catch (Exception e)
             {
@@ -193,15 +241,24 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the Request already exists, if the Request already exists then update, otherwise add new Request and return true
-                // code
-
-                // Run add request code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblrequestData VALUES(\'" + requestID + "\',\'" + clientID + "\'," +
-                                      plannedDate + "," + deadlineDate + ")").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if request exists, if exist then update, otherwise add
+                if (CheckExist(requestID, "tblrequestData", "requestID"))
+                {
+                    // Run update Request code
+                    connection.RunCommand("UPDATE tblrequestData SET requestID = \'" + requestID + "\', clientID = \'" + clientID + "\', plannedDate = " + plannedDate + ", deadlineDate = " +
+                                          deadlineDate + " WHERE requestID = \'" + requestID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add request code
+                    connection.RunCommand("INSERT INTO dbo.tblrequestData VALUES(\'" + requestID + "\',\'" + clientID + "\'," +
+                                          plannedDate + "," + deadlineDate + ")").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
             }
             catch (Exception e)
             {
@@ -214,15 +271,25 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the Job already exists, if the Job already exists then update, otherwise add new Job and return true
-                // code
-
-                // Run add Job code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tbljobs VALUES(\'" + jobID + "\'," + scheduledDate + ",\'" +
-                                      service + "\',\'" + status + "\',\'" + staffID + "\')").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if job exists, if exist then update, otherwise add
+                if (CheckExist(jobID, "tbljobs", "jobID"))
+                {
+                    // Run update Job code
+                    connection.RunCommand("UPDATE tbljobs SET jobID = \'" + jobID + "\', scheduledDate = " + scheduledDate + ", service = \'" +
+                                          service + "\', status = \'" + status + "\', staffID = \'" + staffID + "\' WHERE jobID = \'" + jobID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add Job code
+                    connection.RunCommand("INSERT INTO dbo.tbljobs VALUES(\'" + jobID + "\'," + scheduledDate + ",\'" +
+                                          service + "\',\'" + status + "\',\'" + staffID + "\')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
             }
             catch (Exception e)
             {
@@ -235,15 +302,25 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the Job Record already exists, if the Job Record already exists then update, otherwise add new Job Record and return true
-                // code
-
-                // Run add Job Record code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tbljobRecords VALUES(\'" + jobRecordID + "\',\'" + clientID + "\',\'" +
-                                      callRecordID + "\',\'" + description + "\',\'" + status + "\')").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if job record exists, if exist then update, otherwise add
+                if (CheckExist(jobRecordID, "tbljobRecords", "jobRecordID"))
+                {
+                    // Run update Job code
+                    connection.RunCommand("UPDATE tbljobRecords SET jobRecordID = \'" + jobRecordID + "\', clientID = \'" + clientID + "\', callRecordID = \'" +
+                                          callRecordID + "\', description = \'" + description + "\', status = \'" + status + "\' WHERE jobRecordID = \'" + jobRecordID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add Job Record code
+                    connection.RunCommand("INSERT INTO dbo.tbljobRecords VALUES(\'" + jobRecordID + "\',\'" + clientID + "\',\'" +
+                                          callRecordID + "\',\'" + description + "\',\'" + status + "\')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
             }
             catch (Exception e)
             {
@@ -256,15 +333,25 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the Issue already exists, if the Issue already exists then update, otherwise add new Issue and return true
-                // code
-
-                // Run add Issue code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblissues VALUES(\'" + issueID + "\'," + reportedDate + ",\'" +
-                                      clientID + "\',\'" + status + "\',\'" + staffID + "\',\'" + description + "\')").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if issue exists, if exist then update, otherwise add
+                if (CheckExist(issueID, "tblissues", "issueID"))
+                {
+                    // Run update issue code
+                    connection.RunCommand("UPDATE tblissues SET issueID = \'" + issueID + "\', reportedDate = " + reportedDate + ", clientID = \'" +
+                                          clientID + "\', status = \'" + status + "\', staffID = \'" + staffID + "\', description = \'" + description + "\' WHERE issueID = \'" + issueID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add Issue code
+                    connection.RunCommand("INSERT INTO dbo.tblissues VALUES(\'" + issueID + "\'," + reportedDate + ",\'" +
+                                          clientID + "\',\'" + status + "\',\'" + staffID + "\',\'" + description + "\')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
             }
             catch (Exception e)
             {
@@ -277,15 +364,25 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the Contract already exists, if the Contract already exists then update, otherwise add new Contract and return true
-                // code
-
-                // Run add Contract code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblcontracts VALUES(\'" + contractID + "\'," + dateSigned + ",\'" +
-                                      clientID + "\',\'" + slaID + "\')").ExecuteNonQuery();
-                connection.database.Close();
-                return true;
+                // Check if contract exists, if exist then update, otherwise add
+                if (CheckExist(contractID, "tblcontracts", "contractID"))
+                {
+                    // Run update contract code
+                    connection.RunCommand("UPDATE tblcontracts SET contractID = \'" + contractID + "\', dateSigned = " + dateSigned + ", clientID = \'" +
+                                          clientID + "\', slaID = \'" + slaID + "\' WHERE contractID = \'" + contractID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add Contract code
+                    connection.RunCommand("INSERT INTO dbo.tblcontracts VALUES(\'" + contractID + "\'," + dateSigned + ",\'" +
+                                          clientID + "\',\'" + slaID + "\')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
             }
             catch (Exception e)
             {
@@ -298,14 +395,25 @@ namespace Database
         {
             try
             {
-                // Add some logic here to first check whether the Call Record already exists, if the Call Record already exists then update, otherwise add new Call Record and return true
-                // code
-
-                // Run add Call code
                 connection.database.Open();
-                connection.RunCommand("INSERT INTO dbo.tblcontracts VALUES(\'" + callRecordID + "\',\'" + clientID + "\'," +
-                                      startTimestamp + "," + endTimestamp + ",\'" + staffID + "\')").ExecuteNonQuery();
-                connection.database.Close();
+                // Check if call record exists, if exist then update, otherwise add
+                if (CheckExist(callRecordID, "tblcallRecords", "callRecordID"))
+                {
+                    // Run update Call Record code
+                    connection.RunCommand("UPDATE tblcallRecords SET callRecordID = \'" + callRecordID + "\', clientID = \'" + clientID + "\', startTimestamp = " + startTimestamp + ", endTimestamp = " +
+                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE callRecordID = \'" + callRecordID + "\'");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add Call Record code
+                    connection.RunCommand("INSERT INTO dbo.tblcallRecords VALUES(\'" + callRecordID + "\',\'" + clientID + "\'," +
+                                          startTimestamp + "," + endTimestamp + ",\'" + staffID + "\')").ExecuteNonQuery();
+                    connection.database.Close();
+                }
+
+                
                 return true;
             }
             catch (Exception e)
