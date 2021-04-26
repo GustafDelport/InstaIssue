@@ -6,7 +6,8 @@ namespace Authentication
 {
     public class Login
     {
-        public Boolean LoginUser(String username, String password)
+        private readonly Connection connection = new Connection();
+        public Boolean LoginUser()
         {
             Boolean flag = true;
 
