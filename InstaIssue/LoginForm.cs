@@ -66,5 +66,11 @@ namespace InstaIssue
                 //Wrong password
             }  
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Data data = new Data();
+            Boolean flag = data.AddUser("Spiffzz", "Test");
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Database
 {
-    class Data
+    public class Data
     {
         private readonly Connection connection = new Connection();
 
