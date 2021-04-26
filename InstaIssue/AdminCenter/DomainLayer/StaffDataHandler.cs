@@ -30,7 +30,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
                 ID = (String)connection.RunCommand(Q).ExecuteScalar();
 
                 connection.database.Close();
-                return "";
+                return ID;
             }
             catch (Exception e)
             {
