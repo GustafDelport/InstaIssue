@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Database;
 
 namespace Authentication
 {
     public class Login
     {
-        public Boolean LoginUser()
+        public Boolean LoginUser(String username, String password)
         {
             Boolean flag = true;
 
-            //Doen jou connection hier JJ
+            //Doen jou connection hier JJ en toets
+
+
             return flag;
         }
     }

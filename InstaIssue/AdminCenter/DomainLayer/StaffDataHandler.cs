@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Database;
 
 namespace InstaIssue.AdminCenter.DomainLayer
 {
     class StaffDataHandler
     {
+        private readonly Connection connection = new Connection();
         public StaffDataHandler() { }
 
         public List<Staff> GetAllStaff()
@@ -17,6 +16,26 @@ namespace InstaIssue.AdminCenter.DomainLayer
         public Staff GetStaff()
         {
             return null;
+        }
+
+        public String ReturnStaffID(String username)
+        {
+            try
+            {
+                String ID;
+                var Q = $"SELECT A.staffID FROM tblstaff A JOIN tblusers B on A.userID = B.id WHERE B.username = "+ username +"";
+
+                connection.database.Open();
+
+                ID = (String)connection.RunCommand(Q).ExecuteScalar();
+
+                connection.database.Close();
+                return "";
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public Boolean AddStaff()
