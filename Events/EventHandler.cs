@@ -9,13 +9,13 @@ namespace Events
     class EventHandler
     {
         public delegate void LaunchEvent();
-        public event LaunchEvent LaunchHandeler;
+        public event LaunchEvent LaunchHandler;
 
         public void IntialLaunch()
         {
-            if (LaunchHandeler != null)
+            if (LaunchHandler != null)
             {
-                LaunchHandeler();
+                LaunchHandler();
             }
         }
 
