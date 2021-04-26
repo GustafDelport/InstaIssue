@@ -12,7 +12,7 @@ namespace InstaIssue
     {
         //Forms
         //==========================================================================
-        public static Login loginForm;
+        public static LoginForm loginForm;
 
         public static CallCenterForm callCenterForm;
         public static Information informationForm;
