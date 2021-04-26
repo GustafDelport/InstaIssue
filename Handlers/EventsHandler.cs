@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Events
+namespace Handlers
 {
-    class EventHandler
+    class EventsHandler
     {
-        public delegate void LaunchEvent();
+        public delegate void LaunchEvent(String staffID);
         public event LaunchEvent LaunchHandler;
 
-        public void IntialLaunch()
+        public void IntialLaunch(String staffID)
         {
-            if (LaunchHandler != null)
-            {
-                LaunchHandler();
-            }
+            LaunchHandler(staffID);
         }
 
         //To hook methods in the class you want the methods.

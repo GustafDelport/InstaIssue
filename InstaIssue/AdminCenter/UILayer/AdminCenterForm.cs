@@ -13,6 +13,7 @@ namespace InstaIssue.AdminCenter.UILayer
     public partial class AdminCenterForm : Form
     {
         private String staffID;
+        private Panel activePanel;
 
         public AdminCenterForm()
         {
@@ -21,7 +22,8 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void AdminCenterForm_Load(object sender, EventArgs e)
         {
-
+            activePanel = pnlIssues;
+            activePanel.Visible = true;
         }
 
         public void TrackIssues()
@@ -41,5 +43,15 @@ namespace InstaIssue.AdminCenter.UILayer
         {
 
         }
+
+        //Fancy Animations
+        #region
+        private void button1_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlIssues.Visible = true;
+            activePanel = pnlIssues;
+        }
+        #endregion
     }
 }

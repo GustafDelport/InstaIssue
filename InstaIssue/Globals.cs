@@ -12,7 +12,7 @@ namespace InstaIssue
     {
         //Forms
         //==========================================================================
-        public static Login loginForm;
+        public static LoginForm loginForm;
 
         public static CallCenterForm callCenterForm;
         public static Information informationForm;
@@ -32,7 +32,13 @@ namespace InstaIssue
         public static StaffDeleteForm staffDeleteForm;
         public static StaffEditForm staffEditForm;
         public static StaffViewForm staffViewForm;
+
         //==========================================================================
+
+        //Tracking
+        //==========================================================================
+        public static String StaffID;
+        public static String nationalID;
 
     }
 }
