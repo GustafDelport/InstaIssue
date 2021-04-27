@@ -32,6 +32,7 @@ namespace InstaIssue.CallCenter.UILayer
 
             callStatus = true;
             CallTest();
+            tmrTime.Start();
         }
 
         //Methods
@@ -321,5 +322,11 @@ namespace InstaIssue.CallCenter.UILayer
             //Event rating trigger
         }
         #endregion
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
     }
 }

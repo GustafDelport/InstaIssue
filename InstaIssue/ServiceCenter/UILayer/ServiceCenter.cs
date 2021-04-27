@@ -26,6 +26,7 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             activePanel = pnlRequests;
             activePanel.Visible = true;
+            tmrTime.Start();
         }
 
         public void GetAllRequest()
@@ -96,6 +97,12 @@ namespace InstaIssue.AdminCenter.UILayer
         private void btnSchedJobs_Click(object sender, EventArgs e)
         {
             //Schedule Jobs
+        }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
         }
     }
 }

@@ -15,6 +15,12 @@ namespace InstaIssue.CallCenter.UILayer
         public Information()
         {
             InitializeComponent();
+            
+        }
+
+        private void Information_Load(object sender, EventArgs e)
+        {
+            tmrTime.Start();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -26,5 +32,11 @@ namespace InstaIssue.CallCenter.UILayer
         //Fancy animations
         #region
         #endregion
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
     }
 }
