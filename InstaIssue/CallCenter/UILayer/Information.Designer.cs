@@ -116,7 +116,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(159, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 81);
+            this.panel2.Size = new System.Drawing.Size(767, 81);
             this.panel2.TabIndex = 1;
             // 
             // pnlSeperator
@@ -235,7 +235,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(923, 512);
+            this.ClientSize = new System.Drawing.Size(926, 512);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
