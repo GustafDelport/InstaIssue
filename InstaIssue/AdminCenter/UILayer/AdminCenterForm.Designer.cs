@@ -114,6 +114,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnMngClients.Text = "Manage Clients";
             this.btnMngClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMngClients.UseVisualStyleBackColor = true;
+            this.btnMngClients.Click += new System.EventHandler(this.btnMngClients_Click);
             // 
             // btnMngStaff
             // 
@@ -131,6 +132,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnMngStaff.Text = "Manage Staff";
             this.btnMngStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMngStaff.UseVisualStyleBackColor = true;
+            this.btnMngStaff.Click += new System.EventHandler(this.btnMngStaff_Click);
             // 
             // panel1
             // 
@@ -195,7 +197,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // dgvIssues
             // 
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssues.Location = new System.Drawing.Point(12, 9);
+            this.dgvIssues.Location = new System.Drawing.Point(23, 19);
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.RowTemplate.Height = 25;
             this.dgvIssues.Size = new System.Drawing.Size(706, 394);

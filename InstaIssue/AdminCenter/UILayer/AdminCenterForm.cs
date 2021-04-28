@@ -53,5 +53,15 @@ namespace InstaIssue.AdminCenter.UILayer
             activePanel = pnlIssues;
         }
         #endregion
+
+        private void btnMngClients_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMngStaff_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
