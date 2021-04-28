@@ -1,3 +1,4 @@
+using InstaIssue.AdminCenter.UILayer;
 using InstaIssue.CallCenter.UILayer;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace InstaIssue
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new ServiceCenter());
         }
     }
 }

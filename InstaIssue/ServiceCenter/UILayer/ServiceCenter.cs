@@ -63,6 +63,9 @@ namespace InstaIssue.AdminCenter.UILayer
             activePanel.Visible = false;
             pnlJobs.Visible = true;
             activePanel = pnlJobs;
+
+            //pnlJobs.Visible = true;
+            //pnlRequests.Visible = false;
         }
         #endregion
 
@@ -103,6 +106,11 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void pnlJobs_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

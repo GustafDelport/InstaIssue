@@ -328,5 +328,11 @@ namespace InstaIssue.CallCenter.UILayer
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Globals.serviceCenterForm.Show();
+            Globals.callCenterForm.Hide();
+        }
     }
 }
