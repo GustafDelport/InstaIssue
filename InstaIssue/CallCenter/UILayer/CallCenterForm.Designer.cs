@@ -29,6 +29,7 @@ namespace InstaIssue.CallCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -101,6 +102,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTrackIssue = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pnlReviews = new System.Windows.Forms.Panel();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -1028,6 +1030,11 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlReviews.Visible = false;
             this.pnlReviews.VisibleChanged += new System.EventHandler(this.pnlReviews_VisibleChanged_1);
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // CallCenterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1152,5 +1159,6 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.PictureBox picTwoStar;
         private System.Windows.Forms.PictureBox picOneStar;
         private System.Windows.Forms.Panel pnlReviews;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }
