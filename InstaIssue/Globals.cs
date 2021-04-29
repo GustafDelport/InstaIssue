@@ -1,4 +1,5 @@
-﻿using InstaIssue.AdminCenter.UILayer;
+﻿using InstaIssue.AdminCenter.DomainLayer;
+using InstaIssue.AdminCenter.UILayer;
 using InstaIssue.CallCenter.UILayer;
 using System;
 using System.Collections.Generic;

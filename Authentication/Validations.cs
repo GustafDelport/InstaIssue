@@ -22,5 +22,34 @@ namespace Authentication
             return flag;
         }
 
+        public int ValidateStaffRank(String data)
+        {
+            int n = 0;
+
+            switch (data.PadRight(3))
+            {
+                case "AGT":
+                    {
+                        //Call Agent
+                        n = 1;
+                    }
+                    break;
+                case "ADM":
+                    {
+                        //Admin
+                        n = 2;
+                    }
+                    break;
+                case "SEM":
+                    {
+                        //Service Manager
+                        n = 3;
+                    }
+                    break;
+            }
+
+            return n;
+        }
+
     }
 }
