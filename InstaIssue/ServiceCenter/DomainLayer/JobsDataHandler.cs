@@ -30,7 +30,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
         {
             Data data = new Data();
             data.AddJob(jobID,scheduledDate,service,status,staffID);
-
+            return true;
         }
     }
 }

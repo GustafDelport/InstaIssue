@@ -12,7 +12,7 @@ namespace Database
         {
             connection.Connect();
         }
-        
+
         // Check whether an ID already exists in the given table & col
         public Boolean CheckExist(string id, string tblName, string idCol)
         {
@@ -101,7 +101,7 @@ namespace Database
                 if (CheckExist(clientID, "tblclients", "clientID"))
                 {
                     // Run update client code
-                    connection.RunCommand("UPDATE tblclients SET clientID = \'" + clientID + "\', name = \'" + name + "\', surname = \'" + surname + "\', nationalID = " + 
+                    connection.RunCommand("UPDATE tblclients SET clientID = \'" + clientID + "\', name = \'" + name + "\', surname = \'" + surname + "\', nationalID = " +
                                           nationalID + "\', phoneNumber = \'" + phoneNumber + "\', email = \'" + email + "\', address = \'" + address + "\' WHERE clientID = \'" + clientID + "\'");
                     connection.database.Close();
                     return true;
@@ -132,7 +132,22 @@ namespace Database
                 throw e;
             }
         }
-
+        //get all staff
+        public Boolean GetAllStaff()
+        {
+            try
+            {
+                connection.database.Open();
+                // get all the staff
+                connection.RunCommand("SELECT * from tblstaff");
+                return true;
+            }
+            catch (Exception e)
+            {
+                return true;
+                throw ;
+            }
+    }
         // Add staff user
         public Boolean AddStaff(string staffID, string name, string surname, string status, string skills, string address, int userID = -1)
         {

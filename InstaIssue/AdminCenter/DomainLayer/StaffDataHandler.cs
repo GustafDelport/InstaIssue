@@ -42,7 +42,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
         {
             Data data = new Data();
             data.AddStaff(staffID,name,surname,status,skills,adress);
-
+            return true;
         }
         public Boolean EditStaff(String type, String newData)
         {
