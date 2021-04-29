@@ -25,6 +25,12 @@ namespace Database
             
         }
 
+        public SqlConnection GetSqlConnection()
+        {
+            database = new SqlConnection(SQLConnection);
+            return database;
+        }
+
         public SqlCommand RunCommand(string command)
         {
             SqlCommand cmd = new SqlCommand(command, database);

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +15,13 @@ namespace InstaIssue.CallCenter.DomainLayer
         /// <summary>
         /// Sql happens in this class
         /// </summary>
-        
 
-        private String connection;
+
+        private readonly Connection connection = new Connection();
 
         public ClientDataHandler()
         {
+            connection.Connect();
         }
 
         //Client Data retrieval
@@ -28,10 +32,40 @@ namespace InstaIssue.CallCenter.DomainLayer
             return (List<Clients>)Enumerable.Empty<Clients>();
         }
 
-        public Clients GetClient()
+        public Clients GetClient(String nationalID)
         {
-            //Return something empty for now
-            return new Clients();
+            Clients client = new Clients();
+            try
+            {
+                connection.database.Open();
+
+                String Q = $"SELECT * FROM tblclients WHERE nationalID = {nationalID}";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q,con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    client.ClientID = row["clientID"].ToString();
+                    client.Name = row["name"].ToString();
+                    client.Surname = row["surname"].ToString();
+                    client.NationalID = row["nationalID"].ToString();
+                    client.PhoneNumber = row["phoneNumber"].ToString();
+                    client.EMail = row["email"].ToString();
+                    client.Address = row["address"].ToString();
+                }
+
+                connection.database.Close();
+
+            }   
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return client;
         }
 
         public List<CallRecords> GetCallRecords(String nationalID)
@@ -90,6 +124,5 @@ namespace InstaIssue.CallCenter.DomainLayer
         }
 
         #endregion
-
     }
 }
