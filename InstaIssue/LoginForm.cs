@@ -66,7 +66,6 @@ namespace InstaIssue
             //    //Wrong password
             //}
 
-            //Jissis !!!!!
             if (txtUsername.Text == "Admin" && txtPassword.Text == "Password")
             {
                 Globals.callCenterForm.Show();
