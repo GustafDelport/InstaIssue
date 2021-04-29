@@ -40,6 +40,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnadd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -169,12 +170,23 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
+            // btnadd
+            // 
+            this.btnadd.Location = new System.Drawing.Point(245, 173);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.TabIndex = 9;
+            this.btnadd.Text = "add staff";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            // 
             // StaffEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.btnadd);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -203,5 +215,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.Button btnadd;
     }
 }

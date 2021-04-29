@@ -20,9 +20,10 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return null;
         }
 
-        public Boolean AddStaff()
+        public Boolean AddStaff(String staffID, int userid, String name, String surname, String status, String skills, String adress)
         {
-            //All Fields later;
+            StaffDataHandler staffDataHandler = new StaffDataHandler();
+            staffDataHandler.addStaff(staffID, userid, name, surname, status, skills, adress);
             return false;
         }
         public Boolean EditStaff(String type, String newData)
