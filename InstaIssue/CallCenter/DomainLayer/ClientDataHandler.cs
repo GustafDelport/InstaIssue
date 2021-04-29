@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,9 @@ namespace InstaIssue.CallCenter.DomainLayer
         /// <summary>
         /// Sql happens in this class
         /// </summary>
-        
 
-        private String connection;
+
+        private readonly Connection connection = new Connection();
 
         public ClientDataHandler()
         {
@@ -28,10 +29,23 @@ namespace InstaIssue.CallCenter.DomainLayer
             return (List<Clients>)Enumerable.Empty<Clients>();
         }
 
-        public Clients GetClient()
+        public Clients GetClient(String nationalID)
         {
-            //Return something empty for now
-            return new Clients();
+            Clients client = new Clients();
+            try
+            {
+                connection.database.Open();
+
+                //connection.RunCommand();
+
+                connection.database.Close();
+
+            }   
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return client;
         }
 
         public List<CallRecords> GetCallRecords(String nationalID)
@@ -90,6 +104,5 @@ namespace InstaIssue.CallCenter.DomainLayer
         }
 
         #endregion
-
     }
 }

@@ -1,13 +1,9 @@
 ﻿using InstaIssue.CallCenter.DomainLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using Authentication;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InstaIssue.CallCenter.LogicLayer;
 
 namespace InstaIssue.CallCenter.UILayer
 {
@@ -18,6 +14,8 @@ namespace InstaIssue.CallCenter.UILayer
         private String Status;
         private Boolean callStatus;
         private Panel activePanel;
+        private readonly Validations validations = new Validations();
+
 
         public CallCenterForm()
         {
@@ -259,7 +257,18 @@ namespace InstaIssue.CallCenter.UILayer
         #region
         private void btnFind_Click(object sender, EventArgs e)
         {
-            //Qury here
+            if (validations.ValidateID(txtNationalID.Text))
+            {
+                //Validate if ID is a valid ID
+                Globals.nationalID = txtNationalID.Text;
+
+                //Now we find the client
+                ClientTracker tracker = new ClientTracker();
+                client = tracker.GetClient(Globals.nationalID);
+
+                //Now we have access to client aslong as the instace is open
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -284,6 +293,12 @@ namespace InstaIssue.CallCenter.UILayer
         {
             //Track Issues => take to info form
             Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Globals.serviceCenterForm.Show();
             Globals.callCenterForm.Hide();
         }
 
@@ -323,16 +338,20 @@ namespace InstaIssue.CallCenter.UILayer
         }
         #endregion
 
+        //Other
+        #region
+
+
         private void tmrTime_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+        #endregion
 
-        private void button8_Click(object sender, EventArgs e)
+        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Globals.serviceCenterForm.Show();
-            Globals.callCenterForm.Hide();
+
         }
     }
 }

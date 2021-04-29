@@ -32,6 +32,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
@@ -103,7 +104,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.button7 = new System.Windows.Forms.Button();
             this.pnlReviews = new System.Windows.Forms.Panel();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
-            this.button8 = new System.Windows.Forms.Button();
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -142,6 +142,24 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(159, 512);
             this.pnlControls.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button8.Image = global::InstaIssue.Properties.Resources.CreateS;
+            this.button8.Location = new System.Drawing.Point(4, 445);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(146, 67);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Service Center";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button2
             // 
@@ -839,6 +857,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.metroComboBox2.Size = new System.Drawing.Size(163, 29);
             this.metroComboBox2.TabIndex = 8;
             this.metroComboBox2.UseSelectable = true;
+            this.metroComboBox2.SelectedIndexChanged += new System.EventHandler(this.metroComboBox2_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -1036,24 +1055,6 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
-            // 
-            // button8
-            // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button8.Image = global::InstaIssue.Properties.Resources.CreateS;
-            this.button8.Location = new System.Drawing.Point(4, 445);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(146, 67);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Service Center";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // CallCenterForm
             // 
