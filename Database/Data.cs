@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Text;
 
 namespace Database
@@ -60,6 +61,33 @@ namespace Database
                     throw e;
                 }
             }
+        }
+        
+        // Check if specific entry exists in database in specified table and return SQLDataReader object
+        public SqlDataReader FindEntry(string id, string tblName, string idCol)
+        {
+            if (CheckExist(id, tblName, idCol))
+            {
+                connection.database.Open();
+                string buildCommand = "SELECT * FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = \'" + id + "\'";
+                SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+                connection.database.Close();
+                return reader;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        
+        // Find all entries in specified table and return SQLDataReader object
+        public SqlDataReader FindAll(string tblName)
+        {
+            connection.database.Open();
+            string buildCommand = "SELECT * FROM \'" + tblName + "\'";
+            SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+            connection.database.Close();
+            return reader;
         }
 
         // Add login user
