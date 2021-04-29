@@ -24,6 +24,7 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             activePanel = pnlIssues;
             activePanel.Visible = true;
+            tmrTime.Start();
         }
 
         public void TrackIssues()
@@ -54,6 +55,7 @@ namespace InstaIssue.AdminCenter.UILayer
         }
         #endregion
 
+
         private void btnMngClients_Click(object sender, EventArgs e)
         {
 
@@ -61,7 +63,12 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void btnMngStaff_Click(object sender, EventArgs e)
         {
+        }
 
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
         }
     }
 }

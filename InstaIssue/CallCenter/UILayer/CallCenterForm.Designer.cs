@@ -29,8 +29,10 @@ namespace InstaIssue.CallCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
@@ -101,6 +103,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTrackIssue = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pnlReviews = new System.Windows.Forms.Panel();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -128,6 +131,7 @@ namespace InstaIssue.CallCenter.UILayer
             // pnlControls
             // 
             this.pnlControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlControls.Controls.Add(this.button8);
             this.pnlControls.Controls.Add(this.button2);
             this.pnlControls.Controls.Add(this.button1);
             this.pnlControls.Controls.Add(this.btnClients);
@@ -138,6 +142,24 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(159, 512);
             this.pnlControls.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button8.Image = global::InstaIssue.Properties.Resources.CreateS;
+            this.button8.Location = new System.Drawing.Point(4, 445);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(146, 67);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Service Center";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button2
             // 
@@ -287,9 +309,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblName.Location = new System.Drawing.Point(165, 28);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(125, 21);
+            this.lblName.Size = new System.Drawing.Size(22, 21);
             this.lblName.TabIndex = 10;
-            this.lblName.Text = "Gustaf Delport";
+            this.lblName.Text = "...";
             // 
             // lblID
             // 
@@ -299,9 +321,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblID.Location = new System.Drawing.Point(165, 8);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(127, 21);
+            this.lblID.Size = new System.Drawing.Size(22, 21);
             this.lblID.TabIndex = 9;
-            this.lblID.Text = "0004175144080";
+            this.lblID.Text = "...";
             this.lblID.MouseLeave += new System.EventHandler(this.lblID_MouseLeave);
             this.lblID.MouseHover += new System.EventHandler(this.label6_MouseHover);
             // 
@@ -835,6 +857,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.metroComboBox2.Size = new System.Drawing.Size(163, 29);
             this.metroComboBox2.TabIndex = 8;
             this.metroComboBox2.UseSelectable = true;
+            this.metroComboBox2.SelectedIndexChanged += new System.EventHandler(this.metroComboBox2_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -1028,6 +1051,11 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlReviews.Visible = false;
             this.pnlReviews.VisibleChanged += new System.EventHandler(this.pnlReviews_VisibleChanged_1);
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // CallCenterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1152,5 +1180,7 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.PictureBox picTwoStar;
         private System.Windows.Forms.PictureBox picOneStar;
         private System.Windows.Forms.Panel pnlReviews;
+        private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Button button8;
     }
 }

@@ -29,6 +29,7 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceCenter));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnJobs = new System.Windows.Forms.Button();
@@ -42,8 +43,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblCID = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlRequests = new System.Windows.Forms.Panel();
-            this.pnlJobs = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAReq = new System.Windows.Forms.Button();
             this.btnCReq = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -51,17 +50,18 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnROD = new System.Windows.Forms.Button();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.dgvRequests = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvJobs = new System.Windows.Forms.DataGridView();
-            this.btnViewJobs = new System.Windows.Forms.Button();
+            this.pnlJobs = new System.Windows.Forms.Panel();
             this.btnSchedJobs = new System.Windows.Forms.Button();
+            this.btnViewJobs = new System.Windows.Forms.Button();
+            this.dgvJobs = new System.Windows.Forms.DataGridView();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlRequests.SuspendLayout();
-            this.pnlJobs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).BeginInit();
+            this.pnlJobs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +142,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(159, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(769, 81);
+            this.panel2.Size = new System.Drawing.Size(766, 81);
             this.panel2.TabIndex = 1;
             // 
             // pnlSeperator
@@ -200,7 +200,6 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlRequests
             // 
-            this.pnlRequests.Controls.Add(this.pnlJobs);
             this.pnlRequests.Controls.Add(this.btnAReq);
             this.pnlRequests.Controls.Add(this.btnCReq);
             this.pnlRequests.Controls.Add(this.textBox1);
@@ -208,35 +207,11 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlRequests.Controls.Add(this.btnROD);
             this.pnlRequests.Controls.Add(this.metroDateTime1);
             this.pnlRequests.Controls.Add(this.dgvRequests);
-            this.pnlRequests.Controls.Add(this.label1);
             this.pnlRequests.Location = new System.Drawing.Point(167, 90);
             this.pnlRequests.Name = "pnlRequests";
-            this.pnlRequests.Size = new System.Drawing.Size(750, 411);
+            this.pnlRequests.Size = new System.Drawing.Size(747, 406);
             this.pnlRequests.TabIndex = 2;
             this.pnlRequests.Visible = false;
-            // 
-            // pnlJobs
-            // 
-            this.pnlJobs.Controls.Add(this.btnSchedJobs);
-            this.pnlJobs.Controls.Add(this.btnViewJobs);
-            this.pnlJobs.Controls.Add(this.dgvJobs);
-            this.pnlJobs.Controls.Add(this.label2);
-            this.pnlJobs.Location = new System.Drawing.Point(0, 0);
-            this.pnlJobs.Name = "pnlJobs";
-            this.pnlJobs.Size = new System.Drawing.Size(750, 411);
-            this.pnlJobs.TabIndex = 3;
-            this.pnlJobs.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 21);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Jobs";
             // 
             // btnAReq
             // 
@@ -322,7 +297,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(14, 38);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(159, 29);
             this.metroDateTime1.TabIndex = 14;
@@ -335,43 +310,17 @@ namespace InstaIssue.AdminCenter.UILayer
             this.dgvRequests.Size = new System.Drawing.Size(555, 389);
             this.dgvRequests.TabIndex = 13;
             // 
-            // label1
+            // pnlJobs
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 21);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Requests";
-            // 
-            // dgvJobs
-            // 
-            this.dgvJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobs.Location = new System.Drawing.Point(181, 17);
-            this.dgvJobs.Name = "dgvJobs";
-            this.dgvJobs.RowTemplate.Height = 25;
-            this.dgvJobs.Size = new System.Drawing.Size(555, 389);
-            this.dgvJobs.TabIndex = 13;
-            // 
-            // btnViewJobs
-            // 
-            this.btnViewJobs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewJobs.FlatAppearance.BorderSize = 0;
-            this.btnViewJobs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnViewJobs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnViewJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewJobs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnViewJobs.Image = global::InstaIssue.Properties.Resources.JobsS;
-            this.btnViewJobs.Location = new System.Drawing.Point(14, 81);
-            this.btnViewJobs.Name = "btnViewJobs";
-            this.btnViewJobs.Size = new System.Drawing.Size(159, 82);
-            this.btnViewJobs.TabIndex = 14;
-            this.btnViewJobs.Text = "View All Jobs";
-            this.btnViewJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnViewJobs.UseVisualStyleBackColor = true;
-            this.btnViewJobs.Click += new System.EventHandler(this.btnViewJobs_Click);
+            this.pnlJobs.Controls.Add(this.btnSchedJobs);
+            this.pnlJobs.Controls.Add(this.btnViewJobs);
+            this.pnlJobs.Controls.Add(this.dgvJobs);
+            this.pnlJobs.Location = new System.Drawing.Point(167, 87);
+            this.pnlJobs.Name = "pnlJobs";
+            this.pnlJobs.Size = new System.Drawing.Size(750, 411);
+            this.pnlJobs.TabIndex = 3;
+            this.pnlJobs.Visible = false;
+            this.pnlJobs.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlJobs_Paint);
             // 
             // btnSchedJobs
             // 
@@ -391,12 +340,45 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnSchedJobs.UseVisualStyleBackColor = true;
             this.btnSchedJobs.Click += new System.EventHandler(this.btnSchedJobs_Click);
             // 
+            // btnViewJobs
+            // 
+            this.btnViewJobs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewJobs.FlatAppearance.BorderSize = 0;
+            this.btnViewJobs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnViewJobs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnViewJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewJobs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnViewJobs.Image = global::InstaIssue.Properties.Resources.JobsS;
+            this.btnViewJobs.Location = new System.Drawing.Point(14, 81);
+            this.btnViewJobs.Name = "btnViewJobs";
+            this.btnViewJobs.Size = new System.Drawing.Size(159, 82);
+            this.btnViewJobs.TabIndex = 14;
+            this.btnViewJobs.Text = "View All Jobs";
+            this.btnViewJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnViewJobs.UseVisualStyleBackColor = true;
+            this.btnViewJobs.Click += new System.EventHandler(this.btnViewJobs_Click);
+            // 
+            // dgvJobs
+            // 
+            this.dgvJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJobs.Location = new System.Drawing.Point(181, 17);
+            this.dgvJobs.Name = "dgvJobs";
+            this.dgvJobs.RowTemplate.Height = 25;
+            this.dgvJobs.Size = new System.Drawing.Size(555, 389);
+            this.dgvJobs.TabIndex = 13;
+            // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // ServiceCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(928, 512);
+            this.ClientSize = new System.Drawing.Size(925, 512);
+            this.Controls.Add(this.pnlJobs);
             this.Controls.Add(this.pnlRequests);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -414,9 +396,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.PerformLayout();
             this.pnlRequests.ResumeLayout(false);
             this.pnlRequests.PerformLayout();
-            this.pnlJobs.ResumeLayout(false);
-            this.pnlJobs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).EndInit();
+            this.pnlJobs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobs)).EndInit();
             this.ResumeLayout(false);
 
@@ -437,8 +418,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnRequests;
         private System.Windows.Forms.Panel pnlRequests;
         private System.Windows.Forms.Panel pnlJobs;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.Button btnROD;
@@ -449,5 +428,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.DataGridView dgvJobs;
         private System.Windows.Forms.Button btnViewJobs;
         private System.Windows.Forms.Button btnSchedJobs;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

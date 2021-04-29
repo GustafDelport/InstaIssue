@@ -41,8 +41,8 @@ namespace InstaIssue
 
 
             //Shortcut
-            this.Hide();
-            Globals.callCenterForm.Show();
+            //this.Hide();
+            //Globals.callCenterForm.Show();
 
             //Events 
             //EventsHandler eventsHandler = new EventsHandler();
@@ -52,19 +52,30 @@ namespace InstaIssue
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String username = "", password = "";
+            //String username = "", password = "";
 
-            Login login = new Login();
-            if (login.LoginUser("username", "password"))
+            //Login login = new Login();
+            //if (login.LoginUser("username", "password"))
+            //{
+
+            //    StaffDataHandler handler = new StaffDataHandler();
+            //    Globals.StaffID = handler.ReturnStaffID(username);
+            //}
+            //else
+            //{
+            //    //Wrong password
+            //}
+
+            if (txtUsername.Text == "Admin" && txtPassword.Text == "Password")
             {
-
-                StaffDataHandler handler = new StaffDataHandler();
-                Globals.StaffID = handler.ReturnStaffID(username);
+                Globals.callCenterForm.Show();
+                this.Hide();
             }
             else
             {
-                //Wrong password
-            }  
+                MessageBox.Show("Incorect Password or Username","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

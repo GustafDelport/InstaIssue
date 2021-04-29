@@ -1,4 +1,5 @@
-﻿using InstaIssue.CallCenter.DomainLayer;
+﻿using Database;
+using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,20 @@ namespace InstaIssue.CallCenter.LogicLayer
 
         public Clients GetClient(String nationalID)
         {
-            return new Clients();
+            Clients client = new Clients();
+
+            //Validate if that client exists
+            ClientDataHandler handler = new ClientDataHandler();
+            Data data = new Data();
+
+            if (data.CheckExist(nationalID, "tblclients", "nationalID"))
+            {
+                client = handler.GetClient(nationalID);
+            }
+            else client = null;
+
+            //return validclient
+            return client;
         }
 
         public List<Clients> GetClients()

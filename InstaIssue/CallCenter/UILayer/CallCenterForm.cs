@@ -1,13 +1,9 @@
 ﻿using InstaIssue.CallCenter.DomainLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using Authentication;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InstaIssue.CallCenter.LogicLayer;
 
 namespace InstaIssue.CallCenter.UILayer
 {
@@ -18,6 +14,8 @@ namespace InstaIssue.CallCenter.UILayer
         private String Status;
         private Boolean callStatus;
         private Panel activePanel;
+        private readonly Validations validations = new Validations();
+
 
         public CallCenterForm()
         {
@@ -32,6 +30,7 @@ namespace InstaIssue.CallCenter.UILayer
 
             callStatus = true;
             CallTest();
+            tmrTime.Start();
         }
 
         //Methods
@@ -258,7 +257,36 @@ namespace InstaIssue.CallCenter.UILayer
         #region
         private void btnFind_Click(object sender, EventArgs e)
         {
-            //Qury here
+            if (validations.ValidateID(txtNationalID.Text))
+            {
+                //Validate if ID is a valid ID
+                Globals.nationalID = txtNationalID.Text;
+
+                //Now we find the client
+                client = new ClientTracker().GetClient(Globals.nationalID);
+
+                if (client == null)
+                {
+                    MessageBox.Show("The client does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Client Found", "The ID entered is not correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                //Now we have access to client aslong as the instace is open
+                activePanel.Visible = false;
+                pnlClients.Visible = true;
+                activePanel = pnlClients;
+
+                lblName.Text = client.Name;
+                lblID.Text = client.NationalID;
+                //Add Contract Tracker later
+            }
+            else
+            {
+                MessageBox.Show("The ID entered is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            txtNationalID.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -276,13 +304,18 @@ namespace InstaIssue.CallCenter.UILayer
             //Track Job
             Globals.informationForm.Show();
             Globals.callCenterForm.Hide();
-
         }
 
         private void btnTrackIssue_Click(object sender, EventArgs e)
         {
             //Track Issues => take to info form
             Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Globals.serviceCenterForm.Show();
             Globals.callCenterForm.Hide();
         }
 
@@ -321,5 +354,21 @@ namespace InstaIssue.CallCenter.UILayer
             //Event rating trigger
         }
         #endregion
+
+        //Other
+        #region
+
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
+        #endregion
+
+        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

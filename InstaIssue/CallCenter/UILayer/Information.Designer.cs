@@ -29,6 +29,7 @@ namespace InstaIssue.CallCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -223,6 +225,11 @@ namespace InstaIssue.CallCenter.UILayer
             this.dgvData.Size = new System.Drawing.Size(749, 413);
             this.dgvData.TabIndex = 2;
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -239,6 +246,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.Name = "Information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information";
+            this.Load += new System.EventHandler(this.Information_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
@@ -266,5 +274,6 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Label lblCName;
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

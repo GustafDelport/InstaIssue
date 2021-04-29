@@ -46,7 +46,7 @@ namespace Database
                     connection.database.Open();
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
                     connection.database.Close();
-                    if (Exist > 1)
+                    if (Exist >= 1)
                     {
                         return true;
                     }
