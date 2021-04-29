@@ -32,11 +32,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
-            this.lblContract = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.lblCContract = new System.Windows.Forms.Label();
-            this.lblCName = new System.Windows.Forms.Label();
             this.lblCID = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
@@ -44,6 +40,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnadd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,16 +55,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.dgvData.Name = "dgvData";
             this.dgvData.RowTemplate.Height = 25;
             this.dgvData.Size = new System.Drawing.Size(749, 413);
-            this.dgvData.TabIndex = 5;
+            this.dgvData.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pnlSeperator);
-            this.panel2.Controls.Add(this.lblContract);
-            this.panel2.Controls.Add(this.lblName);
             this.panel2.Controls.Add(this.lblID);
-            this.panel2.Controls.Add(this.lblCContract);
-            this.panel2.Controls.Add(this.lblCName);
             this.panel2.Controls.Add(this.lblCID);
             this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.lblTime);
@@ -75,37 +68,15 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.Location = new System.Drawing.Point(159, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(767, 81);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 7;
             // 
             // pnlSeperator
             // 
             this.pnlSeperator.BackColor = System.Drawing.Color.White;
-            this.pnlSeperator.Location = new System.Drawing.Point(150, 9);
+            this.pnlSeperator.Location = new System.Drawing.Point(152, 12);
             this.pnlSeperator.Name = "pnlSeperator";
-            this.pnlSeperator.Size = new System.Drawing.Size(10, 59);
-            this.pnlSeperator.TabIndex = 12;
-            // 
-            // lblContract
-            // 
-            this.lblContract.AutoSize = true;
-            this.lblContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblContract.Location = new System.Drawing.Point(166, 49);
-            this.lblContract.Name = "lblContract";
-            this.lblContract.Size = new System.Drawing.Size(48, 21);
-            this.lblContract.TabIndex = 18;
-            this.lblContract.Text = "Gold";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(166, 29);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(125, 21);
-            this.lblName.TabIndex = 17;
-            this.lblName.Text = "Gustaf Delport";
+            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
+            this.pnlSeperator.TabIndex = 13;
             // 
             // lblID
             // 
@@ -113,44 +84,22 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblID.Location = new System.Drawing.Point(166, 9);
+            this.lblID.Location = new System.Drawing.Point(168, 12);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(127, 21);
-            this.lblID.TabIndex = 16;
-            this.lblID.Text = "0004175144080";
-            // 
-            // lblCContract
-            // 
-            this.lblCContract.AutoSize = true;
-            this.lblCContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCContract.Location = new System.Drawing.Point(6, 49);
-            this.lblCContract.Name = "lblCContract";
-            this.lblCContract.Size = new System.Drawing.Size(133, 21);
-            this.lblCContract.TabIndex = 15;
-            this.lblCContract.Text = "Client Contract";
-            // 
-            // lblCName
-            // 
-            this.lblCName.AutoSize = true;
-            this.lblCName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCName.Location = new System.Drawing.Point(6, 29);
-            this.lblCName.Name = "lblCName";
-            this.lblCName.Size = new System.Drawing.Size(108, 21);
-            this.lblCName.TabIndex = 14;
-            this.lblCName.Text = "Client Name";
+            this.lblID.Size = new System.Drawing.Size(67, 21);
+            this.lblID.TabIndex = 15;
+            this.lblID.Text = "JA0221";
             // 
             // lblCID
             // 
             this.lblCID.AutoSize = true;
             this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCID.Location = new System.Drawing.Point(6, 9);
+            this.lblCID.Location = new System.Drawing.Point(8, 12);
             this.lblCID.Name = "lblCID";
-            this.lblCID.Size = new System.Drawing.Size(77, 21);
-            this.lblCID.TabIndex = 13;
-            this.lblCID.Text = "Client ID";
+            this.lblCID.Size = new System.Drawing.Size(67, 21);
+            this.lblCID.TabIndex = 14;
+            this.lblCID.Text = "Staff ID";
             // 
             // lblDate
             // 
@@ -182,7 +131,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(159, 512);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 6;
             // 
             // btnDashboard
             // 
@@ -221,12 +170,23 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
+            // btnadd
+            // 
+            this.btnadd.Location = new System.Drawing.Point(245, 173);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.TabIndex = 9;
+            this.btnadd.Text = "add staff";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            // 
             // StaffEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.btnadd);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -247,11 +207,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSeperator;
-        private System.Windows.Forms.Label lblContract;
-        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblCContract;
-        private System.Windows.Forms.Label lblCName;
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
@@ -259,5 +215,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.Button btnadd;
     }
 }

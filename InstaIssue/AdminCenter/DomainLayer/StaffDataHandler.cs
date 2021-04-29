@@ -70,20 +70,21 @@ namespace InstaIssue.AdminCenter.DomainLayer
             }
             catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
 
-        public Boolean AddStaff()
+        public Boolean addStaff(String staffID, int userid, String name, String surname, String status,String skills, String adress)
         {
-            //All Fields later;
-            return false;
+            Data data = new Data();
+            data.AddStaff(staffID,name,surname,status,skills,adress);
+            return true;
         }
         public Boolean EditStaff(String type, String newData)
         {
-            //All Fields later;
             return false;
         }
+           
 
         public Boolean DeleteStaff(String staffID)
         {

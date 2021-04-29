@@ -116,6 +116,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnMngClients.Text = "Manage Clients";
             this.btnMngClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMngClients.UseVisualStyleBackColor = true;
+            this.btnMngClients.Click += new System.EventHandler(this.btnMngClients_Click);
             // 
             // btnMngStaff
             // 
@@ -133,6 +134,59 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnMngStaff.Text = "Manage Staff";
             this.btnMngStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMngStaff.UseVisualStyleBackColor = true;
+            this.btnMngStaff.Click += new System.EventHandler(this.btnMngStaff_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.imgLogo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(178, 81);
+            this.panel1.TabIndex = 0;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.imgLogo.Image = global::InstaIssue.Properties.Resources.LogoGreen;
+            this.imgLogo.Location = new System.Drawing.Point(49, 0);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(78, 78);
+            this.imgLogo.TabIndex = 1;
+            this.imgLogo.TabStop = false;
+            // 
+            // pnlInfo
+            // 
+            this.pnlInfo.Controls.Add(this.lblDate);
+            this.pnlInfo.Controls.Add(this.lblTime);
+            this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlInfo.Location = new System.Drawing.Point(178, 0);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(748, 81);
+            this.pnlInfo.TabIndex = 1;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblDate.Location = new System.Drawing.Point(616, 9);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(120, 24);
+            this.lblDate.TabIndex = 6;
+            this.lblDate.Text = "2021-04-17";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblTime.Location = new System.Drawing.Point(616, 44);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(63, 24);
+            this.lblTime.TabIndex = 5;
+            this.lblTime.Text = "14:23";
             // 
             // panel1
             // 
@@ -197,7 +251,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // dgvIssues
             // 
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssues.Location = new System.Drawing.Point(12, 9);
+            this.dgvIssues.Location = new System.Drawing.Point(23, 19);
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.RowTemplate.Height = 25;
             this.dgvIssues.Size = new System.Drawing.Size(706, 394);
