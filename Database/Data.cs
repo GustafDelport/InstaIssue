@@ -63,6 +63,35 @@ namespace Database
             }
         }
         
+        // Delete a specific entry if it exists in database, in specified table
+        public Boolean DeleteEntry(string id, string tblName, string idCol)
+        {
+            if (CheckExist(id, tblName, idCol))
+            {
+                if (tblName == "tblusers")
+                {
+                    connection.database.Open();
+                    string buildCommand = "DELETE FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = " + Convert.ToInt32(id);
+                    connection.RunCommand(buildCommand).ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    connection.database.Open();
+                    string buildCommand = "DELETE FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = \'" + id + "\'";
+                    connection.RunCommand(buildCommand).ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+                
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
         // Check if specific entry exists in database in specified table and return SQLDataReader object
         public SqlDataReader FindEntry(string id, string tblName, string idCol)
         {
@@ -100,7 +129,7 @@ namespace Database
                 if (CheckExist(username, "tblusers", "username"))
                 {
                     // Run update user code
-                    connection.RunCommand("UPDATE tblusers SET username = \'" + username + "\', password = \'" + password + "\', updatedAt = " + DateTime.Now + " WHERE username = \'" + username + "\'");
+                    connection.RunCommand("UPDATE tblusers SET username = \'" + username + "\', password = \'" + password + "\', updatedAt = " + DateTime.Now + " WHERE username = \'" + username + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -130,7 +159,7 @@ namespace Database
                 {
                     // Run update client code
                     connection.RunCommand("UPDATE tblclients SET clientID = \'" + clientID + "\', name = \'" + name + "\', surname = \'" + surname + "\', nationalID = " +
-                                          nationalID + "\', phoneNumber = \'" + phoneNumber + "\', email = \'" + email + "\', address = \'" + address + "\' WHERE clientID = \'" + clientID + "\'");
+                                          nationalID + "\', phoneNumber = \'" + phoneNumber + "\', email = \'" + email + "\', address = \'" + address + "\' WHERE clientID = \'" + clientID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -187,7 +216,7 @@ namespace Database
                 {
                     // Run update staff code
                     connection.RunCommand("UPDATE tblstaff SET staffID = \'" + staffID + "\', name = \'" + name + "\', surname = \'" + surname + "\', status = \'" +
-                                          status + "\', skills = \'" + skills + "\', address = \'" + address + "\' WHERE staffID = \'" + staffID + "\'");
+                                          status + "\', skills = \'" + skills + "\', address = \'" + address + "\' WHERE staffID = \'" + staffID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -229,7 +258,7 @@ namespace Database
                 {
                     // Run update SLA code
                     connection.RunCommand("UPDATE tblsla SET slaID = \'" + slaID + "\', name = \'" + name + "\', description = \'" + description + "\', tarif = " +
-                                          tarif + " WHERE slaID = \'" + slaID + "\'");
+                                          tarif + " WHERE slaID = \'" + slaID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -259,7 +288,7 @@ namespace Database
                 {
                     // Run update Review Record code
                     connection.RunCommand("UPDATE tblreviewRecords SET reviewID = \'" + reviewID + "\', clientID = \'" + clientID + "\', startTimestamp = " + startTimestamp + ", endTimestamp = " +
-                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE reviewID = \'" + reviewID + "\'");
+                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE reviewID = \'" + reviewID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -290,7 +319,7 @@ namespace Database
                 {
                     // Run update Request code
                     connection.RunCommand("UPDATE tblrequestData SET requestID = \'" + requestID + "\', clientID = \'" + clientID + "\', plannedDate = " + plannedDate + ", deadlineDate = " +
-                                          deadlineDate + " WHERE requestID = \'" + requestID + "\'");
+                                          deadlineDate + " WHERE requestID = \'" + requestID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -320,7 +349,7 @@ namespace Database
                 {
                     // Run update Job code
                     connection.RunCommand("UPDATE tbljobs SET jobID = \'" + jobID + "\', scheduledDate = " + scheduledDate + ", service = \'" +
-                                          service + "\', status = \'" + status + "\', staffID = \'" + staffID + "\' WHERE jobID = \'" + jobID + "\'");
+                                          service + "\', status = \'" + status + "\', staffID = \'" + staffID + "\' WHERE jobID = \'" + jobID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -351,7 +380,7 @@ namespace Database
                 {
                     // Run update Job code
                     connection.RunCommand("UPDATE tbljobRecords SET jobRecordID = \'" + jobRecordID + "\', clientID = \'" + clientID + "\', callRecordID = \'" +
-                                          callRecordID + "\', description = \'" + description + "\', status = \'" + status + "\' WHERE jobRecordID = \'" + jobRecordID + "\'");
+                                          callRecordID + "\', description = \'" + description + "\', status = \'" + status + "\' WHERE jobRecordID = \'" + jobRecordID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -382,7 +411,7 @@ namespace Database
                 {
                     // Run update issue code
                     connection.RunCommand("UPDATE tblissues SET issueID = \'" + issueID + "\', reportedDate = " + reportedDate + ", clientID = \'" +
-                                          clientID + "\', status = \'" + status + "\', staffID = \'" + staffID + "\', description = \'" + description + "\' WHERE issueID = \'" + issueID + "\'");
+                                          clientID + "\', status = \'" + status + "\', staffID = \'" + staffID + "\', description = \'" + description + "\' WHERE issueID = \'" + issueID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -413,7 +442,7 @@ namespace Database
                 {
                     // Run update contract code
                     connection.RunCommand("UPDATE tblcontracts SET contractID = \'" + contractID + "\', dateSigned = " + dateSigned + ", clientID = \'" +
-                                          clientID + "\', slaID = \'" + slaID + "\' WHERE contractID = \'" + contractID + "\'");
+                                          clientID + "\', slaID = \'" + slaID + "\' WHERE contractID = \'" + contractID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -444,7 +473,7 @@ namespace Database
                 {
                     // Run update Call Record code
                     connection.RunCommand("UPDATE tblcallRecords SET callRecordID = \'" + callRecordID + "\', clientID = \'" + clientID + "\', startTimestamp = " + startTimestamp + ", endTimestamp = " +
-                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE callRecordID = \'" + callRecordID + "\'");
+                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE callRecordID = \'" + callRecordID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
