@@ -228,36 +228,6 @@ namespace InstaIssue.CallCenter.UILayer
         {
             //Create Issue
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //Create a Review
-        }
-
-        private void picOneStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picTwoStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picThreeStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picFourStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picFiveStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
         #endregion
 
         //Other
@@ -270,10 +240,5 @@ namespace InstaIssue.CallCenter.UILayer
             lblTime.Text = DateTime.Now.ToString("T");
         }
         #endregion
-
-        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
