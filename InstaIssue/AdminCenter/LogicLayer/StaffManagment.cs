@@ -13,6 +13,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public List<Staff> GetAllStaff()
         {
+
             return null;
         }
         public Staff GetStaff()
@@ -24,7 +25,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
         {
             StaffDataHandler staffDataHandler = new StaffDataHandler();
             staffDataHandler.addStaff(staffID, userid, name, surname, status, skills, adress);
-            return false;
+            return true;
         }
         public Boolean EditStaff(String type, String newData)
         {
