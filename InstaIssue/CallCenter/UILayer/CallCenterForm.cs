@@ -263,12 +263,23 @@ namespace InstaIssue.CallCenter.UILayer
                 Globals.nationalID = txtNationalID.Text;
 
                 //Now we find the client
-                ClientTracker tracker = new ClientTracker();
-                client = tracker.GetClient(Globals.nationalID);
+                client = new ClientTracker().GetClient(Globals.nationalID);
 
+                if (client == null)
+                {
+                    MessageBox.Show("The client does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Client Found", "The ID entered is not correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 //Now we have access to client aslong as the instace is open
             }
-            
+            else
+            {
+                MessageBox.Show("The ID entered is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            txtNationalID.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)

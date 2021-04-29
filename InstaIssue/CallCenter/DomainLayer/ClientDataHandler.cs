@@ -1,6 +1,8 @@
 ﻿using Database;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace InstaIssue.CallCenter.DomainLayer
 
         public ClientDataHandler()
         {
+            connection.Connect();
         }
 
         //Client Data retrieval
@@ -36,7 +39,24 @@ namespace InstaIssue.CallCenter.DomainLayer
             {
                 connection.database.Open();
 
-                //connection.RunCommand();
+                String Q = $"SELECT * FROM tblclients WHERE nationalID = {nationalID}";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q,con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    client.ClientID = row["clientID"].ToString();
+                    client.Name = row["name"].ToString();
+                    client.Surname = row["surname"].ToString();
+                    client.NationalID = row["nationalID"].ToString();
+                    client.PhoneNumber = row["phoneNumber"].ToString();
+                    client.EMail = row["email"].ToString();
+                    client.Address = row["address"].ToString();
+                }
 
                 connection.database.Close();
 
