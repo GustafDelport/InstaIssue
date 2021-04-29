@@ -55,6 +55,16 @@ namespace InstaIssue.AdminCenter.UILayer
         }
         #endregion
 
+
+        private void btnMngClients_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMngStaff_Click(object sender, EventArgs e)
+        {
+        }
+
         private void tmrTime_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("d");

@@ -16,5 +16,10 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             InitializeComponent();
         }
+
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
