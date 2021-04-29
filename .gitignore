@@ -361,3 +361,22 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# VSCode configuration file
+.vscode
+
+# Web Application
+# dependencies
+web-cloud/node_modules
+web-cloud/.pnp
+web-cloud/.pnp.js
+web-cloud/coverage
+web-cloud/build
+web-cloud/.DS_Store
+web-cloud/.env.local
+web-cloud/.env.development.local
+web-cloud/.env.test.local
+web-cloud/.env.production.local
+web-cloud/npm-debug.log*
+web-cloud/yarn-debug.log*
+web-cloud/yarn-error.log*
