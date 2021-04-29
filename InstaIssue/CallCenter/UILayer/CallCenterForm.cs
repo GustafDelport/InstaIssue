@@ -274,6 +274,13 @@ namespace InstaIssue.CallCenter.UILayer
                     MessageBox.Show("Client Found", "The ID entered is not correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 //Now we have access to client aslong as the instace is open
+                activePanel.Visible = false;
+                pnlClients.Visible = true;
+                activePanel = pnlClients;
+
+                lblName.Text = client.Name;
+                lblID.Text = client.NationalID;
+                //Add Contract Tracker later
             }
             else
             {
@@ -297,7 +304,6 @@ namespace InstaIssue.CallCenter.UILayer
             //Track Job
             Globals.informationForm.Show();
             Globals.callCenterForm.Hide();
-
         }
 
         private void btnTrackIssue_Click(object sender, EventArgs e)

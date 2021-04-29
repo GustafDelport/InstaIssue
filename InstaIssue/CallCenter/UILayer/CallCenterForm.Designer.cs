@@ -309,9 +309,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblName.Location = new System.Drawing.Point(165, 28);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(125, 21);
+            this.lblName.Size = new System.Drawing.Size(22, 21);
             this.lblName.TabIndex = 10;
-            this.lblName.Text = "Gustaf Delport";
+            this.lblName.Text = "...";
             // 
             // lblID
             // 
@@ -321,9 +321,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblID.Location = new System.Drawing.Point(165, 8);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(127, 21);
+            this.lblID.Size = new System.Drawing.Size(22, 21);
             this.lblID.TabIndex = 9;
-            this.lblID.Text = "0004175144080";
+            this.lblID.Text = "...";
             this.lblID.MouseLeave += new System.EventHandler(this.lblID_MouseLeave);
             this.lblID.MouseHover += new System.EventHandler(this.label6_MouseHover);
             // 
