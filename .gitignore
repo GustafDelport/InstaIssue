@@ -380,3 +380,4 @@ web-cloud/.env.production.local
 web-cloud/npm-debug.log*
 web-cloud/yarn-debug.log*
 web-cloud/yarn-error.log*
+web-cloud/.idea
