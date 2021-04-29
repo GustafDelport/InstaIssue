@@ -65,13 +65,6 @@ namespace InstaIssue.CallCenter.UILayer
             lblID.Font = new Font("Century Gothic", 12);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            activePanel.Visible = false;
-            pnlReviews.Visible = true;
-            activePanel = pnlReviews;
-        }
-
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             activePanel.Visible = false;
@@ -162,94 +155,6 @@ namespace InstaIssue.CallCenter.UILayer
             pnlTrackIssue.Visible = false;
             btnTopAddIss.Visible = true;
             btnTopTrackIss.Visible = true;
-        }
-
-        private void picOneStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picOneStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-        }
-
-        private void picTwoStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picTwoStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-        }
-
-        private void picThreeStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-            picThreeStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picThreeStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-            picThreeStar.Image = Properties.Resources.Star;
-        }
-
-        private void picFourStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-            picThreeStar.Image = Properties.Resources.StarYellow;
-            picFourStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picFourStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-            picThreeStar.Image = Properties.Resources.Star;
-            picFourStar.Image = Properties.Resources.Star;
-        }
-
-        private void picFiveStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-            picThreeStar.Image = Properties.Resources.StarYellow;
-            picFourStar.Image = Properties.Resources.StarYellow;
-            picFiveStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picFiveStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-            picThreeStar.Image = Properties.Resources.Star;
-            picFourStar.Image = Properties.Resources.Star;
-            picFiveStar.Image = Properties.Resources.Star;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            pnlRev.Visible = true;
-            button7.Visible = false;
-        }
-
-        private void pnlReviews_VisibleChanged(object sender, EventArgs e)
-        {
-            //pnlRev.Visible = false;
-            //button7.Visible = true;
-        }
-
-        private void pnlReviews_VisibleChanged_1(object sender, EventArgs e)
-        {
-            pnlRev.Visible = false;
-            button7.Visible = true;
         }
         #endregion
 
