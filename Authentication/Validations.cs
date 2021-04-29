@@ -26,7 +26,7 @@ namespace Authentication
         {
             int n = 0;
 
-            switch (data.PadRight(3))
+            switch (data.Substring(0,3))
             {
                 case "AGT":
                     {
@@ -44,6 +44,11 @@ namespace Authentication
                     {
                         //Service Manager
                         n = 3;
+                    }
+                    break;
+                case "Agt":
+                    {
+                        n = 1;
                     }
                     break;
             }
