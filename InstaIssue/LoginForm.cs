@@ -52,30 +52,58 @@ namespace InstaIssue
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //String username = "", password = "";
+            String username = "", password = "";
 
-            //Login login = new Login();
-            //if (login.LoginUser("username", "password"))
-            //{
-
-            //    StaffDataHandler handler = new StaffDataHandler();
-            //    Globals.StaffID = handler.ReturnStaffID(username);
-            //}
-            //else
-            //{
-            //    //Wrong password
-            //}
-
-            if (txtUsername.Text == "Admin" && txtPassword.Text == "Password")
+            if (!String.IsNullOrEmpty(txtUsername.Text) && !String.IsNullOrEmpty(txtPassword.Text))
             {
-                Globals.callCenterForm.Show();
-                this.Hide();
+                username = txtUsername.Text;
+                password = txtPassword.Text;
+
+                Login login = new Login();
+
+                if (login.LoginUser(username, password))
+                {
+                    StaffDataHandler handler = new StaffDataHandler();
+                    Globals.StaffID = handler.ReturnStaffID(username);
+
+                    switch (new Validations().ValidateStaffRank(Globals.StaffID))
+                    {
+                        case 1:
+                            {
+                                //Call Agent
+                                Globals.callCenterForm.Show();
+                                this.Hide();
+                            }
+                            break;
+                        case 2:
+                            {
+                                //Admin
+                                Globals.AdminCenterForm.Show();
+                                this.Hide();
+                            }
+                            break;
+                        case 3:
+                            {
+                                //Service Manager
+                                Globals.serviceCenterForm.Show();
+                                this.Hide();
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Incorect Password or Username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Text = "";
+                    txtUsername.Text = "";
+                }
             }
             else
             {
-                MessageBox.Show("Incorect Password or Username","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please check Format of username of password", "Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Text = "";
+                txtUsername.Text = "";
             }
-
         }
     }
 }

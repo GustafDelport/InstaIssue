@@ -28,8 +28,41 @@ namespace InstaIssue.CallCenter.DomainLayer
         #region
         public List<Clients> GetClients()
         {
-            //Return something empty for now
-            return (List<Clients>)Enumerable.Empty<Clients>();
+            List<Clients> clients = new List<Clients>();
+            try
+            {
+                connection.database.Open();
+
+                String Q = $"SELECT * FROM tblclients";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                String[] arr = new string[7];
+                foreach (DataRow row in table.Rows)
+                {
+                    
+                    arr[0] = row["clientID"].ToString();
+                    arr[1] = row["name"].ToString();
+                    arr[2] = row["surname"].ToString();
+                    arr[3] = row["nationalID"].ToString();
+                    arr[4] = row["phoneNumber"].ToString();
+                    arr[5] = row["email"].ToString();
+                    arr[6] = row["address"].ToString();
+
+                    clients.Add(new Clients(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6]));
+                }
+
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return clients;
         }
 
         public Clients GetClient(String nationalID)

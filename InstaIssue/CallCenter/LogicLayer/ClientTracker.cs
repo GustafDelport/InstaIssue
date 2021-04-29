@@ -44,10 +44,22 @@ namespace InstaIssue.CallCenter.LogicLayer
             return client;
         }
 
-        public List<Clients> GetClients()
-        {
-            return (List<Clients>)Enumerable.Empty<Clients>();
-        }
+        //Useless for now a agent does net need to see all clients
+        //public List<Clients> GetClients()
+        //{
+        //    List<Clients> clients = new List<Clients>();
+        //    ClientDataHandler handler = new ClientDataHandler();
+        //    Data data = new Data();
+
+        //    if (data.CheckExist(nationalID, "tblclients", "nationalID"))
+        //    {
+        //        clients = handler.GetClients();
+        //    }
+        //    else clients = null;
+
+        //    //return validclient
+        //    return clients;
+        //}
 
         public List<CallRecords> GetCallRecords(String nationalID)
         {
