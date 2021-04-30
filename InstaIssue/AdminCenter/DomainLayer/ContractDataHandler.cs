@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace InstaIssue.AdminCenter.DomainLayer
 {
     class ContractDataHandler
     {
-        private String connection;
+        
+        private readonly Connection connection = new Connection();
 
         public ContractDataHandler()
         {
@@ -34,9 +36,11 @@ namespace InstaIssue.AdminCenter.DomainLayer
             return null;
         }
 
-        public Boolean AddContract()
+        public Boolean AddContract(String contractID,DateTime dateSigned,String clientID,String slaID)
         {
-            //All Fields later;
+            Data data = new Data();
+            data.AddContract(contractID, dateSigned, clientID, slaID);
+
             return false;
         }
         public Boolean EditContract(String type, String newData)

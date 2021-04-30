@@ -33,9 +33,10 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return null;
         }
 
-        public Boolean AddContract()
+        public Boolean AddContract(String contractID, DateTime dateSigned, String clientID, String slaID)
         {
-            //All Fields later;
+            ContractDataHandler contractDataHandler = new ContractDataHandler();
+            contractDataHandler.AddContract(contractID, dateSigned, clientID, slaID)
             return false;
         }
         public Boolean EditContract(String type, String newData)
