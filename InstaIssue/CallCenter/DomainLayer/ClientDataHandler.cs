@@ -131,16 +131,68 @@ namespace InstaIssue.CallCenter.DomainLayer
             return callRecords;
         }
 
+        //NB!
         public List<ReviewRecords> GetReviews(String nationalID)
         {
-            //Return something empty for now
-            return (List<ReviewRecords>)Enumerable.Empty<ReviewRecords>();
+            //Add review records later.
+            List<ReviewRecords> reviewRecords = new List<ReviewRecords>();
+
+            String Q = $"SELECT * FROM tblCallRecords";
+            SqlConnection con = connection.GetSqlConnection();
+
+            SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+            DataTable table = new DataTable();
+
+            reader.Fill(table);
+
+            String[] arr = new string[7];
+            foreach (DataRow row in table.Rows)
+            {
+
+                arr[0] = row["callrecordID"].ToString();
+                arr[1] = row["clientID"].ToString();
+                arr[2] = row["startTimestamp"].ToString();//Date
+                arr[3] = row["endTimestamp"].ToString();//Date
+                arr[4] = row["staffID"].ToString();
+
+                
+            }
+
+            reviewRecords.Add(new ReviewRecords());
+
+            connection.database.Close();
+
+            return reviewRecords;
         }
 
         public List<JobRecords> GetJobRecords(String nationalID)
         {
-            //Return something empty for now
-            return (List<JobRecords>)Enumerable.Empty<JobRecords>();
+            List<JobRecords> jobRecords = new List<JobRecords>();
+
+            String Q = $"SELECT * FROM tblCallRecords";
+            SqlConnection con = connection.GetSqlConnection();
+
+            SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+            DataTable table = new DataTable();
+
+            reader.Fill(table);
+
+            String[] arr = new string[7];
+            foreach (DataRow row in table.Rows)
+            {
+
+                arr[0] = row["jobrecordID"].ToString();
+                arr[1] = row["clientID"].ToString();
+                arr[2] = row["callrecordID"].ToString();
+                arr[3] = row["description"].ToString();
+                arr[4] = row["status"].ToString();
+
+                jobRecords.Add(new JobRecords(arr[0],arr[1],arr[2],arr[3],arr[4]));
+            }
+
+            connection.database.Close();
+
+            return jobRecords;
         }
         #endregion
     }
