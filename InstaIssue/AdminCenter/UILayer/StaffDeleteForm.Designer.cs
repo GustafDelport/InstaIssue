@@ -29,6 +29,7 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDeleteForm));
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
@@ -201,7 +202,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDeleteSaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDeleteSaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDeleteSaff.Image = global::InstaIssue.Properties.Resources.ClientAddS;
+            this.btnDeleteSaff.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteSaff.Image")));
             this.btnDeleteSaff.Location = new System.Drawing.Point(16, 49);
             this.btnDeleteSaff.Name = "btnDeleteSaff";
             this.btnDeleteSaff.Size = new System.Drawing.Size(159, 82);
