@@ -36,7 +36,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
         public Boolean AddContract(String contractID, DateTime dateSigned, String clientID, String slaID)
         {
             ContractDataHandler contractDataHandler = new ContractDataHandler();
-            contractDataHandler.AddContract(contractID, dateSigned, clientID, slaID)
+            contractDataHandler.AddContract(contractID, dateSigned, clientID, slaID);
             return false;
         }
         public Boolean EditContract(String type, String newData)
@@ -47,7 +47,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public Boolean DeleteContract(String staffID)
         {
-            //All Fields later;
+            
             return false;
         }
 

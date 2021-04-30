@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Database;
 
 namespace InstaIssue.CallCenter.LogicLayer
 {
@@ -10,6 +11,7 @@ namespace InstaIssue.CallCenter.LogicLayer
     {
         private String nationalID;
         private DateTime timeStamp;
+        
 
         public ClientSatisfaction()
         {
@@ -29,6 +31,8 @@ namespace InstaIssue.CallCenter.LogicLayer
 
         public Boolean SetCallRecords(String nationalID, DateTime startTimestamp, DateTime endTimestamp, String staffID)
         {
+            ClientSatisfaction clientSatisfaction = new ClientSatisfaction();
+            clientSatisfaction.SetCallRecords(nationalID, startTimestamp, endTimestamp, staffID);
             return false;
         }
     }

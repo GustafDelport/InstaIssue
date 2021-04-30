@@ -133,21 +133,52 @@ namespace Database
             }
         }
         //get all staff
-        public Boolean GetAllStaff()
+        public List<String> GetAllStaff()
+        {
+            try
+            {
+                List<String> ID = new List<string>();
+                var Q = $"SELECT * from tblstaff";
+
+                connection.database.Open();
+
+                
+                ID.Add((String)connection.RunCommand(Q).ExecuteScalar());
+
+                connection.database.Close();
+                return ID;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+        //delete staff
+        public Boolean deletestaff(string staffID)
         {
             try
             {
                 connection.database.Open();
-                // get all the staff
-                connection.RunCommand("SELECT * from tblstaff");
-                return true;
+                // Check if staff exists, if exist then delete
+                if (CheckExist(staffID, "tblstaff", "staffID"))
+                {
+                    // Run update staff code
+                    connection.RunCommand("DELETE FROM tblstaff WHERE staffID = "+staffID+"");
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    
+                    return false;
+                }
+
             }
             catch (Exception e)
             {
-                return true;
-                throw ;
+                throw e;
             }
-    }
+        }
         // Add staff user
         public Boolean AddStaff(string staffID, string name, string surname, string status, string skills, string address, int userID = -1)
         {

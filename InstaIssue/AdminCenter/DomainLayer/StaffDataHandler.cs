@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using Database;
 
 namespace InstaIssue.AdminCenter.DomainLayer
@@ -9,10 +11,48 @@ namespace InstaIssue.AdminCenter.DomainLayer
         private readonly Connection connection = new Connection();
         public StaffDataHandler() { }
 
-        public List<Staff> GetAllStaff()
+        public Boolean deletestaff()
         {
-            return null;
+            return false;
         }
+        public Staff GetAllStaff()
+        {
+            Staff staff = new Staff();
+            try
+            {
+                connection.database.Open();
+
+                String Q = $"SELECT * FROM tblstafff ";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    staff.StaffID = row["staffID"].ToString();
+                    staff.StaffID = row["name"].ToString();
+                    staff.StaffID = row["surname"].ToString();
+                    staff.StaffID = row["status"].ToString();
+                    staff.StaffID = row["skills"].ToString();
+                    staff.StaffID = row["address"].ToString();
+
+                }
+                
+
+                connection.database.Close();
+                return staff;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
+        }
+    
+
         public Staff GetStaff()
         {
             return null;

@@ -1,6 +1,8 @@
 ﻿using Database;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +23,39 @@ namespace InstaIssue.AdminCenter.DomainLayer
             return null;
         }
 
-        public List<Contracts> GetContracts()
+        public Contracts GetContracts()
         {
-            return null;
+
+            Contracts contract = new Contracts();
+            try
+            {
+                connection.database.Open();
+
+                String Q = $"SELECT * FROM tblcontract";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    contract.ContractID = row["contractID"].ToString();
+                    contract.ClientID = row["clietID"].ToString();
+                    contract.SLAID1 = row["SLAID"].ToString();
+                    contract.DateSigned1 = DateTime.Parse((string)row["datesigned"]);
+                }
+    
+
+                connection.database.Close();
+
+            }
+            catch (Exception e)
+            {
+                throw ;
+            }
+            return contract;
         }
 
         public SLA GetSLA()
