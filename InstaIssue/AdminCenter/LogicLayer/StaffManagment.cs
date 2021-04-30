@@ -39,7 +39,9 @@ namespace InstaIssue.AdminCenter.LogicLayer
             //Calls method from Database.data
             Data data = new Data();
             //Get data from form
-            data.DeleteEntry(id, tblName, idCol);
+            data.DeleteEntry(staffID, "tblStaff", "staffID");
+            
+            AdminCenter.UILayer.StaffDeleteForm staffDelete = new AdminCenter.UILayer.StaffDeleteForm();
             return false;
         }
     }
