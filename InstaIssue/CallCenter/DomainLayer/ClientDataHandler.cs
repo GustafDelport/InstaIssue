@@ -103,8 +103,32 @@ namespace InstaIssue.CallCenter.DomainLayer
 
         public List<CallRecords> GetCallRecords(String nationalID)
         {
-            //Return something empty for now
-            return (List<CallRecords>)Enumerable.Empty<CallRecords>();
+            List<CallRecords> callRecords = new List<CallRecords>();
+
+            String Q = $"SELECT * FROM tblCallRecords";
+            SqlConnection con = connection.GetSqlConnection();
+
+            SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+            DataTable table = new DataTable();
+
+            reader.Fill(table);
+
+            String[] arr = new string[7];
+            foreach (DataRow row in table.Rows)
+            {
+
+                arr[0] = row["callrecordID"].ToString();
+                arr[1] = row["clientID"].ToString();
+                arr[2] = row["startTimestamp"].ToString();//Date
+                arr[3] = row["endTimestamp"].ToString();//Date
+                arr[4] = row["staffID"].ToString();
+
+                callRecords.Add(new CallRecords(arr[0], arr[1],Convert.ToDateTime(arr[2]), Convert.ToDateTime(arr[3]), arr[4]));
+            }
+
+            connection.database.Close();
+
+            return callRecords;
         }
 
         public List<ReviewRecords> GetReviews(String nationalID)
@@ -118,44 +142,6 @@ namespace InstaIssue.CallCenter.DomainLayer
             //Return something empty for now
             return (List<JobRecords>)Enumerable.Empty<JobRecords>();
         }
-        #endregion
-
-        //Client Data Setting
-        #region
-
-        public Boolean SetCallRecords(String nationalID, DateTime startTimestamp, DateTime endTimestamp, String staffID)
-        {
-            return false;
-        }
-
-        public Boolean SetReview(String nationalID, String description, String status, DateTime timeStamp)
-        {
-            return false;
-        }
-
-        public Boolean SetJobRecords(String nationalID,String description,String status)
-        {
-            return false;
-        }
-
-        #endregion
-
-        //Client Manipulation
-        #region
-
-        public Boolean DeleteClient()
-        {
-            return false;
-        }
-        public Boolean RegisterClient()
-        {
-            return false;
-        }
-        public Boolean EditClient(int type,String newData)
-        {
-            return false;
-        }
-
         #endregion
     }
 }

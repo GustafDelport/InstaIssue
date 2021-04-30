@@ -6,23 +6,9 @@ using System.Threading.Tasks;
 
 namespace InstaIssue.CallCenter.LogicLayer
 {
-    class ClientSatisfaction
+    class CallHandler
     {
-        private String nationalID;
-        private DateTime timeStamp;
-
-        public ClientSatisfaction()
-        {
-        }
-
-        public string NationalID { get => nationalID; set => nationalID = value; }
-
         public Boolean SetJobRecords(String nationalID, String description, String status)
-        {
-            return false;
-        }
-
-        public Boolean SetReview(String nationalID, String description, String status, DateTime timeStamp)
         {
             return false;
         }
