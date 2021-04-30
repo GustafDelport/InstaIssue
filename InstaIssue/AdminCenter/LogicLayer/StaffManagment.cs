@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Database;
 
 namespace InstaIssue.AdminCenter.LogicLayer
 {
@@ -35,7 +36,10 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public Boolean DeleteStaff(String staffID)
         {
-            //All Fields later;
+            //Calls method from Database.data
+            Data data = new Data();
+            //Get data from form
+            data.DeleteEntry(id, tblName, idCol);
             return false;
         }
     }
