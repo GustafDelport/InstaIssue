@@ -56,5 +56,42 @@ namespace Authentication
             return n;
         }
 
+        public Boolean validateText(String data)
+        {
+            Boolean flag = true;
+
+            if (!String.IsNullOrEmpty(data) && !Regex.IsMatch(data, "^[0-9]+$"))
+            {
+                flag = true;
+            }
+            else flag = false;
+
+            return flag;
+        }
+
+        public Boolean validateNumber(String data)
+        {
+            Boolean flag = true;
+
+            if (!String.IsNullOrEmpty(data) && Regex.IsMatch(data, "^[0-9]+$"))
+            {
+                flag = true;
+            }
+            else flag = false;
+
+            return flag;
+        }
+        public Boolean validateEmail(String data)
+        {
+            Boolean flag = true;
+
+            if (!String.IsNullOrEmpty(data) && Regex.IsMatch(data, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+            {
+                flag = true;
+            }
+            else flag = false;
+
+            return flag;
+        }
     }
 }

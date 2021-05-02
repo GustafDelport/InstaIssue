@@ -14,6 +14,7 @@ namespace InstaIssue.CallCenter.UILayer
         private String Status;
         private Boolean callStatus;
         private Panel activePanel;
+        private bool flag;
         private readonly Validations validations = new Validations();
 
 
@@ -156,6 +157,16 @@ namespace InstaIssue.CallCenter.UILayer
             btnTopAddIss.Visible = true;
             btnTopTrackIss.Visible = true;
         }
+
+        public void ResetBoxes()
+        {
+            txtName.Text = "Name";
+            txtSurname.Text = "Surname";
+            txtNatID.Text = "National ID";
+            txtPhone.Text = "Phone Number";
+            txtEmail.Text = "Email";
+            txtAddress.Text = "Address";
+        }
         #endregion
 
         //Button Clicks
@@ -196,7 +207,71 @@ namespace InstaIssue.CallCenter.UILayer
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //Add Client
+            //Validate if the text is correct!
+            Panel ClientPanel = pnlAddClient;
+
+            //I use a array of booleans to check each itterations posible state
+            Boolean[] flagArr = new Boolean[6];
+            int n = 0;
+
+            //Fix this error
+            foreach (TextBox item in pnlAddClient.Controls)
+            {
+                switch (item.Name)
+                {
+                    case "txtNatID":
+                        {
+                            flagArr[n] = validations.ValidateID(item.Text);
+                            n++;
+                        }
+                        break;
+                    case "txtPhone":
+                        {
+                            flagArr[n] = validations.validateNumber(item.Text);
+                            n++;
+                        }
+                        break;
+                    case "txtEmail":
+                        {
+                            flagArr[n] = validations.validateEmail(item.Text);
+                            n++;
+                        }
+                        break;
+                    default:
+                        {
+                            flagArr[n] = validations.validateText(item.Text);
+                            n++;
+                        }
+                        break;
+                }
+            }
+
+            foreach (var item in flagArr)
+            {
+                if (!item)
+                {
+                    //Our final flag to count as one singular status check
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    flag = true;
+
+                }
+            }
+
+            if (flag)
+            {
+                //Call RegisterCLientClass
+                MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                ResetBoxes();
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnCreateReq_Click(object sender, EventArgs e)
