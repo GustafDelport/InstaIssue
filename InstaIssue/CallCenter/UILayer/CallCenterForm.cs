@@ -167,6 +167,35 @@ namespace InstaIssue.CallCenter.UILayer
             txtEmail.Text = "Email";
             txtAddress.Text = "Address";
         }
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            this.Text = "";
+        }
+
+        private void txtSurname_Click(object sender, EventArgs e)
+        {
+            this.Text = "";
+        }
+
+        private void txtNatID_Click(object sender, EventArgs e)
+        {
+            this.Text = "";
+        }
+
+        private void txtPhone_Click(object sender, EventArgs e)
+        {
+            this.Text = "";
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            this.Text = "";
+        }
+
+        private void txtAddress_Click(object sender, EventArgs e)
+        {
+            this.Text = "";
+        }
         #endregion
 
         //Button Clicks
@@ -264,6 +293,7 @@ namespace InstaIssue.CallCenter.UILayer
             if (flag)
             {
                 //Call RegisterCLientClass
+                //Validate aswell tho
                 MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

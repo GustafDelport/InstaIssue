@@ -55,6 +55,17 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtNationalID = new System.Windows.Forms.TextBox();
             this.picUserLarge = new System.Windows.Forms.PictureBox();
             this.pnlClients = new System.Windows.Forms.Panel();
+            this.pnlIssues = new System.Windows.Forms.Panel();
+            this.btnTopAddIss = new System.Windows.Forms.Button();
+            this.pnlCreateIss = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnAddIssue = new System.Windows.Forms.Button();
+            this.btnTopTrackIss = new System.Windows.Forms.Button();
+            this.pnlTrackIssue = new System.Windows.Forms.Panel();
+            this.btnTrackIssue = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -78,17 +89,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
-            this.pnlIssues = new System.Windows.Forms.Panel();
-            this.btnTopAddIss = new System.Windows.Forms.Button();
-            this.pnlCreateIss = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnAddIssue = new System.Windows.Forms.Button();
-            this.btnTopTrackIss = new System.Windows.Forms.Button();
-            this.pnlTrackIssue = new System.Windows.Forms.Panel();
-            this.btnTrackIssue = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -99,12 +99,12 @@ namespace InstaIssue.CallCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserLarge)).BeginInit();
             this.pnlClients.SuspendLayout();
-            this.pnlJobs.SuspendLayout();
-            this.pnlReqs.SuspendLayout();
-            this.pnlAddClient.SuspendLayout();
             this.pnlIssues.SuspendLayout();
             this.pnlCreateIss.SuspendLayout();
             this.pnlTrackIssue.SuspendLayout();
+            this.pnlJobs.SuspendLayout();
+            this.pnlReqs.SuspendLayout();
+            this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlControls
@@ -392,6 +392,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlClients
             // 
+            this.pnlClients.Controls.Add(this.pnlIssues);
             this.pnlClients.Controls.Add(this.button6);
             this.pnlClients.Controls.Add(this.button5);
             this.pnlClients.Controls.Add(this.button3);
@@ -404,6 +405,151 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlClients.TabIndex = 5;
             this.pnlClients.Visible = false;
             this.pnlClients.VisibleChanged += new System.EventHandler(this.pnlClients_VisibleChanged);
+            // 
+            // pnlIssues
+            // 
+            this.pnlIssues.Controls.Add(this.btnTopAddIss);
+            this.pnlIssues.Controls.Add(this.pnlCreateIss);
+            this.pnlIssues.Controls.Add(this.btnTopTrackIss);
+            this.pnlIssues.Controls.Add(this.pnlTrackIssue);
+            this.pnlIssues.Location = new System.Drawing.Point(294, 9);
+            this.pnlIssues.Name = "pnlIssues";
+            this.pnlIssues.Size = new System.Drawing.Size(749, 416);
+            this.pnlIssues.TabIndex = 5;
+            this.pnlIssues.Visible = false;
+            this.pnlIssues.VisibleChanged += new System.EventHandler(this.pnlIssues_VisibleChanged);
+            // 
+            // btnTopAddIss
+            // 
+            this.btnTopAddIss.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTopAddIss.FlatAppearance.BorderSize = 0;
+            this.btnTopAddIss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnTopAddIss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnTopAddIss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTopAddIss.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTopAddIss.Image = global::InstaIssue.Properties.Resources.CreateS;
+            this.btnTopAddIss.Location = new System.Drawing.Point(398, 30);
+            this.btnTopAddIss.Name = "btnTopAddIss";
+            this.btnTopAddIss.Size = new System.Drawing.Size(159, 82);
+            this.btnTopAddIss.TabIndex = 19;
+            this.btnTopAddIss.Text = "Create Issue";
+            this.btnTopAddIss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTopAddIss.UseVisualStyleBackColor = true;
+            this.btnTopAddIss.Click += new System.EventHandler(this.btnTopAddIss_Click);
+            // 
+            // pnlCreateIss
+            // 
+            this.pnlCreateIss.Controls.Add(this.label5);
+            this.pnlCreateIss.Controls.Add(this.label4);
+            this.pnlCreateIss.Controls.Add(this.metroComboBox1);
+            this.pnlCreateIss.Controls.Add(this.richTextBox1);
+            this.pnlCreateIss.Controls.Add(this.btnAddIssue);
+            this.pnlCreateIss.Location = new System.Drawing.Point(382, 118);
+            this.pnlCreateIss.Name = "pnlCreateIss";
+            this.pnlCreateIss.Size = new System.Drawing.Size(193, 294);
+            this.pnlCreateIss.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(51, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 21);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Description";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(74, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 21);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Jobs";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(18, 27);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(159, 29);
+            this.metroComboBox1.TabIndex = 10;
+            this.metroComboBox1.UseSelectable = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(18, 82);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(159, 115);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
+            // btnAddIssue
+            // 
+            this.btnAddIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddIssue.FlatAppearance.BorderSize = 0;
+            this.btnAddIssue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAddIssue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAddIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddIssue.Image = global::InstaIssue.Properties.Resources.ClientAddS;
+            this.btnAddIssue.Location = new System.Drawing.Point(16, 203);
+            this.btnAddIssue.Name = "btnAddIssue";
+            this.btnAddIssue.Size = new System.Drawing.Size(159, 82);
+            this.btnAddIssue.TabIndex = 8;
+            this.btnAddIssue.Text = "Create Issue";
+            this.btnAddIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddIssue.UseVisualStyleBackColor = true;
+            this.btnAddIssue.Click += new System.EventHandler(this.btnAddIssue_Click);
+            // 
+            // btnTopTrackIss
+            // 
+            this.btnTopTrackIss.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTopTrackIss.FlatAppearance.BorderSize = 0;
+            this.btnTopTrackIss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnTopTrackIss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnTopTrackIss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTopTrackIss.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTopTrackIss.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnTopTrackIss.Location = new System.Drawing.Point(183, 30);
+            this.btnTopTrackIss.Name = "btnTopTrackIss";
+            this.btnTopTrackIss.Size = new System.Drawing.Size(159, 82);
+            this.btnTopTrackIss.TabIndex = 17;
+            this.btnTopTrackIss.Text = "Track Issue";
+            this.btnTopTrackIss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTopTrackIss.UseVisualStyleBackColor = true;
+            this.btnTopTrackIss.Click += new System.EventHandler(this.btnTopTrackIss_Click);
+            // 
+            // pnlTrackIssue
+            // 
+            this.pnlTrackIssue.Controls.Add(this.btnTrackIssue);
+            this.pnlTrackIssue.Location = new System.Drawing.Point(167, 118);
+            this.pnlTrackIssue.Name = "pnlTrackIssue";
+            this.pnlTrackIssue.Size = new System.Drawing.Size(193, 294);
+            this.pnlTrackIssue.TabIndex = 16;
+            // 
+            // btnTrackIssue
+            // 
+            this.btnTrackIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrackIssue.FlatAppearance.BorderSize = 0;
+            this.btnTrackIssue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnTrackIssue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnTrackIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrackIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTrackIssue.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnTrackIssue.Location = new System.Drawing.Point(16, 203);
+            this.btnTrackIssue.Name = "btnTrackIssue";
+            this.btnTrackIssue.Size = new System.Drawing.Size(159, 82);
+            this.btnTrackIssue.TabIndex = 8;
+            this.btnTrackIssue.Text = "Track Issue";
+            this.btnTrackIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTrackIssue.UseVisualStyleBackColor = true;
+            this.btnTrackIssue.Click += new System.EventHandler(this.btnTrackIssue_Click);
             // 
             // button6
             // 
@@ -622,6 +768,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtNatID.TabIndex = 14;
             this.txtNatID.Text = "National ID";
             this.txtNatID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNatID.Click += new System.EventHandler(this.txtNatID_Click);
             // 
             // txtAddress
             // 
@@ -632,6 +779,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtAddress.TabIndex = 12;
             this.txtAddress.Text = "Address";
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
             // 
             // txtEmail
             // 
@@ -642,6 +790,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtEmail.TabIndex = 13;
             this.txtEmail.Text = "Email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // txtPhone
             // 
@@ -652,6 +801,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtPhone.TabIndex = 11;
             this.txtPhone.Text = "Phone Number";
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             // 
             // txtSurname
             // 
@@ -662,6 +812,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtSurname.TabIndex = 9;
             this.txtSurname.Text = "Surname";
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
             // 
             // txtName
             // 
@@ -672,6 +823,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtName.TabIndex = 7;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // btnAddClient
             // 
@@ -691,151 +843,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.button5_Click);
             // 
-            // pnlIssues
-            // 
-            this.pnlIssues.Controls.Add(this.btnTopAddIss);
-            this.pnlIssues.Controls.Add(this.pnlCreateIss);
-            this.pnlIssues.Controls.Add(this.btnTopTrackIss);
-            this.pnlIssues.Controls.Add(this.pnlTrackIssue);
-            this.pnlIssues.Location = new System.Drawing.Point(165, 87);
-            this.pnlIssues.Name = "pnlIssues";
-            this.pnlIssues.Size = new System.Drawing.Size(749, 416);
-            this.pnlIssues.TabIndex = 5;
-            this.pnlIssues.Visible = false;
-            this.pnlIssues.VisibleChanged += new System.EventHandler(this.pnlIssues_VisibleChanged);
-            // 
-            // btnTopAddIss
-            // 
-            this.btnTopAddIss.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTopAddIss.FlatAppearance.BorderSize = 0;
-            this.btnTopAddIss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnTopAddIss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnTopAddIss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTopAddIss.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTopAddIss.Image = global::InstaIssue.Properties.Resources.CreateS;
-            this.btnTopAddIss.Location = new System.Drawing.Point(398, 30);
-            this.btnTopAddIss.Name = "btnTopAddIss";
-            this.btnTopAddIss.Size = new System.Drawing.Size(159, 82);
-            this.btnTopAddIss.TabIndex = 19;
-            this.btnTopAddIss.Text = "Create Issue";
-            this.btnTopAddIss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTopAddIss.UseVisualStyleBackColor = true;
-            this.btnTopAddIss.Click += new System.EventHandler(this.btnTopAddIss_Click);
-            // 
-            // pnlCreateIss
-            // 
-            this.pnlCreateIss.Controls.Add(this.label5);
-            this.pnlCreateIss.Controls.Add(this.label4);
-            this.pnlCreateIss.Controls.Add(this.metroComboBox1);
-            this.pnlCreateIss.Controls.Add(this.richTextBox1);
-            this.pnlCreateIss.Controls.Add(this.btnAddIssue);
-            this.pnlCreateIss.Location = new System.Drawing.Point(382, 118);
-            this.pnlCreateIss.Name = "pnlCreateIss";
-            this.pnlCreateIss.Size = new System.Drawing.Size(193, 294);
-            this.pnlCreateIss.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(51, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 21);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Description";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(74, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 21);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Jobs";
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(18, 27);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(159, 29);
-            this.metroComboBox1.TabIndex = 10;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(18, 82);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(159, 115);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
-            // 
-            // btnAddIssue
-            // 
-            this.btnAddIssue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddIssue.FlatAppearance.BorderSize = 0;
-            this.btnAddIssue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnAddIssue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnAddIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddIssue.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.btnAddIssue.Location = new System.Drawing.Point(16, 203);
-            this.btnAddIssue.Name = "btnAddIssue";
-            this.btnAddIssue.Size = new System.Drawing.Size(159, 82);
-            this.btnAddIssue.TabIndex = 8;
-            this.btnAddIssue.Text = "Create Issue";
-            this.btnAddIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddIssue.UseVisualStyleBackColor = true;
-            this.btnAddIssue.Click += new System.EventHandler(this.btnAddIssue_Click);
-            // 
-            // btnTopTrackIss
-            // 
-            this.btnTopTrackIss.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTopTrackIss.FlatAppearance.BorderSize = 0;
-            this.btnTopTrackIss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnTopTrackIss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnTopTrackIss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTopTrackIss.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTopTrackIss.Image = global::InstaIssue.Properties.Resources.TrackB;
-            this.btnTopTrackIss.Location = new System.Drawing.Point(183, 30);
-            this.btnTopTrackIss.Name = "btnTopTrackIss";
-            this.btnTopTrackIss.Size = new System.Drawing.Size(159, 82);
-            this.btnTopTrackIss.TabIndex = 17;
-            this.btnTopTrackIss.Text = "Track Issue";
-            this.btnTopTrackIss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTopTrackIss.UseVisualStyleBackColor = true;
-            this.btnTopTrackIss.Click += new System.EventHandler(this.btnTopTrackIss_Click);
-            // 
-            // pnlTrackIssue
-            // 
-            this.pnlTrackIssue.Controls.Add(this.btnTrackIssue);
-            this.pnlTrackIssue.Location = new System.Drawing.Point(167, 118);
-            this.pnlTrackIssue.Name = "pnlTrackIssue";
-            this.pnlTrackIssue.Size = new System.Drawing.Size(193, 294);
-            this.pnlTrackIssue.TabIndex = 16;
-            // 
-            // btnTrackIssue
-            // 
-            this.btnTrackIssue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTrackIssue.FlatAppearance.BorderSize = 0;
-            this.btnTrackIssue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnTrackIssue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnTrackIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrackIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTrackIssue.Image = global::InstaIssue.Properties.Resources.TrackB;
-            this.btnTrackIssue.Location = new System.Drawing.Point(16, 203);
-            this.btnTrackIssue.Name = "btnTrackIssue";
-            this.btnTrackIssue.Size = new System.Drawing.Size(159, 82);
-            this.btnTrackIssue.TabIndex = 8;
-            this.btnTrackIssue.Text = "Track Issue";
-            this.btnTrackIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTrackIssue.UseVisualStyleBackColor = true;
-            this.btnTrackIssue.Click += new System.EventHandler(this.btnTrackIssue_Click);
-            // 
             // tmrTime
             // 
             this.tmrTime.Interval = 1000;
@@ -846,7 +853,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
-            this.Controls.Add(this.pnlIssues);
             this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlDash);
             this.Controls.Add(this.pnlInfo);
@@ -869,16 +875,16 @@ namespace InstaIssue.CallCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserLarge)).EndInit();
             this.pnlClients.ResumeLayout(false);
+            this.pnlIssues.ResumeLayout(false);
+            this.pnlCreateIss.ResumeLayout(false);
+            this.pnlCreateIss.PerformLayout();
+            this.pnlTrackIssue.ResumeLayout(false);
             this.pnlJobs.ResumeLayout(false);
             this.pnlJobs.PerformLayout();
             this.pnlReqs.ResumeLayout(false);
             this.pnlReqs.PerformLayout();
             this.pnlAddClient.ResumeLayout(false);
             this.pnlAddClient.PerformLayout();
-            this.pnlIssues.ResumeLayout(false);
-            this.pnlCreateIss.ResumeLayout(false);
-            this.pnlCreateIss.PerformLayout();
-            this.pnlTrackIssue.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
