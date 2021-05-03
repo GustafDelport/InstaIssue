@@ -11,8 +11,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
     {
         public void doWork()
         {
-            MessageBox.Show("This is client View");
-            //throw new NotImplementedException();
             //Trigger event here
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
-    class ClientSelectManagement
+    public class ClientSelectManagement
     {
         private String type;
         private ClientContext context;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstaIssue.AdminCenter.LogicLayer.DesignPattern;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,12 +30,6 @@ namespace InstaIssue.AdminCenter.UILayer
 
         //Fancy Animations
         #region
-        private void button1_Click(object sender, EventArgs e)
-        {
-            activePanel.Visible = false;
-            pnlIssues.Visible = true;
-            activePanel = pnlIssues;
-        }
 
         private void btnMngClients_Click(object sender, EventArgs e)
         {
@@ -55,6 +50,13 @@ namespace InstaIssue.AdminCenter.UILayer
             activePanel.Visible = false;
             pnlContracts.Visible = true;
             activePanel = pnlContracts;
+        }
+
+        private void btnMngIssues_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlIssues.Visible = true;
+            activePanel = pnlIssues;
         }
         #endregion
 
@@ -79,29 +81,24 @@ namespace InstaIssue.AdminCenter.UILayer
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-
+            new ClientSelectManagement("Add").doWork();
         }
 
         private void btnViewClient_Click(object sender, EventArgs e)
         {
-
+            new ClientSelectManagement("View").doWork();
         }
 
         private void btnEditClient_Click(object sender, EventArgs e)
         {
-
+            new ClientSelectManagement("Edit").doWork();
         }
 
         private void btnDeleteClient_Click(object sender, EventArgs e)
         {
-
+            new ClientSelectManagement("Delete").doWork();
         }
 
         private void btnAddCont_Click(object sender, EventArgs e)
@@ -120,6 +117,11 @@ namespace InstaIssue.AdminCenter.UILayer
         }
 
         private void btnDeleteCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
 
         }
