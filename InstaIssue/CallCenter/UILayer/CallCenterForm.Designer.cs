@@ -55,17 +55,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtNationalID = new System.Windows.Forms.TextBox();
             this.picUserLarge = new System.Windows.Forms.PictureBox();
             this.pnlClients = new System.Windows.Forms.Panel();
-            this.pnlIssues = new System.Windows.Forms.Panel();
-            this.btnTopAddIss = new System.Windows.Forms.Button();
-            this.pnlCreateIss = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnAddIssue = new System.Windows.Forms.Button();
-            this.btnTopTrackIss = new System.Windows.Forms.Button();
-            this.pnlTrackIssue = new System.Windows.Forms.Panel();
-            this.btnTrackIssue = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -82,6 +71,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.dtpPlannedDate = new MetroFramework.Controls.MetroDateTime();
             this.btnCreateReq = new System.Windows.Forms.Button();
             this.pnlAddClient = new System.Windows.Forms.Panel();
+            this.cmbContractsC = new System.Windows.Forms.ComboBox();
             this.txtNatID = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -89,6 +79,17 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
+            this.pnlIssues = new System.Windows.Forms.Panel();
+            this.btnTopAddIss = new System.Windows.Forms.Button();
+            this.pnlCreateIss = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnAddIssue = new System.Windows.Forms.Button();
+            this.btnTopTrackIss = new System.Windows.Forms.Button();
+            this.pnlTrackIssue = new System.Windows.Forms.Panel();
+            this.btnTrackIssue = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -99,12 +100,12 @@ namespace InstaIssue.CallCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserLarge)).BeginInit();
             this.pnlClients.SuspendLayout();
-            this.pnlIssues.SuspendLayout();
-            this.pnlCreateIss.SuspendLayout();
-            this.pnlTrackIssue.SuspendLayout();
             this.pnlJobs.SuspendLayout();
             this.pnlReqs.SuspendLayout();
             this.pnlAddClient.SuspendLayout();
+            this.pnlIssues.SuspendLayout();
+            this.pnlCreateIss.SuspendLayout();
+            this.pnlTrackIssue.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlControls
@@ -406,13 +407,316 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlClients.Visible = false;
             this.pnlClients.VisibleChanged += new System.EventHandler(this.pnlClients_VisibleChanged);
             // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button6.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.button6.Location = new System.Drawing.Point(491, 9);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(159, 69);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "Track Job";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button5.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.button5.Location = new System.Drawing.Point(292, 9);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(159, 73);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Create Request";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button3.Image = global::InstaIssue.Properties.Resources.ClientAddS;
+            this.button3.Location = new System.Drawing.Point(93, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 73);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Add Client";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pnlJobs
+            // 
+            this.pnlJobs.Controls.Add(this.cmbJobs);
+            this.pnlJobs.Controls.Add(this.label6);
+            this.pnlJobs.Controls.Add(this.btnTrackJob);
+            this.pnlJobs.Location = new System.Drawing.Point(474, 88);
+            this.pnlJobs.Name = "pnlJobs";
+            this.pnlJobs.Size = new System.Drawing.Size(193, 324);
+            this.pnlJobs.TabIndex = 16;
+            // 
+            // cmbJobs
+            // 
+            this.cmbJobs.FormattingEnabled = true;
+            this.cmbJobs.ItemHeight = 23;
+            this.cmbJobs.Location = new System.Drawing.Point(17, 33);
+            this.cmbJobs.Name = "cmbJobs";
+            this.cmbJobs.Size = new System.Drawing.Size(156, 29);
+            this.cmbJobs.TabIndex = 14;
+            this.cmbJobs.UseSelectable = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(48, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 21);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Client Jobs";
+            // 
+            // btnTrackJob
+            // 
+            this.btnTrackJob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrackJob.FlatAppearance.BorderSize = 0;
+            this.btnTrackJob.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnTrackJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnTrackJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrackJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTrackJob.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.btnTrackJob.Location = new System.Drawing.Point(17, 238);
+            this.btnTrackJob.Name = "btnTrackJob";
+            this.btnTrackJob.Size = new System.Drawing.Size(159, 82);
+            this.btnTrackJob.TabIndex = 6;
+            this.btnTrackJob.Text = "Track Job";
+            this.btnTrackJob.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTrackJob.UseVisualStyleBackColor = true;
+            this.btnTrackJob.Click += new System.EventHandler(this.btnTrackJob_Click);
+            // 
+            // pnlReqs
+            // 
+            this.pnlReqs.Controls.Add(this.label3);
+            this.pnlReqs.Controls.Add(this.cmbProducts);
+            this.pnlReqs.Controls.Add(this.label2);
+            this.pnlReqs.Controls.Add(this.label1);
+            this.pnlReqs.Controls.Add(this.dtpDeadlineDate);
+            this.pnlReqs.Controls.Add(this.dtpPlannedDate);
+            this.pnlReqs.Controls.Add(this.btnCreateReq);
+            this.pnlReqs.Location = new System.Drawing.Point(275, 88);
+            this.pnlReqs.Name = "pnlReqs";
+            this.pnlReqs.Size = new System.Drawing.Size(193, 324);
+            this.pnlReqs.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(41, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 21);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Client Product";
+            // 
+            // cmbProducts
+            // 
+            this.cmbProducts.FormattingEnabled = true;
+            this.cmbProducts.ItemHeight = 23;
+            this.cmbProducts.Location = new System.Drawing.Point(17, 154);
+            this.cmbProducts.Name = "cmbProducts";
+            this.cmbProducts.Size = new System.Drawing.Size(156, 29);
+            this.cmbProducts.TabIndex = 14;
+            this.cmbProducts.UseSelectable = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(41, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 21);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Deadline Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(43, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Planned Date";
+            // 
+            // dtpDeadlineDate
+            // 
+            this.dtpDeadlineDate.Location = new System.Drawing.Point(18, 94);
+            this.dtpDeadlineDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDeadlineDate.Name = "dtpDeadlineDate";
+            this.dtpDeadlineDate.Size = new System.Drawing.Size(156, 29);
+            this.dtpDeadlineDate.TabIndex = 1;
+            // 
+            // dtpPlannedDate
+            // 
+            this.dtpPlannedDate.Location = new System.Drawing.Point(19, 33);
+            this.dtpPlannedDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpPlannedDate.Name = "dtpPlannedDate";
+            this.dtpPlannedDate.Size = new System.Drawing.Size(156, 29);
+            this.dtpPlannedDate.TabIndex = 0;
+            // 
+            // btnCreateReq
+            // 
+            this.btnCreateReq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateReq.FlatAppearance.BorderSize = 0;
+            this.btnCreateReq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnCreateReq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnCreateReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCreateReq.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.btnCreateReq.Location = new System.Drawing.Point(17, 238);
+            this.btnCreateReq.Name = "btnCreateReq";
+            this.btnCreateReq.Size = new System.Drawing.Size(159, 82);
+            this.btnCreateReq.TabIndex = 6;
+            this.btnCreateReq.Text = "Create Request";
+            this.btnCreateReq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCreateReq.UseVisualStyleBackColor = true;
+            this.btnCreateReq.Click += new System.EventHandler(this.btnCreateReq_Click);
+            // 
+            // pnlAddClient
+            // 
+            this.pnlAddClient.Controls.Add(this.cmbContractsC);
+            this.pnlAddClient.Controls.Add(this.txtNatID);
+            this.pnlAddClient.Controls.Add(this.txtAddress);
+            this.pnlAddClient.Controls.Add(this.txtEmail);
+            this.pnlAddClient.Controls.Add(this.txtPhone);
+            this.pnlAddClient.Controls.Add(this.txtSurname);
+            this.pnlAddClient.Controls.Add(this.txtName);
+            this.pnlAddClient.Controls.Add(this.btnAddClient);
+            this.pnlAddClient.Location = new System.Drawing.Point(76, 88);
+            this.pnlAddClient.Name = "pnlAddClient";
+            this.pnlAddClient.Size = new System.Drawing.Size(193, 324);
+            this.pnlAddClient.TabIndex = 7;
+            // 
+            // cmbContractsC
+            // 
+            this.cmbContractsC.FormattingEnabled = true;
+            this.cmbContractsC.Items.AddRange(new object[] {
+            "Initial Contract"});
+            this.cmbContractsC.Location = new System.Drawing.Point(17, 207);
+            this.cmbContractsC.Name = "cmbContractsC";
+            this.cmbContractsC.Size = new System.Drawing.Size(159, 29);
+            this.cmbContractsC.TabIndex = 15;
+            // 
+            // txtNatID
+            // 
+            this.txtNatID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNatID.Location = new System.Drawing.Point(17, 78);
+            this.txtNatID.Name = "txtNatID";
+            this.txtNatID.Size = new System.Drawing.Size(159, 23);
+            this.txtNatID.TabIndex = 14;
+            this.txtNatID.Text = "National ID";
+            this.txtNatID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNatID.Click += new System.EventHandler(this.txtNatID_Click);
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAddress.Location = new System.Drawing.Point(17, 174);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(159, 23);
+            this.txtAddress.TabIndex = 12;
+            this.txtAddress.Text = "Address";
+            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(17, 142);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(159, 23);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.Text = "Email";
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPhone.Location = new System.Drawing.Point(17, 110);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(159, 23);
+            this.txtPhone.TabIndex = 11;
+            this.txtPhone.Text = "Phone Number";
+            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSurname.Location = new System.Drawing.Point(17, 46);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(159, 23);
+            this.txtSurname.TabIndex = 9;
+            this.txtSurname.Text = "Surname";
+            this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.Location = new System.Drawing.Point(17, 14);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(159, 23);
+            this.txtName.TabIndex = 7;
+            this.txtName.Text = "Name";
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
+            // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddClient.FlatAppearance.BorderSize = 0;
+            this.btnAddClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAddClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddClient.Image = global::InstaIssue.Properties.Resources.ClientAddS;
+            this.btnAddClient.Location = new System.Drawing.Point(17, 238);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(159, 82);
+            this.btnAddClient.TabIndex = 8;
+            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.button5_Click);
+            // 
             // pnlIssues
             // 
             this.pnlIssues.Controls.Add(this.btnTopAddIss);
             this.pnlIssues.Controls.Add(this.pnlCreateIss);
             this.pnlIssues.Controls.Add(this.btnTopTrackIss);
             this.pnlIssues.Controls.Add(this.pnlTrackIssue);
-            this.pnlIssues.Location = new System.Drawing.Point(294, 9);
+            this.pnlIssues.Location = new System.Drawing.Point(1, 0);
             this.pnlIssues.Name = "pnlIssues";
             this.pnlIssues.Size = new System.Drawing.Size(749, 416);
             this.pnlIssues.TabIndex = 5;
@@ -551,298 +855,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTrackIssue.UseVisualStyleBackColor = true;
             this.btnTrackIssue.Click += new System.EventHandler(this.btnTrackIssue_Click);
             // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button6.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.button6.Location = new System.Drawing.Point(490, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(159, 82);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Track Job";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button5.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.button5.Location = new System.Drawing.Point(292, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 82);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Create Request";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.button3.Location = new System.Drawing.Point(92, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 82);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Add Client";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pnlJobs
-            // 
-            this.pnlJobs.Controls.Add(this.cmbJobs);
-            this.pnlJobs.Controls.Add(this.label6);
-            this.pnlJobs.Controls.Add(this.btnTrackJob);
-            this.pnlJobs.Location = new System.Drawing.Point(474, 118);
-            this.pnlJobs.Name = "pnlJobs";
-            this.pnlJobs.Size = new System.Drawing.Size(193, 294);
-            this.pnlJobs.TabIndex = 16;
-            // 
-            // cmbJobs
-            // 
-            this.cmbJobs.FormattingEnabled = true;
-            this.cmbJobs.ItemHeight = 23;
-            this.cmbJobs.Location = new System.Drawing.Point(17, 33);
-            this.cmbJobs.Name = "cmbJobs";
-            this.cmbJobs.Size = new System.Drawing.Size(156, 29);
-            this.cmbJobs.TabIndex = 14;
-            this.cmbJobs.UseSelectable = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(48, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 21);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Client Jobs";
-            // 
-            // btnTrackJob
-            // 
-            this.btnTrackJob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTrackJob.FlatAppearance.BorderSize = 0;
-            this.btnTrackJob.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnTrackJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnTrackJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrackJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTrackJob.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.btnTrackJob.Location = new System.Drawing.Point(16, 203);
-            this.btnTrackJob.Name = "btnTrackJob";
-            this.btnTrackJob.Size = new System.Drawing.Size(159, 82);
-            this.btnTrackJob.TabIndex = 6;
-            this.btnTrackJob.Text = "Track Job";
-            this.btnTrackJob.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTrackJob.UseVisualStyleBackColor = true;
-            this.btnTrackJob.Click += new System.EventHandler(this.btnTrackJob_Click);
-            // 
-            // pnlReqs
-            // 
-            this.pnlReqs.Controls.Add(this.label3);
-            this.pnlReqs.Controls.Add(this.cmbProducts);
-            this.pnlReqs.Controls.Add(this.label2);
-            this.pnlReqs.Controls.Add(this.label1);
-            this.pnlReqs.Controls.Add(this.dtpDeadlineDate);
-            this.pnlReqs.Controls.Add(this.dtpPlannedDate);
-            this.pnlReqs.Controls.Add(this.btnCreateReq);
-            this.pnlReqs.Location = new System.Drawing.Point(275, 118);
-            this.pnlReqs.Name = "pnlReqs";
-            this.pnlReqs.Size = new System.Drawing.Size(193, 294);
-            this.pnlReqs.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(41, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 21);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Client Product";
-            // 
-            // cmbProducts
-            // 
-            this.cmbProducts.FormattingEnabled = true;
-            this.cmbProducts.ItemHeight = 23;
-            this.cmbProducts.Location = new System.Drawing.Point(17, 154);
-            this.cmbProducts.Name = "cmbProducts";
-            this.cmbProducts.Size = new System.Drawing.Size(156, 29);
-            this.cmbProducts.TabIndex = 14;
-            this.cmbProducts.UseSelectable = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(41, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 21);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Deadline Date";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(43, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 21);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Planned Date";
-            // 
-            // dtpDeadlineDate
-            // 
-            this.dtpDeadlineDate.Location = new System.Drawing.Point(18, 94);
-            this.dtpDeadlineDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpDeadlineDate.Name = "dtpDeadlineDate";
-            this.dtpDeadlineDate.Size = new System.Drawing.Size(156, 29);
-            this.dtpDeadlineDate.TabIndex = 1;
-            // 
-            // dtpPlannedDate
-            // 
-            this.dtpPlannedDate.Location = new System.Drawing.Point(19, 33);
-            this.dtpPlannedDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpPlannedDate.Name = "dtpPlannedDate";
-            this.dtpPlannedDate.Size = new System.Drawing.Size(156, 29);
-            this.dtpPlannedDate.TabIndex = 0;
-            // 
-            // btnCreateReq
-            // 
-            this.btnCreateReq.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateReq.FlatAppearance.BorderSize = 0;
-            this.btnCreateReq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnCreateReq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnCreateReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCreateReq.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.btnCreateReq.Location = new System.Drawing.Point(17, 203);
-            this.btnCreateReq.Name = "btnCreateReq";
-            this.btnCreateReq.Size = new System.Drawing.Size(159, 82);
-            this.btnCreateReq.TabIndex = 6;
-            this.btnCreateReq.Text = "Create Request";
-            this.btnCreateReq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCreateReq.UseVisualStyleBackColor = true;
-            this.btnCreateReq.Click += new System.EventHandler(this.btnCreateReq_Click);
-            // 
-            // pnlAddClient
-            // 
-            this.pnlAddClient.Controls.Add(this.txtNatID);
-            this.pnlAddClient.Controls.Add(this.txtAddress);
-            this.pnlAddClient.Controls.Add(this.txtEmail);
-            this.pnlAddClient.Controls.Add(this.txtPhone);
-            this.pnlAddClient.Controls.Add(this.txtSurname);
-            this.pnlAddClient.Controls.Add(this.txtName);
-            this.pnlAddClient.Controls.Add(this.btnAddClient);
-            this.pnlAddClient.Location = new System.Drawing.Point(76, 118);
-            this.pnlAddClient.Name = "pnlAddClient";
-            this.pnlAddClient.Size = new System.Drawing.Size(193, 294);
-            this.pnlAddClient.TabIndex = 7;
-            // 
-            // txtNatID
-            // 
-            this.txtNatID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNatID.Location = new System.Drawing.Point(17, 78);
-            this.txtNatID.Name = "txtNatID";
-            this.txtNatID.Size = new System.Drawing.Size(159, 23);
-            this.txtNatID.TabIndex = 14;
-            this.txtNatID.Text = "National ID";
-            this.txtNatID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNatID.Click += new System.EventHandler(this.txtNatID_Click);
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddress.Location = new System.Drawing.Point(17, 174);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(159, 23);
-            this.txtAddress.TabIndex = 12;
-            this.txtAddress.Text = "Address";
-            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(17, 142);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(159, 23);
-            this.txtEmail.TabIndex = 13;
-            this.txtEmail.Text = "Email";
-            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhone.Location = new System.Drawing.Point(17, 110);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(159, 23);
-            this.txtPhone.TabIndex = 11;
-            this.txtPhone.Text = "Phone Number";
-            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
-            // 
-            // txtSurname
-            // 
-            this.txtSurname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSurname.Location = new System.Drawing.Point(17, 46);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(159, 23);
-            this.txtSurname.TabIndex = 9;
-            this.txtSurname.Text = "Surname";
-            this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(17, 14);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(159, 23);
-            this.txtName.TabIndex = 7;
-            this.txtName.Text = "Name";
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtName.Click += new System.EventHandler(this.txtName_Click);
-            // 
-            // btnAddClient
-            // 
-            this.btnAddClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddClient.FlatAppearance.BorderSize = 0;
-            this.btnAddClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnAddClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddClient.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.btnAddClient.Location = new System.Drawing.Point(16, 203);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(159, 82);
-            this.btnAddClient.TabIndex = 8;
-            this.btnAddClient.Text = "Add Client";
-            this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddClient.UseVisualStyleBackColor = true;
-            this.btnAddClient.Click += new System.EventHandler(this.button5_Click);
-            // 
             // tmrTime
             // 
             this.tmrTime.Interval = 1000;
@@ -875,16 +887,16 @@ namespace InstaIssue.CallCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserLarge)).EndInit();
             this.pnlClients.ResumeLayout(false);
-            this.pnlIssues.ResumeLayout(false);
-            this.pnlCreateIss.ResumeLayout(false);
-            this.pnlCreateIss.PerformLayout();
-            this.pnlTrackIssue.ResumeLayout(false);
             this.pnlJobs.ResumeLayout(false);
             this.pnlJobs.PerformLayout();
             this.pnlReqs.ResumeLayout(false);
             this.pnlReqs.PerformLayout();
             this.pnlAddClient.ResumeLayout(false);
             this.pnlAddClient.PerformLayout();
+            this.pnlIssues.ResumeLayout(false);
+            this.pnlCreateIss.ResumeLayout(false);
+            this.pnlCreateIss.PerformLayout();
+            this.pnlTrackIssue.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -950,5 +962,6 @@ namespace InstaIssue.CallCenter.UILayer
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.ComboBox cmbContractsC;
     }
 }

@@ -4,11 +4,90 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Authentication
 {
     public class Validations
     {
+        public Boolean ValidateRegisterClient(Panel panel)
+        {
+            Boolean[] flagArr = new Boolean[7];
+            Boolean flag = false;
+            int n = 0;
+
+            foreach (Control item in panel.Controls)
+            {
+                if (item is TextBox)
+                {
+                    switch (item.Name)
+                    {
+                        case "txtNatID":
+                            {
+                                flagArr[n] = ValidateID(item.Text);
+                                n++;
+                            }
+                            break;
+                        case "txtPhone":
+                            {
+                                flagArr[n] = validateNumber(item.Text);
+                                n++;
+                            }
+                            break;
+                        case "txtEmail":
+                            {
+                                flagArr[n] = validateEmail(item.Text);
+                                n++;
+                            }
+                            break;
+                        default:
+                            {
+                                flagArr[n] = validateText(item.Text);
+                                n++;
+                            }
+                            break;
+                    }
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox box = (ComboBox)item;
+
+                    if (box.SelectedIndex == -1)
+                    {
+                        flagArr[n] = false;
+                        n++;
+                    }
+                    else
+                    {
+                        flagArr[n] = true;
+                        n++;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+                
+            }
+
+            foreach (var item in flagArr)
+            {
+                if (!item)
+                {
+                    //Our final flag to count as one singular status check
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    flag = true;
+
+                }
+            }
+
+            return flag;
+        }
+
         public Boolean ValidateID(String data)
         {
             Boolean flag = false;

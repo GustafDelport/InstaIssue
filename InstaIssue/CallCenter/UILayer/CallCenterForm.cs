@@ -169,32 +169,32 @@ namespace InstaIssue.CallCenter.UILayer
         }
         private void txtName_Click(object sender, EventArgs e)
         {
-            this.Text = "";
+            txtName.Text = "";
         }
 
         private void txtSurname_Click(object sender, EventArgs e)
         {
-            this.Text = "";
+            txtSurname.Text = "";
         }
 
         private void txtNatID_Click(object sender, EventArgs e)
         {
-            this.Text = "";
+            txtNatID.Text = "";
         }
 
         private void txtPhone_Click(object sender, EventArgs e)
         {
-            this.Text = "";
+            txtPhone.Text = "";
         }
 
         private void txtEmail_Click(object sender, EventArgs e)
         {
-            this.Text = "";
+            txtEmail.Text = "";
         }
 
         private void txtAddress_Click(object sender, EventArgs e)
         {
-            this.Text = "";
+            txtAddress.Text = "";
         }
         #endregion
 
@@ -238,62 +238,15 @@ namespace InstaIssue.CallCenter.UILayer
         {
             //Validate if the text is correct!
             Panel ClientPanel = pnlAddClient;
-
-            //I use a array of booleans to check each itterations posible state
-            Boolean[] flagArr = new Boolean[6];
+       
             int n = 0;
 
-            //Fix this error
-            foreach (TextBox item in pnlAddClient.Controls)
-            {
-                switch (item.Name)
-                {
-                    case "txtNatID":
-                        {
-                            flagArr[n] = validations.ValidateID(item.Text);
-                            n++;
-                        }
-                        break;
-                    case "txtPhone":
-                        {
-                            flagArr[n] = validations.validateNumber(item.Text);
-                            n++;
-                        }
-                        break;
-                    case "txtEmail":
-                        {
-                            flagArr[n] = validations.validateEmail(item.Text);
-                            n++;
-                        }
-                        break;
-                    default:
-                        {
-                            flagArr[n] = validations.validateText(item.Text);
-                            n++;
-                        }
-                        break;
-                }
-            }
-
-            foreach (var item in flagArr)
-            {
-                if (!item)
-                {
-                    //Our final flag to count as one singular status check
-                    flag = false;
-                    break;
-                }
-                else
-                {
-                    flag = true;
-
-                }
-            }
+            //Major validations happen here
+            flag = validations.ValidateRegisterClient(ClientPanel);
 
             if (flag)
             {
                 //Call RegisterCLientClass
-                //Validate aswell tho
                 MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
