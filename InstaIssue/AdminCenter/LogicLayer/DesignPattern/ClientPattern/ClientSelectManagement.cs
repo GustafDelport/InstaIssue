@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InstaIssue.Handlers;
+using System;
+using System.Windows.Forms;
 
 namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
@@ -10,14 +8,18 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
     {
         private String type;
         private ClientContext context;
+        private Form form;
 
         public ClientSelectManagement(string type)
         {
             this.type = type;
+            
         }
 
         public void doWork()
         {
+            Globals.handler.ClientEvent += Switch;
+
             switch (type)
             {
                 case "Edit":
@@ -45,6 +47,34 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
             }
 
             context.doWork();
+        }
+
+        public void Switch(String formName)
+        {
+            Globals.AdminCenterForm.Hide();
+            switch (formName)
+            {
+                case "Edit":
+                    {
+                        Globals.clientsEditForm.Show();
+                    }
+                    break;
+                case "Delete":
+                    {
+                        Globals.clientsEditForm.Show();
+                    }
+                    break;
+                case "Add":
+                    {
+                        Globals.clientsEditForm.Show();
+                    }
+                    break;
+                case "View":
+                    {
+                        Globals.clientsEditForm.Show();
+                    }
+                    break;
+            }
         }
     }
 }

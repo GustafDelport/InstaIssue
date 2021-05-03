@@ -1,6 +1,7 @@
 ﻿using InstaIssue.AdminCenter.DomainLayer;
 using InstaIssue.AdminCenter.UILayer;
 using InstaIssue.CallCenter.UILayer;
+using InstaIssue.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,6 @@ namespace InstaIssue
         //==========================================================================
         public static String StaffID;
         public static String nationalID;
-
+        public static EventsHandler handler = new EventsHandler();
     }
 }

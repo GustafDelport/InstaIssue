@@ -41,13 +41,7 @@ namespace InstaIssue
 
 
             //Shortcut
-            //this.Hide();
-            //Globals.callCenterForm.Show();
-
-            //Events 
-            //EventsHandler eventsHandler = new EventsHandler();
-            //eventsHandler.IntialLaunch += assignStaff;
-
+            Globals.AdminCenterForm.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

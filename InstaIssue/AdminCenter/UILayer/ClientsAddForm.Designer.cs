@@ -29,7 +29,6 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
-
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
@@ -45,20 +44,30 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlAddClient = new System.Windows.Forms.Panel();
+            this.txtNatID = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnAddClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvData
             // 
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(165, 87);
+            this.dgvData.Location = new System.Drawing.Point(195, 99);
             this.dgvData.Name = "dgvData";
             this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.Size = new System.Drawing.Size(749, 413);
+            this.dgvData.Size = new System.Drawing.Size(719, 401);
             this.dgvData.TabIndex = 8;
             // 
             // panel2
@@ -73,10 +82,10 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.lblTime);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(159, 0);
+            this.panel2.Location = new System.Drawing.Point(178, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(767, 81);
-            this.panel2.TabIndex = 7;
+            this.panel2.Size = new System.Drawing.Size(748, 81);
+            this.panel2.TabIndex = 1;
             // 
             // pnlSeperator
             // 
@@ -158,142 +167,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblDate.Location = new System.Drawing.Point(635, 9);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(120, 24);
-            this.lblDate.TabIndex = 6;
-            this.lblDate.Text = "2021-04-17";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTime.Location = new System.Drawing.Point(635, 44);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(63, 24);
-            this.lblTime.TabIndex = 5;
-            this.lblTime.Text = "14:23";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnDashboard);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(159, 512);
-            this.panel1.TabIndex = 6;
-
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.pnlAddClient = new System.Windows.Forms.Panel();
-            this.txtNatID = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtSurname = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.btnAddClient = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.pnlAddClient.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnDashboard);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 512);
-            this.panel1.TabIndex = 0;
-
-            // btnDashboard
-            // 
-            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
-
-            this.btnDashboard.Location = new System.Drawing.Point(0, 115);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(159, 82);
-            this.btnDashboard.TabIndex = 11;
-
-            this.btnDashboard.Location = new System.Drawing.Point(0, 120);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(178, 82);
-            this.btnDashboard.TabIndex = 6;
-
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            // 
-
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.imgLogo);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(159, 81);
-            this.panel4.TabIndex = 0;
-
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.imgLogo);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(178, 81);
-            this.panel3.TabIndex = 1;
-
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.imgLogo.Image = global::InstaIssue.Properties.Resources.LogoGreen;
-
-            this.imgLogo.Location = new System.Drawing.Point(40, 1);
-
-            this.imgLogo.Location = new System.Drawing.Point(49, 0);
-
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(78, 78);
-            this.imgLogo.TabIndex = 1;
-            this.imgLogo.TabStop = false;
-            // 
-
-
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblDate);
-            this.panel2.Controls.Add(this.lblTime);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(178, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(748, 81);
-            this.panel2.TabIndex = 1;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblDate.Location = new System.Drawing.Point(616, 9);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(120, 24);
@@ -310,6 +183,64 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblTime.Size = new System.Drawing.Size(63, 24);
             this.lblTime.TabIndex = 7;
             this.lblTime.Text = "14:23";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.btnDashboard);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(178, 512);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 120);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(178, 82);
+            this.btnDashboard.TabIndex = 6;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 81);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(178, 10);
+            this.panel4.TabIndex = 0;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.imgLogo.Image = global::InstaIssue.Properties.Resources.LogoGreen;
+            this.imgLogo.Location = new System.Drawing.Point(49, 0);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(78, 78);
+            this.imgLogo.TabIndex = 1;
+            this.imgLogo.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel3.Controls.Add(this.imgLogo);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(178, 81);
+            this.panel3.TabIndex = 1;
             // 
             // pnlAddClient
             // 
@@ -402,42 +333,28 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAddClient.UseVisualStyleBackColor = true;
             // 
-
             // ClientsAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
-
             this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-
             this.Controls.Add(this.pnlAddClient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-
             this.Name = "ClientsAddForm";
             this.Text = "Add Clients";
             this.Load += new System.EventHandler(this.ClientsAddForm_Load);
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-
-            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.pnlAddClient.ResumeLayout(false);
             this.pnlAddClient.PerformLayout();
-
             this.ResumeLayout(false);
 
         }

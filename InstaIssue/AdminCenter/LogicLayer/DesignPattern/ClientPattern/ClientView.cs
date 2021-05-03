@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstaIssue.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
     {
         public void doWork()
         {
+            Globals.handler.TriggerClient("View");
             //Trigger event here
         }
     }
