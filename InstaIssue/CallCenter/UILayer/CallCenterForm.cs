@@ -32,6 +32,8 @@ namespace InstaIssue.CallCenter.UILayer
             callStatus = true;
             CallTest();
             tmrTime.Start();
+            //Data loading here
+
         }
 
         //Methods
@@ -239,15 +241,24 @@ namespace InstaIssue.CallCenter.UILayer
             //Validate if the text is correct!
             Panel ClientPanel = pnlAddClient;
        
-            int n = 0;
-
             //Major validations happen here
             flag = validations.ValidateRegisterClient(ClientPanel);
 
             if (flag)
             {
                 //Call RegisterCLientClass
-                MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                flag = new RegisterClient().RegisterNewClient();
+                if (flag)
+                {
+                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetBoxes();
+                }
+                
             }
             else
             {
