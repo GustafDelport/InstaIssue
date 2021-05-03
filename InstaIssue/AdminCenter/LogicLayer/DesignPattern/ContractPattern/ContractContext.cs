@@ -8,5 +8,16 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
     class ContractContext
     {
+        private ContractControlType controlType;
+
+        public ContractContext(ContractControlType controlType)
+        {
+            this.controlType = controlType;
+        }
+
+        public void doWork()
+        {
+            controlType.doWork();
+        }
     }
 }

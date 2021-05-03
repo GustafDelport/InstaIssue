@@ -81,6 +81,11 @@ namespace InstaIssue.AdminCenter.UILayer
 
         }
 
+        private void btnDeleteStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAddClient_Click(object sender, EventArgs e)
         {
             new ClientSelectManagement("Add").doWork();
@@ -103,27 +108,22 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void btnAddCont_Click(object sender, EventArgs e)
         {
-
+            new ContractSelectManagement("Add").doWork();
         }
 
         private void btnViewCont_Click(object sender, EventArgs e)
         {
-
+            new ContractSelectManagement("View").doWork();
         }
 
         private void btnEditCont_Click(object sender, EventArgs e)
         {
-
+            new ContractSelectManagement("Edit").doWork();
         }
 
         private void btnDeleteCont_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDeleteStaff_Click(object sender, EventArgs e)
-        {
-
+            new ContractSelectManagement("Delete").doWork();
         }
     }
 }
