@@ -1,13 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace InstaIssue.Handlers
 {
-    class EventsHandler
+    public class EventsHandler
     {
+        public EventsHandler()
+        {
+        }
 
+        public delegate void Client(string formName);
+        public event Client ClientEvent;
+
+        public void TriggerClient(string formName)
+        {
+            if (ClientEvent != null)
+            {
+                ClientEvent(formName);
+            }
+            else
+            {
+                //Throw Error
+            }
+        }
     }
 }

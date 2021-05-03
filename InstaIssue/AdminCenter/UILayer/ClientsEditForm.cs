@@ -26,5 +26,12 @@ namespace InstaIssue.AdminCenter.UILayer
         {
 
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Globals.clientsEditForm.Hide();
+            Globals.AdminCenterForm.Show();
+
+        }
     }
 }
