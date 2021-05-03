@@ -63,5 +63,65 @@ namespace InstaIssue.AdminCenter.UILayer
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteCont_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
