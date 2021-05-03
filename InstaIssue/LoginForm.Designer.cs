@@ -43,7 +43,9 @@ namespace InstaIssue
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+
             this.btnLogin.Location = new System.Drawing.Point(28, 250);
+
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(282, 65);
@@ -80,6 +82,7 @@ namespace InstaIssue
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblUsername.Location = new System.Drawing.Point(28, 110);
+
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(95, 25);
