@@ -232,7 +232,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ContractsEditForm";
-            this.Text = "ContractsEditForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Contracts";
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

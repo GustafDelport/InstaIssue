@@ -169,7 +169,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffAddForm";
-            this.Text = "StaffAddForm";
+            this.Text = "Add Staff";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

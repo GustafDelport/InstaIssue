@@ -29,7 +29,6 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
             this.lblContract = new System.Windows.Forms.Label();
@@ -44,21 +43,11 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvData
-            // 
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(167, 96);
-            this.dgvData.Name = "dgvData";
-            this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.Size = new System.Drawing.Size(749, 440);
-            this.dgvData.TabIndex = 5;
             // 
             // panel2
             // 
@@ -191,6 +180,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
             this.btnDashboard.Location = new System.Drawing.Point(0, 123);
@@ -228,13 +218,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(923, 545);
-            this.Controls.Add(this.dgvData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "ContractsAddForm";
-            this.Text = "ContractsAddForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Contracts";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -245,8 +234,6 @@ namespace InstaIssue.AdminCenter.UILayer
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSeperator;
         private System.Windows.Forms.Label lblContract;

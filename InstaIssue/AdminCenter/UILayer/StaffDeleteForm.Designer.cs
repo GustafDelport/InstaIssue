@@ -214,7 +214,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffDeleteForm";
-            this.Text = "StaffDeleteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Delete Staff";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

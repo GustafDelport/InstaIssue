@@ -29,7 +29,6 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
             this.lblContract = new System.Windows.Forms.Label();
@@ -42,9 +41,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.pnlAddClient = new System.Windows.Forms.Panel();
             this.txtNatID = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -53,22 +51,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvData
-            // 
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(195, 99);
-            this.dgvData.Name = "dgvData";
-            this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.Size = new System.Drawing.Size(719, 401);
-            this.dgvData.TabIndex = 8;
             // 
             // panel2
             // 
@@ -186,7 +174,6 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -213,14 +200,15 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // panel4
+            // panel3
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 81);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(178, 10);
-            this.panel4.TabIndex = 0;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel3.Controls.Add(this.imgLogo);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(178, 81);
+            this.panel3.TabIndex = 1;
             // 
             // imgLogo
             // 
@@ -231,16 +219,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo.Size = new System.Drawing.Size(78, 78);
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.imgLogo);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(178, 81);
-            this.panel3.TabIndex = 1;
             // 
             // pnlAddClient
             // 
@@ -339,20 +317,19 @@ namespace InstaIssue.AdminCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
-            this.Controls.Add(this.dgvData);
             this.Controls.Add(this.pnlAddClient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "ClientsAddForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Clients";
             this.Load += new System.EventHandler(this.ClientsAddForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.pnlAddClient.ResumeLayout(false);
             this.pnlAddClient.PerformLayout();
             this.ResumeLayout(false);
@@ -361,8 +338,6 @@ namespace InstaIssue.AdminCenter.UILayer
 
         #endregion
 
-
-        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSeperator;
         private System.Windows.Forms.Label lblContract;
@@ -375,7 +350,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
 
         private System.Windows.Forms.Panel panel3;
