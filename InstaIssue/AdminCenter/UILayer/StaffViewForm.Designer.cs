@@ -31,15 +31,15 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSeperator = new System.Windows.Forms.Panel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblCID = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.pnlSeperator = new System.Windows.Forms.Panel();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblCID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,6 +68,37 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(767, 81);
             this.panel2.TabIndex = 4;
+            // 
+            // pnlSeperator
+            // 
+            this.pnlSeperator.BackColor = System.Drawing.Color.White;
+            this.pnlSeperator.Location = new System.Drawing.Point(152, 12);
+            this.pnlSeperator.Name = "pnlSeperator";
+            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
+            this.pnlSeperator.TabIndex = 13;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblID.Location = new System.Drawing.Point(168, 12);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(67, 21);
+            this.lblID.TabIndex = 15;
+            this.lblID.Text = "JA0221";
+            // 
+            // lblCID
+            // 
+            this.lblCID.AutoSize = true;
+            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCID.Location = new System.Drawing.Point(8, 12);
+            this.lblCID.Name = "lblCID";
+            this.lblCID.Size = new System.Drawing.Size(67, 21);
+            this.lblCID.TabIndex = 14;
+            this.lblCID.Text = "Staff ID";
             // 
             // lblDate
             // 
@@ -108,6 +139,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
             this.btnDashboard.Location = new System.Drawing.Point(0, 115);
@@ -117,6 +149,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panel4
             // 
@@ -137,37 +170,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo.Size = new System.Drawing.Size(78, 78);
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
-            // 
-            // pnlSeperator
-            // 
-            this.pnlSeperator.BackColor = System.Drawing.Color.White;
-            this.pnlSeperator.Location = new System.Drawing.Point(152, 12);
-            this.pnlSeperator.Name = "pnlSeperator";
-            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
-            this.pnlSeperator.TabIndex = 13;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblID.Location = new System.Drawing.Point(168, 12);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(67, 21);
-            this.lblID.TabIndex = 15;
-            this.lblID.Text = "JA0221";
-            // 
-            // lblCID
-            // 
-            this.lblCID.AutoSize = true;
-            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCID.Location = new System.Drawing.Point(8, 12);
-            this.lblCID.Name = "lblCID";
-            this.lblCID.Size = new System.Drawing.Size(67, 21);
-            this.lblCID.TabIndex = 14;
-            this.lblCID.Text = "Staff ID";
             // 
             // StaffViewForm
             // 

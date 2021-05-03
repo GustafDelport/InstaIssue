@@ -25,8 +25,9 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void btnDeleteSaff_Click(object sender, EventArgs e)
         {
-            StaffManagment staffmanagement = new StaffManagment();
-            staffmanagement.DeleteStaff(txtName.Text);
+            //NEEEEEEEEEEEEEEEEEEEEEEEE wie was die ?
+            //StaffManagment staffmanagement = new StaffManagment();
+            //staffmanagement.DeleteStaff(txtName.Text);
        
         }
 
