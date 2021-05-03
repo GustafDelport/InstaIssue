@@ -27,24 +27,6 @@ namespace InstaIssue.AdminCenter.UILayer
             tmrTime.Start();
         }
 
-        public void TrackIssues()
-        {
-
-        }
-
-        public void StaffControls()
-        {
-
-        }
-        public void ClientControls()
-        {
-
-        }
-        public void ContractControls()
-        {
-
-        }
-
         //Fancy Animations
         #region
         private void button1_Click(object sender, EventArgs e)
@@ -53,17 +35,28 @@ namespace InstaIssue.AdminCenter.UILayer
             pnlIssues.Visible = true;
             activePanel = pnlIssues;
         }
-        #endregion
-
 
         private void btnMngClients_Click(object sender, EventArgs e)
         {
-
+            activePanel.Visible = false;
+            pnlClients.Visible = true;
+            activePanel = pnlClients;
         }
 
         private void btnMngStaff_Click(object sender, EventArgs e)
         {
+            activePanel.Visible = false;
+            pnlStaff.Visible = true;
+            activePanel = pnlStaff;
         }
+
+        private void btnMngContracts_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlContracts.Visible = true;
+            activePanel = pnlContracts;
+        }
+        #endregion
 
         private void tmrTime_Tick(object sender, EventArgs e)
         {

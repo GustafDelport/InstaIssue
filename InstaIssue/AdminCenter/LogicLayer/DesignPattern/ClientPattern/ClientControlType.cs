@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InstaIssue.Handlers
+namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
-    class EventsHandler
+    interface ClientControlType
     {
-
+        public void doWork();
     }
 }
