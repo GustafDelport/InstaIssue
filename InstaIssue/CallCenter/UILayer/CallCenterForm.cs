@@ -198,6 +198,26 @@ namespace InstaIssue.CallCenter.UILayer
         {
             txtAddress.Text = "";
         }
+
+        private void btnTrackJob_Click(object sender, EventArgs e)
+        {
+            //Track Job
+            Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+        }
+
+        private void btnTrackIssue_Click(object sender, EventArgs e)
+        {
+            //Track Issues => take to info form
+            Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Globals.serviceCenterForm.Show();
+            Globals.callCenterForm.Hide();
+        }
         #endregion
 
         //Button Clicks
@@ -271,26 +291,6 @@ namespace InstaIssue.CallCenter.UILayer
         private void btnCreateReq_Click(object sender, EventArgs e)
         {
             //Create Req
-        }
-
-        private void btnTrackJob_Click(object sender, EventArgs e)
-        {
-            //Track Job
-            Globals.informationForm.Show();
-            Globals.callCenterForm.Hide();
-        }
-
-        private void btnTrackIssue_Click(object sender, EventArgs e)
-        {
-            //Track Issues => take to info form
-            Globals.informationForm.Show();
-            Globals.callCenterForm.Hide();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Globals.serviceCenterForm.Show();
-            Globals.callCenterForm.Hide();
         }
 
         private void btnAddIssue_Click(object sender, EventArgs e)
