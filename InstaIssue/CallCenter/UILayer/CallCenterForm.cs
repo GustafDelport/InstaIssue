@@ -14,6 +14,7 @@ namespace InstaIssue.CallCenter.UILayer
         private String Status;
         private Boolean callStatus;
         private Panel activePanel;
+        private bool flag;
         private readonly Validations validations = new Validations();
 
 
@@ -31,6 +32,8 @@ namespace InstaIssue.CallCenter.UILayer
             callStatus = true;
             CallTest();
             tmrTime.Start();
+            //Data loading here
+
         }
 
         //Methods
@@ -63,13 +66,6 @@ namespace InstaIssue.CallCenter.UILayer
         private void lblID_MouseLeave(object sender, EventArgs e)
         {
             lblID.Font = new Font("Century Gothic", 12);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            activePanel.Visible = false;
-            pnlReviews.Visible = true;
-            activePanel = pnlReviews;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -164,92 +160,43 @@ namespace InstaIssue.CallCenter.UILayer
             btnTopTrackIss.Visible = true;
         }
 
-        private void picOneStar_MouseHover(object sender, EventArgs e)
+        public void ResetBoxes()
         {
-            picOneStar.Image = Properties.Resources.StarYellow;
+            txtName.Text = "Name";
+            txtSurname.Text = "Surname";
+            txtNatID.Text = "National ID";
+            txtPhone.Text = "Phone Number";
+            txtEmail.Text = "Email";
+            txtAddress.Text = "Address";
+        }
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
         }
 
-        private void picOneStar_MouseLeave(object sender, EventArgs e)
+        private void txtSurname_Click(object sender, EventArgs e)
         {
-            picOneStar.Image = Properties.Resources.Star;
+            txtSurname.Text = "";
         }
 
-        private void picTwoStar_MouseHover(object sender, EventArgs e)
+        private void txtNatID_Click(object sender, EventArgs e)
         {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
+            txtNatID.Text = "";
         }
 
-        private void picTwoStar_MouseLeave(object sender, EventArgs e)
+        private void txtPhone_Click(object sender, EventArgs e)
         {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
+            txtPhone.Text = "";
         }
 
-        private void picThreeStar_MouseHover(object sender, EventArgs e)
+        private void txtEmail_Click(object sender, EventArgs e)
         {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-            picThreeStar.Image = Properties.Resources.StarYellow;
+            txtEmail.Text = "";
         }
 
-        private void picThreeStar_MouseLeave(object sender, EventArgs e)
+        private void txtAddress_Click(object sender, EventArgs e)
         {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-            picThreeStar.Image = Properties.Resources.Star;
-        }
-
-        private void picFourStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-            picThreeStar.Image = Properties.Resources.StarYellow;
-            picFourStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picFourStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-            picThreeStar.Image = Properties.Resources.Star;
-            picFourStar.Image = Properties.Resources.Star;
-        }
-
-        private void picFiveStar_MouseHover(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.StarYellow;
-            picTwoStar.Image = Properties.Resources.StarYellow;
-            picThreeStar.Image = Properties.Resources.StarYellow;
-            picFourStar.Image = Properties.Resources.StarYellow;
-            picFiveStar.Image = Properties.Resources.StarYellow;
-        }
-
-        private void picFiveStar_MouseLeave(object sender, EventArgs e)
-        {
-            picOneStar.Image = Properties.Resources.Star;
-            picTwoStar.Image = Properties.Resources.Star;
-            picThreeStar.Image = Properties.Resources.Star;
-            picFourStar.Image = Properties.Resources.Star;
-            picFiveStar.Image = Properties.Resources.Star;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            pnlRev.Visible = true;
-            button7.Visible = false;
-        }
-
-        private void pnlReviews_VisibleChanged(object sender, EventArgs e)
-        {
-            //pnlRev.Visible = false;
-            //button7.Visible = true;
-        }
-
-        private void pnlReviews_VisibleChanged_1(object sender, EventArgs e)
-        {
-            pnlRev.Visible = false;
-            button7.Visible = true;
+            txtAddress.Text = "";
         }
         #endregion
 
@@ -291,7 +238,34 @@ namespace InstaIssue.CallCenter.UILayer
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //Add Client
+            //Validate if the text is correct!
+            Panel ClientPanel = pnlAddClient;
+       
+            //Major validations happen here
+            flag = validations.ValidateRegisterClient(ClientPanel);
+
+            if (flag)
+            {
+                //Call RegisterCLientClass
+
+                flag = new RegisterClient().RegisterNewClient();
+                if (flag)
+                {
+                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetBoxes();
+                }
+                
+            }
+            else
+            {
+                ResetBoxes();
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnCreateReq_Click(object sender, EventArgs e)
@@ -323,36 +297,6 @@ namespace InstaIssue.CallCenter.UILayer
         {
             //Create Issue
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //Create a Review
-        }
-
-        private void picOneStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picTwoStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picThreeStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picFourStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
-
-        private void picFiveStar_Click(object sender, EventArgs e)
-        {
-            //Event rating trigger
-        }
         #endregion
 
         //Other
@@ -365,10 +309,5 @@ namespace InstaIssue.CallCenter.UILayer
             lblTime.Text = DateTime.Now.ToString("T");
         }
         #endregion
-
-        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

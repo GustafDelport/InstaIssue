@@ -32,8 +32,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -73,6 +71,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.dtpPlannedDate = new MetroFramework.Controls.MetroDateTime();
             this.btnCreateReq = new System.Windows.Forms.Button();
             this.pnlAddClient = new System.Windows.Forms.Panel();
+            this.cmbContractsC = new System.Windows.Forms.ComboBox();
             this.txtNatID = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -80,16 +79,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
-            this.pnlRev = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.picFiveStar = new System.Windows.Forms.PictureBox();
-            this.picFourStar = new System.Windows.Forms.PictureBox();
-            this.picThreeStar = new System.Windows.Forms.PictureBox();
-            this.picTwoStar = new System.Windows.Forms.PictureBox();
-            this.picOneStar = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.pnlIssues = new System.Windows.Forms.Panel();
             this.btnTopAddIss = new System.Windows.Forms.Button();
             this.pnlCreateIss = new System.Windows.Forms.Panel();
@@ -101,8 +90,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTopTrackIss = new System.Windows.Forms.Button();
             this.pnlTrackIssue = new System.Windows.Forms.Panel();
             this.btnTrackIssue = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.pnlReviews = new System.Windows.Forms.Panel();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -116,23 +103,14 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlJobs.SuspendLayout();
             this.pnlReqs.SuspendLayout();
             this.pnlAddClient.SuspendLayout();
-            this.pnlRev.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFiveStar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFourStar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picThreeStar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTwoStar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOneStar)).BeginInit();
             this.pnlIssues.SuspendLayout();
             this.pnlCreateIss.SuspendLayout();
             this.pnlTrackIssue.SuspendLayout();
-            this.pnlReviews.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlControls
             // 
             this.pnlControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlControls.Controls.Add(this.button8);
-            this.pnlControls.Controls.Add(this.button2);
             this.pnlControls.Controls.Add(this.button1);
             this.pnlControls.Controls.Add(this.btnClients);
             this.pnlControls.Controls.Add(this.btnDashboard);
@@ -142,42 +120,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(159, 512);
             this.pnlControls.TabIndex = 0;
-            // 
-            // button8
-            // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button8.Image = global::InstaIssue.Properties.Resources.CreateS;
-            this.button8.Location = new System.Drawing.Point(4, 445);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(146, 67);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Service Center";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.Image = global::InstaIssue.Properties.Resources.Review;
-            this.button2.Location = new System.Drawing.Point(0, 375);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 82);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Reviews";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -451,6 +393,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlClients
             // 
+            this.pnlClients.Controls.Add(this.pnlIssues);
             this.pnlClients.Controls.Add(this.button6);
             this.pnlClients.Controls.Add(this.button5);
             this.pnlClients.Controls.Add(this.button3);
@@ -473,9 +416,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button6.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.button6.Location = new System.Drawing.Point(490, 30);
+            this.button6.Location = new System.Drawing.Point(491, 9);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(159, 82);
+            this.button6.Size = new System.Drawing.Size(159, 69);
             this.button6.TabIndex = 17;
             this.button6.Text = "Track Job";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -491,9 +434,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button5.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.button5.Location = new System.Drawing.Point(292, 30);
+            this.button5.Location = new System.Drawing.Point(292, 9);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 82);
+            this.button5.Size = new System.Drawing.Size(159, 73);
             this.button5.TabIndex = 16;
             this.button5.Text = "Create Request";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -509,9 +452,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button3.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.button3.Location = new System.Drawing.Point(92, 30);
+            this.button3.Location = new System.Drawing.Point(93, 9);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 82);
+            this.button3.Size = new System.Drawing.Size(159, 73);
             this.button3.TabIndex = 15;
             this.button3.Text = "Add Client";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -523,9 +466,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlJobs.Controls.Add(this.cmbJobs);
             this.pnlJobs.Controls.Add(this.label6);
             this.pnlJobs.Controls.Add(this.btnTrackJob);
-            this.pnlJobs.Location = new System.Drawing.Point(474, 118);
+            this.pnlJobs.Location = new System.Drawing.Point(474, 88);
             this.pnlJobs.Name = "pnlJobs";
-            this.pnlJobs.Size = new System.Drawing.Size(193, 294);
+            this.pnlJobs.Size = new System.Drawing.Size(193, 324);
             this.pnlJobs.TabIndex = 16;
             // 
             // cmbJobs
@@ -558,7 +501,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTrackJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTrackJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTrackJob.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.btnTrackJob.Location = new System.Drawing.Point(16, 203);
+            this.btnTrackJob.Location = new System.Drawing.Point(17, 238);
             this.btnTrackJob.Name = "btnTrackJob";
             this.btnTrackJob.Size = new System.Drawing.Size(159, 82);
             this.btnTrackJob.TabIndex = 6;
@@ -576,9 +519,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlReqs.Controls.Add(this.dtpDeadlineDate);
             this.pnlReqs.Controls.Add(this.dtpPlannedDate);
             this.pnlReqs.Controls.Add(this.btnCreateReq);
-            this.pnlReqs.Location = new System.Drawing.Point(275, 118);
+            this.pnlReqs.Location = new System.Drawing.Point(275, 88);
             this.pnlReqs.Name = "pnlReqs";
-            this.pnlReqs.Size = new System.Drawing.Size(193, 294);
+            this.pnlReqs.Size = new System.Drawing.Size(193, 324);
             this.pnlReqs.TabIndex = 14;
             // 
             // label3
@@ -649,7 +592,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnCreateReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCreateReq.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.btnCreateReq.Location = new System.Drawing.Point(17, 203);
+            this.btnCreateReq.Location = new System.Drawing.Point(17, 238);
             this.btnCreateReq.Name = "btnCreateReq";
             this.btnCreateReq.Size = new System.Drawing.Size(159, 82);
             this.btnCreateReq.TabIndex = 6;
@@ -660,6 +603,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlAddClient
             // 
+            this.pnlAddClient.Controls.Add(this.cmbContractsC);
             this.pnlAddClient.Controls.Add(this.txtNatID);
             this.pnlAddClient.Controls.Add(this.txtAddress);
             this.pnlAddClient.Controls.Add(this.txtEmail);
@@ -667,10 +611,20 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlAddClient.Controls.Add(this.txtSurname);
             this.pnlAddClient.Controls.Add(this.txtName);
             this.pnlAddClient.Controls.Add(this.btnAddClient);
-            this.pnlAddClient.Location = new System.Drawing.Point(76, 118);
+            this.pnlAddClient.Location = new System.Drawing.Point(76, 88);
             this.pnlAddClient.Name = "pnlAddClient";
-            this.pnlAddClient.Size = new System.Drawing.Size(193, 294);
+            this.pnlAddClient.Size = new System.Drawing.Size(193, 324);
             this.pnlAddClient.TabIndex = 7;
+            // 
+            // cmbContractsC
+            // 
+            this.cmbContractsC.FormattingEnabled = true;
+            this.cmbContractsC.Items.AddRange(new object[] {
+            "Initial Contract"});
+            this.cmbContractsC.Location = new System.Drawing.Point(17, 207);
+            this.cmbContractsC.Name = "cmbContractsC";
+            this.cmbContractsC.Size = new System.Drawing.Size(159, 29);
+            this.cmbContractsC.TabIndex = 15;
             // 
             // txtNatID
             // 
@@ -681,6 +635,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtNatID.TabIndex = 14;
             this.txtNatID.Text = "National ID";
             this.txtNatID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNatID.Click += new System.EventHandler(this.txtNatID_Click);
             // 
             // txtAddress
             // 
@@ -691,6 +646,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtAddress.TabIndex = 12;
             this.txtAddress.Text = "Address";
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
             // 
             // txtEmail
             // 
@@ -701,6 +657,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtEmail.TabIndex = 13;
             this.txtEmail.Text = "Email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // txtPhone
             // 
@@ -711,6 +668,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtPhone.TabIndex = 11;
             this.txtPhone.Text = "Phone Number";
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             // 
             // txtSurname
             // 
@@ -721,6 +679,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtSurname.TabIndex = 9;
             this.txtSurname.Text = "Surname";
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
             // 
             // txtName
             // 
@@ -731,6 +690,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtName.TabIndex = 7;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // btnAddClient
             // 
@@ -741,7 +701,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddClient.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.btnAddClient.Location = new System.Drawing.Point(16, 203);
+            this.btnAddClient.Location = new System.Drawing.Point(17, 238);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(159, 82);
             this.btnAddClient.TabIndex = 8;
@@ -750,140 +710,14 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.button5_Click);
             // 
-            // pnlRev
-            // 
-            this.pnlRev.Controls.Add(this.label8);
-            this.pnlRev.Controls.Add(this.picFiveStar);
-            this.pnlRev.Controls.Add(this.picFourStar);
-            this.pnlRev.Controls.Add(this.picThreeStar);
-            this.pnlRev.Controls.Add(this.picTwoStar);
-            this.pnlRev.Controls.Add(this.picOneStar);
-            this.pnlRev.Controls.Add(this.label7);
-            this.pnlRev.Controls.Add(this.metroComboBox2);
-            this.pnlRev.Controls.Add(this.button4);
-            this.pnlRev.Location = new System.Drawing.Point(305, 117);
-            this.pnlRev.Name = "pnlRev";
-            this.pnlRev.Size = new System.Drawing.Size(193, 294);
-            this.pnlRev.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(65, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 20);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Rating";
-            // 
-            // picFiveStar
-            // 
-            this.picFiveStar.Image = global::InstaIssue.Properties.Resources.Star;
-            this.picFiveStar.Location = new System.Drawing.Point(144, 117);
-            this.picFiveStar.Name = "picFiveStar";
-            this.picFiveStar.Size = new System.Drawing.Size(25, 25);
-            this.picFiveStar.TabIndex = 17;
-            this.picFiveStar.TabStop = false;
-            this.picFiveStar.Click += new System.EventHandler(this.picFiveStar_Click);
-            this.picFiveStar.MouseLeave += new System.EventHandler(this.picFiveStar_MouseLeave);
-            this.picFiveStar.MouseHover += new System.EventHandler(this.picFiveStar_MouseHover);
-            // 
-            // picFourStar
-            // 
-            this.picFourStar.Image = global::InstaIssue.Properties.Resources.Star;
-            this.picFourStar.Location = new System.Drawing.Point(113, 117);
-            this.picFourStar.Name = "picFourStar";
-            this.picFourStar.Size = new System.Drawing.Size(25, 25);
-            this.picFourStar.TabIndex = 16;
-            this.picFourStar.TabStop = false;
-            this.picFourStar.Click += new System.EventHandler(this.picFourStar_Click);
-            this.picFourStar.MouseLeave += new System.EventHandler(this.picFourStar_MouseLeave);
-            this.picFourStar.MouseHover += new System.EventHandler(this.picFourStar_MouseHover);
-            // 
-            // picThreeStar
-            // 
-            this.picThreeStar.Image = global::InstaIssue.Properties.Resources.Star;
-            this.picThreeStar.Location = new System.Drawing.Point(82, 117);
-            this.picThreeStar.Name = "picThreeStar";
-            this.picThreeStar.Size = new System.Drawing.Size(25, 25);
-            this.picThreeStar.TabIndex = 15;
-            this.picThreeStar.TabStop = false;
-            this.picThreeStar.Click += new System.EventHandler(this.picThreeStar_Click);
-            this.picThreeStar.MouseLeave += new System.EventHandler(this.picThreeStar_MouseLeave);
-            this.picThreeStar.MouseHover += new System.EventHandler(this.picThreeStar_MouseHover);
-            // 
-            // picTwoStar
-            // 
-            this.picTwoStar.Image = global::InstaIssue.Properties.Resources.Star;
-            this.picTwoStar.Location = new System.Drawing.Point(51, 117);
-            this.picTwoStar.Name = "picTwoStar";
-            this.picTwoStar.Size = new System.Drawing.Size(25, 25);
-            this.picTwoStar.TabIndex = 14;
-            this.picTwoStar.TabStop = false;
-            this.picTwoStar.Click += new System.EventHandler(this.picTwoStar_Click);
-            this.picTwoStar.MouseLeave += new System.EventHandler(this.picTwoStar_MouseLeave);
-            this.picTwoStar.MouseHover += new System.EventHandler(this.picTwoStar_MouseHover);
-            // 
-            // picOneStar
-            // 
-            this.picOneStar.Image = global::InstaIssue.Properties.Resources.Star;
-            this.picOneStar.Location = new System.Drawing.Point(20, 117);
-            this.picOneStar.Name = "picOneStar";
-            this.picOneStar.Size = new System.Drawing.Size(25, 25);
-            this.picOneStar.TabIndex = 13;
-            this.picOneStar.TabStop = false;
-            this.picOneStar.Click += new System.EventHandler(this.picOneStar_Click);
-            this.picOneStar.MouseLeave += new System.EventHandler(this.picOneStar_MouseLeave);
-            this.picOneStar.MouseHover += new System.EventHandler(this.picOneStar_MouseHover);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(72, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Jobs";
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(15, 36);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(163, 29);
-            this.metroComboBox2.TabIndex = 8;
-            this.metroComboBox2.UseSelectable = true;
-            this.metroComboBox2.SelectedIndexChanged += new System.EventHandler(this.metroComboBox2_SelectedIndexChanged);
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button4.Image = global::InstaIssue.Properties.Resources.ClientReviewS;
-            this.button4.Location = new System.Drawing.Point(15, 203);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 82);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Add Review";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
+
             // pnlIssues
             // 
             this.pnlIssues.Controls.Add(this.btnTopAddIss);
             this.pnlIssues.Controls.Add(this.pnlCreateIss);
             this.pnlIssues.Controls.Add(this.btnTopTrackIss);
             this.pnlIssues.Controls.Add(this.pnlTrackIssue);
-            this.pnlIssues.Location = new System.Drawing.Point(165, 87);
+            this.pnlIssues.Location = new System.Drawing.Point(1, 0);
             this.pnlIssues.Name = "pnlIssues";
             this.pnlIssues.Size = new System.Drawing.Size(749, 416);
             this.pnlIssues.TabIndex = 5;
@@ -1022,35 +856,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTrackIssue.UseVisualStyleBackColor = true;
             this.btnTrackIssue.Click += new System.EventHandler(this.btnTrackIssue_Click);
             // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button7.Image = global::InstaIssue.Properties.Resources.ClientReviewS;
-            this.button7.Location = new System.Drawing.Point(320, 30);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(159, 82);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Add Review";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // pnlReviews
-            // 
-            this.pnlReviews.Controls.Add(this.button7);
-            this.pnlReviews.Controls.Add(this.pnlRev);
-            this.pnlReviews.Location = new System.Drawing.Point(165, 87);
-            this.pnlReviews.Name = "pnlReviews";
-            this.pnlReviews.Size = new System.Drawing.Size(749, 416);
-            this.pnlReviews.TabIndex = 7;
-            this.pnlReviews.Visible = false;
-            this.pnlReviews.VisibleChanged += new System.EventHandler(this.pnlReviews_VisibleChanged_1);
-            // 
             // tmrTime
             // 
             this.tmrTime.Interval = 1000;
@@ -1061,8 +866,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
-            this.Controls.Add(this.pnlReviews);
-            this.Controls.Add(this.pnlIssues);
             this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlDash);
             this.Controls.Add(this.pnlInfo);
@@ -1091,18 +894,10 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlReqs.PerformLayout();
             this.pnlAddClient.ResumeLayout(false);
             this.pnlAddClient.PerformLayout();
-            this.pnlRev.ResumeLayout(false);
-            this.pnlRev.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFiveStar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFourStar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picThreeStar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTwoStar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOneStar)).EndInit();
             this.pnlIssues.ResumeLayout(false);
             this.pnlCreateIss.ResumeLayout(false);
             this.pnlCreateIss.PerformLayout();
             this.pnlTrackIssue.ResumeLayout(false);
-            this.pnlReviews.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1129,20 +924,17 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Panel pnlDash;
         private System.Windows.Forms.Panel pnlClients;
         private System.Windows.Forms.Panel pnlIssues;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox picUserLarge;
         private System.Windows.Forms.TextBox txtNationalID;
         private System.Windows.Forms.PictureBox picPhoneButton;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Label lblNationalID;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCreateReq;
         private System.Windows.Forms.Panel pnlAddClient;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Panel pnlRev;
         private System.Windows.Forms.Panel pnlReqs;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtEmail;
@@ -1170,17 +962,7 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label7;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox picFiveStar;
-        private System.Windows.Forms.PictureBox picFourStar;
-        private System.Windows.Forms.PictureBox picThreeStar;
-        private System.Windows.Forms.PictureBox picTwoStar;
-        private System.Windows.Forms.PictureBox picOneStar;
-        private System.Windows.Forms.Panel pnlReviews;
         private System.Windows.Forms.Timer tmrTime;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ComboBox cmbContractsC;
     }
 }

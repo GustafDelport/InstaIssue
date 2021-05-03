@@ -461,13 +461,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel pnlAddClient;
         private System.Windows.Forms.TextBox txtNatID;
         private System.Windows.Forms.TextBox txtAddress;
