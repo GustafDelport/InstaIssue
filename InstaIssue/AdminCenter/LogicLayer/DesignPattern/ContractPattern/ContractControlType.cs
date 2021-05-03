@@ -8,5 +8,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
     interface ContractControlType
     {
+        public void doWork();
     }
 }

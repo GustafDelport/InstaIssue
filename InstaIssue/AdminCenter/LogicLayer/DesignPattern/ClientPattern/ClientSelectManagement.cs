@@ -8,12 +8,11 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
     {
         private String type;
         private ClientContext context;
-        private Form form;
+
 
         public ClientSelectManagement(string type)
         {
             this.type = type;
-            
         }
 
         public void doWork()
