@@ -16,5 +16,11 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             InitializeComponent();
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Globals.contractsViewForm.Hide();
+            Globals.AdminCenterForm.Show();
+        }
     }
 }
