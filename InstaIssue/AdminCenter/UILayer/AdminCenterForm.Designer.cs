@@ -44,21 +44,24 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlIssues = new System.Windows.Forms.Panel();
             this.dgvIssues = new System.Windows.Forms.DataGridView();
             this.pnlStaff = new System.Windows.Forms.Panel();
+            this.btnDeleteStaff = new System.Windows.Forms.Button();
+            this.btnEditStaff = new System.Windows.Forms.Button();
+            this.btnViewStaff = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
             this.pnlContracts = new System.Windows.Forms.Panel();
             this.btnDeleteCont = new System.Windows.Forms.Button();
             this.btnEditCont = new System.Windows.Forms.Button();
             this.btnViewCont = new System.Windows.Forms.Button();
             this.btnAddCont = new System.Windows.Forms.Button();
-            this.btnDeleteStaff = new System.Windows.Forms.Button();
-            this.btnEditStaff = new System.Windows.Forms.Button();
-            this.btnViewStaff = new System.Windows.Forms.Button();
-            this.btnAddStaff = new System.Windows.Forms.Button();
             this.pnlClients = new System.Windows.Forms.Panel();
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.btnEditClient = new System.Windows.Forms.Button();
             this.btnViewClient = new System.Windows.Forms.Button();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.pnlSeperator = new System.Windows.Forms.Panel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblCID = new System.Windows.Forms.Label();
             this.pnlControls.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -177,6 +180,9 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlInfo
             // 
+            this.pnlInfo.Controls.Add(this.pnlSeperator);
+            this.pnlInfo.Controls.Add(this.lblID);
+            this.pnlInfo.Controls.Add(this.lblCID);
             this.pnlInfo.Controls.Add(this.lblDate);
             this.pnlInfo.Controls.Add(this.lblTime);
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -235,6 +241,82 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlStaff.Size = new System.Drawing.Size(737, 413);
             this.pnlStaff.TabIndex = 3;
             this.pnlStaff.Visible = false;
+            // 
+            // btnDeleteStaff
+            // 
+            this.btnDeleteStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteStaff.FlatAppearance.BorderSize = 0;
+            this.btnDeleteStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnDeleteStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnDeleteStaff.Image = global::InstaIssue.Properties.Resources.DeleteB;
+            this.btnDeleteStaff.Location = new System.Drawing.Point(371, 206);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(240, 147);
+            this.btnDeleteStaff.TabIndex = 13;
+            this.btnDeleteStaff.Text = "Delete Staff";
+            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteStaff.UseVisualStyleBackColor = true;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditStaff.FlatAppearance.BorderSize = 0;
+            this.btnEditStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnEditStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEditStaff.Image = global::InstaIssue.Properties.Resources.EditB;
+            this.btnEditStaff.Location = new System.Drawing.Point(125, 206);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(240, 147);
+            this.btnEditStaff.TabIndex = 12;
+            this.btnEditStaff.Text = "Edit Staff";
+            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditStaff.UseVisualStyleBackColor = true;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            // 
+            // btnViewStaff
+            // 
+            this.btnViewStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewStaff.FlatAppearance.BorderSize = 0;
+            this.btnViewStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnViewStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnViewStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnViewStaff.Image = global::InstaIssue.Properties.Resources.ViewB;
+            this.btnViewStaff.Location = new System.Drawing.Point(371, 53);
+            this.btnViewStaff.Name = "btnViewStaff";
+            this.btnViewStaff.Size = new System.Drawing.Size(240, 147);
+            this.btnViewStaff.TabIndex = 11;
+            this.btnViewStaff.Text = "View Staff";
+            this.btnViewStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnViewStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnViewStaff.UseVisualStyleBackColor = true;
+            this.btnViewStaff.Click += new System.EventHandler(this.btnViewStaff_Click);
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddStaff.FlatAppearance.BorderSize = 0;
+            this.btnAddStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAddStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddStaff.Image = global::InstaIssue.Properties.Resources.StaffB;
+            this.btnAddStaff.Location = new System.Drawing.Point(125, 53);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(240, 147);
+            this.btnAddStaff.TabIndex = 10;
+            this.btnAddStaff.Text = "Add Staff";
+            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddStaff.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // pnlContracts
             // 
@@ -323,82 +405,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAddCont.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAddCont.UseVisualStyleBackColor = true;
             this.btnAddCont.Click += new System.EventHandler(this.btnAddCont_Click);
-            // 
-            // btnDeleteStaff
-            // 
-            this.btnDeleteStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteStaff.FlatAppearance.BorderSize = 0;
-            this.btnDeleteStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnDeleteStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDeleteStaff.Image = global::InstaIssue.Properties.Resources.DeleteB;
-            this.btnDeleteStaff.Location = new System.Drawing.Point(371, 206);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(240, 147);
-            this.btnDeleteStaff.TabIndex = 13;
-            this.btnDeleteStaff.Text = "Delete Staff";
-            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDeleteStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDeleteStaff.UseVisualStyleBackColor = true;
-            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
-            // 
-            // btnEditStaff
-            // 
-            this.btnEditStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditStaff.FlatAppearance.BorderSize = 0;
-            this.btnEditStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnEditStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnEditStaff.Image = global::InstaIssue.Properties.Resources.EditB;
-            this.btnEditStaff.Location = new System.Drawing.Point(125, 206);
-            this.btnEditStaff.Name = "btnEditStaff";
-            this.btnEditStaff.Size = new System.Drawing.Size(240, 147);
-            this.btnEditStaff.TabIndex = 12;
-            this.btnEditStaff.Text = "Edit Staff";
-            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditStaff.UseVisualStyleBackColor = true;
-            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
-            // 
-            // btnViewStaff
-            // 
-            this.btnViewStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewStaff.FlatAppearance.BorderSize = 0;
-            this.btnViewStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnViewStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnViewStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnViewStaff.Image = global::InstaIssue.Properties.Resources.ViewB;
-            this.btnViewStaff.Location = new System.Drawing.Point(371, 53);
-            this.btnViewStaff.Name = "btnViewStaff";
-            this.btnViewStaff.Size = new System.Drawing.Size(240, 147);
-            this.btnViewStaff.TabIndex = 11;
-            this.btnViewStaff.Text = "View Staff";
-            this.btnViewStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnViewStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnViewStaff.UseVisualStyleBackColor = true;
-            this.btnViewStaff.Click += new System.EventHandler(this.btnViewStaff_Click);
-            // 
-            // btnAddStaff
-            // 
-            this.btnAddStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddStaff.FlatAppearance.BorderSize = 0;
-            this.btnAddStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnAddStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddStaff.Image = global::InstaIssue.Properties.Resources.StaffB;
-            this.btnAddStaff.Location = new System.Drawing.Point(125, 53);
-            this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(240, 147);
-            this.btnAddStaff.TabIndex = 10;
-            this.btnAddStaff.Text = "Add Staff";
-            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddStaff.UseVisualStyleBackColor = true;
-            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // pnlClients
             // 
@@ -493,6 +499,37 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
+            // pnlSeperator
+            // 
+            this.pnlSeperator.BackColor = System.Drawing.Color.White;
+            this.pnlSeperator.Location = new System.Drawing.Point(150, 12);
+            this.pnlSeperator.Name = "pnlSeperator";
+            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
+            this.pnlSeperator.TabIndex = 16;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblID.Location = new System.Drawing.Point(166, 12);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(67, 21);
+            this.lblID.TabIndex = 18;
+            this.lblID.Text = "JA0221";
+            // 
+            // lblCID
+            // 
+            this.lblCID.AutoSize = true;
+            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCID.Location = new System.Drawing.Point(6, 12);
+            this.lblCID.Name = "lblCID";
+            this.lblCID.Size = new System.Drawing.Size(67, 21);
+            this.lblCID.TabIndex = 17;
+            this.lblCID.Text = "Staff ID";
+            // 
             // AdminCenterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -556,5 +593,8 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnViewCont;
         private System.Windows.Forms.Button btnAddCont;
         private System.Windows.Forms.Button btnDeleteStaff;
+        private System.Windows.Forms.Panel pnlSeperator;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblCID;
     }
 }

@@ -19,12 +19,7 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void ClientsEditForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public void EditClient()
-        {
-
+            tmrTime.Start();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -32,6 +27,12 @@ namespace InstaIssue.AdminCenter.UILayer
             Globals.clientsEditForm.Hide();
             Globals.AdminCenterForm.Show();
 
+        }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
         }
     }
 }

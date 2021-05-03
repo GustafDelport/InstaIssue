@@ -19,15 +19,19 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void ClientsAddForm_Load(object sender, EventArgs e)
         {
-
+            tmrTime.Start();
         }
-
-        public void AddClient() { }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             Globals.clientsAddForm.Hide();
             Globals.AdminCenterForm.Show();
+        }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
         }
     }
 }

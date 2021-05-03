@@ -29,7 +29,7 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvData = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
             this.lblID = new System.Windows.Forms.Label();
@@ -40,22 +40,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.btnadd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvData
-            // 
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(167, 90);
-            this.dgvData.Name = "dgvData";
-            this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.Size = new System.Drawing.Size(749, 413);
-            this.dgvData.TabIndex = 8;
             // 
             // panel2
             // 
@@ -172,15 +162,10 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
-            // btnadd
+            // tmrTime
             // 
-            this.btnadd.Location = new System.Drawing.Point(245, 173);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 23);
-            this.btnadd.TabIndex = 9;
-            this.btnadd.Text = "add staff";
-            this.btnadd.UseVisualStyleBackColor = true;
-            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // StaffEditForm
             // 
@@ -188,14 +173,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
-            this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.dgvData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Staff";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.Load += new System.EventHandler(this.StaffEditForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -206,8 +189,6 @@ namespace InstaIssue.AdminCenter.UILayer
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSeperator;
         private System.Windows.Forms.Label lblID;
@@ -218,6 +199,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

@@ -29,6 +29,7 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDeleteForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
@@ -43,6 +44,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlAddClient = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnDeleteSaff = new System.Windows.Forms.Button();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -183,7 +185,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtName.TabIndex = 7;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnDeleteSaff
             // 
@@ -204,6 +205,11 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDeleteSaff.UseVisualStyleBackColor = true;
             this.btnDeleteSaff.Click += new System.EventHandler(this.btnDeleteSaff_Click);
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // StaffDeleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -216,6 +222,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "StaffDeleteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Staff";
+            this.Load += new System.EventHandler(this.StaffDeleteForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -241,5 +248,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel pnlAddClient;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnDeleteSaff;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

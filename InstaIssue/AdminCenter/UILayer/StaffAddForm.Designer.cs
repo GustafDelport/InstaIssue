@@ -29,6 +29,7 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
             this.lblID = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -160,6 +162,11 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // StaffAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -169,7 +176,9 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffAddForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Staff";
+            this.Load += new System.EventHandler(this.StaffAddForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -190,5 +199,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

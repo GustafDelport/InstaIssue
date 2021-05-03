@@ -22,5 +22,16 @@ namespace InstaIssue.AdminCenter.UILayer
             Globals.contractsDeleteForm.Hide();
             Globals.AdminCenterForm.Show();
         }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void ContractsDeleteForm_Load(object sender, EventArgs e)
+        {
+            tmrTime.Start();
+        }
     }
 }
