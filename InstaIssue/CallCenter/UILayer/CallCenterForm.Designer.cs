@@ -199,11 +199,11 @@ namespace InstaIssue.CallCenter.UILayer
             // lblCID
             // 
             this.lblCID.AutoSize = true;
-            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblCID.Location = new System.Drawing.Point(5, 8);
             this.lblCID.Name = "lblCID";
-            this.lblCID.Size = new System.Drawing.Size(77, 21);
+            this.lblCID.Size = new System.Drawing.Size(70, 20);
             this.lblCID.TabIndex = 2;
             this.lblCID.Text = "Client ID";
             // 
@@ -236,22 +236,22 @@ namespace InstaIssue.CallCenter.UILayer
             // lblContract
             // 
             this.lblContract.AutoSize = true;
-            this.lblContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblContract.Location = new System.Drawing.Point(165, 48);
             this.lblContract.Name = "lblContract";
-            this.lblContract.Size = new System.Drawing.Size(48, 21);
+            this.lblContract.Size = new System.Drawing.Size(43, 20);
             this.lblContract.TabIndex = 11;
             this.lblContract.Text = "Gold";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblName.Location = new System.Drawing.Point(165, 28);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(22, 21);
+            this.lblName.Size = new System.Drawing.Size(21, 20);
             this.lblName.TabIndex = 10;
             this.lblName.Text = "...";
             // 
@@ -259,11 +259,11 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.lblID.AutoSize = true;
             this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblID.Location = new System.Drawing.Point(165, 8);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(22, 21);
+            this.lblID.Size = new System.Drawing.Size(21, 20);
             this.lblID.TabIndex = 9;
             this.lblID.Text = "...";
             this.lblID.MouseLeave += new System.EventHandler(this.lblID_MouseLeave);
@@ -272,22 +272,22 @@ namespace InstaIssue.CallCenter.UILayer
             // lblCContract
             // 
             this.lblCContract.AutoSize = true;
-            this.lblCContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblCContract.Location = new System.Drawing.Point(5, 48);
             this.lblCContract.Name = "lblCContract";
-            this.lblCContract.Size = new System.Drawing.Size(133, 21);
+            this.lblCContract.Size = new System.Drawing.Size(114, 20);
             this.lblCContract.TabIndex = 8;
             this.lblCContract.Text = "Client Contract";
             // 
             // lblCName
             // 
             this.lblCName.AutoSize = true;
-            this.lblCName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblCName.Location = new System.Drawing.Point(5, 28);
             this.lblCName.Name = "lblCName";
-            this.lblCName.Size = new System.Drawing.Size(108, 21);
+            this.lblCName.Size = new System.Drawing.Size(95, 20);
             this.lblCName.TabIndex = 7;
             this.lblCName.Text = "Client Name";
             // 
@@ -303,22 +303,22 @@ namespace InstaIssue.CallCenter.UILayer
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblDate.Location = new System.Drawing.Point(635, 8);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(120, 24);
+            this.lblDate.Size = new System.Drawing.Size(122, 25);
             this.lblDate.TabIndex = 4;
             this.lblDate.Text = "2021-04-17";
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblTime.Location = new System.Drawing.Point(635, 43);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(63, 24);
+            this.lblTime.Size = new System.Drawing.Size(66, 25);
             this.lblTime.TabIndex = 3;
             this.lblTime.Text = "14:23";
             // 
@@ -338,11 +338,11 @@ namespace InstaIssue.CallCenter.UILayer
             // lblNationalID
             // 
             this.lblNationalID.AutoSize = true;
-            this.lblNationalID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNationalID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNationalID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblNationalID.Location = new System.Drawing.Point(325, 88);
             this.lblNationalID.Name = "lblNationalID";
-            this.lblNationalID.Size = new System.Drawing.Size(98, 21);
+            this.lblNationalID.Size = new System.Drawing.Size(88, 20);
             this.lblNationalID.TabIndex = 9;
             this.lblNationalID.Text = "National ID";
             // 
@@ -378,7 +378,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.txtNationalID.Location = new System.Drawing.Point(297, 112);
             this.txtNationalID.Name = "txtNationalID";
-            this.txtNationalID.Size = new System.Drawing.Size(159, 27);
+            this.txtNationalID.Size = new System.Drawing.Size(159, 26);
             this.txtNationalID.TabIndex = 3;
             this.txtNationalID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -484,11 +484,11 @@ namespace InstaIssue.CallCenter.UILayer
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(48, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 21);
+            this.label6.Size = new System.Drawing.Size(87, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Client Jobs";
             // 
@@ -527,11 +527,11 @@ namespace InstaIssue.CallCenter.UILayer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(41, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 21);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 15;
             this.label3.Text = "Client Product";
             // 
@@ -548,22 +548,22 @@ namespace InstaIssue.CallCenter.UILayer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(41, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 21);
+            this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Deadline Date";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(43, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 21);
+            this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Planned Date";
             // 
@@ -628,10 +628,10 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // txtNatID
             // 
-            this.txtNatID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNatID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNatID.Location = new System.Drawing.Point(17, 78);
             this.txtNatID.Name = "txtNatID";
-            this.txtNatID.Size = new System.Drawing.Size(159, 23);
+            this.txtNatID.Size = new System.Drawing.Size(159, 22);
             this.txtNatID.TabIndex = 14;
             this.txtNatID.Text = "National ID";
             this.txtNatID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -639,10 +639,10 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // txtAddress
             // 
-            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddress.Location = new System.Drawing.Point(17, 174);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(159, 23);
+            this.txtAddress.Size = new System.Drawing.Size(159, 22);
             this.txtAddress.TabIndex = 12;
             this.txtAddress.Text = "Address";
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -650,10 +650,10 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.Location = new System.Drawing.Point(17, 142);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(159, 23);
+            this.txtEmail.Size = new System.Drawing.Size(159, 22);
             this.txtEmail.TabIndex = 13;
             this.txtEmail.Text = "Email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -661,10 +661,10 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhone.Location = new System.Drawing.Point(17, 110);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(159, 23);
+            this.txtPhone.Size = new System.Drawing.Size(159, 22);
             this.txtPhone.TabIndex = 11;
             this.txtPhone.Text = "Phone Number";
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -672,10 +672,10 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // txtSurname
             // 
-            this.txtSurname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSurname.Location = new System.Drawing.Point(17, 46);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(159, 23);
+            this.txtSurname.Size = new System.Drawing.Size(159, 22);
             this.txtSurname.TabIndex = 9;
             this.txtSurname.Text = "Surname";
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -683,10 +683,10 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(17, 14);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(159, 23);
+            this.txtName.Size = new System.Drawing.Size(159, 22);
             this.txtName.TabIndex = 7;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -756,22 +756,22 @@ namespace InstaIssue.CallCenter.UILayer
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(51, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 21);
+            this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Description";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(74, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 21);
+            this.label4.Size = new System.Drawing.Size(43, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Jobs";
             // 
@@ -869,7 +869,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.Controls.Add(this.pnlDash);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnlControls);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CallCenterForm";
