@@ -9,10 +9,13 @@ namespace InstaIssue.Handlers
         }
 
         public delegate void Client(string formName);
-        public event Client ClientEvent; 
-        
+        public event Client ClientEvent;
+
         public delegate void Contract(string formName);
-        public event Contract ContractEvent;
+        public event Contract ContractEvent; 
+        
+        public delegate void Staff(string formName);
+        public event Staff StaffEvent;
 
         public void TriggerClient(string formName)
         {
@@ -31,6 +34,18 @@ namespace InstaIssue.Handlers
             if (ContractEvent != null)
             {
                 ContractEvent(formName);
+            }
+            else
+            {
+                //Throw Error
+            }
+        }
+
+        public void TriggerStaff(string formName)
+        {
+            if (StaffEvent != null)
+            {
+                StaffEvent(formName);
             }
             else
             {

@@ -68,22 +68,22 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-
+            new StaffSelectManagement("Add").doWork();
         }
 
         private void btnViewStaff_Click(object sender, EventArgs e)
         {
-
+            new StaffSelectManagement("View").doWork();
         }
 
         private void btnEditStaff_Click(object sender, EventArgs e)
         {
-
+            new StaffSelectManagement("Edit").doWork();
         }
 
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
-
+            new StaffSelectManagement("Delete").doWork();
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)

@@ -8,5 +8,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
     interface StaffControlType
     {
+        public void doWork();
     }
 }

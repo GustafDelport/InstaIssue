@@ -18,16 +18,29 @@ namespace InstaIssue.AdminCenter.UILayer
             InitializeComponent();
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnDeleteSaff_Click(object sender, EventArgs e)
         {
-            StaffManagment staffmanagement = new StaffManagment();
-            staffmanagement.DeleteStaff(txtName.Text);
+            //NEEEEEEEEEEEEEEEEEEEEEEEE wie was die ?
+            //StaffManagment staffmanagement = new StaffManagment();
+            //staffmanagement.DeleteStaff(txtName.Text);
        
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Globals.staffDeleteForm.Hide();
+            Globals.AdminCenterForm.Show();
+        }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void StaffDeleteForm_Load(object sender, EventArgs e)
+        {
+            tmrTime.Start();
         }
     }
 }

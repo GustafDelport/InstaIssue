@@ -8,5 +8,16 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
 {
     class StaffContext
     {
+        private StaffControlType controlType;
+
+        public StaffContext(StaffControlType controlType)
+        {
+            this.controlType = controlType;
+        }
+
+        public void doWork()
+        {
+            controlType.doWork();
+        }
     }
 }

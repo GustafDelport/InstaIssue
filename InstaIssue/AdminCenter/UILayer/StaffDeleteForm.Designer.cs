@@ -29,8 +29,8 @@ namespace InstaIssue.AdminCenter.UILayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDeleteForm));
-            this.dgvData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSeperator = new System.Windows.Forms.Panel();
             this.lblID = new System.Windows.Forms.Label();
@@ -44,22 +44,13 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlAddClient = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnDeleteSaff = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvData
-            // 
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(167, 90);
-            this.dgvData.Name = "dgvData";
-            this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.Size = new System.Drawing.Size(749, 413);
-            this.dgvData.TabIndex = 8;
             // 
             // panel2
             // 
@@ -144,6 +135,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
             this.btnDashboard.Location = new System.Drawing.Point(0, 115);
@@ -153,6 +145,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panel4
             // 
@@ -178,7 +171,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             this.pnlAddClient.Controls.Add(this.txtName);
             this.pnlAddClient.Controls.Add(this.btnDeleteSaff);
-            this.pnlAddClient.Location = new System.Drawing.Point(198, 115);
+            this.pnlAddClient.Location = new System.Drawing.Point(422, 207);
             this.pnlAddClient.Name = "pnlAddClient";
             this.pnlAddClient.Size = new System.Drawing.Size(193, 143);
             this.pnlAddClient.TabIndex = 9;
@@ -192,7 +185,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtName.TabIndex = 7;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnDeleteSaff
             // 
@@ -201,6 +193,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDeleteSaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnDeleteSaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDeleteSaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteSaff.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeleteSaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDeleteSaff.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteSaff.Image")));
             this.btnDeleteSaff.Location = new System.Drawing.Point(16, 49);
@@ -212,6 +205,11 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDeleteSaff.UseVisualStyleBackColor = true;
             this.btnDeleteSaff.Click += new System.EventHandler(this.btnDeleteSaff_Click);
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // StaffDeleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -219,12 +217,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
             this.Controls.Add(this.pnlAddClient);
-            this.Controls.Add(this.dgvData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffDeleteForm";
-            this.Text = "StaffDeleteForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Delete Staff";
+            this.Load += new System.EventHandler(this.StaffDeleteForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -237,8 +235,6 @@ namespace InstaIssue.AdminCenter.UILayer
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSeperator;
         private System.Windows.Forms.Label lblID;
@@ -252,5 +248,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel pnlAddClient;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnDeleteSaff;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

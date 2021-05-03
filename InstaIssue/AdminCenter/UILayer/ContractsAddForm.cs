@@ -16,5 +16,22 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             InitializeComponent();
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Globals.contractsAddForm.Hide();
+            Globals.AdminCenterForm.Show();
+        }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void ContractsAddForm_Load(object sender, EventArgs e)
+        {
+            tmrTime.Start();
+        }
     }
 }
