@@ -710,7 +710,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.button5_Click);
             // 
-
             // pnlIssues
             // 
             this.pnlIssues.Controls.Add(this.btnTopAddIss);
