@@ -104,7 +104,7 @@ namespace Authentication
         public int ValidateStaffRank(String data)
         {
             int n = 0;
-
+          
             switch (data.Substring(0,3))
             {
                 case "AGT":
@@ -125,6 +125,7 @@ namespace Authentication
                         n = 3;
                     }
                     break;
+                
                 case "Agt":
                     {
                         n = 1;
