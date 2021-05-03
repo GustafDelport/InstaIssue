@@ -21,5 +21,11 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Globals.staffEditForm.Hide();
+            Globals.AdminCenterForm.Show();
+        }
     }
 }

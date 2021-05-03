@@ -29,5 +29,11 @@ namespace InstaIssue.AdminCenter.UILayer
             staffmanagement.DeleteStaff(txtName.Text);
        
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Globals.staffDeleteForm.Hide();
+            Globals.AdminCenterForm.Show();
+        }
     }
 }
