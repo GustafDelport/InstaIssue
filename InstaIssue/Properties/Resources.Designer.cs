@@ -193,6 +193,46 @@ namespace InstaIssue.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeleteB {
+            get {
+                object obj = ResourceManager.GetObject("DeleteB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteS {
+            get {
+                object obj = ResourceManager.GetObject("DeleteS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditB {
+            get {
+                object obj = ResourceManager.GetObject("EditB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditS {
+            get {
+                object obj = ResourceManager.GetObject("EditS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap End {
             get {
                 object obj = ResourceManager.GetObject("End", resourceCulture);
@@ -353,9 +393,9 @@ namespace InstaIssue.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Star {
+        internal static System.Drawing.Bitmap StaffB {
             get {
-                object obj = ResourceManager.GetObject("Star", resourceCulture);
+                object obj = ResourceManager.GetObject("StaffB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +403,9 @@ namespace InstaIssue.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap StarYellow {
+        internal static System.Drawing.Bitmap StaffS {
             get {
-                object obj = ResourceManager.GetObject("StarYellow", resourceCulture);
+                object obj = ResourceManager.GetObject("StaffS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +426,26 @@ namespace InstaIssue.Properties {
         internal static System.Drawing.Bitmap TrackS {
             get {
                 object obj = ResourceManager.GetObject("TrackS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ViewB {
+            get {
+                object obj = ResourceManager.GetObject("ViewB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ViewS {
+            get {
+                object obj = ResourceManager.GetObject("ViewS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

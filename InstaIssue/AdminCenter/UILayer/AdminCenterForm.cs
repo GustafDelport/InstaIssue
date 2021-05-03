@@ -27,24 +27,6 @@ namespace InstaIssue.AdminCenter.UILayer
             tmrTime.Start();
         }
 
-        public void TrackIssues()
-        {
-
-        }
-
-        public void StaffControls()
-        {
-
-        }
-        public void ClientControls()
-        {
-
-        }
-        public void ContractControls()
-        {
-
-        }
-
         //Fancy Animations
         #region
         private void button1_Click(object sender, EventArgs e)
@@ -53,22 +35,93 @@ namespace InstaIssue.AdminCenter.UILayer
             pnlIssues.Visible = true;
             activePanel = pnlIssues;
         }
-        #endregion
-
 
         private void btnMngClients_Click(object sender, EventArgs e)
         {
-
+            activePanel.Visible = false;
+            pnlClients.Visible = true;
+            activePanel = pnlClients;
         }
 
         private void btnMngStaff_Click(object sender, EventArgs e)
         {
+            activePanel.Visible = false;
+            pnlStaff.Visible = true;
+            activePanel = pnlStaff;
         }
+
+        private void btnMngContracts_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlContracts.Visible = true;
+            activePanel = pnlContracts;
+        }
+        #endregion
 
         private void tmrTime_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteCont_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
