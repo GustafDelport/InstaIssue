@@ -103,5 +103,17 @@ namespace Generator
 
             return contractID;
         }
+        public String GenerateIssueID()
+        {
+            //Example: IA0001     
+            String number = "";
+
+            String prefix = "I";
+            String indicator = "";
+
+            String IssueID = prefix + indicator + number;
+
+            return IssueID;
+        }
     }
 }

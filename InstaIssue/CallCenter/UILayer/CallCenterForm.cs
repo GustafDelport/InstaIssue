@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using InstaIssue.CallCenter.LogicLayer;
 using System.Collections.Generic;
 using InstaIssue.Handlers;
+using InstaIssue.AdminCenter.LogicLayer;
 
 namespace InstaIssue.CallCenter.UILayer
 {
@@ -311,6 +312,24 @@ namespace InstaIssue.CallCenter.UILayer
         private void btnAddIssue_Click(object sender, EventArgs e)
         {
             //Create Issue
+            flag = new Validations().ValidateRegisterClient(pnlCreateIss);
+            string description = rtbDescription.Text;
+            DateTime dateReported = new DateTime();
+            dateReported = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            if (flag)
+            {
+                flag = new IssuesCenter().CreateIssue(client, dateReported, Globals.StaffID, "Ongoing", description);
+                if (flag)
+                {
+                    MessageBox.Show("A new issue was registered", "Creation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create issue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetBoxes();
+                }
+            }
         }
         #endregion
 

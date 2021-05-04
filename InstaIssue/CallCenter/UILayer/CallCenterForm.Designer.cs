@@ -84,8 +84,8 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlCreateIss = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.cmbJobsIs = new MetroFramework.Controls.MetroComboBox();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.btnAddIssue = new System.Windows.Forms.Button();
             this.btnTopTrackIss = new System.Windows.Forms.Button();
             this.pnlTrackIssue = new System.Windows.Forms.Panel();
@@ -742,8 +742,8 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.pnlCreateIss.Controls.Add(this.label5);
             this.pnlCreateIss.Controls.Add(this.label4);
-            this.pnlCreateIss.Controls.Add(this.metroComboBox1);
-            this.pnlCreateIss.Controls.Add(this.richTextBox1);
+            this.pnlCreateIss.Controls.Add(this.cmbJobsIs);
+            this.pnlCreateIss.Controls.Add(this.rtbDescription);
             this.pnlCreateIss.Controls.Add(this.btnAddIssue);
             this.pnlCreateIss.Location = new System.Drawing.Point(382, 118);
             this.pnlCreateIss.Name = "pnlCreateIss";
@@ -772,23 +772,23 @@ namespace InstaIssue.CallCenter.UILayer
             this.label4.TabIndex = 11;
             this.label4.Text = "Jobs";
             // 
-            // metroComboBox1
+            // cmbJobsIs
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(18, 27);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(159, 29);
-            this.metroComboBox1.TabIndex = 10;
-            this.metroComboBox1.UseSelectable = true;
+            this.cmbJobsIs.FormattingEnabled = true;
+            this.cmbJobsIs.ItemHeight = 23;
+            this.cmbJobsIs.Location = new System.Drawing.Point(18, 27);
+            this.cmbJobsIs.Name = "cmbJobsIs";
+            this.cmbJobsIs.Size = new System.Drawing.Size(159, 29);
+            this.cmbJobsIs.TabIndex = 10;
+            this.cmbJobsIs.UseSelectable = true;
             // 
-            // richTextBox1
+            // rtbDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(18, 82);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(159, 115);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.rtbDescription.Location = new System.Drawing.Point(18, 82);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.Size = new System.Drawing.Size(159, 115);
+            this.rtbDescription.TabIndex = 9;
+            this.rtbDescription.Text = "";
             // 
             // btnAddIssue
             // 
@@ -957,8 +957,8 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Button btnAddIssue;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private MetroFramework.Controls.MetroComboBox cmbJobsIs;
+        private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Timer tmrTime;
         private System.Windows.Forms.ComboBox cmbContractsC;
     }
