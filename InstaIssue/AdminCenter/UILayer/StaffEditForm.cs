@@ -12,6 +12,9 @@ namespace InstaIssue.AdminCenter.UILayer
 {
     public partial class StaffEditForm : Form
     {
+
+        //Not hide the below panel then return a staff entity and populate relavent data and use that to edit staff
+
         public StaffEditForm()
         {
             InitializeComponent();
@@ -32,6 +35,16 @@ namespace InstaIssue.AdminCenter.UILayer
         private void StaffEditForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+        }
+
+        private void txtNewData_Click(object sender, EventArgs e)
+        {
+            txtNewData.Text = "";
+        }
+
+        private void txtStaffID_Click(object sender, EventArgs e)
+        {
+            txtStaffID.Text = "";
         }
     }
 }

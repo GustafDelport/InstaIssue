@@ -41,10 +41,14 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.pnlAddClient = new System.Windows.Forms.Panel();
+            this.txtContractID = new System.Windows.Forms.TextBox();
+            this.btnDeleteSaff = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -167,15 +171,55 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
+            // pnlAddClient
+            // 
+            this.pnlAddClient.Controls.Add(this.txtContractID);
+            this.pnlAddClient.Controls.Add(this.btnDeleteSaff);
+            this.pnlAddClient.Location = new System.Drawing.Point(439, 201);
+            this.pnlAddClient.Name = "pnlAddClient";
+            this.pnlAddClient.Size = new System.Drawing.Size(193, 143);
+            this.pnlAddClient.TabIndex = 10;
+            // 
+            // txtContractID
+            // 
+            this.txtContractID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContractID.Location = new System.Drawing.Point(16, 21);
+            this.txtContractID.Name = "txtContractID";
+            this.txtContractID.Size = new System.Drawing.Size(159, 22);
+            this.txtContractID.TabIndex = 7;
+            this.txtContractID.Text = "Contract ID";
+            this.txtContractID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtContractID.Click += new System.EventHandler(this.txtContractID_Click);
+            // 
+            // btnDeleteSaff
+            // 
+            this.btnDeleteSaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSaff.FlatAppearance.BorderSize = 0;
+            this.btnDeleteSaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnDeleteSaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnDeleteSaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteSaff.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteSaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnDeleteSaff.Image = global::InstaIssue.Properties.Resources.DeleteS;
+            this.btnDeleteSaff.Location = new System.Drawing.Point(16, 49);
+            this.btnDeleteSaff.Name = "btnDeleteSaff";
+            this.btnDeleteSaff.Size = new System.Drawing.Size(159, 82);
+            this.btnDeleteSaff.TabIndex = 8;
+            this.btnDeleteSaff.Text = "Delete Contract";
+            this.btnDeleteSaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteSaff.UseVisualStyleBackColor = true;
+            // 
             // ContractsDeleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.pnlAddClient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ContractsDeleteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Contracts";
             this.Load += new System.EventHandler(this.ContractsDeleteForm_Load);
             this.panel2.ResumeLayout(false);
@@ -183,6 +227,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.pnlAddClient.ResumeLayout(false);
+            this.pnlAddClient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +245,8 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Panel pnlAddClient;
+        private System.Windows.Forms.TextBox txtContractID;
+        private System.Windows.Forms.Button btnDeleteSaff;
     }
 }

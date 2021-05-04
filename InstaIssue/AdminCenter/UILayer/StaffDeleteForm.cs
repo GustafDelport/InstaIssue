@@ -42,5 +42,10 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
         }
+
+        private void txtNatID_Click(object sender, EventArgs e)
+        {
+            txtStaffID.Text = "";
+        }
     }
 }

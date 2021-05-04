@@ -33,5 +33,45 @@ namespace InstaIssue.AdminCenter.UILayer
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+
+        //Fancy Animations
+        #region
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+        }
+
+        private void txtSurname_Click(object sender, EventArgs e)
+        {
+            txtSurname.Text = "";
+
+        }
+
+        private void txtNatID_Click(object sender, EventArgs e)
+        {
+            txtNatID.Text = "";
+
+        }
+
+        private void txtPhone_Click(object sender, EventArgs e)
+        {
+            txtPhone.Text = "";
+
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+
+        }
+
+        private void txtAddress_Click(object sender, EventArgs e)
+        {
+            txtAddress.Text = "";
+
+        }
+
+        #endregion
     }
 }

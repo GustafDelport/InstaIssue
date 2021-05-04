@@ -33,5 +33,10 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
         }
+
+        private void txtContractID_Click(object sender, EventArgs e)
+        {
+            txtContractID.Text = "";
+        }
     }
 }

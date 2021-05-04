@@ -41,10 +41,17 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.pnlAddClient = new System.Windows.Forms.Panel();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.cmbSkills = new MetroFramework.Controls.MetroComboBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnAddStaff = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -167,12 +174,90 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
+            // pnlAddClient
+            // 
+            this.pnlAddClient.Controls.Add(this.txtAddress);
+            this.pnlAddClient.Controls.Add(this.cmbSkills);
+            this.pnlAddClient.Controls.Add(this.txtSurname);
+            this.pnlAddClient.Controls.Add(this.txtName);
+            this.pnlAddClient.Controls.Add(this.btnAddStaff);
+            this.pnlAddClient.Location = new System.Drawing.Point(432, 136);
+            this.pnlAddClient.Name = "pnlAddClient";
+            this.pnlAddClient.Size = new System.Drawing.Size(193, 230);
+            this.pnlAddClient.TabIndex = 9;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAddress.Location = new System.Drawing.Point(16, 110);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(159, 23);
+            this.txtAddress.TabIndex = 11;
+            this.txtAddress.Text = "Address";
+            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
+            // 
+            // cmbSkills
+            // 
+            this.cmbSkills.FormattingEnabled = true;
+            this.cmbSkills.ItemHeight = 23;
+            this.cmbSkills.Items.AddRange(new object[] {
+            "Call Agent",
+            "Maintenance Agent",
+            "Admin Agent"});
+            this.cmbSkills.Location = new System.Drawing.Point(17, 74);
+            this.cmbSkills.Name = "cmbSkills";
+            this.cmbSkills.Size = new System.Drawing.Size(158, 29);
+            this.cmbSkills.TabIndex = 10;
+            this.cmbSkills.UseSelectable = true;
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSurname.Location = new System.Drawing.Point(17, 43);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(159, 23);
+            this.txtSurname.TabIndex = 9;
+            this.txtSurname.Text = "Surname";
+            this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.Location = new System.Drawing.Point(17, 14);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(159, 23);
+            this.txtName.TabIndex = 7;
+            this.txtName.Text = "Name";
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddStaff.FlatAppearance.BorderSize = 0;
+            this.btnAddStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAddStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddStaff.Image = global::InstaIssue.Properties.Resources.ClientAddS;
+            this.btnAddStaff.Location = new System.Drawing.Point(16, 140);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(159, 82);
+            this.btnAddStaff.TabIndex = 8;
+            this.btnAddStaff.Text = "Add Staff";
+            this.btnAddStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddStaff.UseVisualStyleBackColor = true;
+            // 
             // StaffAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.pnlAddClient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffAddForm";
@@ -184,6 +269,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.pnlAddClient.ResumeLayout(false);
+            this.pnlAddClient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +287,11 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Panel pnlAddClient;
+        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnAddStaff;
+        private MetroFramework.Controls.MetroComboBox cmbSkills;
+        private System.Windows.Forms.TextBox txtAddress;
     }
 }

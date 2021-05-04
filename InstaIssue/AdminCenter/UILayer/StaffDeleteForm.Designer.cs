@@ -42,7 +42,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.pnlAddClient = new System.Windows.Forms.Panel();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
             this.btnDeleteSaff = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
@@ -169,22 +169,23 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlAddClient
             // 
-            this.pnlAddClient.Controls.Add(this.txtName);
+            this.pnlAddClient.Controls.Add(this.txtStaffID);
             this.pnlAddClient.Controls.Add(this.btnDeleteSaff);
             this.pnlAddClient.Location = new System.Drawing.Point(422, 207);
             this.pnlAddClient.Name = "pnlAddClient";
             this.pnlAddClient.Size = new System.Drawing.Size(193, 143);
             this.pnlAddClient.TabIndex = 9;
             // 
-            // txtName
+            // txtStaffID
             // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(16, 21);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(159, 22);
-            this.txtName.TabIndex = 7;
-            this.txtName.Text = "Name";
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStaffID.Location = new System.Drawing.Point(16, 21);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(159, 22);
+            this.txtStaffID.TabIndex = 7;
+            this.txtStaffID.Text = "Staff ID";
+            this.txtStaffID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStaffID.Click += new System.EventHandler(this.txtNatID_Click);
             // 
             // btnDeleteSaff
             // 
@@ -246,7 +247,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Panel pnlAddClient;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Button btnDeleteSaff;
         private System.Windows.Forms.Timer tmrTime;
     }
