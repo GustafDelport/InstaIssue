@@ -21,7 +21,7 @@ namespace Generator
             //Example ID : A00000001
             //             A99999999
             //             B00000001
-            String lastID = "A00000003";//data.GetLastClientID();
+            String lastID = data.GetLastClientID();
 
             //Now we check it and change it
             String identifier = lastID.Substring(0, 1);
@@ -46,61 +46,10 @@ namespace Generator
                 int newNumber = int.Parse(number);
                 newNumber++;
                 number = newNumber.ToString();
-                //Left padding here
 
-                String tempNum = number;
-                int n = tempNum.Length;
-
-                tempNum.PadRight(7,'0');
-
-                //switch (number.Length)
-                //{
-                //    case 1:
-                //        {
-                //            //Pad left 7
-                //            number.PadLeft(7, '0');
-                //        }
-                //        break;
-                //    case 2:
-                //        {
-                //            //Pad left 6
-                //            number.PadLeft(6, '0');
-                //        }
-                //        break;
-                //    case 3:
-                //        {
-                //            //Pad left 5
-                //            number.PadLeft(5, '0');
-                //        }
-                //        break;
-                //    case 4:
-                //        {
-                //            //Pad left 4
-                //            number.PadLeft(4, '0');
-                //        }
-                //        break;
-                //    case 5:
-                //        {
-                //            //Pad left 3
-                //            number.PadLeft(3, '0');
-                //        }
-                //        break;
-                //    case 6:
-                //        {
-                //            //Pad left 2
-                //            number.PadLeft(2, '0');
-                //        }
-                //        break;
-                //    case 7:
-                //        {
-                //            //Pad left 1
-                //            number.PadLeft(1, '0');
-                //        }
-                //        break;
-                //    default:
-                //        break;
-                //}
-
+                //My genius left pad replacement XDD DDD !!!!!!!!!
+                int tempNum = int.Parse(number);
+                number = tempNum.ToString($"D8");
             }
 
             string ID = identifier+number;
