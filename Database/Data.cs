@@ -14,6 +14,25 @@ namespace Database
             connection.Connect();
         }
 
+        public String GetLastClientID()
+        {
+            String ID;
+            try
+            {
+                string buildCommand = $"SELECT TOP 1 clientID FROM tblclients ORDER BY clientID DESC";
+                connection.database.Open();
+                ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            String lastID = ID;
+            return lastID;
+        }
+
         // Check whether an ID already exists in the given table & col
         public Boolean CheckExist(string id, string tblName, string idCol)
         {

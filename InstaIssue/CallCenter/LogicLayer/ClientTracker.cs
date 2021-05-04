@@ -17,11 +17,6 @@ namespace InstaIssue.CallCenter.LogicLayer
 
         public string NationalID { get => nationalID; set => nationalID = value; }
 
-        public ClientTracker(String NationalID)
-        {
-            this.nationalID = NationalID;
-        }
-
         public ClientTracker()
         {
         }
@@ -60,20 +55,5 @@ namespace InstaIssue.CallCenter.LogicLayer
         //    //return validclient
         //    return clients;
         //}
-
-        public List<CallRecords> GetCallRecords(String nationalID)
-        {
-            return (List<CallRecords>)Enumerable.Empty<CallRecords>();
-        }
-
-        public List<ReviewRecords> GetReviews(String nationalID)
-        {
-            return (List<ReviewRecords>)Enumerable.Empty<ReviewRecords>();
-        }
-
-        public List<JobRecords> GetJobRecords(String nationalID)
-        {
-            return (List<JobRecords>)Enumerable.Empty<JobRecords>();
-        }
     }
 }

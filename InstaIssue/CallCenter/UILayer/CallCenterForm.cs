@@ -238,7 +238,7 @@ namespace InstaIssue.CallCenter.UILayer
                 }
                 else
                 {
-                    MessageBox.Show("Client Found", "The ID entered is not correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Client Found", "The ID entered is correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 //Now we have access to client aslong as the instace is open
                 activePanel.Visible = false;
@@ -264,11 +264,20 @@ namespace InstaIssue.CallCenter.UILayer
             //Major validations happen here
             flag = validations.ValidateRegisterClient(ClientPanel);
 
+            String name = txtName.Text;
+            String surname = txtSurname.Text;
+            String natID = txtNatID.Text;
+            String phone = txtPhone.Text;
+            String eMail = txtEmail.Text;
+            String address = txtAddress.Text;
+            String SLA = cmbContractsC.Text;
+
+
             if (flag)
             {
                 //Call RegisterCLientClass
 
-                flag = new RegisterClient().RegisterNewClient();
+                flag = new RegisterClient().RegisterNewClient(name,surname,natID,phone,eMail,address,SLA);
                 if (flag)
                 {
                     MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
