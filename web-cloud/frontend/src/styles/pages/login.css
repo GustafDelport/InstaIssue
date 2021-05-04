@@ -1,0 +1,37 @@
+.login-page {
+    height: 100% !important;
+}
+
+.login-page .rs-content {
+    padding: 20px;
+    margin: 20px;
+    height: 500px;
+}
+
+.login-page .rs-panel {
+    background: #0f131a;
+    margin-top: 70px;
+}
+
+.rs-content {
+    background-color: #1A1D24;
+    border-radius: 0;
+    margin: 0 !important;
+}
+
+.rs-navbar-header {
+    font-size: 1rem;
+}
+
+.navbar-brand {
+    padding: 18px 20px;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
