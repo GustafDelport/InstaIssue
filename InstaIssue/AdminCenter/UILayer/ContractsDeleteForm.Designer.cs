@@ -176,6 +176,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ContractsDeleteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Contracts";
             this.Load += new System.EventHandler(this.ContractsDeleteForm_Load);
             this.panel2.ResumeLayout(false);

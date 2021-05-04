@@ -41,10 +41,14 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.pnlEditStaff = new System.Windows.Forms.Panel();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
+            this.btnFindStaff = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.pnlEditStaff.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -167,12 +171,50 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pnlEditStaff
+            // 
+            this.pnlEditStaff.Controls.Add(this.txtStaffID);
+            this.pnlEditStaff.Controls.Add(this.btnFindStaff);
+            this.pnlEditStaff.Location = new System.Drawing.Point(419, 87);
+            this.pnlEditStaff.Name = "pnlEditStaff";
+            this.pnlEditStaff.Size = new System.Drawing.Size(193, 139);
+            this.pnlEditStaff.TabIndex = 10;
+            // 
+            // txtStaffID
+            // 
+            this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStaffID.Location = new System.Drawing.Point(16, 21);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(159, 22);
+            this.txtStaffID.TabIndex = 7;
+            this.txtStaffID.Text = "Staff ID";
+            this.txtStaffID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnFindStaff
+            // 
+            this.btnFindStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFindStaff.FlatAppearance.BorderSize = 0;
+            this.btnFindStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnFindStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnFindStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindStaff.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFindStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFindStaff.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnFindStaff.Location = new System.Drawing.Point(16, 49);
+            this.btnFindStaff.Name = "btnFindStaff";
+            this.btnFindStaff.Size = new System.Drawing.Size(159, 82);
+            this.btnFindStaff.TabIndex = 8;
+            this.btnFindStaff.Text = "Find Staff";
+            this.btnFindStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnFindStaff.UseVisualStyleBackColor = true;
+            // 
             // StaffEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.pnlEditStaff);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StaffEditForm";
@@ -184,6 +226,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.pnlEditStaff.ResumeLayout(false);
+            this.pnlEditStaff.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +244,8 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Panel pnlEditStaff;
+        private System.Windows.Forms.TextBox txtStaffID;
+        private System.Windows.Forms.Button btnFindStaff;
     }
 }

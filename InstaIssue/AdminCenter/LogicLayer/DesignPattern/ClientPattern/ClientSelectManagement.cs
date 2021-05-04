@@ -60,17 +60,17 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
                     break;
                 case "Delete":
                     {
-                        Globals.clientsEditForm.Show();
+                        Globals.clientsDeleteForm.Show();
                     }
                     break;
                 case "Add":
                     {
-                        Globals.clientsEditForm.Show();
+                        Globals.clientsAddForm.Show();
                     }
                     break;
                 case "View":
                     {
-                        Globals.clientsEditForm.Show();
+                        Globals.clientsViewForm.Show();
                     }
                     break;
             }

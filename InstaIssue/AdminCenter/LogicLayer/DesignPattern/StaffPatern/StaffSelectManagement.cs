@@ -25,7 +25,7 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
             {
                 case "Edit":
                     {
-                        context = new StaffContext(new StaffView());
+                        context = new StaffContext(new StaffEdit());
                     }
                     break;
                 case "View":
