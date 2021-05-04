@@ -90,5 +90,18 @@ namespace Generator
 
             return contractID;
         }
+
+        public String GenerateSlaID()
+        {
+            //Example: AA0001         
+            String number = "";
+
+            String type = "";
+            String importance = "";
+
+            String contractID = type + importance + number;
+
+            return contractID;
+        }
     }
 }

@@ -4,17 +4,20 @@ using Authentication;
 using System.Drawing;
 using System.Windows.Forms;
 using InstaIssue.CallCenter.LogicLayer;
+using System.Collections.Generic;
+using InstaIssue.Handlers;
 
 namespace InstaIssue.CallCenter.UILayer
 {
     public partial class CallCenterForm : Form
     {
-        private String staffID;
+        private string staffID;
         private Clients client;
-        private String Status;
-        private Boolean callStatus;
+        private string Status;
+        private bool callStatus;
         private Panel activePanel;
         private bool flag;
+        private List<String> SLAlist;
         private readonly Validations validations = new Validations();
 
 
@@ -34,6 +37,12 @@ namespace InstaIssue.CallCenter.UILayer
             tmrTime.Start();
             //Data loading here
 
+            //Load all contracts in cmb
+            SLAlist = new PopulationHandler().GetSla();
+            foreach (string item in SLAlist)
+            {
+                cmbContractsC.Items.Add(item);
+            }
         }
 
         //Methods
@@ -293,7 +302,6 @@ namespace InstaIssue.CallCenter.UILayer
                 ResetBoxes();
                 MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void btnCreateReq_Click(object sender, EventArgs e)

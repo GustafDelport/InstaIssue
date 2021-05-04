@@ -41,6 +41,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel3 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.pnlAddClient = new System.Windows.Forms.Panel();
+            this.cmbContracts = new MetroFramework.Controls.MetroComboBox();
             this.txtNatID = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
-            this.cmbContracts = new MetroFramework.Controls.MetroComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -186,6 +186,18 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlAddClient.Size = new System.Drawing.Size(193, 332);
             this.pnlAddClient.TabIndex = 8;
             // 
+            // cmbContracts
+            // 
+            this.cmbContracts.AutoCompleteCustomSource.AddRange(new string[] {
+            "Diamond Plus"});
+            this.cmbContracts.FormattingEnabled = true;
+            this.cmbContracts.ItemHeight = 23;
+            this.cmbContracts.Location = new System.Drawing.Point(17, 206);
+            this.cmbContracts.Name = "cmbContracts";
+            this.cmbContracts.Size = new System.Drawing.Size(159, 29);
+            this.cmbContracts.TabIndex = 15;
+            this.cmbContracts.UseSelectable = true;
+            // 
             // txtNatID
             // 
             this.txtNatID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -268,21 +280,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // tmrTime
             // 
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
-            // 
-            // cmbContracts
-            // 
-            this.cmbContracts.FormattingEnabled = true;
-            this.cmbContracts.ItemHeight = 23;
-            this.cmbContracts.Location = new System.Drawing.Point(17, 206);
-            this.cmbContracts.Name = "cmbContracts";
-            this.cmbContracts.Size = new System.Drawing.Size(159, 29);
-            this.cmbContracts.TabIndex = 15;
-            this.cmbContracts.UseSelectable = true;
             // 
             // ClientsAddForm
             // 
