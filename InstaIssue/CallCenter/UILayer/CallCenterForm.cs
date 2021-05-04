@@ -264,11 +264,20 @@ namespace InstaIssue.CallCenter.UILayer
             //Major validations happen here
             flag = validations.ValidateRegisterClient(ClientPanel);
 
+            String name = txtName.Text;
+            String surname = txtSurname.Text;
+            String natID = txtNatID.Text;
+            String phone = txtPhone.Text;
+            String eMail = txtEmail.Text;
+            String address = txtAddress.Text;
+            String SLA = cmbContractsC.Text;
+
+
             if (flag)
             {
                 //Call RegisterCLientClass
 
-                flag = new RegisterClient().RegisterNewClient();
+                flag = new RegisterClient().RegisterNewClient(name,surname,natID,phone,eMail,address,SLA);
                 if (flag)
                 {
                     MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

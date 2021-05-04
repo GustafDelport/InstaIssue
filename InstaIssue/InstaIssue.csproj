@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Authentication\Authentication.csproj" />
     <ProjectReference Include="..\Database\Database.csproj" />
+    <ProjectReference Include="..\Generator\Generator.csproj" />
   </ItemGroup>
 
   <ItemGroup>

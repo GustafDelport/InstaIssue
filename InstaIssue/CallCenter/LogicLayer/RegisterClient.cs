@@ -1,9 +1,6 @@
 ﻿using Database;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Generator;
 
 namespace InstaIssue.CallCenter.LogicLayer
 {
@@ -16,14 +13,14 @@ namespace InstaIssue.CallCenter.LogicLayer
             connection.Connect();
         }
 
-        public Boolean RegisterNewClient()
+        public Boolean RegisterNewClient(String name, String surname, String natID, String Phone, String Email, String Address, String SLA)
         {
-            //Add Fields
             Boolean flag = false;
-            Data data = new Data();
 
-            //Call it in
-            //flag = data.AddClient();
+            //Multiple sql's called with logic creating unique ID's
+            IDBuilder builder = new IDBuilder();
+            String ID = builder.GenerateClientID();
+
 
             return flag;
         }
