@@ -248,15 +248,14 @@ namespace InstaIssue.CallCenter.UILayer
                 else
                 {
                     MessageBox.Show("Client Found", "The ID entered is correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblName.Text = client.Name;
+                    lblID.Text = client.NationalID;
+                    lblContract.Text = new ClientTracker().GetClientContract(client.ClientID);
                 }
                 //Now we have access to client aslong as the instace is open
                 activePanel.Visible = false;
                 pnlClients.Visible = true;
                 activePanel = pnlClients;
-
-                lblName.Text = client.Name;
-                lblID.Text = client.NationalID;
-                //Add Contract Tracker later
             }
             else
             {

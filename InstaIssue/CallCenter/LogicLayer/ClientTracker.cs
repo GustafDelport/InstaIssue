@@ -39,6 +39,12 @@ namespace InstaIssue.CallCenter.LogicLayer
             return client;
         }
 
+        public string GetClientContract(String clientID)
+        {
+            string contractName = new ClientDataHandler().GetClientContract(clientID);
+            return contractName;
+        }
+
         //Useless for now a agent does net need to see all clients
         //public List<Clients> GetClients()
         //{
