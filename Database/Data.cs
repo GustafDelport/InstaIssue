@@ -13,6 +13,22 @@ namespace Database
         {
             connection.Connect();
         }
+        public String GetSLAID(String SLAName)
+        {
+            String ID;
+            try
+            {
+                string buildCommand = $"SELECT slaID FROM tblsla WHERE name = '{SLAName}'";
+                connection.database.Open();
+                ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return ID;
+        }
 
         public String GetLastClientID()
         {
@@ -36,14 +52,20 @@ namespace Database
         // Check whether an ID already exists in the given table & col
         public Boolean CheckExist(string id, string tblName, string idCol)
         {
+            if (connection.database.State == System.Data.ConnectionState.Open)
+            {
+                connection.database.Close();
+            }
+            else
+            {
+                connection.database.Open();
+            }
             if (tblName == "tblusers")
             {
                 try
                 {
                     string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = " + id + ")";
-                    connection.database.Open();
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
-                    connection.database.Close();
                     if (Exist > 1)
                     {
                         return true;
@@ -63,9 +85,7 @@ namespace Database
                 try
                 {
                     string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = \'" + id + "\')";
-                    connection.database.Open();
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
-                    connection.database.Close();
                     if (Exist >= 1)
                     {
                         return true;
@@ -89,7 +109,6 @@ namespace Database
             {
                 if (tblName == "tblusers")
                 {
-                    connection.database.Open();
                     string buildCommand = "DELETE FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = " + Convert.ToInt32(id);
                     connection.RunCommand(buildCommand).ExecuteNonQuery();
                     connection.database.Close();
@@ -116,7 +135,6 @@ namespace Database
         {
             if (CheckExist(id, tblName, idCol))
             {
-                connection.database.Open();
                 string buildCommand = "SELECT * FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = \'" + id + "\'";
                 SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
                 connection.database.Close();
@@ -143,7 +161,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if user exists, if exist then update, otherwise add
                 if (CheckExist(username, "tblusers", "username"))
                 {
@@ -172,7 +189,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if client exists, if exist then update, otherwise add
                 if (CheckExist(clientID, "tblclients", "clientID"))
                 {
@@ -229,7 +245,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if staff exists, if exist then update, otherwise add
                 if (CheckExist(staffID, "tblstaff", "staffID"))
                 {
@@ -273,7 +288,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if SLA exists, if exist then update, otherwise add
                 if (CheckExist(slaID, "tblsla", "slaID"))
                 {
@@ -303,7 +317,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if record exists, if exist then update, otherwise add
                 if (CheckExist(reviewID, "tblreviewRecords", "reviewID"))
                 {
@@ -334,7 +347,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if request exists, if exist then update, otherwise add
                 if (CheckExist(requestID, "tblrequestData", "requestID"))
                 {
@@ -364,7 +376,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if job exists, if exist then update, otherwise add
                 if (CheckExist(jobID, "tbljobs", "jobID"))
                 {
@@ -395,7 +406,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if job record exists, if exist then update, otherwise add
                 if (CheckExist(jobRecordID, "tbljobRecords", "jobRecordID"))
                 {
@@ -426,7 +436,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if issue exists, if exist then update, otherwise add
                 if (CheckExist(issueID, "tblissues", "issueID"))
                 {
@@ -457,7 +466,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if contract exists, if exist then update, otherwise add
                 if (CheckExist(contractID, "tblcontracts", "contractID"))
                 {
@@ -470,8 +478,7 @@ namespace Database
                 else
                 {
                     // Run add Contract code
-                    connection.RunCommand("INSERT INTO dbo.tblcontracts VALUES(\'" + contractID + "\'," + dateSigned + ",\'" +
-                                          clientID + "\',\'" + slaID + "\')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblcontracts VALUES('{contractID}','{dateSigned}','{clientID}','{slaID}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -488,7 +495,6 @@ namespace Database
         {
             try
             {
-                connection.database.Open();
                 // Check if call record exists, if exist then update, otherwise add
                 if (CheckExist(callRecordID, "tblcallRecords", "callRecordID"))
                 {

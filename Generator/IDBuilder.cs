@@ -56,5 +56,39 @@ namespace Generator
 
             return ID;
         }
+
+        public String GenerateContractID(String SLAID)
+        {
+            //Four numeric digits representing the year the contract was issued.
+            //▪ An alphabetic character specifying the general contract type(any uppercase
+            //character from A to Z).
+            //▪ An alphabetic character indicating the importance of the client, i.e.the general
+            //service level to be afforded a client of this importance(A, B, C, or D).
+            //▪ Six numeric digits, left padded with zeroes
+
+            //Example: 2020AA000001
+            Char[] charVersion = SLAID.ToCharArray();
+            String number = "";
+
+            String year = DateTime.Now.ToString("yyyy");
+            String type = charVersion[0].ToString();
+            String importance = charVersion[1].ToString();
+
+            for (int i = 2; i < charVersion.Length-1; i++)
+            {
+                number += charVersion[i];
+            }
+
+            int newNumber = int.Parse(number);
+            newNumber++;
+            number = newNumber.ToString();
+
+            int tempNum = int.Parse(number);
+            number = tempNum.ToString($"D6");
+
+            String contractID = year+type+importance+number;
+
+            return contractID;
+        }
     }
 }

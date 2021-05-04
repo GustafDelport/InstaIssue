@@ -55,6 +55,14 @@ namespace InstaIssue.CallCenter.UILayer
             this.txtNationalID = new System.Windows.Forms.TextBox();
             this.picUserLarge = new System.Windows.Forms.PictureBox();
             this.pnlClients = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pnlJobs = new System.Windows.Forms.Panel();
+            this.cmbJobs = new MetroFramework.Controls.MetroComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnTrackJob = new System.Windows.Forms.Button();
+            this.pnlReqs = new System.Windows.Forms.Panel();
             this.pnlIssues = new System.Windows.Forms.Panel();
             this.btnTopAddIss = new System.Windows.Forms.Button();
             this.pnlCreateIss = new System.Windows.Forms.Panel();
@@ -66,14 +74,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTopTrackIss = new System.Windows.Forms.Button();
             this.pnlTrackIssue = new System.Windows.Forms.Panel();
             this.btnTrackIssue = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pnlJobs = new System.Windows.Forms.Panel();
-            this.cmbJobs = new MetroFramework.Controls.MetroComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnTrackJob = new System.Windows.Forms.Button();
-            this.pnlReqs = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbProducts = new MetroFramework.Controls.MetroComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,11 +100,11 @@ namespace InstaIssue.CallCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserLarge)).BeginInit();
             this.pnlClients.SuspendLayout();
+            this.pnlJobs.SuspendLayout();
+            this.pnlReqs.SuspendLayout();
             this.pnlIssues.SuspendLayout();
             this.pnlCreateIss.SuspendLayout();
             this.pnlTrackIssue.SuspendLayout();
-            this.pnlJobs.SuspendLayout();
-            this.pnlReqs.SuspendLayout();
             this.pnlAddClient.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -393,7 +393,6 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlClients
             // 
-            this.pnlClients.Controls.Add(this.pnlIssues);
             this.pnlClients.Controls.Add(this.button6);
             this.pnlClients.Controls.Add(this.button5);
             this.pnlClients.Controls.Add(this.button3);
@@ -407,13 +406,130 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlClients.Visible = false;
             this.pnlClients.VisibleChanged += new System.EventHandler(this.pnlClients_VisibleChanged);
             // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button6.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.button6.Location = new System.Drawing.Point(491, 9);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(159, 69);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "Track Job";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button5.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.button5.Location = new System.Drawing.Point(292, 9);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(159, 73);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Create Request";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button3.Image = global::InstaIssue.Properties.Resources.ClientAddS;
+            this.button3.Location = new System.Drawing.Point(93, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 73);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Add Client";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pnlJobs
+            // 
+            this.pnlJobs.Controls.Add(this.cmbJobs);
+            this.pnlJobs.Controls.Add(this.label6);
+            this.pnlJobs.Controls.Add(this.btnTrackJob);
+            this.pnlJobs.Location = new System.Drawing.Point(474, 88);
+            this.pnlJobs.Name = "pnlJobs";
+            this.pnlJobs.Size = new System.Drawing.Size(193, 324);
+            this.pnlJobs.TabIndex = 16;
+            // 
+            // cmbJobs
+            // 
+            this.cmbJobs.FormattingEnabled = true;
+            this.cmbJobs.ItemHeight = 23;
+            this.cmbJobs.Location = new System.Drawing.Point(17, 33);
+            this.cmbJobs.Name = "cmbJobs";
+            this.cmbJobs.Size = new System.Drawing.Size(156, 29);
+            this.cmbJobs.TabIndex = 14;
+            this.cmbJobs.UseSelectable = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(48, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 20);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Client Jobs";
+            // 
+            // btnTrackJob
+            // 
+            this.btnTrackJob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrackJob.FlatAppearance.BorderSize = 0;
+            this.btnTrackJob.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnTrackJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnTrackJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrackJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTrackJob.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.btnTrackJob.Location = new System.Drawing.Point(17, 238);
+            this.btnTrackJob.Name = "btnTrackJob";
+            this.btnTrackJob.Size = new System.Drawing.Size(159, 82);
+            this.btnTrackJob.TabIndex = 6;
+            this.btnTrackJob.Text = "Track Job";
+            this.btnTrackJob.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTrackJob.UseVisualStyleBackColor = true;
+            this.btnTrackJob.Click += new System.EventHandler(this.btnTrackJob_Click);
+            // 
+            // pnlReqs
+            // 
+            this.pnlReqs.Controls.Add(this.label3);
+            this.pnlReqs.Controls.Add(this.cmbProducts);
+            this.pnlReqs.Controls.Add(this.label2);
+            this.pnlReqs.Controls.Add(this.label1);
+            this.pnlReqs.Controls.Add(this.dtpDeadlineDate);
+            this.pnlReqs.Controls.Add(this.dtpPlannedDate);
+            this.pnlReqs.Controls.Add(this.btnCreateReq);
+            this.pnlReqs.Location = new System.Drawing.Point(275, 88);
+            this.pnlReqs.Name = "pnlReqs";
+            this.pnlReqs.Size = new System.Drawing.Size(193, 324);
+            this.pnlReqs.TabIndex = 14;
+            // 
             // pnlIssues
             // 
             this.pnlIssues.Controls.Add(this.btnTopAddIss);
             this.pnlIssues.Controls.Add(this.pnlCreateIss);
             this.pnlIssues.Controls.Add(this.btnTopTrackIss);
             this.pnlIssues.Controls.Add(this.pnlTrackIssue);
-            this.pnlIssues.Location = new System.Drawing.Point(1, 0);
+            this.pnlIssues.Location = new System.Drawing.Point(164, 87);
             this.pnlIssues.Name = "pnlIssues";
             this.pnlIssues.Size = new System.Drawing.Size(749, 416);
             this.pnlIssues.TabIndex = 5;
@@ -552,123 +668,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTrackIssue.UseVisualStyleBackColor = true;
             this.btnTrackIssue.Click += new System.EventHandler(this.btnTrackIssue_Click);
             // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button6.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.button6.Location = new System.Drawing.Point(491, 9);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(159, 69);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Track Job";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button5.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.button5.Location = new System.Drawing.Point(292, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 73);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Create Request";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.button3.Location = new System.Drawing.Point(93, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 73);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Add Client";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pnlJobs
-            // 
-            this.pnlJobs.Controls.Add(this.cmbJobs);
-            this.pnlJobs.Controls.Add(this.label6);
-            this.pnlJobs.Controls.Add(this.btnTrackJob);
-            this.pnlJobs.Location = new System.Drawing.Point(474, 88);
-            this.pnlJobs.Name = "pnlJobs";
-            this.pnlJobs.Size = new System.Drawing.Size(193, 324);
-            this.pnlJobs.TabIndex = 16;
-            // 
-            // cmbJobs
-            // 
-            this.cmbJobs.FormattingEnabled = true;
-            this.cmbJobs.ItemHeight = 23;
-            this.cmbJobs.Location = new System.Drawing.Point(17, 33);
-            this.cmbJobs.Name = "cmbJobs";
-            this.cmbJobs.Size = new System.Drawing.Size(156, 29);
-            this.cmbJobs.TabIndex = 14;
-            this.cmbJobs.UseSelectable = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(48, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 20);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Client Jobs";
-            // 
-            // btnTrackJob
-            // 
-            this.btnTrackJob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTrackJob.FlatAppearance.BorderSize = 0;
-            this.btnTrackJob.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnTrackJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnTrackJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrackJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTrackJob.Image = global::InstaIssue.Properties.Resources.ClientJobS;
-            this.btnTrackJob.Location = new System.Drawing.Point(17, 238);
-            this.btnTrackJob.Name = "btnTrackJob";
-            this.btnTrackJob.Size = new System.Drawing.Size(159, 82);
-            this.btnTrackJob.TabIndex = 6;
-            this.btnTrackJob.Text = "Track Job";
-            this.btnTrackJob.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTrackJob.UseVisualStyleBackColor = true;
-            this.btnTrackJob.Click += new System.EventHandler(this.btnTrackJob_Click);
-            // 
-            // pnlReqs
-            // 
-            this.pnlReqs.Controls.Add(this.label3);
-            this.pnlReqs.Controls.Add(this.cmbProducts);
-            this.pnlReqs.Controls.Add(this.label2);
-            this.pnlReqs.Controls.Add(this.label1);
-            this.pnlReqs.Controls.Add(this.dtpDeadlineDate);
-            this.pnlReqs.Controls.Add(this.dtpPlannedDate);
-            this.pnlReqs.Controls.Add(this.btnCreateReq);
-            this.pnlReqs.Location = new System.Drawing.Point(275, 88);
-            this.pnlReqs.Name = "pnlReqs";
-            this.pnlReqs.Size = new System.Drawing.Size(193, 324);
-            this.pnlReqs.TabIndex = 14;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -765,7 +764,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             this.cmbContractsC.FormattingEnabled = true;
             this.cmbContractsC.Items.AddRange(new object[] {
-            "Initial Contract"});
+            "Diamond Plus"});
             this.cmbContractsC.Location = new System.Drawing.Point(17, 207);
             this.cmbContractsC.Name = "cmbContractsC";
             this.cmbContractsC.Size = new System.Drawing.Size(159, 28);
@@ -865,6 +864,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.pnlIssues);
             this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlDash);
             this.Controls.Add(this.pnlInfo);
@@ -887,14 +887,14 @@ namespace InstaIssue.CallCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserLarge)).EndInit();
             this.pnlClients.ResumeLayout(false);
-            this.pnlIssues.ResumeLayout(false);
-            this.pnlCreateIss.ResumeLayout(false);
-            this.pnlCreateIss.PerformLayout();
-            this.pnlTrackIssue.ResumeLayout(false);
             this.pnlJobs.ResumeLayout(false);
             this.pnlJobs.PerformLayout();
             this.pnlReqs.ResumeLayout(false);
             this.pnlReqs.PerformLayout();
+            this.pnlIssues.ResumeLayout(false);
+            this.pnlCreateIss.ResumeLayout(false);
+            this.pnlCreateIss.PerformLayout();
+            this.pnlTrackIssue.ResumeLayout(false);
             this.pnlAddClient.ResumeLayout(false);
             this.pnlAddClient.PerformLayout();
             this.ResumeLayout(false);
