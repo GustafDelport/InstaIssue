@@ -240,9 +240,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblContract.Location = new System.Drawing.Point(165, 48);
             this.lblContract.Name = "lblContract";
-            this.lblContract.Size = new System.Drawing.Size(43, 20);
+            this.lblContract.Size = new System.Drawing.Size(21, 20);
             this.lblContract.TabIndex = 11;
-            this.lblContract.Text = "Gold";
+            this.lblContract.Text = "...";
             // 
             // lblName
             // 

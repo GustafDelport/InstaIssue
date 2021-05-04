@@ -72,7 +72,7 @@ namespace InstaIssue.CallCenter.DomainLayer
             {
                 connection.database.Open();
 
-                String Q = $"SELECT * FROM tblclients WHERE nationalID = {nationalID}";
+                String Q = $"SELECT * FROM tblclients WHERE nationalID = '{nationalID}'";
                 SqlConnection con = connection.GetSqlConnection();
 
                 SqlDataAdapter reader = new SqlDataAdapter(Q,con);
@@ -131,40 +131,6 @@ namespace InstaIssue.CallCenter.DomainLayer
             return callRecords;
         }
 
-        //NB!
-        public List<ReviewRecords> GetReviews(String nationalID)
-        {
-            //Add review records later.
-            List<ReviewRecords> reviewRecords = new List<ReviewRecords>();
-
-            String Q = $"SELECT * FROM tblCallRecords";
-            SqlConnection con = connection.GetSqlConnection();
-
-            SqlDataAdapter reader = new SqlDataAdapter(Q, con);
-            DataTable table = new DataTable();
-
-            reader.Fill(table);
-
-            String[] arr = new string[7];
-            foreach (DataRow row in table.Rows)
-            {
-
-                arr[0] = row["callrecordID"].ToString();
-                arr[1] = row["clientID"].ToString();
-                arr[2] = row["startTimestamp"].ToString();//Date
-                arr[3] = row["endTimestamp"].ToString();//Date
-                arr[4] = row["staffID"].ToString();
-
-                
-            }
-
-            reviewRecords.Add(new ReviewRecords());
-
-            connection.database.Close();
-
-            return reviewRecords;
-        }
-
         public List<JobRecords> GetJobRecords(String nationalID)
         {
             List<JobRecords> jobRecords = new List<JobRecords>();
@@ -193,6 +159,12 @@ namespace InstaIssue.CallCenter.DomainLayer
             connection.database.Close();
 
             return jobRecords;
+        }
+
+        public string GetClientContract(string clientID)
+        {
+            string contractName = new Data().GetContractName(clientID);        
+            return contractName;
         }
         #endregion
     }

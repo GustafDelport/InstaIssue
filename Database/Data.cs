@@ -31,6 +31,23 @@ namespace Database
             return ID;
         }
 
+        public string GetContractName(string clientID)
+        {
+            string name = "";
+            try
+            {
+                string buildCommand = $"SELECT B.name FROM tblcontracts A JOIN tblsla B ON A.slaID = B.slaID WHERE A.clientID = '{clientID}'";
+                connection.database.Open();
+                name = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return name;
+        }
+
         public List<string> GetSLA()
         {
             List<string> SLAs = new List<string>();
