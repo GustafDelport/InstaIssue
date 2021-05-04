@@ -33,5 +33,25 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
         }
+
+        //Fancy Animations
+        #region
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+        }
+
+        private void txtSurname_Click(object sender, EventArgs e)
+        {
+            txtSurname.Text = "";
+        }
+
+        private void txtAddress_Click(object sender, EventArgs e)
+        {
+            txtAddress.Text = "";
+        }
+        #endregion
+
+
     }
 }

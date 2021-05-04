@@ -49,6 +49,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.cmbContracts = new MetroFramework.Controls.MetroComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -172,6 +173,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlAddClient
             // 
+            this.pnlAddClient.Controls.Add(this.cmbContracts);
             this.pnlAddClient.Controls.Add(this.txtNatID);
             this.pnlAddClient.Controls.Add(this.txtAddress);
             this.pnlAddClient.Controls.Add(this.txtEmail);
@@ -181,7 +183,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlAddClient.Controls.Add(this.btnAddClient);
             this.pnlAddClient.Location = new System.Drawing.Point(429, 145);
             this.pnlAddClient.Name = "pnlAddClient";
-            this.pnlAddClient.Size = new System.Drawing.Size(193, 294);
+            this.pnlAddClient.Size = new System.Drawing.Size(193, 332);
             this.pnlAddClient.TabIndex = 8;
             // 
             // txtNatID
@@ -193,6 +195,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtNatID.TabIndex = 14;
             this.txtNatID.Text = "National ID";
             this.txtNatID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNatID.Click += new System.EventHandler(this.txtNatID_Click);
             // 
             // txtAddress
             // 
@@ -203,6 +206,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtAddress.TabIndex = 12;
             this.txtAddress.Text = "Address";
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
             // 
             // txtEmail
             // 
@@ -213,6 +217,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtEmail.TabIndex = 13;
             this.txtEmail.Text = "Email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // txtPhone
             // 
@@ -223,6 +228,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtPhone.TabIndex = 11;
             this.txtPhone.Text = "Phone Number";
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             // 
             // txtSurname
             // 
@@ -233,6 +239,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtSurname.TabIndex = 9;
             this.txtSurname.Text = "Surname";
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
             // 
             // txtName
             // 
@@ -243,6 +250,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtName.TabIndex = 7;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // btnAddClient
             // 
@@ -253,7 +261,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddClient.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.btnAddClient.Location = new System.Drawing.Point(16, 203);
+            this.btnAddClient.Location = new System.Drawing.Point(17, 241);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(159, 82);
             this.btnAddClient.TabIndex = 8;
@@ -265,6 +273,16 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
+            // cmbContracts
+            // 
+            this.cmbContracts.FormattingEnabled = true;
+            this.cmbContracts.ItemHeight = 23;
+            this.cmbContracts.Location = new System.Drawing.Point(17, 206);
+            this.cmbContracts.Name = "cmbContracts";
+            this.cmbContracts.Size = new System.Drawing.Size(159, 29);
+            this.cmbContracts.TabIndex = 15;
+            this.cmbContracts.UseSelectable = true;
             // 
             // ClientsAddForm
             // 
@@ -313,5 +331,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Timer tmrTime;
+        private MetroFramework.Controls.MetroComboBox cmbContracts;
     }
 }

@@ -44,11 +44,24 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlEditStaff = new System.Windows.Forms.Panel();
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.btnFindStaff = new System.Windows.Forms.Button();
+            this.pnlEdit = new System.Windows.Forms.Panel();
+            this.lblAStatus = new System.Windows.Forms.Label();
+            this.lblASurname = new System.Windows.Forms.Label();
+            this.lblAName = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.pnlSep = new System.Windows.Forms.Panel();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblCV = new System.Windows.Forms.Label();
+            this.txtNewData = new System.Windows.Forms.TextBox();
+            this.btnEditStaff = new System.Windows.Forms.Button();
+            this.cmbData = new MetroFramework.Controls.MetroComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlEditStaff.SuspendLayout();
+            this.pnlEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -189,6 +202,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtStaffID.TabIndex = 7;
             this.txtStaffID.Text = "Staff ID";
             this.txtStaffID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStaffID.Click += new System.EventHandler(this.txtStaffID_Click);
             // 
             // btnFindStaff
             // 
@@ -208,12 +222,159 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnFindStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFindStaff.UseVisualStyleBackColor = true;
             // 
+            // pnlEdit
+            // 
+            this.pnlEdit.Controls.Add(this.lblAStatus);
+            this.pnlEdit.Controls.Add(this.lblASurname);
+            this.pnlEdit.Controls.Add(this.lblAName);
+            this.pnlEdit.Controls.Add(this.lblStatus);
+            this.pnlEdit.Controls.Add(this.pnlSep);
+            this.pnlEdit.Controls.Add(this.lblSurname);
+            this.pnlEdit.Controls.Add(this.lblName);
+            this.pnlEdit.Controls.Add(this.lblCV);
+            this.pnlEdit.Controls.Add(this.txtNewData);
+            this.pnlEdit.Controls.Add(this.btnEditStaff);
+            this.pnlEdit.Controls.Add(this.cmbData);
+            this.pnlEdit.Location = new System.Drawing.Point(327, 232);
+            this.pnlEdit.Name = "pnlEdit";
+            this.pnlEdit.Size = new System.Drawing.Size(376, 268);
+            this.pnlEdit.TabIndex = 11;
+            // 
+            // lblAStatus
+            // 
+            this.lblAStatus.AutoSize = true;
+            this.lblAStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAStatus.Location = new System.Drawing.Point(124, 112);
+            this.lblAStatus.Name = "lblAStatus";
+            this.lblAStatus.Size = new System.Drawing.Size(22, 21);
+            this.lblAStatus.TabIndex = 22;
+            this.lblAStatus.Text = "...";
+            // 
+            // lblASurname
+            // 
+            this.lblASurname.AutoSize = true;
+            this.lblASurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblASurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblASurname.Location = new System.Drawing.Point(124, 79);
+            this.lblASurname.Name = "lblASurname";
+            this.lblASurname.Size = new System.Drawing.Size(22, 21);
+            this.lblASurname.TabIndex = 21;
+            this.lblASurname.Text = "...";
+            // 
+            // lblAName
+            // 
+            this.lblAName.AutoSize = true;
+            this.lblAName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAName.Location = new System.Drawing.Point(124, 49);
+            this.lblAName.Name = "lblAName";
+            this.lblAName.Size = new System.Drawing.Size(22, 21);
+            this.lblAName.TabIndex = 20;
+            this.lblAName.Text = "...";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(13, 112);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(59, 21);
+            this.lblStatus.TabIndex = 19;
+            this.lblStatus.Text = "Status";
+            // 
+            // pnlSep
+            // 
+            this.pnlSep.BackColor = System.Drawing.Color.White;
+            this.pnlSep.Location = new System.Drawing.Point(108, 53);
+            this.pnlSep.Name = "pnlSep";
+            this.pnlSep.Size = new System.Drawing.Size(10, 80);
+            this.pnlSep.TabIndex = 18;
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblSurname.Location = new System.Drawing.Point(13, 79);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(79, 21);
+            this.lblSurname.TabIndex = 17;
+            this.lblSurname.Text = "Surname";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblName.Location = new System.Drawing.Point(13, 49);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(58, 21);
+            this.lblName.TabIndex = 16;
+            this.lblName.Text = "Name";
+            // 
+            // lblCV
+            // 
+            this.lblCV.AutoSize = true;
+            this.lblCV.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.lblCV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCV.Location = new System.Drawing.Point(11, 16);
+            this.lblCV.Name = "lblCV";
+            this.lblCV.Size = new System.Drawing.Size(125, 21);
+            this.lblCV.TabIndex = 15;
+            this.lblCV.Text = "Current Values";
+            // 
+            // txtNewData
+            // 
+            this.txtNewData.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNewData.Location = new System.Drawing.Point(248, 53);
+            this.txtNewData.Name = "txtNewData";
+            this.txtNewData.Size = new System.Drawing.Size(119, 27);
+            this.txtNewData.TabIndex = 10;
+            this.txtNewData.Text = "New Data";
+            this.txtNewData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNewData.Click += new System.EventHandler(this.txtNewData_Click);
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditStaff.FlatAppearance.BorderSize = 0;
+            this.btnEditStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnEditStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditStaff.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEditStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEditStaff.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnEditStaff.Location = new System.Drawing.Point(117, 177);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(159, 82);
+            this.btnEditStaff.TabIndex = 9;
+            this.btnEditStaff.Text = "Edit Staff";
+            this.btnEditStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditStaff.UseVisualStyleBackColor = true;
+            // 
+            // cmbData
+            // 
+            this.cmbData.FormattingEnabled = true;
+            this.cmbData.ItemHeight = 23;
+            this.cmbData.Items.AddRange(new object[] {
+            "Name",
+            "Surname",
+            "Status"});
+            this.cmbData.Location = new System.Drawing.Point(248, 18);
+            this.cmbData.Name = "cmbData";
+            this.cmbData.Size = new System.Drawing.Size(119, 29);
+            this.cmbData.TabIndex = 0;
+            this.cmbData.UseSelectable = true;
+            // 
             // StaffEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.pnlEdit);
             this.Controls.Add(this.pnlEditStaff);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -228,6 +389,8 @@ namespace InstaIssue.AdminCenter.UILayer
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.pnlEditStaff.ResumeLayout(false);
             this.pnlEditStaff.PerformLayout();
+            this.pnlEdit.ResumeLayout(false);
+            this.pnlEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +410,17 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Panel pnlEditStaff;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Button btnFindStaff;
+        private System.Windows.Forms.Panel pnlEdit;
+        private System.Windows.Forms.Button btnEditStaff;
+        private MetroFramework.Controls.MetroComboBox cmbData;
+        private System.Windows.Forms.TextBox txtNewData;
+        private System.Windows.Forms.Label lblCV;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Panel pnlSep;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblAStatus;
+        private System.Windows.Forms.Label lblASurname;
+        private System.Windows.Forms.Label lblAName;
     }
 }

@@ -219,6 +219,8 @@ namespace Database
                                           status + "\', skills = \'" + skills + "\', address = \'" + address + "\' WHERE staffID = \'" + staffID + "\'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
+
+                    
                 }
                 else
                 {
