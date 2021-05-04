@@ -1,0 +1,28 @@
+html {
+  height: 100vh !important;
+}
+
+#root, #app  {
+  height: 100% !important;
+}
+
+body {
+  height: 100% !important;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-reactroot] {
+  height: 100% !important;
+  position: absolute;
+  width: 100% !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
