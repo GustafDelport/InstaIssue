@@ -33,5 +33,15 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
         }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+        }
+
+        private void textTarif_Click(object sender, EventArgs e)
+        {
+            textTarif.Text = "";
+        }
     }
 }

@@ -33,5 +33,10 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
         }
+
+        private void txtNewData_Click(object sender, EventArgs e)
+        {
+            txtNewData.Text = "";
+        }
     }
 }

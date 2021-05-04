@@ -41,10 +41,14 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.btnViewContracts = new System.Windows.Forms.Button();
+            this.dgvSContracts = new System.Windows.Forms.DataGridView();
+            this.btnViewSLA = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSContracts)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -130,6 +134,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
             this.btnDashboard.Location = new System.Drawing.Point(0, 115);
@@ -166,12 +171,60 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
+            // btnViewContracts
+            // 
+            this.btnViewContracts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewContracts.FlatAppearance.BorderSize = 0;
+            this.btnViewContracts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnViewContracts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnViewContracts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewContracts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnViewContracts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnViewContracts.Image = global::InstaIssue.Properties.Resources.ViewS;
+            this.btnViewContracts.Location = new System.Drawing.Point(165, 87);
+            this.btnViewContracts.Name = "btnViewContracts";
+            this.btnViewContracts.Size = new System.Drawing.Size(140, 92);
+            this.btnViewContracts.TabIndex = 14;
+            this.btnViewContracts.Text = "View All Contracts";
+            this.btnViewContracts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnViewContracts.UseVisualStyleBackColor = true;
+            // 
+            // dgvSContracts
+            // 
+            this.dgvSContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSContracts.Location = new System.Drawing.Point(311, 87);
+            this.dgvSContracts.Name = "dgvSContracts";
+            this.dgvSContracts.RowTemplate.Height = 25;
+            this.dgvSContracts.Size = new System.Drawing.Size(603, 402);
+            this.dgvSContracts.TabIndex = 13;
+            // 
+            // btnViewSLA
+            // 
+            this.btnViewSLA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewSLA.FlatAppearance.BorderSize = 0;
+            this.btnViewSLA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnViewSLA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnViewSLA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewSLA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnViewSLA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnViewSLA.Image = global::InstaIssue.Properties.Resources.CreateS;
+            this.btnViewSLA.Location = new System.Drawing.Point(165, 185);
+            this.btnViewSLA.Name = "btnViewSLA";
+            this.btnViewSLA.Size = new System.Drawing.Size(140, 96);
+            this.btnViewSLA.TabIndex = 15;
+            this.btnViewSLA.Text = "View All SLA\'s";
+            this.btnViewSLA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnViewSLA.UseVisualStyleBackColor = true;
+            // 
             // ContractsViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
+            this.Controls.Add(this.btnViewSLA);
+            this.Controls.Add(this.btnViewContracts);
+            this.Controls.Add(this.dgvSContracts);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ContractsViewForm";
@@ -183,6 +236,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSContracts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +253,8 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Button btnViewContracts;
+        private System.Windows.Forms.DataGridView dgvSContracts;
+        private System.Windows.Forms.Button btnViewSLA;
     }
 }

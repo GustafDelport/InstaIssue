@@ -33,5 +33,10 @@ namespace InstaIssue.AdminCenter.UILayer
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+
+        private void txtClientID_Click(object sender, EventArgs e)
+        {
+            txtClientID.Text = "";
+        }
     }
 }
