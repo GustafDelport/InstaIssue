@@ -1,17 +1,18 @@
-﻿using System;
+﻿using InstaIssue.Handlers;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Authentication;
 using System.Windows.Forms;
+using InstaIssue.CallCenter.LogicLayer;
 
 namespace InstaIssue.AdminCenter.UILayer
 {
     public partial class ClientsAddForm : Form
     {
+        private List<String> SLAlist;
+        private bool flag;
+        private readonly Validations validations = new Validations();
+
         public ClientsAddForm()
         {
             InitializeComponent();
@@ -20,6 +21,12 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ClientsAddForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            SLAlist = new PopulationHandler().GetSla();
+            foreach (string item in SLAlist)
+            {
+                cmbContracts.Items.Add(item);
+            }
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -73,5 +80,53 @@ namespace InstaIssue.AdminCenter.UILayer
         }
 
         #endregion
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            //Validate if the text is correct!
+            Panel ClientPanel = pnlAddClient;
+
+            //Major validations happen here
+            flag = validations.ValidateRegisterClient(ClientPanel);
+
+            String name = txtName.Text;
+            String surname = txtSurname.Text;
+            String natID = txtNatID.Text;
+            String phone = txtPhone.Text;
+            String eMail = txtEmail.Text;
+            String address = txtAddress.Text;
+            String SLA = cmbContracts.Text;
+
+            flag = true;
+
+            if (flag)
+            {
+                flag = new RegisterClient().RegisterNewClient(name, surname, natID, phone, eMail, address, SLA);
+                if (flag)
+                {
+                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetBoxes();
+                }
+            }
+            else
+            {
+                ResetBoxes();
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ResetBoxes()
+        {
+            txtName.Text = "Name";
+            txtSurname.Text = "Surname";
+            txtNatID.Text = "National ID";
+            txtPhone.Text = "Phone Number";
+            txtEmail.Text = "Email";
+            txtAddress.Text = "Address";
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
@@ -28,6 +29,33 @@ namespace Database
                 throw e;
             }
             return ID;
+        }
+
+        public List<string> GetSLA()
+        {
+            List<string> SLAs = new List<string>();
+            try
+            {
+                connection.database.Open();
+                String Q = $"SELECT name FROM tblsla";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    SLAs.Add(row["name"].ToString());
+                }
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return SLAs;
         }
 
         public String GetLastClientID()
