@@ -161,6 +161,7 @@ namespace Authentication
 
             return flag;
         }
+
         public Boolean validateEmail(String data)
         {
             Boolean flag = true;
@@ -170,6 +171,44 @@ namespace Authentication
                 flag = true;
             }
             else flag = false;
+
+            return flag;
+        }
+
+        public Boolean validateIssueCreation(Panel panel)
+        {
+            Boolean[] flagArr = new Boolean[7];
+            Boolean flag = false;
+            int n = 0;
+
+            foreach (Control item in panel.Controls)
+            {
+                if (item is RichTextBox)
+                {
+                    flagArr[n] = validateText(item.Text);
+                    n++;
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox box = (ComboBox)item;
+
+                    if (box.SelectedIndex == -1)
+                    {
+                        flagArr[n] = false;
+                        n++;
+                    }
+                    else
+                    {
+                        flagArr[n] = true;
+                        n++;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+
+            }
 
             return flag;
         }

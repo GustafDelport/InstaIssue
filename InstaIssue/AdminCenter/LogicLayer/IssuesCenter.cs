@@ -1,4 +1,5 @@
-﻿using InstaIssue.AdminCenter.DomainLayer;
+﻿using Generator;
+using InstaIssue.AdminCenter.DomainLayer;
 using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,12 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return null;
         }
 
-        public Boolean CreateIssue(Clients clients, DateTime date, String staffID)
+        public Boolean CreateIssue(Clients clients, DateTime reportedDate, String staffID, String status,String description)
         {
-            return false;
+            string issueID = new IDBuilder().GenerateIssueID();
+            Boolean flag = new IssueDataHandler().CreateIssue(issueID,clients,reportedDate,staffID,status,description);
+            
+            return flag;
         }
     }
 }

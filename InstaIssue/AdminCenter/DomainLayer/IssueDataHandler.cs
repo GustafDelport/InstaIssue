@@ -1,4 +1,6 @@
-﻿using InstaIssue.CallCenter.DomainLayer;
+﻿using Authentication;
+using Database;
+using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,11 @@ namespace InstaIssue.AdminCenter.DomainLayer
 {
     class IssueDataHandler
     {
-        private String connection;
-        private Clients clients;
+        private readonly Connection connection = new Connection();
 
         public IssueDataHandler()
         {
+            connection.Connect();
         }
 
         public List<Issues> GetIssues()
@@ -26,9 +28,9 @@ namespace InstaIssue.AdminCenter.DomainLayer
             return null;
         }
 
-        public Boolean CreateIssue(Clients clients,DateTime date, String staffID)
+        public Boolean CreateIssue(string IssueID,Clients clients, DateTime reportedDate, String staffID, String status, String description)
         {
-            return false;
+            return new Data().AddIssue(IssueID, reportedDate, clients.ClientID, status, staffID, description);
         }
     }
 }
