@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { isMobile } from 'react-device-detect';
-import {Icon, Nav, Navbar, Sidebar, Sidenav } from "rsuite";
+import {Button, ButtonToolbar, Icon, Nav, Navbar, Sidebar, Sidenav} from "rsuite";
 
 // Components
 import AdminNavComponent from "./adminnav.component";
@@ -52,6 +52,11 @@ export default class SidebarComponent extends Component {
                 width={expand ? 260 : 56}
                 collapsible
             >
+                <Sidenav.Header>
+                    <ButtonToolbar>
+                        <Button appearance="link" href="/"><Icon icon="arrow-circle-left" /> Return Home</Button>
+                    </ButtonToolbar>
+                </Sidenav.Header>
                 <Sidenav
                     expanded={expand}
                     activeKey="1"

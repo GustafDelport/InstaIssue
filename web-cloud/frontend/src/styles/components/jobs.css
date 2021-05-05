@@ -1,0 +1,24 @@
+.job {
+    display: block;
+    background-color: #1A1D24;
+    box-shadow: 0 4px 10px 5px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    max-width: 25rem;
+    width: 15rem;
+    margin: 0.5rem;
+    padding: 2rem;
+    min-height: 8rem;
+    text-align: left;
+}
+
+.job:hover {
+    box-shadow: 0 4px 10px 8px rgba(0, 0, 0, .3);
+}
+
+.job h4 {
+    margin-bottom: 0.8rem;
+}
+
+.job .rs-btn {
+    margin-top: 1.2rem;
+}

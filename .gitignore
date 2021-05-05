@@ -370,3 +370,8 @@ FodyWeavers.xsd
 web-cloud/frontend/.idea
 web-cloud/frontend/node_modules
 web-cloud/frontend/.gitignore
+
+# API Backend
+web-cloud/backend/.idea
+web-cloud/backend/node_modules
+web-cloud/backend/package-lock.json

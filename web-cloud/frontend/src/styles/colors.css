@@ -1,0 +1,12 @@
+.rs-btn-ghost {
+    color: rgb(192, 192, 0) !important;
+    border-color: rgb(192, 192, 0) !important;
+}
+
+.rs-btn-primary {
+    background-color: rgb(192, 192, 0) !important;
+}
+
+.rs-btn-link {
+    color: rgb(192, 192, 0) !important;
+}

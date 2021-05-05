@@ -2,42 +2,44 @@ import React, { Component } from "react";
 import {
     Container,
     Content, Divider,
-    Footer,
     Header
 } from "rsuite";
 import { Helmet } from "react-helmet";
 
 // Components
-import NavbarComponent from "../../partials/navbar.component";
-import FooterComponent from "../../partials/footer.component";
-import JobsComponent from "./jobs/jobs.component";
+import NavbarComponent from "../../../partials/navbar.component";
+import FooterComponent from "../../../partials/footer.component";
+import SidebarComponent from "../../../partials/sidebar.component";
+import ReviewedJobsComponent from "./reviewedjobs.component";
 
-export default class LandingComponent extends Component {
+export default class JobsComponent extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            user: undefined
+            user: undefined,
+            isStaff: false
         }
     }
 
     render() {
-        if (this.state.user) {
+        if (this.state.isStaff) {
             return (
                 <Container>
                     <Helmet>
-                        <title>InstaIssue | Homepage</title>
+                        <title>InstaIssue | Reviewed Jobs</title>
                     </Helmet>
                     <NavbarComponent />
+                    <SidebarComponent />
 
                     <Container className="container-content">
                         <Header>
-
+                            <h2>Reviewed Jobs</h2>
+                            <Divider />
                         </Header>
                         <Content>
                             <div className="content-inner">
-                                <h2>Finished Jobs</h2>
-                                <Divider />
+                                <ReviewedJobsComponent />
                             </div>
                         </Content>
                         <FooterComponent />
@@ -49,19 +51,18 @@ export default class LandingComponent extends Component {
             return (
                 <Container>
                     <Helmet>
-                        <title>InstaIssue | Homepage</title>
+                        <title>InstaIssue | Reviewed Jobs</title>
                     </Helmet>
-                    <NavbarComponent />
+                    <SidebarComponent />
 
                     <Container className="container-content">
                         <Header>
-
+                            <h2>Reviewed Jobs</h2>
+                            <Divider />
                         </Header>
                         <Content>
                             <div className="content-inner">
-                                <h2>Finished Jobs</h2>
-                                <Divider />
-                                <JobsComponent />
+                                <ReviewedJobsComponent />
                             </div>
                         </Content>
                         <FooterComponent />
