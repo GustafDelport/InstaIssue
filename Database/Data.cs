@@ -147,7 +147,7 @@ namespace Database
             {
                 try
                 {
-                    string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = " + id + ")";
+                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol}] = {id}";
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
                     if (Exist > 1)
                     {
@@ -167,7 +167,7 @@ namespace Database
             {
                 try
                 {
-                    string buildCommand = "SELECT COUNT(*) FROM [" + tblName + "] WHERE ([" + idCol + "] = \'" + id + "\')";
+                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol} = {id}";
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
                     if (Exist >= 1)
                     {
@@ -192,7 +192,7 @@ namespace Database
             {
                 if (tblName == "tblusers")
                 {
-                    string buildCommand = "DELETE FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = " + Convert.ToInt32(id);
+                    string buildCommand = $"DELETE FROM {tblName} WHERE {idCol} + = " + Convert.ToInt32(id);
                     connection.RunCommand(buildCommand).ExecuteNonQuery();
                     connection.database.Close();
                     return true;
@@ -200,7 +200,7 @@ namespace Database
                 else
                 {
                     connection.database.Open();
-                    string buildCommand = "DELETE FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = \'" + id + "\'";
+                    string buildCommand = $"DELETE FROM {tblName} WHERE {idCol} = {id}";
                     connection.RunCommand(buildCommand).ExecuteNonQuery();
                     connection.database.Close();
                     return true;
@@ -218,7 +218,7 @@ namespace Database
         {
             if (CheckExist(id, tblName, idCol))
             {
-                string buildCommand = "SELECT * FROM \'" + tblName + "\' WHERE \'" + idCol + "\' = \'" + id + "\'";
+                string buildCommand = $"SELECT * FROM {tblName} WHERE {idCol} = '{id}'";
                 SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
                 connection.database.Close();
                 return reader;
@@ -233,7 +233,7 @@ namespace Database
         public SqlDataReader FindAll(string tblName)
         {
             connection.database.Open();
-            string buildCommand = "SELECT * FROM \'" + tblName + "\'";
+            string buildCommand = $"SELECT * FROM {tblName}";
             SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
             connection.database.Close();
             return reader;
@@ -248,14 +248,14 @@ namespace Database
                 if (CheckExist(username, "tblusers", "username"))
                 {
                     // Run update user code
-                    connection.RunCommand("UPDATE tblusers SET username = \'" + username + "\', password = \'" + password + "\', updatedAt = " + DateTime.Now + " WHERE username = \'" + username + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblusers SET username ='{username}', password = '{password}', updatedAt = '{DateTime.Now}' WHERE username = '{username}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add user code
-                    connection.RunCommand("INSERT INTO dbo.tblusers(username, password, createdAt, updatedAt) VALUES(\'" + username + "\',\'" + password + "\'," + DateTime.Now + "," + DateTime.Now + ")").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblusers(username, password, createdAt, updatedAt) VALUES('{username}','{password}','{DateTime.Now}','{DateTime.Now}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -375,8 +375,7 @@ namespace Database
                 if (CheckExist(slaID, "tblsla", "slaID"))
                 {
                     // Run update SLA code
-                    connection.RunCommand("UPDATE tblsla SET slaID = \'" + slaID + "\', name = \'" + name + "\', description = \'" + description + "\', tarif = " +
-                                          tarif + " WHERE slaID = \'" + slaID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblsla SET slaID = '{slaID}', name = '{name}', description = '{description}', tarif = {tarif} WHERE slaID = '{slaID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -403,16 +402,14 @@ namespace Database
                 if (CheckExist(reviewID, "tblreviewRecords", "reviewID"))
                 {
                     // Run update Review Record code
-                    connection.RunCommand("UPDATE tblreviewRecords SET reviewID = \'" + reviewID + "\', clientID = \'" + clientID + "\', startTimestamp = " + startTimestamp + ", endTimestamp = " +
-                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE reviewID = \'" + reviewID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblreviewRecords SET reviewID = '{reviewID}', clientID = '{clientID}', startTimestamp = '{startTimestamp}', endTimestamp = '{endTimestamp}', staffID = '{staffID}' WHERE reviewID = '{reviewID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add review code
-                    connection.RunCommand("INSERT INTO dbo.tblreviewRecords VALUES(\'" + reviewID + "\'," + clientID + "," +
-                                          startTimestamp + "," + endTimestamp + ",\'" + staffID + "\')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblreviewRecords VALUES('{reviewID}','{clientID}','{startTimestamp}','{endTimestamp}','{staffID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -433,16 +430,14 @@ namespace Database
                 if (CheckExist(requestID, "tblrequestData", "requestID"))
                 {
                     // Run update Request code
-                    connection.RunCommand("UPDATE tblrequestData SET requestID = \'" + requestID + "\', clientID = \'" + clientID + "\', plannedDate = " + plannedDate + ", deadlineDate = " +
-                                          deadlineDate + " WHERE requestID = \'" + requestID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblrequestData SET requestID = '{requestID}', clientID = '{clientID}', plannedDate = '{plannedDate}', deadlineDate = '{deadlineDate}' WHERE requestID = '{requestID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add request code
-                    connection.RunCommand("INSERT INTO dbo.tblrequestData VALUES(\'" + requestID + "\',\'" + clientID + "\'," +
-                                          plannedDate + "," + deadlineDate + ")").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblrequestData VALUES('{requestID}','{clientID}','{plannedDate}','{deadlineDate}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -462,16 +457,14 @@ namespace Database
                 if (CheckExist(jobID, "tbljobs", "jobID"))
                 {
                     // Run update Job code
-                    connection.RunCommand("UPDATE tbljobs SET jobID = \'" + jobID + "\', scheduledDate = " + scheduledDate + ", service = \'" +
-                                          service + "\', status = \'" + status + "\', staffID = \'" + staffID + "\' WHERE jobID = \'" + jobID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tbljobs SET jobID = '{jobID}', scheduledDate = '{scheduledDate}', service = '{service}', status = '{status}', staffID = '{staffID}' WHERE jobID = '{jobID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add Job code
-                    connection.RunCommand("INSERT INTO dbo.tbljobs VALUES(\'" + jobID + "\'," + scheduledDate + ",\'" +
-                                          service + "\',\'" + status + "\',\'" + staffID + "\')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tbljobs VALUES('{jobID}','{scheduledDate}','{service}','{status}','{staffID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -492,16 +485,14 @@ namespace Database
                 if (CheckExist(jobRecordID, "tbljobRecords", "jobRecordID"))
                 {
                     // Run update Job code
-                    connection.RunCommand("UPDATE tbljobRecords SET jobRecordID = \'" + jobRecordID + "\', clientID = \'" + clientID + "\', callRecordID = \'" +
-                                          callRecordID + "\', description = \'" + description + "\', status = \'" + status + "\' WHERE jobRecordID = \'" + jobRecordID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tbljobRecords SET jobRecordID = '{jobRecordID}', clientID = '{clientID}', callRecordID = '{callRecordID}', description = '{description}', status = '{status}' WHERE jobRecordID = '{jobRecordID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add Job Record code
-                    connection.RunCommand("INSERT INTO dbo.tbljobRecords VALUES(\'" + jobRecordID + "\',\'" + clientID + "\',\'" +
-                                          callRecordID + "\',\'" + description + "\',\'" + status + "\')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tbljobRecords VALUES('{jobRecordID}','{clientID}','{callRecordID}','{description}','{status}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -550,8 +541,7 @@ namespace Database
                 if (CheckExist(contractID, "tblcontracts", "contractID"))
                 {
                     // Run update contract code
-                    connection.RunCommand("UPDATE tblcontracts SET contractID = \'" + contractID + "\', dateSigned = " + dateSigned + ", clientID = \'" +
-                                          clientID + "\', slaID = \'" + slaID + "\' WHERE contractID = \'" + contractID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblcontracts SET contractID = '{contractID}', dateSigned = '{dateSigned}', clientID = '{clientID}', slaID = '{slaID}' WHERE contractID = '{contractID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -579,16 +569,14 @@ namespace Database
                 if (CheckExist(callRecordID, "tblcallRecords", "callRecordID"))
                 {
                     // Run update Call Record code
-                    connection.RunCommand("UPDATE tblcallRecords SET callRecordID = \'" + callRecordID + "\', clientID = \'" + clientID + "\', startTimestamp = " + startTimestamp + ", endTimestamp = " +
-                                          endTimestamp + ", staffID = \'" + staffID + "\' WHERE callRecordID = \'" + callRecordID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblcallRecords SET callRecordID = '{callRecordID}', clientID = '{clientID}', startTimestamp = '{startTimestamp}', endTimestamp = '{endTimestamp}', staffID = '{staffID}' WHERE callRecordID = '{callRecordID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add Call Record code
-                    connection.RunCommand("INSERT INTO dbo.tblcallRecords VALUES(\'" + callRecordID + "\',\'" + clientID + "\'," +
-                                          startTimestamp + "," + endTimestamp + ",\'" + staffID + "\')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblcallRecords VALUES('{callRecordID}','{clientID}','{startTimestamp}','{endTimestamp}','{staffID}')").ExecuteNonQuery();
                     connection.database.Close();
                 }
 
