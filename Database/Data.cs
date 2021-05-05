@@ -185,7 +185,7 @@ namespace Database
             {
                 try
                 {
-                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol}] = {id}";
+                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol}] = '{id}'";
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
                     if (Exist > 1)
                     {
@@ -205,7 +205,7 @@ namespace Database
             {
                 try
                 {
-                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol} = {id}";
+                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol} = '{id}'";
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
                     if (Exist >= 1)
                     {
