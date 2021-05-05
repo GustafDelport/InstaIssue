@@ -75,6 +75,8 @@ namespace Database
             return SLAs;
         }
 
+        //Redacted
+        #region
         //public String GetLastClientID()
         //{
         //    String ID;
@@ -150,6 +152,7 @@ namespace Database
         //    String lastID = ID;
         //    return lastID;
         //}
+        #endregion
 
         public String GetLastID(String tblName,String idCol)
         {

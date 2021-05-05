@@ -7,6 +7,7 @@ using InstaIssue.CallCenter.LogicLayer;
 using System.Collections.Generic;
 using InstaIssue.Handlers;
 using InstaIssue.AdminCenter.LogicLayer;
+using InstaIssue.AdminCenter.DomainLayer;
 
 namespace InstaIssue.CallCenter.UILayer
 {
@@ -18,6 +19,7 @@ namespace InstaIssue.CallCenter.UILayer
         private bool flag;
         private List<String> SLAlist;
         private readonly Validations validations = new Validations();
+        private List<AdminCenter.DomainLayer.Jobs> jobs;
         private List<Products> products;
 
         public CallCenterForm()
@@ -41,7 +43,7 @@ namespace InstaIssue.CallCenter.UILayer
             foreach (string item in SLAlist)
             {
                 cmbContractsC.Items.Add(item);
-            }         
+            }       
         }
 
         //Methods
@@ -237,6 +239,12 @@ namespace InstaIssue.CallCenter.UILayer
             {
                 cmbProducts.Items.Add(item.Name);
             }
+            jobs = new ClientTracker().GetClientJobs(client.ClientID);
+
+            foreach (var item in jobs)
+            {
+                cmbProducts.Items.Add(item.Service);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -346,6 +354,8 @@ namespace InstaIssue.CallCenter.UILayer
             //Track Job
             Globals.informationForm.Show();
             Globals.callCenterForm.Hide();
+            Globals.informationForm.SeeJobs(client.ClientID);
+
         }
 
         private void btnTrackIssue_Click(object sender, EventArgs e)
@@ -353,6 +363,7 @@ namespace InstaIssue.CallCenter.UILayer
             //Track Issues => take to info form
             Globals.informationForm.Show();
             Globals.callCenterForm.Hide();
+            Globals.informationForm.SeeIssues(client.ClientID);
         }
         #endregion
 

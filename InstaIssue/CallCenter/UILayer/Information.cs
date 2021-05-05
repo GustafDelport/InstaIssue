@@ -1,8 +1,10 @@
-﻿using InstaIssue.Handlers;
+﻿using InstaIssue.CallCenter.LogicLayer;
+using InstaIssue.Handlers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,7 @@ namespace InstaIssue.CallCenter.UILayer
 {
     public partial class Information : Form
     {
+        private SqlDataReader reader;
         public Information()
         {
             InitializeComponent();
@@ -33,6 +36,30 @@ namespace InstaIssue.CallCenter.UILayer
         //Fancy animations
         #region
         #endregion
+        
+        public void SeeIssues(string clietID)
+        {
+            reader = new GeneralHandler().GetData(clietID, "tblissues", "clientID");
+            //Read dat from here
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            dgvData.AutoGenerateColumns = true;
+            dgvData.DataSource = table;
+            dgvData.Refresh();
+        }
+
+        public void SeeJobs(string clietID)
+        {
+            reader = new GeneralHandler().GetData(clietID, "tbljobs", "clientID");
+            //Read dat from here
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            dgvData.AutoGenerateColumns = true;
+            dgvData.DataSource = table;
+            dgvData.Refresh();
+        }
 
         private void tmrTime_Tick(object sender, EventArgs e)
         {

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace InstaIssue.AdminCenter.DomainLayer
 {
-    class Jobs
+    public class Jobs
     {
         private String jobID;
+        private String clientID;
         private DateTime scheduledDate;
         private String service;
         private String status;
@@ -18,9 +19,10 @@ namespace InstaIssue.AdminCenter.DomainLayer
         {
         }
 
-        public Jobs(string jobID, DateTime scheduledDate, string service, string status, string staffID)
+        public Jobs(string jobID, string clientID, DateTime scheduledDate, string service, string status, string staffID)
         {
             this.jobID = jobID;
+            this.clientID = clientID;
             this.scheduledDate = scheduledDate;
             this.service = service;
             this.status = status;
@@ -32,5 +34,6 @@ namespace InstaIssue.AdminCenter.DomainLayer
         public string Service { get => service; set => service = value; }
         public string Status { get => status; set => status = value; }
         public string StaffID { get => staffID; set => staffID = value; }
+        public string ClientID { get => clientID; set => clientID = value; }
     }
 }

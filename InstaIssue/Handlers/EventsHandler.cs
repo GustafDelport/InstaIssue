@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace InstaIssue.Handlers
 {
@@ -16,6 +17,10 @@ namespace InstaIssue.Handlers
         
         public delegate void Staff(string formName);
         public event Staff StaffEvent;
+
+        //TBD
+        public delegate void Information(SqlDataReader data);
+        public event Information InformationEvent;
 
         public void TriggerClient(string formName)
         {
@@ -46,6 +51,19 @@ namespace InstaIssue.Handlers
             if (StaffEvent != null)
             {
                 StaffEvent(formName);
+            }
+            else
+            {
+                //Throw Error
+            }
+        }
+
+        //TBD
+        public void TriggerInformation(SqlDataReader data)
+        {
+            if (InformationEvent != null)
+            {
+                InformationEvent(data);
             }
             else
             {
