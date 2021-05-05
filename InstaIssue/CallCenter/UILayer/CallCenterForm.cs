@@ -312,7 +312,6 @@ namespace InstaIssue.CallCenter.UILayer
         private void btnAddIssue_Click(object sender, EventArgs e)
         {
             //Create Issue
-            //flag = new Validations().validateIssueCreation(pnlCreateIss);
             flag = true;
             string description = rtbDescription.Text;
             DateTime dateReported = new DateTime();

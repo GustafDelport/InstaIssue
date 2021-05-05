@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using InstaIssue.CallCenter.DomainLayer;
+using Generator;
 
 namespace InstaIssue.AdminCenter.LogicLayer
 {
@@ -13,14 +14,13 @@ namespace InstaIssue.AdminCenter.LogicLayer
     {
         private readonly Connection connection = new Connection();
         private readonly Data data = new Data();
+
         public ContractsManagment()
         {
             connection.Connect();
         }
 
-        public Contracts GetContract()
-
-        public Contracts GetContract()
+        public List<Contracts> GetContract()
         {
             List<Contracts> contracts = new List<Contracts>();
             try
@@ -43,7 +43,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
                     arr[2] = row["clientID"].ToString();
                     arr[3] = row["slaID"].ToString();
 
-                    contracts.Add(new Contracts(arr[0],DateTime.Parse(arr[1]),arr[2],arr[3]));
+                    contracts.Add(new Contracts(arr[0], DateTime.Parse(arr[1]), arr[2], arr[3]));
                 }
                 connection.database.Close();
             }
@@ -54,9 +54,10 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return contracts;
         }
 
-        public List<Contracts> GetContracts()
+        internal bool AddSLA(string name, string descrip, string tarif, string code)
         {
-            return null;
+            String slaID = new IDBuilder().GenerateSlaID(code);
+            return data.AddSLA(slaID,name,descrip,Double.Parse(tarif));
         }
 
         public List<SLA> GetSLAs()
@@ -82,7 +83,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
                     arr[2] = row["description"].ToString();
                     arr[3] = row["tarif"].ToString();
 
-                    slas.Add(new SLA(arr[0],arr[1],arr[2],arr[3]));
+                    slas.Add(new SLA(arr[0], arr[1], arr[2], arr[3]));
                 }
                 connection.database.Close();
             }
@@ -93,7 +94,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return slas;
         }
 
-        public Boolean AddContract(String contractID,DateTime dateSigned, String clientID, String SlaID)
+        public Boolean AddContract(String contractID, DateTime dateSigned, String clientID, String SlaID)
         {
             try
             {
@@ -137,8 +138,6 @@ namespace InstaIssue.AdminCenter.LogicLayer
             }
             return true;
         }
-        }
-
         public Boolean EditSLA(String type, String newData)
         {
             try
