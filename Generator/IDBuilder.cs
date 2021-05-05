@@ -21,7 +21,7 @@ namespace Generator
             //Example ID : A00000001
             //             A99999999
             //             B00000001
-            String lastID = data.GetLastClientID();
+            String lastID = data.GetLastID("tblclients","clientID");
 
             //Now we check it and change it
             String identifier = lastID.Substring(0, 1);
@@ -140,7 +140,7 @@ namespace Generator
                     break;
             }
 
-            string number = data.GetLastSLAID().Substring(2, 4);
+            string number = data.GetLastID("tblsla","slaID").Substring(2, 4);
 
             int newNumber = int.Parse(number);
             newNumber++;
@@ -157,7 +157,7 @@ namespace Generator
         public String GenerateIssueID()
         {
             //Example: IA0001
-            string lastID = data.GetLastIssueID();
+            string lastID = data.GetLastID("tblissues","issueID");
 
             String prefix = "I";
             String number = lastID.Substring(2,4);
@@ -191,6 +191,45 @@ namespace Generator
             String IssueID = prefix + indicator + number;
 
             return IssueID;
+        }
+
+        public String GenerateReqID()
+        {
+            //Example A000001
+            String lastID = data.GetLastID("tblrequestData", "requestID");
+
+            //Now we check it and change it
+            String identifier = lastID.Substring(0, 1);
+            String number = lastID.Substring(1, 6);
+
+            if (int.Parse(number) == 999999)
+            {
+                int n = 1;
+                foreach (char item in Alphabet)
+                {
+                    if (Char.Parse(identifier) == item)
+                    {
+                        identifier = Alphabet[n].ToString();
+                        number = "000001";
+                        break;
+                    }
+                    n++;
+                }
+            }
+            else
+            {
+                int newNumber = int.Parse(number);
+                newNumber++;
+                number = newNumber.ToString();
+
+                //My genius left pad replacement XDD DDD !!!!!!!!!
+                int tempNum = int.Parse(number);
+                number = tempNum.ToString($"D6");
+            }
+
+            string ID = identifier + number;
+
+            return ID;
         }
     }
 }

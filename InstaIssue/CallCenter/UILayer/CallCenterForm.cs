@@ -306,7 +306,36 @@ namespace InstaIssue.CallCenter.UILayer
 
         private void btnCreateReq_Click(object sender, EventArgs e)
         {
-            //Create Req
+            Panel ClientPanel = pnlReqs;
+
+            //Major validations happen here
+            flag = validations.validateReqCreation(ClientPanel);
+
+            String name = txtName.Text;
+            DateTime planedDate = dtpPlannedDate.Value;
+            DateTime deadlineDate = dtpDeadlineDate.Value;
+
+            flag = true;
+
+            if (flag)
+            {
+                flag = new GeneralHandler().CreateReq(client.ClientID, planedDate, deadlineDate);
+                if (flag)
+                {
+                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetBoxes();
+                }
+
+            }
+            else
+            {
+                ResetBoxes();
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAddIssue_Click(object sender, EventArgs e)

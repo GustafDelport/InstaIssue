@@ -75,50 +75,88 @@ namespace Database
             return SLAs;
         }
 
-        public String GetLastClientID()
+        //public String GetLastClientID()
+        //{
+        //    String ID;
+        //    try
+        //    {
+        //        string buildCommand = $"SELECT TOP 1 clientID FROM tblclients ORDER BY clientID DESC";
+        //        connection.database.Open();
+        //        ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+        //        connection.database.Close();
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw e;
+        //    }
+        //    String lastID = ID;
+        //    return lastID;
+        //}
+
+        //public String GetLastIssueID()
+        //{
+        //    String ID;
+        //    try
+        //    {
+        //        string buildCommand = $"SELECT TOP 1 issueID FROM tblissues ORDER BY issueID DESC";
+        //        connection.database.Open();
+        //        ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+        //        connection.database.Close();
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw e;
+        //    }
+        //    String lastID = ID;
+        //    return lastID;
+        //}
+
+        //public String GetLastReqID()
+        //{
+        //    String ID;
+        //    try
+        //    {
+        //        string buildCommand = $"SELECT TOP 1 requestID FROM tblrequestData ORDER BY requestID DESC";
+        //        connection.database.Open();
+        //        ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+        //        connection.database.Close();
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw e;
+        //    }
+        //    String lastID = ID;
+        //    return lastID;
+        //}
+
+        //public String GetLastSLAID()
+        //{
+        //    String ID;
+        //    try
+        //    {
+        //        string buildCommand = $"SELECT TOP 1 slaID FROM tblsla ORDER BY slaID DESC";
+        //        connection.database.Open();
+        //        ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+        //        connection.database.Close();
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw e;
+        //    }
+        //    String lastID = ID;
+        //    return lastID;
+        //}
+
+        public String GetLastID(String tblName,String idCol)
         {
             String ID;
             try
             {
-                string buildCommand = $"SELECT TOP 1 clientID FROM tblclients ORDER BY clientID DESC";
-                connection.database.Open();
-                ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
-                connection.database.Close();
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-            String lastID = ID;
-            return lastID;
-        }
-
-        public String GetLastIssueID()
-        {
-            String ID;
-            try
-            {
-                string buildCommand = $"SELECT TOP 1 issueID FROM tblissues ORDER BY issueID DESC";
-                connection.database.Open();
-                ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
-                connection.database.Close();
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-            String lastID = ID;
-            return lastID;
-        }
-
-        public String GetLastSLAID()
-        {
-            String ID;
-            try
-            {
-                string buildCommand = $"SELECT TOP 1 slaID FROM tblsla ORDER BY slaID DESC";
+                string buildCommand = $"SELECT TOP 1 {idCol} FROM {tblName} ORDER BY {idCol} DESC";
                 connection.database.Open();
                 ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
                 connection.database.Close();
