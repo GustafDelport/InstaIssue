@@ -173,17 +173,18 @@ namespace InstaIssue.CallCenter.DomainLayer
 
             reader.Fill(table);
 
-            String[] arr = new string[5];
+            String[] arr = new string[6];
             foreach (DataRow row in table.Rows)
             {
 
                 arr[0] = row["productID"].ToString();
                 arr[1] = row["clientID"].ToString();
-                arr[2] = row["name"].ToString();
-                arr[3] = row["serialNumber"].ToString();
-                arr[4] = row["warintyExpireDate"].ToString();
+                arr[2] = row["contractID"].ToString();
+                arr[3] = row["name"].ToString();
+                arr[4] = row["serialNumber"].ToString();
+                arr[5] = row["warintyExpireDate"].ToString();
 
-                products.Add(new Products(arr[0],arr[1],arr[2],arr[3],DateTime.Parse(arr[4])));
+                products.Add(new Products(arr[0],arr[1],arr[2],arr[3],arr[4],DateTime.Parse(arr[5])));
             }
 
             connection.database.Close();
