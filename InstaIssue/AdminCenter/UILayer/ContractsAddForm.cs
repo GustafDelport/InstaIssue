@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Authentication;
+using InstaIssue.AdminCenter.LogicLayer;
+using System;
 using System.Windows.Forms;
 
 namespace InstaIssue.AdminCenter.UILayer
@@ -41,7 +36,37 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void textTarif_Click(object sender, EventArgs e)
         {
-            textTarif.Text = "";
+            txtTarif.Text = "";
+        }
+
+        private void btnAddSLA_Click(object sender, EventArgs e)
+        {
+            ContractsManagment managment = new ContractsManagment();
+            Validations validation = new Validations();
+            Boolean flag = validation.validateSLACreation(pnlAddSLA);
+
+            String name = txtName.Text;
+            String descrip = rtbDescription.Text;
+            String tarif = txtTarif.Text;
+            String code = cmbType.Text + "," + cmbImportance.Text;
+
+            if (flag)
+            {
+                flag = managment.AddSLA(name,descrip,tarif,code);
+                if (flag)
+                {
+                    MessageBox.Show("A new SLA was registered", "Creation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create SLA", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //ResetBoxes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

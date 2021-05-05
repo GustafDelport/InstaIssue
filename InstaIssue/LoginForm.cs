@@ -41,7 +41,6 @@ namespace InstaIssue
 
 
             //Shortcut
-            Globals.callCenterForm.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

@@ -1,17 +1,19 @@
-﻿using InstaIssue.AdminCenter.DomainLayer;
+﻿using Database;
+using Generator;
+using InstaIssue.AdminCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InstaIssue.AdminCenter.LogicLayer
 {
     class ContractsManagment
     {
+        private readonly Connection connection = new Connection();
 
-        public ContractsManagment() { }
-
+        public ContractsManagment() 
+        {
+            connection.Connect();
+        }
 
         public Contracts GetContract()
         {
@@ -23,45 +25,21 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return null;
         }
 
-        public SLA GetSLA()
-        {
-            return null;
-        }
-
         public List<SLA> GetSLAs()
         {
             return null;
         }
 
-        public Boolean AddContract()
+        public Boolean AddSLA(String name,String description,String tarif,String Code)
         {
-            //All Fields later;
-            return false;
-        }
-        public Boolean EditContract(String type, String newData)
-        {
-            //All Fields later;
-            return false;
-        }
+            Data data = new Data();
+            IDBuilder builder = new IDBuilder();
+            String ID = builder.GenerateSlaID(Code);
 
-        public Boolean DeleteContract(String staffID)
-        {
-            //All Fields later;
-            return false;
-        }
-
-        public Boolean AddSLA()
-        {
-            //All Fields later;
-            return false;
+            Boolean flag = data.AddSLA(ID,name,description,double.Parse(tarif));
+            return flag;
         }
         public Boolean EditSLA(String type, String newData)
-        {
-            //All Fields later;
-            return false;
-        }
-
-        public Boolean DeleteSLA(String staffID)
         {
             //All Fields later;
             return false;

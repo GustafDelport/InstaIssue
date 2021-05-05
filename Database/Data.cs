@@ -94,6 +94,44 @@ namespace Database
             return lastID;
         }
 
+        public String GetLastIssueID()
+        {
+            String ID;
+            try
+            {
+                string buildCommand = $"SELECT TOP 1 issueID FROM tblissues ORDER BY issueID DESC";
+                connection.database.Open();
+                ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            String lastID = ID;
+            return lastID;
+        }
+
+        public String GetLastSLAID()
+        {
+            String ID;
+            try
+            {
+                string buildCommand = $"SELECT TOP 1 slaID FROM tblsla ORDER BY slaID DESC";
+                connection.database.Open();
+                ID = (String)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            String lastID = ID;
+            return lastID;
+        }
+
         // Check whether an ID already exists in the given table & col
         public Boolean CheckExist(string id, string tblName, string idCol)
         {
@@ -345,8 +383,7 @@ namespace Database
                 else
                 {
                     // Run add sla code
-                    connection.RunCommand("INSERT INTO dbo.tblsla VALUES(\'" + slaID + "\'," + name + ",\'" +
-                                          description + "\'," + tarif + ")").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblsla VALUES('{slaID}','{name}','{description}',{tarif})").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -485,16 +522,14 @@ namespace Database
                 if (CheckExist(issueID, "tblissues", "issueID"))
                 {
                     // Run update issue code
-                    connection.RunCommand("UPDATE tblissues SET issueID = \'" + issueID + "\', reportedDate = " + reportedDate + ", clientID = \'" +
-                                          clientID + "\', status = \'" + status + "\', staffID = \'" + staffID + "\', description = \'" + description + "\' WHERE issueID = \'" + issueID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblissues SET issueID = '{issueID}', reportedDate = '{reportedDate}', clientID = '{clientID}', status = '{status}', staffID = '{staffID}', description = '{description}' WHERE issueID = '{issueID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add Issue code
-                    connection.RunCommand("INSERT INTO dbo.tblissues VALUES(\'" + issueID + "\'," + reportedDate + ",\'" +
-                                          clientID + "\',\'" + status + "\',\'" + staffID + "\',\'" + description + "\')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblissues VALUES('{issueID}','{reportedDate}','{clientID}','{status}','{staffID}','{description}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }

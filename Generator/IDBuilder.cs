@@ -91,25 +91,102 @@ namespace Generator
             return contractID;
         }
 
-        public String GenerateSlaID()
+        public String GenerateSlaID(string code)
         {
-            //Example: AA0001         
-            String number = "";
-
             String type = "";
             String importance = "";
+
+            string[] raw = code.Split(',');
+            switch (raw[0])
+            {
+                case "Maintenance":
+                    {
+                        type = "M";
+                    }
+                    break;
+                case "Repair":
+                    {
+                        type = "R";
+                    }
+                    break;
+                case "Replace":
+                    {
+                        type = "P";
+                    }
+                    break;
+                case "Ultimate":
+                    {
+                        type = "U";
+                    }
+                    break;
+            }
+            
+            switch (raw[1])
+            {
+                case "Level 1 - Most important":
+                    {
+                        importance = "A";
+                    }
+                    break;
+                case "Level 2 - Important":
+                    {
+                        importance = "B";
+                    }
+                    break;
+                case "Level 3 - Reductable":
+                    {
+                        importance = "C";
+                    }
+                    break;
+            }
+
+            string number = data.GetLastSLAID().Substring(2, 4);
+
+            int newNumber = int.Parse(number);
+            newNumber++;
+            number = newNumber.ToString();
+
+            int tempNum = int.Parse(number);
+            number = tempNum.ToString($"D4");
 
             String contractID = type + importance + number;
 
             return contractID;
         }
+
         public String GenerateIssueID()
         {
-            //Example: IA0001     
-            String number = "";
+            //Example: IA0001
+            string lastID = data.GetLastIssueID();
 
             String prefix = "I";
-            String indicator = "";
+            String number = lastID.Substring(2,4);
+            String indicator = lastID.Substring(1,1);
+
+            if (int.Parse(number) == 9999)
+            {
+                int n = 1;
+                foreach (char item in Alphabet)
+                {
+                    if (Char.Parse(indicator) == item)
+                    {
+                        indicator = Alphabet[n].ToString();
+                        number = "0001";
+                        break;
+                    }
+                    n++;
+                }
+            }
+            else
+            {
+                int newNumber = int.Parse(number);
+                newNumber++;
+                number = newNumber.ToString();
+
+                //My genius left pad replacement XDD DDD !!!!!!!!!
+                int tempNum = int.Parse(number);
+                number = tempNum.ToString($"D4");
+            }
 
             String IssueID = prefix + indicator + number;
 
