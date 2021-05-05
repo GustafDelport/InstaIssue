@@ -105,32 +105,26 @@ namespace Authentication
         {
             int n = 0;
           
-            switch (data.Substring(0,3))
+            switch (data.Substring(1,1))
             {
-                case "AGT":
+                case "A":
                     {
                         //Call Agent
-                        n = 1;
-                    }
-                    break;
-                case "ADM":
-                    {
-                        //Admin
                         n = 2;
                     }
                     break;
-                case "SEM":
+                case "C":
+                    {
+                        //Admin
+                        n = 1;
+                    }
+                    break;
+                case "M":
                     {
                         //Service Manager
                         n = 3;
                     }
-                    break;
-                
-                case "Agt":
-                    {
-                        n = 1;
-                    }
-                    break;
+                    break;             
             }
 
             return n;
@@ -188,6 +182,51 @@ namespace Authentication
                     flagArr[n] = validateText(item.Text);
                     n++;
                 }
+            }
+            foreach (var item in flagArr)
+            {
+                if (!item)
+                {
+                    //Our final flag to count as one singular status check
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    flag = true;
+
+                }
+            }
+
+            return flag;
+        }
+
+        public Boolean validateSLACreation(Panel panel)
+        {
+            Boolean flag = false;
+            Boolean[] flagArr = new Boolean[5];
+            int n = 0;
+
+            foreach (Control item in panel.Controls)
+            {
+                if (item is RichTextBox || item is TextBox)
+                {
+                    if (item.Name == "txtTarif")
+                    {
+                        flagArr[n] = validateNumber(item.Text);
+                        n++;
+                    }
+                    else if (item.Name == "txtName")
+                    {
+                        flagArr[n] = validateText(item.Text);
+                        n++;
+                    }
+                    else
+                    {
+                        flagArr[n] = validateText(item.Text);
+                        n++;
+                    }
+                }
                 else if (item is ComboBox)
                 {
                     ComboBox box = (ComboBox)item;
@@ -208,6 +247,20 @@ namespace Authentication
                     continue;
                 }
 
+            }
+            foreach (var item in flagArr)
+            {
+                if (!item)
+                {
+                    //Our final flag to count as one singular status check
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    flag = true;
+
+                }
             }
 
             return flag;

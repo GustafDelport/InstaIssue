@@ -83,8 +83,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnTopAddIss = new System.Windows.Forms.Button();
             this.pnlCreateIss = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbJobsIs = new MetroFramework.Controls.MetroComboBox();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.btnAddIssue = new System.Windows.Forms.Button();
             this.btnTopTrackIss = new System.Windows.Forms.Button();
@@ -741,8 +739,6 @@ namespace InstaIssue.CallCenter.UILayer
             // pnlCreateIss
             // 
             this.pnlCreateIss.Controls.Add(this.label5);
-            this.pnlCreateIss.Controls.Add(this.label4);
-            this.pnlCreateIss.Controls.Add(this.cmbJobsIs);
             this.pnlCreateIss.Controls.Add(this.rtbDescription);
             this.pnlCreateIss.Controls.Add(this.btnAddIssue);
             this.pnlCreateIss.Location = new System.Drawing.Point(382, 118);
@@ -755,36 +751,15 @@ namespace InstaIssue.CallCenter.UILayer
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(51, 59);
+            this.label5.Location = new System.Drawing.Point(51, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Description";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(74, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Jobs";
-            // 
-            // cmbJobsIs
-            // 
-            this.cmbJobsIs.FormattingEnabled = true;
-            this.cmbJobsIs.ItemHeight = 23;
-            this.cmbJobsIs.Location = new System.Drawing.Point(18, 27);
-            this.cmbJobsIs.Name = "cmbJobsIs";
-            this.cmbJobsIs.Size = new System.Drawing.Size(159, 29);
-            this.cmbJobsIs.TabIndex = 10;
-            this.cmbJobsIs.UseSelectable = true;
-            // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(18, 82);
+            this.rtbDescription.Location = new System.Drawing.Point(18, 68);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.Size = new System.Drawing.Size(159, 115);
             this.rtbDescription.TabIndex = 9;
@@ -956,8 +931,6 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Panel pnlCreateIss;
         private System.Windows.Forms.Button btnAddIssue;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroComboBox cmbJobsIs;
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Timer tmrTime;
         private System.Windows.Forms.ComboBox cmbContractsC;

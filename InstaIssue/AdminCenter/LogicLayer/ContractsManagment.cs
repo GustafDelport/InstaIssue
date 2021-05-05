@@ -1,4 +1,4 @@
-﻿using Database;
+using Database;
 using InstaIssue.AdminCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
@@ -19,11 +19,8 @@ namespace InstaIssue.AdminCenter.LogicLayer
         }
 
         public Contracts GetContract()
-        {
-            return null;
-        }
 
-        public List<Contracts> GetContracts()
+        public Contracts GetContract()
         {
             List<Contracts> contracts = new List<Contracts>();
             try
@@ -57,7 +54,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return contracts;
         }
 
-        public SLA GetSLA()
+        public List<Contracts> GetContracts()
         {
             return null;
         }
@@ -140,20 +137,6 @@ namespace InstaIssue.AdminCenter.LogicLayer
             }
             return true;
         }
-
-        public Boolean AddSLA(String type, String newData)
-        {
-            try
-            {
-                //data.AddSLA();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("SLA could not be added.");
-                Console.WriteLine(e);
-                return false;
-            }
-            return true;
         }
 
         public Boolean EditSLA(String type, String newData)

@@ -312,7 +312,8 @@ namespace InstaIssue.CallCenter.UILayer
         private void btnAddIssue_Click(object sender, EventArgs e)
         {
             //Create Issue
-            flag = new Validations().ValidateRegisterClient(pnlCreateIss);
+            //flag = new Validations().validateIssueCreation(pnlCreateIss);
+            flag = true;
             string description = rtbDescription.Text;
             DateTime dateReported = new DateTime();
             dateReported = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -330,6 +331,12 @@ namespace InstaIssue.CallCenter.UILayer
                     ResetBoxes();
                 }
             }
+            else
+            {
+                ResetBoxes();
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         #endregion
 
