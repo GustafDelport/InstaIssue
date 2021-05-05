@@ -10,6 +10,7 @@ namespace InstaIssue.CallCenter.DomainLayer
     {
         private string productID;
         private string clientID; 
+        private string contractID;
         private string name;
         private string serialNumber;
         private DateTime warintyExpireDate;
@@ -18,10 +19,11 @@ namespace InstaIssue.CallCenter.DomainLayer
         {
         }
 
-        public Products(string productID, string clientID, string name, string serialNumber, DateTime warintyExpireDate)
+        public Products(string productID, string clientID, string contractID, string name, string serialNumber, DateTime warintyExpireDate)
         {
             this.productID = productID;
             this.clientID = clientID;
+            this.contractID = contractID;
             this.name = name;
             this.serialNumber = serialNumber;
             this.warintyExpireDate = warintyExpireDate;
@@ -32,5 +34,6 @@ namespace InstaIssue.CallCenter.DomainLayer
         public string Name { get => name; set => name = value; }
         public string SerialNumber { get => serialNumber; set => serialNumber = value; }
         public DateTime WarintyExpireDate { get => warintyExpireDate; set => warintyExpireDate = value; }
+        public string ContractID { get => contractID; set => contractID = value; }
     }
 }
