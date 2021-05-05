@@ -14,9 +14,9 @@ namespace Database
         {
             connection.Connect();
         }
-        public String GetSLAID(String SLAName)
+        public string GetSLAID(String SLAName)
         {
-            String ID;
+            string ID;
             try
             {
                 string buildCommand = $"SELECT slaID FROM tblsla WHERE name = '{SLAName}'";
@@ -275,6 +275,34 @@ namespace Database
             SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
             connection.database.Close();
             return reader;
+        }
+
+        //Add Product
+        public Boolean AddProduct(string productID, string clientID,string name, string serialNumber, DateTime warantyExpireDate)
+        {
+            try
+            {
+                // Check if user exists, if exist then update, otherwise add
+                if (CheckExist(productID, "tblproducts", "productID"))
+                {
+                    // Run update user code
+                    connection.RunCommand($"UPDATE tblusers SET productID ='{productID}', clientID = '{clientID}', name = '{name}', serialNumber = '{serialNumber}',warintyExpireDate = '{warantyExpireDate}' WHERE productID = '{productID}'").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+                else
+                {
+                    // Run add user code
+                    connection.RunCommand($"INSERT INTO dbo.tblproducts VALUES('{productID}','{clientID}','{name}','{serialNumber}','{warantyExpireDate}')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         // Add login user

@@ -20,7 +20,7 @@ namespace InstaIssue.CallCenter.UILayer
         private bool flag;
         private List<String> SLAlist;
         private readonly Validations validations = new Validations();
-
+        private List<Products> products;
 
         public CallCenterForm()
         {
@@ -43,7 +43,7 @@ namespace InstaIssue.CallCenter.UILayer
             foreach (string item in SLAlist)
             {
                 cmbContractsC.Items.Add(item);
-            }
+            }         
         }
 
         //Methods
@@ -263,6 +263,12 @@ namespace InstaIssue.CallCenter.UILayer
                 MessageBox.Show("The ID entered is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             txtNationalID.Text = "";
+            products = new ClientTracker().GetClientProducts(client.ClientID);
+
+            foreach (var item in products)
+            {
+                cmbProducts.Items.Add(item.Name);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
