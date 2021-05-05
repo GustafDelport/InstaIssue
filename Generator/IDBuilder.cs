@@ -195,22 +195,22 @@ namespace Generator
 
         public String GenerateReqID()
         {
-            //Example A000001
+            //Example REQ0000001
             String lastID = data.GetLastID("tblrequestData", "requestID");
 
             //Now we check it and change it
-            String identifier = lastID.Substring(0, 1);
-            String number = lastID.Substring(1, 6);
+            String identifier = lastID.Substring(0, 3);
+            String number = lastID.Substring(3, 7);
 
-            if (int.Parse(number) == 999999)
+            if (int.Parse(number) == 9999999)
             {
                 int n = 1;
                 foreach (char item in Alphabet)
                 {
                     if (Char.Parse(identifier) == item)
                     {
-                        identifier = Alphabet[n].ToString();
-                        number = "000001";
+                        identifier = "REQ";
+                        number = "0000001";
                         break;
                     }
                     n++;
@@ -224,7 +224,7 @@ namespace Generator
 
                 //My genius left pad replacement XDD DDD !!!!!!!!!
                 int tempNum = int.Parse(number);
-                number = tempNum.ToString($"D6");
+                number = tempNum.ToString($"D7");
             }
 
             string ID = identifier + number;
@@ -232,4 +232,6 @@ namespace Generator
             return ID;
         }
     }
+
+    
 }

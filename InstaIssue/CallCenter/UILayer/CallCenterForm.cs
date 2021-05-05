@@ -12,9 +12,7 @@ namespace InstaIssue.CallCenter.UILayer
 {
     public partial class CallCenterForm : Form
     {
-        private string staffID;
         private Clients client;
-        private string Status;
         private bool callStatus;
         private Panel activePanel;
         private bool flag;
@@ -48,16 +46,6 @@ namespace InstaIssue.CallCenter.UILayer
 
         //Methods
         #region
-        public void BeginCall()
-        {
-            //Delegate goes here
-        }
-
-        public void EndCall()
-        {
-            //Delegate goes here
-        }
-
         private void picPhoneButton_Click(object sender, EventArgs e)
         {
             CallTest();
@@ -208,26 +196,6 @@ namespace InstaIssue.CallCenter.UILayer
         {
             txtAddress.Text = "";
         }
-
-        private void btnTrackJob_Click(object sender, EventArgs e)
-        {
-            //Track Job
-            Globals.informationForm.Show();
-            Globals.callCenterForm.Hide();
-        }
-
-        private void btnTrackIssue_Click(object sender, EventArgs e)
-        {
-            //Track Issues => take to info form
-            Globals.informationForm.Show();
-            Globals.callCenterForm.Hide();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Globals.serviceCenterForm.Show();
-            Globals.callCenterForm.Hide();
-        }
         #endregion
 
         //Button Clicks
@@ -371,6 +339,20 @@ namespace InstaIssue.CallCenter.UILayer
                 MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btnTrackJob_Click(object sender, EventArgs e)
+        {
+            //Track Job
+            Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+        }
+
+        private void btnTrackIssue_Click(object sender, EventArgs e)
+        {
+            //Track Issues => take to info form
+            Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
         }
         #endregion
 
