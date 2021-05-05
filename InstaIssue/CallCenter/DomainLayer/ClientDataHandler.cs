@@ -1,4 +1,5 @@
 ﻿using Database;
+using InstaIssue.AdminCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -190,6 +191,37 @@ namespace InstaIssue.CallCenter.DomainLayer
             connection.database.Close();
 
             return products;
+        }
+        public List<Jobs> GetClientJobs(string clientID)
+        {
+            List<Jobs> jobs = new List<Jobs>();
+
+            String Q = $"SELECT * FROM tbljobs WHERE clientID = '{clientID}'";
+            SqlConnection con = connection.GetSqlConnection();
+
+            SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+            DataTable table = new DataTable();
+
+            reader.Fill(table);
+
+            String[] arr = new string[6];
+            foreach (DataRow row in table.Rows)
+            {
+
+                arr[0] = row["jobID"].ToString();
+                arr[1] = row["clientID"].ToString();
+                arr[2] = row["staffID"].ToString();
+                arr[3] = row["scheduledDate"].ToString();
+                arr[4] = row["service"].ToString();
+                arr[5] = row["status"].ToString();
+
+                //Error Here
+                jobs.Add(new Jobs(arr[0],arr[1],DateTime.Parse(arr[3]),arr[4],arr[5],arr[2]));
+            }
+
+            connection.database.Close();
+
+            return jobs;
         }
 
         public string GetClientContract(string clientID)

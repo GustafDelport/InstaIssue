@@ -1,4 +1,5 @@
 ﻿using Database;
+using InstaIssue.AdminCenter.DomainLayer;
 using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,11 @@ namespace InstaIssue.CallCenter.LogicLayer
         public List<Products> GetClientProducts(string clientID)
         {
             return new ClientDataHandler().GetClientProducts(clientID);
+        }
+
+        public List<Jobs> GetClientJobs(string clientID)
+        {
+            return new ClientDataHandler().GetClientJobs(clientID);
         }
 
         //Useless for now a agent does net need to see all clients

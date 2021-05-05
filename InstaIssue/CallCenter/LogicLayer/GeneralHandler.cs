@@ -2,6 +2,7 @@
 using Generator;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace InstaIssue.CallCenter.LogicLayer
 
             Boolean flag = new Data().AddRequest(requestID, clientID, plannedDate, deadlineDate);
             return flag;
+        }
+
+        public SqlDataReader GetData(string clientID,String tblname,string idCol)
+        {
+            return new Data().FindEntry(clientID, tblname, idCol);
         }
     }
 }

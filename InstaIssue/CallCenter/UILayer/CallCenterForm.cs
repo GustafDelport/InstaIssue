@@ -7,19 +7,19 @@ using InstaIssue.CallCenter.LogicLayer;
 using System.Collections.Generic;
 using InstaIssue.Handlers;
 using InstaIssue.AdminCenter.LogicLayer;
+using InstaIssue.AdminCenter.DomainLayer;
 
 namespace InstaIssue.CallCenter.UILayer
 {
     public partial class CallCenterForm : Form
     {
-        private string staffID;
         private Clients client;
-        private string Status;
         private bool callStatus;
         private Panel activePanel;
         private bool flag;
         private List<String> SLAlist;
         private readonly Validations validations = new Validations();
+        private List<AdminCenter.DomainLayer.Jobs> jobs;
         private List<Products> products;
 
         public CallCenterForm()
@@ -43,21 +43,11 @@ namespace InstaIssue.CallCenter.UILayer
             foreach (string item in SLAlist)
             {
                 cmbContractsC.Items.Add(item);
-            }         
+            }       
         }
 
         //Methods
         #region
-        public void BeginCall()
-        {
-            //Delegate goes here
-        }
-
-        public void EndCall()
-        {
-            //Delegate goes here
-        }
-
         private void picPhoneButton_Click(object sender, EventArgs e)
         {
             CallTest();
@@ -208,26 +198,6 @@ namespace InstaIssue.CallCenter.UILayer
         {
             txtAddress.Text = "";
         }
-
-        private void btnTrackJob_Click(object sender, EventArgs e)
-        {
-            //Track Job
-            Globals.informationForm.Show();
-            Globals.callCenterForm.Hide();
-        }
-
-        private void btnTrackIssue_Click(object sender, EventArgs e)
-        {
-            //Track Issues => take to info form
-            Globals.informationForm.Show();
-            Globals.callCenterForm.Hide();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Globals.serviceCenterForm.Show();
-            Globals.callCenterForm.Hide();
-        }
         #endregion
 
         //Button Clicks
@@ -268,6 +238,12 @@ namespace InstaIssue.CallCenter.UILayer
             foreach (var item in products)
             {
                 cmbProducts.Items.Add(item.Name);
+            }
+            jobs = new ClientTracker().GetClientJobs(client.ClientID);
+
+            foreach (var item in jobs)
+            {
+                cmbProducts.Items.Add(item.Service);
             }
         }
 
@@ -371,6 +347,23 @@ namespace InstaIssue.CallCenter.UILayer
                 MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btnTrackJob_Click(object sender, EventArgs e)
+        {
+            //Track Job
+            Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+            Globals.informationForm.SeeJobs(client.ClientID);
+
+        }
+
+        private void btnTrackIssue_Click(object sender, EventArgs e)
+        {
+            //Track Issues => take to info form
+            Globals.informationForm.Show();
+            Globals.callCenterForm.Hide();
+            Globals.informationForm.SeeIssues(client.ClientID);
         }
         #endregion
 
