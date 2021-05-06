@@ -1,4 +1,5 @@
-﻿using InstaIssue.CallCenter.DomainLayer;
+﻿using InstaIssue.AdminCenter.LogicLayer;
+using InstaIssue.CallCenter.DomainLayer;
 using InstaIssue.CallCenter.LogicLayer;
 using System;
 using System.Collections.Generic;
@@ -50,12 +51,26 @@ namespace InstaIssue.AdminCenter.UILayer
         private void btnDeleteSaff_Click(object sender, EventArgs e)
         {
             //DeleteAll data asociated with the clientID
+            
+            string[] split = cmbClients.Text.Split(' ');
+            string clientID = split[0];
 
-        }
+            bool flag = new GeneralAdminHandler().DeleteClient(clientID);
+            if (flag)
+            {
+                MessageBox.Show("Client was deleted", "Delete Success", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clients = new ClientTracker().GetClients();
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+                cmbClients.Items.Clear();
+                foreach (Clients item in clients)
+                {
+                    cmbClients.Items.Add(item.ClientID + " " + item.Name);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error client was not deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

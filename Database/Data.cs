@@ -14,6 +14,36 @@ namespace Database
         {
             connection.Connect();
         }
+
+        public List<string> checkClientEntries(string clientID) 
+        {
+            connection.database.Open();
+            string[] clientAssociationsTables = new string[] { "tblrequestData", "tblproducts", "tbljobs", "tbljobRecords","tblcontracts", "tblissues","tblclients", "tblcallRecords" };
+            List<string> tbls = new List<string>();
+            try
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    string buildCommand = $"SELECT COUNT(*) FROM {clientAssociationsTables[i]} WHERE clientID = '{clientID}'";
+                    int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                    if (Exist >= 1)
+                    {
+                        tbls.Add(clientAssociationsTables[i]);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return tbls;
+        }
+
         public string GetSLAID(String SLAName)
         {
             string ID;
@@ -233,17 +263,15 @@ namespace Database
             {
                 if (tblName == "tblusers")
                 {
-                    string buildCommand = $"DELETE FROM {tblName} WHERE {idCol} + = " + Convert.ToInt32(id);
+                    string buildCommand = $"DELETE FROM {tblName} WHERE {idCol} + = '" + Convert.ToInt32(id)+"'";
                     connection.RunCommand(buildCommand).ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
-                    connection.database.Open();
-                    string buildCommand = $"DELETE FROM {tblName} WHERE {idCol} = {id}";
+                    string buildCommand = $"DELETE FROM {tblName} WHERE {idCol} = '{id}'";
                     connection.RunCommand(buildCommand).ExecuteNonQuery();
-                    connection.database.Close();
                     return true;
                 }
                 
