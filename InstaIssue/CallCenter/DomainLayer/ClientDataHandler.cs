@@ -229,6 +229,43 @@ namespace InstaIssue.CallCenter.DomainLayer
             string contractName = new Data().GetContractName(clientID);        
             return contractName;
         }
+
+        public List<Contracts> GetContracts(String clientID)
+        {
+            List<Contracts> contracts = new List<Contracts>();
+
+            try
+            {
+                connection.database.Open();
+
+                String Q = $"SELECT * FROM tblcontracts WHERE clientID = '{clientID}'";
+                SqlConnection con = connection.GetSqlConnection();
+
+                SqlDataAdapter reader = new SqlDataAdapter(Q, con);
+                DataTable table = new DataTable();
+
+                reader.Fill(table);
+
+                String[] arr = new string[4];
+                foreach (DataRow row in table.Rows)
+                {
+                    arr[0] = row["contractID"].ToString();
+                    arr[1] = row["dateSigned"].ToString();
+                    arr[2] = row["clientID"].ToString();
+                    arr[3] = row["slaID"].ToString();
+
+                    contracts.Add(new Contracts(arr[0],DateTime.Parse(arr[1]),arr[2],arr[3]));
+                }
+
+                connection.database.Close();
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return contracts;
+        }
         #endregion
     }
 }

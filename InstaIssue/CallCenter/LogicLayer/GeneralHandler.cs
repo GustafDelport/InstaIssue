@@ -27,6 +27,15 @@ namespace InstaIssue.CallCenter.LogicLayer
             return flag;
         }
 
+        public Boolean CreateProd(string name, string serialNum, string contractID,string clientID , DateTime expDate)
+        {
+            //ID Builder
+            String prodID = new IDBuilder().GenerateProductID();
+
+            Boolean flag = new Data().AddProduct(prodID, clientID, contractID, name, serialNum, expDate);
+            return flag;
+        }
+
         public SqlDataReader GetData(string clientID,String tblname,string idCol)
         {
             return new Data().FindEntry(clientID, tblname, idCol);

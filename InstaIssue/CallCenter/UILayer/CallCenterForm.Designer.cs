@@ -100,12 +100,13 @@ namespace InstaIssue.CallCenter.UILayer
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlNewProd = new System.Windows.Forms.Panel();
             this.pnlProdNew = new System.Windows.Forms.Panel();
-            this.btnAddNewProd = new System.Windows.Forms.Button();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.lblPContr = new System.Windows.Forms.Label();
-            this.txtProdName = new System.Windows.Forms.TextBox();
-            this.txtSerial = new System.Windows.Forms.TextBox();
             this.dtpWarDate = new MetroFramework.Controls.MetroDateTime();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.txtProdName = new System.Windows.Forms.TextBox();
+            this.lblPContr = new System.Windows.Forms.Label();
+            this.cmbNewCont = new MetroFramework.Controls.MetroComboBox();
+            this.btnAddNewProd = new System.Windows.Forms.Button();
+            this.lblExpDate = new System.Windows.Forms.Label();
             this.pnlControls.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -962,43 +963,45 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlProdNew
             // 
+            this.pnlProdNew.Controls.Add(this.lblExpDate);
             this.pnlProdNew.Controls.Add(this.dtpWarDate);
             this.pnlProdNew.Controls.Add(this.txtSerial);
             this.pnlProdNew.Controls.Add(this.txtProdName);
             this.pnlProdNew.Controls.Add(this.lblPContr);
-            this.pnlProdNew.Controls.Add(this.metroComboBox1);
+            this.pnlProdNew.Controls.Add(this.cmbNewCont);
             this.pnlProdNew.Controls.Add(this.btnAddNewProd);
-            this.pnlProdNew.Location = new System.Drawing.Point(272, 76);
+            this.pnlProdNew.Location = new System.Drawing.Point(274, 33);
             this.pnlProdNew.Name = "pnlProdNew";
-            this.pnlProdNew.Size = new System.Drawing.Size(200, 294);
+            this.pnlProdNew.Size = new System.Drawing.Size(200, 337);
             this.pnlProdNew.TabIndex = 0;
             // 
-            // btnAddNewProd
+            // dtpWarDate
             // 
-            this.btnAddNewProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewProd.FlatAppearance.BorderSize = 0;
-            this.btnAddNewProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnAddNewProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnAddNewProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddNewProd.Image = global::InstaIssue.Properties.Resources.TrackB;
-            this.btnAddNewProd.Location = new System.Drawing.Point(20, 198);
-            this.btnAddNewProd.Name = "btnAddNewProd";
-            this.btnAddNewProd.Size = new System.Drawing.Size(159, 82);
-            this.btnAddNewProd.TabIndex = 9;
-            this.btnAddNewProd.Text = "Add Products";
-            this.btnAddNewProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddNewProd.UseVisualStyleBackColor = true;
+            this.dtpWarDate.Location = new System.Drawing.Point(25, 184);
+            this.dtpWarDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpWarDate.Name = "dtpWarDate";
+            this.dtpWarDate.Size = new System.Drawing.Size(150, 29);
+            this.dtpWarDate.TabIndex = 14;
             // 
-            // metroComboBox1
+            // txtSerial
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(25, 35);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(150, 29);
-            this.metroComboBox1.TabIndex = 10;
-            this.metroComboBox1.UseSelectable = true;
+            this.txtSerial.Location = new System.Drawing.Point(25, 120);
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.Size = new System.Drawing.Size(150, 26);
+            this.txtSerial.TabIndex = 13;
+            this.txtSerial.Text = "Serial Number";
+            this.txtSerial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSerial.Click += new System.EventHandler(this.txtSerial_Click);
+            // 
+            // txtProdName
+            // 
+            this.txtProdName.Location = new System.Drawing.Point(25, 79);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(150, 26);
+            this.txtProdName.TabIndex = 12;
+            this.txtProdName.Text = "Name";
+            this.txtProdName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProdName.Click += new System.EventHandler(this.txtProdName_Click);
             // 
             // lblPContr
             // 
@@ -1011,31 +1014,44 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblPContr.TabIndex = 11;
             this.lblPContr.Text = "Client Contracts";
             // 
-            // txtProdName
+            // cmbNewCont
             // 
-            this.txtProdName.Location = new System.Drawing.Point(25, 79);
-            this.txtProdName.Name = "txtProdName";
-            this.txtProdName.Size = new System.Drawing.Size(150, 26);
-            this.txtProdName.TabIndex = 12;
-            this.txtProdName.Text = "Name";
-            this.txtProdName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbNewCont.FormattingEnabled = true;
+            this.cmbNewCont.ItemHeight = 23;
+            this.cmbNewCont.Location = new System.Drawing.Point(25, 35);
+            this.cmbNewCont.Name = "cmbNewCont";
+            this.cmbNewCont.Size = new System.Drawing.Size(150, 29);
+            this.cmbNewCont.TabIndex = 10;
+            this.cmbNewCont.UseSelectable = true;
             // 
-            // txtSerial
+            // btnAddNewProd
             // 
-            this.txtSerial.Location = new System.Drawing.Point(25, 120);
-            this.txtSerial.Name = "txtSerial";
-            this.txtSerial.Size = new System.Drawing.Size(150, 26);
-            this.txtSerial.TabIndex = 13;
-            this.txtSerial.Text = "Serial Number";
-            this.txtSerial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddNewProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNewProd.FlatAppearance.BorderSize = 0;
+            this.btnAddNewProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAddNewProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAddNewProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddNewProd.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnAddNewProd.Location = new System.Drawing.Point(23, 244);
+            this.btnAddNewProd.Name = "btnAddNewProd";
+            this.btnAddNewProd.Size = new System.Drawing.Size(159, 82);
+            this.btnAddNewProd.TabIndex = 9;
+            this.btnAddNewProd.Text = "Add Products";
+            this.btnAddNewProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddNewProd.UseVisualStyleBackColor = true;
+            this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
             // 
-            // dtpWarDate
+            // lblExpDate
             // 
-            this.dtpWarDate.Location = new System.Drawing.Point(25, 161);
-            this.dtpWarDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpWarDate.Name = "dtpWarDate";
-            this.dtpWarDate.Size = new System.Drawing.Size(150, 29);
-            this.dtpWarDate.TabIndex = 14;
+            this.lblExpDate.AutoSize = true;
+            this.lblExpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblExpDate.Location = new System.Drawing.Point(25, 156);
+            this.lblExpDate.Name = "lblExpDate";
+            this.lblExpDate.Size = new System.Drawing.Size(151, 25);
+            this.lblExpDate.TabIndex = 15;
+            this.lblExpDate.Text = "Warinty Expiry";
             // 
             // CallCenterForm
             // 
@@ -1159,9 +1175,10 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.Panel pnlProdNew;
         private System.Windows.Forms.Button btnAddNewProd;
         private System.Windows.Forms.Label lblPContr;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cmbNewCont;
         private MetroFramework.Controls.MetroDateTime dtpWarDate;
         private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.TextBox txtProdName;
+        private System.Windows.Forms.Label lblExpDate;
     }
 }
