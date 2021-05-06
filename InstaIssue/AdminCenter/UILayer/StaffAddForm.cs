@@ -50,8 +50,12 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             txtAddress.Text = "";
         }
+
         #endregion
 
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

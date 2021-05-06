@@ -231,6 +231,143 @@ namespace Generator
 
             return ID;
         }
+
+        public String GenerateProductID()
+        {
+            //A00000001
+            String lastID = data.GetLastID("tblproducts", "productID");
+
+            //Now we check it and change it
+            String identifier = lastID.Substring(0, 1);
+            String number = lastID.Substring(1, 8);
+
+            if (int.Parse(number) == 99999999)
+            {
+                int n = 1;
+                foreach (char item in Alphabet)
+                {
+                    if (Char.Parse(identifier) == item)
+                    {
+                        identifier = Alphabet[n].ToString();
+                        number = "00000001";
+                        break;
+                    }
+                    n++;
+                }
+            }
+            else
+            {
+                int newNumber = int.Parse(number);
+                newNumber++;
+                number = newNumber.ToString();
+
+                //My genius left pad replacement XDD DDD !!!!!!!!!
+                int tempNum = int.Parse(number);
+                number = tempNum.ToString($"D8");
+            }
+
+            string ID = identifier + number;
+
+            return ID;
+        }
+
+        public String GenerateStaffID(string staffType)
+        {
+            //SM0004
+            //SC0003
+            //SA0002
+            //Limit 9999 Staff members!
+
+            string indicator = "S";
+            string type = staffType.Substring(0,1);
+            string number = "";
+
+            String lastID = data.GetLastID("tblstaff", "staffID");
+
+            number = lastID.Substring(2, 4);
+            int newNumber = int.Parse(number);
+            newNumber++;
+            number = newNumber.ToString();
+
+            int tempNum = int.Parse(number);
+            number = tempNum.ToString($"D4");
+
+            return indicator+type+number;
+        }
+
+        public String GenerateJobID(string clientID)
+        {
+            //JB00001A00000004
+            //JB constant
+            //00001 the number
+            //A00000004 : clientID
+
+            string constant = "JB";
+            string number = "";
+            string cID = clientID;
+
+            String lastID = data.GetLastID("tbljobs", "productID");
+
+            number = lastID.Substring(2, 3);
+            int newNumber = int.Parse(number);
+            newNumber++;
+            number = newNumber.ToString();
+
+            int tempNum = int.Parse(number);
+            number = tempNum.ToString($"D5");
+
+            return constant+number+cID;
+        }
+
+        public String GenerateJobRecordID(string clientID)
+        {
+            //JR00001A00000004
+            //C constant
+            //001 the number
+            //A00000004 : clientID
+
+            string constant = "JR";
+            string number = "";
+            string cID = clientID;
+
+            String lastID = data.GetLastID("tbljobRecords", "jobRecordID");
+
+            number = lastID.Substring(2, 3);
+            int newNumber = int.Parse(number);
+            newNumber++;
+            number = newNumber.ToString();
+
+            int tempNum = int.Parse(number);
+            number = tempNum.ToString($"D5");
+
+
+            return constant+number+cID;
+        }
+
+        public String GenerateCallRecordID(string clientID)
+        {
+            //CR00001A00000004
+            //C constant
+            //001 the number
+            //A00000004 : clientID
+
+            string constant = "CR";
+            string number = "";
+            string cID = clientID;
+
+            String lastID = data.GetLastID("tblcallRecords", "callRecordID");
+
+            number = lastID.Substring(2, 3);
+            int newNumber = int.Parse(number);
+            newNumber++;
+            number = newNumber.ToString();
+
+            int tempNum = int.Parse(number);
+            number = tempNum.ToString($"D5");
+
+            return constant + number + cID;
+        }
+
     }
 
     

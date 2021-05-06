@@ -250,6 +250,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAddStaff.Text = "Add Staff";
             this.btnAddStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAddStaff.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // StaffAddForm
             // 

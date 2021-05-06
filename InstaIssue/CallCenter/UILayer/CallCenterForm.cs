@@ -243,7 +243,7 @@ namespace InstaIssue.CallCenter.UILayer
 
             foreach (var item in jobs)
             {
-                cmbProducts.Items.Add(item.Service);
+                cmbJobs.Items.Add(item.Service);
             }
         }
 
