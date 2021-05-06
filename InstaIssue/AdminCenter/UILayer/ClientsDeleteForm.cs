@@ -52,5 +52,10 @@ namespace InstaIssue.AdminCenter.UILayer
             //DeleteAll data asociated with the clientID
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
