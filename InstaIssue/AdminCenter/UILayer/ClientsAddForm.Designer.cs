@@ -300,6 +300,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "ClientsAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Clients";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientsAddForm_FormClosed);
             this.Load += new System.EventHandler(this.ClientsAddForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

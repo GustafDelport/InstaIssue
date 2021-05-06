@@ -441,5 +441,10 @@ namespace InstaIssue.CallCenter.UILayer
             lblTime.Text = DateTime.Now.ToString("T");
         }
         #endregion
+
+        private void CallCenterForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

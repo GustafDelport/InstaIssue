@@ -221,6 +221,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "ContractsDeleteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Contracts";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ContractsDeleteForm_FormClosed);
             this.Load += new System.EventHandler(this.ContractsDeleteForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

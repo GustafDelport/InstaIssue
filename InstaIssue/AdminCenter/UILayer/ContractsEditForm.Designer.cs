@@ -54,8 +54,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditSLA = new System.Windows.Forms.Button();
             this.cmbData = new MetroFramework.Controls.MetroComboBox();
             this.pnlEditStaff = new System.Windows.Forms.Panel();
-            this.btnFindSLA = new System.Windows.Forms.Button();
             this.cmbSLAs = new MetroFramework.Controls.MetroComboBox();
+            this.btnFindSLA = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -339,6 +339,16 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlEditStaff.Size = new System.Drawing.Size(193, 139);
             this.pnlEditStaff.TabIndex = 12;
             // 
+            // cmbSLAs
+            // 
+            this.cmbSLAs.FormattingEnabled = true;
+            this.cmbSLAs.ItemHeight = 23;
+            this.cmbSLAs.Location = new System.Drawing.Point(16, 14);
+            this.cmbSLAs.Name = "cmbSLAs";
+            this.cmbSLAs.Size = new System.Drawing.Size(159, 29);
+            this.cmbSLAs.TabIndex = 9;
+            this.cmbSLAs.UseSelectable = true;
+            // 
             // btnFindSLA
             // 
             this.btnFindSLA.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -357,16 +367,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnFindSLA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFindSLA.UseVisualStyleBackColor = true;
             // 
-            // cmbSLAs
-            // 
-            this.cmbSLAs.FormattingEnabled = true;
-            this.cmbSLAs.ItemHeight = 23;
-            this.cmbSLAs.Location = new System.Drawing.Point(16, 14);
-            this.cmbSLAs.Name = "cmbSLAs";
-            this.cmbSLAs.Size = new System.Drawing.Size(159, 29);
-            this.cmbSLAs.TabIndex = 9;
-            this.cmbSLAs.UseSelectable = true;
-            // 
             // ContractsEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -380,6 +380,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "ContractsEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Contracts";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ContractsEditForm_FormClosed);
             this.Load += new System.EventHandler(this.ContractsEditForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -35,6 +35,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private void StaffEditForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
         }
 
         private void txtNewData_Click(object sender, EventArgs e)
@@ -45,6 +46,11 @@ namespace InstaIssue.AdminCenter.UILayer
         private void txtStaffID_Click(object sender, EventArgs e)
         {
             txtStaffID.Text = "";
+        }
+
+        private void StaffEditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -39,12 +39,14 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
+            this.pnlSeperator = new System.Windows.Forms.Panel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblCID = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlIssues = new System.Windows.Forms.Panel();
             this.dgvIssues = new System.Windows.Forms.DataGridView();
             this.pnlStaff = new System.Windows.Forms.Panel();
-            this.btnDeleteStaff = new System.Windows.Forms.Button();
             this.btnEditStaff = new System.Windows.Forms.Button();
             this.btnViewStaff = new System.Windows.Forms.Button();
             this.btnAddStaff = new System.Windows.Forms.Button();
@@ -59,9 +61,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewClient = new System.Windows.Forms.Button();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
-            this.pnlSeperator = new System.Windows.Forms.Panel();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblCID = new System.Windows.Forms.Label();
             this.pnlControls.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -83,7 +82,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlControls.Location = new System.Drawing.Point(0, 0);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(178, 509);
+            this.pnlControls.Size = new System.Drawing.Size(178, 508);
             this.pnlControls.TabIndex = 0;
             // 
             // btnMngContracts
@@ -188,8 +187,39 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInfo.Location = new System.Drawing.Point(178, 0);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(753, 81);
+            this.pnlInfo.Size = new System.Drawing.Size(752, 81);
             this.pnlInfo.TabIndex = 1;
+            // 
+            // pnlSeperator
+            // 
+            this.pnlSeperator.BackColor = System.Drawing.Color.White;
+            this.pnlSeperator.Location = new System.Drawing.Point(150, 12);
+            this.pnlSeperator.Name = "pnlSeperator";
+            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
+            this.pnlSeperator.TabIndex = 16;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblID.Location = new System.Drawing.Point(166, 12);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(67, 21);
+            this.lblID.TabIndex = 18;
+            this.lblID.Text = "JA0221";
+            // 
+            // lblCID
+            // 
+            this.lblCID.AutoSize = true;
+            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCID.Location = new System.Drawing.Point(6, 12);
+            this.lblCID.Name = "lblCID";
+            this.lblCID.Size = new System.Drawing.Size(67, 21);
+            this.lblCID.TabIndex = 17;
+            this.lblCID.Text = "Staff ID";
             // 
             // lblDate
             // 
@@ -232,34 +262,14 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlStaff
             // 
-            this.pnlStaff.Controls.Add(this.btnDeleteStaff);
             this.pnlStaff.Controls.Add(this.btnEditStaff);
             this.pnlStaff.Controls.Add(this.btnViewStaff);
             this.pnlStaff.Controls.Add(this.btnAddStaff);
-            this.pnlStaff.Location = new System.Drawing.Point(185, 87);
+            this.pnlStaff.Location = new System.Drawing.Point(184, 87);
             this.pnlStaff.Name = "pnlStaff";
             this.pnlStaff.Size = new System.Drawing.Size(737, 413);
             this.pnlStaff.TabIndex = 3;
             this.pnlStaff.Visible = false;
-            // 
-            // btnDeleteStaff
-            // 
-            this.btnDeleteStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteStaff.FlatAppearance.BorderSize = 0;
-            this.btnDeleteStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnDeleteStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDeleteStaff.Image = global::InstaIssue.Properties.Resources.DeleteB;
-            this.btnDeleteStaff.Location = new System.Drawing.Point(371, 206);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(240, 147);
-            this.btnDeleteStaff.TabIndex = 13;
-            this.btnDeleteStaff.Text = "Delete Staff";
-            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDeleteStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDeleteStaff.UseVisualStyleBackColor = true;
-            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
             // 
             // btnEditStaff
             // 
@@ -270,7 +280,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditStaff.Image = global::InstaIssue.Properties.Resources.EditB;
-            this.btnEditStaff.Location = new System.Drawing.Point(125, 206);
+            this.btnEditStaff.Location = new System.Drawing.Point(256, 206);
             this.btnEditStaff.Name = "btnEditStaff";
             this.btnEditStaff.Size = new System.Drawing.Size(240, 147);
             this.btnEditStaff.TabIndex = 12;
@@ -324,7 +334,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlContracts.Controls.Add(this.btnEditCont);
             this.pnlContracts.Controls.Add(this.btnViewCont);
             this.pnlContracts.Controls.Add(this.btnAddCont);
-            this.pnlContracts.Location = new System.Drawing.Point(185, 87);
+            this.pnlContracts.Location = new System.Drawing.Point(184, 87);
             this.pnlContracts.Name = "pnlContracts";
             this.pnlContracts.Size = new System.Drawing.Size(737, 413);
             this.pnlContracts.TabIndex = 5;
@@ -499,43 +509,12 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
-            // pnlSeperator
-            // 
-            this.pnlSeperator.BackColor = System.Drawing.Color.White;
-            this.pnlSeperator.Location = new System.Drawing.Point(150, 12);
-            this.pnlSeperator.Name = "pnlSeperator";
-            this.pnlSeperator.Size = new System.Drawing.Size(10, 22);
-            this.pnlSeperator.TabIndex = 16;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblID.Location = new System.Drawing.Point(166, 12);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(67, 21);
-            this.lblID.TabIndex = 18;
-            this.lblID.Text = "JA0221";
-            // 
-            // lblCID
-            // 
-            this.lblCID.AutoSize = true;
-            this.lblCID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCID.Location = new System.Drawing.Point(6, 12);
-            this.lblCID.Name = "lblCID";
-            this.lblCID.Size = new System.Drawing.Size(67, 21);
-            this.lblCID.TabIndex = 17;
-            this.lblCID.Text = "Staff ID";
-            // 
             // AdminCenterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(931, 509);
+            this.ClientSize = new System.Drawing.Size(930, 508);
             this.Controls.Add(this.pnlContracts);
             this.Controls.Add(this.pnlStaff);
             this.Controls.Add(this.pnlClients);
@@ -547,6 +526,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "AdminCenterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Center";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminCenterForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminCenterForm_Load);
             this.pnlControls.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -592,7 +572,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnEditCont;
         private System.Windows.Forms.Button btnViewCont;
         private System.Windows.Forms.Button btnAddCont;
-        private System.Windows.Forms.Button btnDeleteStaff;
         private System.Windows.Forms.Panel pnlSeperator;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblCID;

@@ -33,16 +33,5 @@ namespace InstaIssue.AdminCenter.LogicLayer
             //All Fields later;
             return false;
         }
-
-        public Boolean DeleteStaff(String staffID)
-        {
-            //Calls method from Database.data
-            Data data = new Data();
-            //Get data from form
-            data.DeleteEntry(staffID, "tblStaff", "staffID");
-            
-            AdminCenter.UILayer.StaffDeleteForm staffDelete = new AdminCenter.UILayer.StaffDeleteForm();
-            return false;
-        }
     }
 }

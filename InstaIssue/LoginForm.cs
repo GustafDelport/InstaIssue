@@ -35,7 +35,6 @@ namespace InstaIssue
             Globals.contractsEditForm = new ContractsEditForm();
             Globals.contractsViewForm = new ContractsViewForm();
             Globals.staffAddForm = new StaffAddForm();
-            Globals.staffDeleteForm = new StaffDeleteForm();
             Globals.staffEditForm = new StaffEditForm();
             Globals.staffViewForm = new StaffViewForm();
 
@@ -97,6 +96,11 @@ namespace InstaIssue
                 txtPassword.Text = "";
                 txtUsername.Text = "";
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

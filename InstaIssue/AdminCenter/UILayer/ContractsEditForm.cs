@@ -32,11 +32,17 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ContractsEditForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
         }
 
         private void txtNewData_Click(object sender, EventArgs e)
         {
             txtNewData.Text = "";
+        }
+
+        private void ContractsEditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

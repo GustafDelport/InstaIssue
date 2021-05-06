@@ -246,6 +246,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.Name = "Information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Information_FormClosed);
             this.Load += new System.EventHandler(this.Information_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

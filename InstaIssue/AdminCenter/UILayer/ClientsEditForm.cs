@@ -20,6 +20,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ClientsEditForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -33,6 +34,11 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void ClientsEditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ClientsAddForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
             SLAlist = new PopulationHandler().GetSla();
             foreach (string item in SLAlist)
             {
@@ -127,6 +128,11 @@ namespace InstaIssue.AdminCenter.UILayer
             txtPhone.Text = "Phone Number";
             txtEmail.Text = "Email";
             txtAddress.Text = "Address";
+        }
+
+        private void ClientsAddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

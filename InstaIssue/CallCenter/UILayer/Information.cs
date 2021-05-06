@@ -66,5 +66,10 @@ namespace InstaIssue.CallCenter.UILayer
             lblDate.Text = DateTime.Now.ToString("d");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+
+        private void Information_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

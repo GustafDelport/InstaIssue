@@ -27,6 +27,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ContractsAddForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
         }
 
         private void txtName_Click(object sender, EventArgs e)
@@ -67,6 +68,11 @@ namespace InstaIssue.AdminCenter.UILayer
             {
                 MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ContractsAddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

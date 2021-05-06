@@ -32,6 +32,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private void StaffAddForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
         }
 
         //Fancy Animations
@@ -56,6 +57,11 @@ namespace InstaIssue.AdminCenter.UILayer
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void StaffAddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

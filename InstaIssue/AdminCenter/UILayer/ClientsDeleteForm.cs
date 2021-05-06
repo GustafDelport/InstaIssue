@@ -72,5 +72,10 @@ namespace InstaIssue.AdminCenter.UILayer
                 MessageBox.Show("Error client was not deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ClientsDeleteForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

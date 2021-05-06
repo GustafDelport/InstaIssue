@@ -26,6 +26,7 @@ namespace InstaIssue.AdminCenter.UILayer
             activePanel = pnlIssues;
             activePanel.Visible = true;
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
         }
 
         //Fancy Animations
@@ -81,11 +82,6 @@ namespace InstaIssue.AdminCenter.UILayer
             new StaffSelectManagement("Edit").doWork();
         }
 
-        private void btnDeleteStaff_Click(object sender, EventArgs e)
-        {
-            new StaffSelectManagement("Delete").doWork();
-        }
-
         private void btnAddClient_Click(object sender, EventArgs e)
         {
             new ClientSelectManagement("Add").doWork();
@@ -124,6 +120,11 @@ namespace InstaIssue.AdminCenter.UILayer
         private void btnDeleteCont_Click(object sender, EventArgs e)
         {
             new ContractSelectManagement("Delete").doWork();
+        }
+
+        private void AdminCenterForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
