@@ -42,6 +42,10 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlEdit = new System.Windows.Forms.Panel();
+            this.lblAAdress = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblAEmail = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.lblAPhone = new System.Windows.Forms.Label();
             this.lblASurname = new System.Windows.Forms.Label();
             this.lblAName = new System.Windows.Forms.Label();
@@ -54,12 +58,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditClient = new System.Windows.Forms.Button();
             this.cmbData = new MetroFramework.Controls.MetroComboBox();
             this.pnlEditStaff = new System.Windows.Forms.Panel();
-            this.btnFindClient = new System.Windows.Forms.Button();
             this.cmbClientIDs = new MetroFramework.Controls.MetroComboBox();
-            this.lblAEmail = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblAAdress = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
+            this.btnFindClient = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -210,6 +210,50 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlEdit.Size = new System.Drawing.Size(376, 268);
             this.pnlEdit.TabIndex = 13;
             // 
+            // lblAAdress
+            // 
+            this.lblAAdress.AutoSize = true;
+            this.lblAAdress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAAdress.Location = new System.Drawing.Point(124, 177);
+            this.lblAAdress.Name = "lblAAdress";
+            this.lblAAdress.Size = new System.Drawing.Size(22, 21);
+            this.lblAAdress.TabIndex = 26;
+            this.lblAAdress.Text = "...";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddress.Location = new System.Drawing.Point(13, 177);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(51, 21);
+            this.lblAddress.TabIndex = 25;
+            this.lblAddress.Text = "Email";
+            // 
+            // lblAEmail
+            // 
+            this.lblAEmail.AutoSize = true;
+            this.lblAEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAEmail.Location = new System.Drawing.Point(124, 144);
+            this.lblAEmail.Name = "lblAEmail";
+            this.lblAEmail.Size = new System.Drawing.Size(22, 21);
+            this.lblAEmail.TabIndex = 24;
+            this.lblAEmail.Text = "...";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblEmail.Location = new System.Drawing.Point(13, 144);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(51, 21);
+            this.lblEmail.TabIndex = 23;
+            this.lblEmail.Text = "Email";
+            // 
             // lblAPhone
             // 
             this.lblAPhone.AutoSize = true;
@@ -348,6 +392,16 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlEditStaff.Size = new System.Drawing.Size(193, 139);
             this.pnlEditStaff.TabIndex = 12;
             // 
+            // cmbClientIDs
+            // 
+            this.cmbClientIDs.FormattingEnabled = true;
+            this.cmbClientIDs.ItemHeight = 23;
+            this.cmbClientIDs.Location = new System.Drawing.Point(25, 14);
+            this.cmbClientIDs.Name = "cmbClientIDs";
+            this.cmbClientIDs.Size = new System.Drawing.Size(150, 29);
+            this.cmbClientIDs.TabIndex = 9;
+            this.cmbClientIDs.UseSelectable = true;
+            // 
             // btnFindClient
             // 
             this.btnFindClient.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -366,60 +420,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnFindClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFindClient.UseVisualStyleBackColor = true;
             // 
-            // cmbClientIDs
-            // 
-            this.cmbClientIDs.FormattingEnabled = true;
-            this.cmbClientIDs.ItemHeight = 23;
-            this.cmbClientIDs.Location = new System.Drawing.Point(25, 14);
-            this.cmbClientIDs.Name = "cmbClientIDs";
-            this.cmbClientIDs.Size = new System.Drawing.Size(150, 29);
-            this.cmbClientIDs.TabIndex = 9;
-            this.cmbClientIDs.UseSelectable = true;
-            // 
-            // lblAEmail
-            // 
-            this.lblAEmail.AutoSize = true;
-            this.lblAEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAEmail.Location = new System.Drawing.Point(124, 144);
-            this.lblAEmail.Name = "lblAEmail";
-            this.lblAEmail.Size = new System.Drawing.Size(22, 21);
-            this.lblAEmail.TabIndex = 24;
-            this.lblAEmail.Text = "...";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblEmail.Location = new System.Drawing.Point(13, 144);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(51, 21);
-            this.lblEmail.TabIndex = 23;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblAAdress
-            // 
-            this.lblAAdress.AutoSize = true;
-            this.lblAAdress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAAdress.Location = new System.Drawing.Point(124, 177);
-            this.lblAAdress.Name = "lblAAdress";
-            this.lblAAdress.Size = new System.Drawing.Size(22, 21);
-            this.lblAAdress.TabIndex = 26;
-            this.lblAAdress.Text = "...";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAddress.Location = new System.Drawing.Point(13, 177);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(51, 21);
-            this.lblAddress.TabIndex = 25;
-            this.lblAddress.Text = "Email";
-            // 
             // ClientsEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -433,6 +433,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "ClientsEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Clients";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientsEditForm_FormClosed);
             this.Load += new System.EventHandler(this.ClientsEditForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

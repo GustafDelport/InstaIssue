@@ -100,13 +100,13 @@ namespace InstaIssue.CallCenter.UILayer
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlNewProd = new System.Windows.Forms.Panel();
             this.pnlProdNew = new System.Windows.Forms.Panel();
+            this.lblExpDate = new System.Windows.Forms.Label();
             this.dtpWarDate = new MetroFramework.Controls.MetroDateTime();
             this.txtSerial = new System.Windows.Forms.TextBox();
             this.txtProdName = new System.Windows.Forms.TextBox();
             this.lblPContr = new System.Windows.Forms.Label();
             this.cmbNewCont = new MetroFramework.Controls.MetroComboBox();
             this.btnAddNewProd = new System.Windows.Forms.Button();
-            this.lblExpDate = new System.Windows.Forms.Label();
             this.pnlControls.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -975,6 +975,17 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlProdNew.Size = new System.Drawing.Size(200, 337);
             this.pnlProdNew.TabIndex = 0;
             // 
+            // lblExpDate
+            // 
+            this.lblExpDate.AutoSize = true;
+            this.lblExpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblExpDate.Location = new System.Drawing.Point(25, 156);
+            this.lblExpDate.Name = "lblExpDate";
+            this.lblExpDate.Size = new System.Drawing.Size(151, 25);
+            this.lblExpDate.TabIndex = 15;
+            this.lblExpDate.Text = "Warinty Expiry";
+            // 
             // dtpWarDate
             // 
             this.dtpWarDate.Location = new System.Drawing.Point(25, 184);
@@ -1042,17 +1053,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddNewProd.UseVisualStyleBackColor = true;
             this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
             // 
-            // lblExpDate
-            // 
-            this.lblExpDate.AutoSize = true;
-            this.lblExpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblExpDate.Location = new System.Drawing.Point(25, 156);
-            this.lblExpDate.Name = "lblExpDate";
-            this.lblExpDate.Size = new System.Drawing.Size(151, 25);
-            this.lblExpDate.TabIndex = 15;
-            this.lblExpDate.Text = "Warinty Expiry";
-            // 
             // CallCenterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1070,6 +1070,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.Name = "CallCenterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Call Center";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CallCenterForm_FormClosed);
             this.Load += new System.EventHandler(this.CallCenterForm_Load);
             this.pnlControls.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);

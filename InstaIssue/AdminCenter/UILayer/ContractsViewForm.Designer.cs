@@ -230,6 +230,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "ContractsViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Contracts";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ContractsViewForm_FormClosed);
             this.Load += new System.EventHandler(this.ContractsViewForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

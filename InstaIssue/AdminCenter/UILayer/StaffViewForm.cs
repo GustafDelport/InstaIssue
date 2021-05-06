@@ -32,6 +32,12 @@ namespace InstaIssue.AdminCenter.UILayer
         private void StaffViewForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
+        }
+
+        private void StaffViewForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

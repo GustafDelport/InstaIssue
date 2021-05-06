@@ -388,6 +388,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "ServiceCenter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiceCenter";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ServiceCenter_FormClosed);
             this.Load += new System.EventHandler(this.ServiceCenter_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

@@ -112,5 +112,10 @@ namespace InstaIssue.AdminCenter.UILayer
         {
 
         }
+
+        private void ServiceCenter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

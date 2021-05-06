@@ -33,11 +33,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
                         context = new StaffContext(new StaffView());
                     }
                     break;
-                case "Delete":
-                    {
-                        context = new StaffContext(new StaffDelete());
-                    }
-                    break;
                 case "Add":
                     {
                         context = new StaffContext(new StaffAdd());
@@ -58,11 +53,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
                 case "Edit":
                     {
                         Globals.staffEditForm.Show();
-                    }
-                    break;
-                case "Delete":
-                    {
-                        Globals.staffDeleteForm.Show();
                     }
                     break;
                 case "Add":

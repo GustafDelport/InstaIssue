@@ -381,6 +381,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.Name = "StaffEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Staff";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StaffEditForm_FormClosed);
             this.Load += new System.EventHandler(this.StaffEditForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
