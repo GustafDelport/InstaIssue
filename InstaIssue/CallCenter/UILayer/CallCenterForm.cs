@@ -377,5 +377,12 @@ namespace InstaIssue.CallCenter.UILayer
             lblTime.Text = DateTime.Now.ToString("T");
         }
         #endregion
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlNewProd.Visible = true;
+            activePanel = pnlNewProd;
+        }
     }
 }

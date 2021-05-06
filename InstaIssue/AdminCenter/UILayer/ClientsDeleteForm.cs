@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InstaIssue.CallCenter.DomainLayer;
+using InstaIssue.CallCenter.LogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace InstaIssue.AdminCenter.UILayer
 {
     public partial class ClientsDeleteForm : Form
     {
+        private List<Clients> clients;
+
         public ClientsDeleteForm()
         {
             InitializeComponent();
@@ -20,6 +24,15 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ClientsDeleteForm_Load(object sender, EventArgs e)
         {
             tmrTime.Start();
+            lblID.Text = Globals.StaffID;
+            //Load all clients in combobox
+            clients = new ClientTracker().GetClients();
+
+            foreach (Clients item in clients)
+            {
+                cmbClients.Items.Add(item.ClientID + " " + item.Name);
+            }
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -34,9 +47,15 @@ namespace InstaIssue.AdminCenter.UILayer
             lblTime.Text = DateTime.Now.ToString("T");
         }
 
-        private void txtClientID_Click(object sender, EventArgs e)
+        private void btnDeleteSaff_Click(object sender, EventArgs e)
         {
-            txtClientID.Text = "";
+            //DeleteAll data asociated with the clientID
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

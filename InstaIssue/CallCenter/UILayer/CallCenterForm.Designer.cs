@@ -32,6 +32,15 @@ namespace InstaIssue.CallCenter.UILayer
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallCenterForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.pnlProducts = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpWarintyExp = new MetroFramework.Controls.MetroDateTime();
+            this.txtSerialNum = new System.Windows.Forms.TextBox();
+            this.txtProName = new System.Windows.Forms.TextBox();
+            this.lblPCont = new System.Windows.Forms.Label();
+            this.cmbPContracts = new MetroFramework.Controls.MetroComboBox();
+            this.btnAddProducts = new System.Windows.Forms.Button();
+            this.btnProducts = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -89,7 +98,17 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlTrackIssue = new System.Windows.Forms.Panel();
             this.btnTrackIssue = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.pnlNewProd = new System.Windows.Forms.Panel();
+            this.pnlProdNew = new System.Windows.Forms.Panel();
+            this.btnAddNewProd = new System.Windows.Forms.Button();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.lblPContr = new System.Windows.Forms.Label();
+            this.txtProdName = new System.Windows.Forms.TextBox();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.dtpWarDate = new MetroFramework.Controls.MetroDateTime();
             this.pnlControls.SuspendLayout();
+            this.pnlProducts.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlInfo.SuspendLayout();
@@ -104,11 +123,15 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlIssues.SuspendLayout();
             this.pnlCreateIss.SuspendLayout();
             this.pnlTrackIssue.SuspendLayout();
+            this.pnlNewProd.SuspendLayout();
+            this.pnlProdNew.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlControls
             // 
             this.pnlControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlControls.Controls.Add(this.pnlProducts);
+            this.pnlControls.Controls.Add(this.btnProducts);
             this.pnlControls.Controls.Add(this.button1);
             this.pnlControls.Controls.Add(this.btnClients);
             this.pnlControls.Controls.Add(this.btnDashboard);
@@ -116,8 +139,104 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlControls.Location = new System.Drawing.Point(0, 0);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(159, 512);
+            this.pnlControls.Size = new System.Drawing.Size(159, 511);
             this.pnlControls.TabIndex = 0;
+            // 
+            // pnlProducts
+            // 
+            this.pnlProducts.Controls.Add(this.panel1);
+            this.pnlProducts.Location = new System.Drawing.Point(159, 87);
+            this.pnlProducts.Name = "pnlProducts";
+            this.pnlProducts.Size = new System.Drawing.Size(749, 416);
+            this.pnlProducts.TabIndex = 7;
+            this.pnlProducts.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dtpWarintyExp);
+            this.panel1.Controls.Add(this.txtSerialNum);
+            this.panel1.Controls.Add(this.txtProName);
+            this.panel1.Controls.Add(this.lblPCont);
+            this.panel1.Controls.Add(this.cmbPContracts);
+            this.panel1.Controls.Add(this.btnAddProducts);
+            this.panel1.Location = new System.Drawing.Point(278, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(193, 324);
+            this.panel1.TabIndex = 8;
+            // 
+            // dtpWarintyExp
+            // 
+            this.dtpWarintyExp.Location = new System.Drawing.Point(17, 158);
+            this.dtpWarintyExp.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpWarintyExp.Name = "dtpWarintyExp";
+            this.dtpWarintyExp.Size = new System.Drawing.Size(159, 29);
+            this.dtpWarintyExp.TabIndex = 13;
+            // 
+            // txtSerialNum
+            // 
+            this.txtSerialNum.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSerialNum.Location = new System.Drawing.Point(17, 117);
+            this.txtSerialNum.Name = "txtSerialNum";
+            this.txtSerialNum.Size = new System.Drawing.Size(159, 27);
+            this.txtSerialNum.TabIndex = 12;
+            this.txtSerialNum.Text = "Serial Number";
+            this.txtSerialNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtProName
+            // 
+            this.txtProName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtProName.Location = new System.Drawing.Point(17, 78);
+            this.txtProName.Name = "txtProName";
+            this.txtProName.Size = new System.Drawing.Size(159, 27);
+            this.txtProName.TabIndex = 11;
+            this.txtProName.Text = "Name";
+            this.txtProName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblPCont
+            // 
+            this.lblPCont.AutoSize = true;
+            this.lblPCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblPCont.Location = new System.Drawing.Point(17, 11);
+            this.lblPCont.Name = "lblPCont";
+            this.lblPCont.Size = new System.Drawing.Size(165, 25);
+            this.lblPCont.TabIndex = 10;
+            this.lblPCont.Text = "Client Contracts";
+            // 
+            // cmbPContracts
+            // 
+            this.cmbPContracts.FormattingEnabled = true;
+            this.cmbPContracts.ItemHeight = 23;
+            this.cmbPContracts.Location = new System.Drawing.Point(17, 37);
+            this.cmbPContracts.Name = "cmbPContracts";
+            this.cmbPContracts.Size = new System.Drawing.Size(159, 29);
+            this.cmbPContracts.TabIndex = 9;
+            this.cmbPContracts.UseSelectable = true;
+            // 
+            // btnAddProducts
+            // 
+            this.btnAddProducts.Location = new System.Drawing.Point(0, 0);
+            this.btnAddProducts.Name = "btnAddProducts";
+            this.btnAddProducts.Size = new System.Drawing.Size(75, 23);
+            this.btnAddProducts.TabIndex = 14;
+            // 
+            // btnProducts
+            // 
+            this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProducts.FlatAppearance.BorderSize = 0;
+            this.btnProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnProducts.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnProducts.Location = new System.Drawing.Point(0, 375);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Size = new System.Drawing.Size(159, 82);
+            this.btnProducts.TabIndex = 8;
+            this.btnProducts.Text = "Client Products";
+            this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // button1
             // 
@@ -220,7 +339,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInfo.Location = new System.Drawing.Point(159, 0);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(767, 81);
+            this.pnlInfo.Size = new System.Drawing.Size(772, 81);
             this.pnlInfo.TabIndex = 3;
             // 
             // pnlSeperator
@@ -711,9 +830,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlIssues.Controls.Add(this.pnlCreateIss);
             this.pnlIssues.Controls.Add(this.btnTopTrackIss);
             this.pnlIssues.Controls.Add(this.pnlTrackIssue);
-            this.pnlIssues.Location = new System.Drawing.Point(164, 87);
+            this.pnlIssues.Location = new System.Drawing.Point(165, 87);
             this.pnlIssues.Name = "pnlIssues";
-            this.pnlIssues.Size = new System.Drawing.Size(749, 416);
+            this.pnlIssues.Size = new System.Drawing.Size(756, 416);
             this.pnlIssues.TabIndex = 5;
             this.pnlIssues.Visible = false;
             this.pnlIssues.VisibleChanged += new System.EventHandler(this.pnlIssues_VisibleChanged);
@@ -832,11 +951,98 @@ namespace InstaIssue.CallCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
+            // pnlNewProd
+            // 
+            this.pnlNewProd.Controls.Add(this.pnlProdNew);
+            this.pnlNewProd.Location = new System.Drawing.Point(165, 87);
+            this.pnlNewProd.Name = "pnlNewProd";
+            this.pnlNewProd.Size = new System.Drawing.Size(756, 416);
+            this.pnlNewProd.TabIndex = 6;
+            this.pnlNewProd.Visible = false;
+            // 
+            // pnlProdNew
+            // 
+            this.pnlProdNew.Controls.Add(this.dtpWarDate);
+            this.pnlProdNew.Controls.Add(this.txtSerial);
+            this.pnlProdNew.Controls.Add(this.txtProdName);
+            this.pnlProdNew.Controls.Add(this.lblPContr);
+            this.pnlProdNew.Controls.Add(this.metroComboBox1);
+            this.pnlProdNew.Controls.Add(this.btnAddNewProd);
+            this.pnlProdNew.Location = new System.Drawing.Point(272, 76);
+            this.pnlProdNew.Name = "pnlProdNew";
+            this.pnlProdNew.Size = new System.Drawing.Size(200, 294);
+            this.pnlProdNew.TabIndex = 0;
+            // 
+            // btnAddNewProd
+            // 
+            this.btnAddNewProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNewProd.FlatAppearance.BorderSize = 0;
+            this.btnAddNewProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnAddNewProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnAddNewProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddNewProd.Image = global::InstaIssue.Properties.Resources.TrackB;
+            this.btnAddNewProd.Location = new System.Drawing.Point(20, 198);
+            this.btnAddNewProd.Name = "btnAddNewProd";
+            this.btnAddNewProd.Size = new System.Drawing.Size(159, 82);
+            this.btnAddNewProd.TabIndex = 9;
+            this.btnAddNewProd.Text = "Add Products";
+            this.btnAddNewProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddNewProd.UseVisualStyleBackColor = true;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(25, 35);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(150, 29);
+            this.metroComboBox1.TabIndex = 10;
+            this.metroComboBox1.UseSelectable = true;
+            // 
+            // lblPContr
+            // 
+            this.lblPContr.AutoSize = true;
+            this.lblPContr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPContr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblPContr.Location = new System.Drawing.Point(17, 5);
+            this.lblPContr.Name = "lblPContr";
+            this.lblPContr.Size = new System.Drawing.Size(165, 25);
+            this.lblPContr.TabIndex = 11;
+            this.lblPContr.Text = "Client Contracts";
+            // 
+            // txtProdName
+            // 
+            this.txtProdName.Location = new System.Drawing.Point(25, 79);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(150, 26);
+            this.txtProdName.TabIndex = 12;
+            this.txtProdName.Text = "Name";
+            this.txtProdName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSerial
+            // 
+            this.txtSerial.Location = new System.Drawing.Point(25, 120);
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.Size = new System.Drawing.Size(150, 26);
+            this.txtSerial.TabIndex = 13;
+            this.txtSerial.Text = "Serial Number";
+            this.txtSerial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dtpWarDate
+            // 
+            this.dtpWarDate.Location = new System.Drawing.Point(25, 161);
+            this.dtpWarDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpWarDate.Name = "dtpWarDate";
+            this.dtpWarDate.Size = new System.Drawing.Size(150, 29);
+            this.dtpWarDate.TabIndex = 14;
+            // 
             // CallCenterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(926, 512);
+            this.ClientSize = new System.Drawing.Size(931, 511);
+            this.Controls.Add(this.pnlNewProd);
             this.Controls.Add(this.pnlIssues);
             this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlDash);
@@ -850,6 +1056,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.Text = "Call Center";
             this.Load += new System.EventHandler(this.CallCenterForm_Load);
             this.pnlControls.ResumeLayout(false);
+            this.pnlProducts.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.pnlInfo.ResumeLayout(false);
@@ -870,6 +1079,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlCreateIss.ResumeLayout(false);
             this.pnlCreateIss.PerformLayout();
             this.pnlTrackIssue.ResumeLayout(false);
+            this.pnlNewProd.ResumeLayout(false);
+            this.pnlProdNew.ResumeLayout(false);
+            this.pnlProdNew.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -934,5 +1146,22 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Timer tmrTime;
         private System.Windows.Forms.ComboBox cmbContractsC;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Panel pnlProducts;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAddProducts;
+        private System.Windows.Forms.Label lblPCont;
+        private MetroFramework.Controls.MetroComboBox cmbPContracts;
+        private System.Windows.Forms.TextBox txtProName;
+        private System.Windows.Forms.TextBox txtSerialNum;
+        private MetroFramework.Controls.MetroDateTime dtpWarintyExp;
+        private System.Windows.Forms.Panel pnlNewProd;
+        private System.Windows.Forms.Panel pnlProdNew;
+        private System.Windows.Forms.Button btnAddNewProd;
+        private System.Windows.Forms.Label lblPContr;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroDateTime dtpWarDate;
+        private System.Windows.Forms.TextBox txtSerial;
+        private System.Windows.Forms.TextBox txtProdName;
     }
 }
