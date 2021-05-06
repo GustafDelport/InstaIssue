@@ -56,21 +56,16 @@ namespace InstaIssue.CallCenter.LogicLayer
             return new ClientDataHandler().GetClientJobs(clientID);
         }
 
-        //Useless for now a agent does net need to see all clients
-        //public List<Clients> GetClients()
-        //{
-        //    List<Clients> clients = new List<Clients>();
-        //    ClientDataHandler handler = new ClientDataHandler();
-        //    Data data = new Data();
+        public List<Clients> GetClients()
+        {
+            List<Clients> clients = new List<Clients>();
+            ClientDataHandler handler = new ClientDataHandler();
+            Data data = new Data();
 
-        //    if (data.CheckExist(nationalID, "tblclients", "nationalID"))
-        //    {
-        //        clients = handler.GetClients();
-        //    }
-        //    else clients = null;
+            clients = handler.GetClients();
 
-        //    //return validclient
-        //    return clients;
-        //}
+            //return validclient
+            return clients;
+        }
     }
 }

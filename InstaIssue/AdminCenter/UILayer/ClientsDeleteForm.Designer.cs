@@ -43,7 +43,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlAddClient = new System.Windows.Forms.Panel();
-            this.txtClientID = new System.Windows.Forms.TextBox();
+            this.cmbClients = new MetroFramework.Controls.MetroComboBox();
             this.btnDeleteSaff = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -174,23 +174,22 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlAddClient
             // 
-            this.pnlAddClient.Controls.Add(this.txtClientID);
+            this.pnlAddClient.Controls.Add(this.cmbClients);
             this.pnlAddClient.Controls.Add(this.btnDeleteSaff);
             this.pnlAddClient.Location = new System.Drawing.Point(441, 200);
             this.pnlAddClient.Name = "pnlAddClient";
             this.pnlAddClient.Size = new System.Drawing.Size(193, 143);
             this.pnlAddClient.TabIndex = 10;
             // 
-            // txtClientID
+            // cmbClients
             // 
-            this.txtClientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtClientID.Location = new System.Drawing.Point(16, 21);
-            this.txtClientID.Name = "txtClientID";
-            this.txtClientID.Size = new System.Drawing.Size(159, 22);
-            this.txtClientID.TabIndex = 7;
-            this.txtClientID.Text = "Client ID";
-            this.txtClientID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtClientID.Click += new System.EventHandler(this.txtClientID_Click);
+            this.cmbClients.FormattingEnabled = true;
+            this.cmbClients.ItemHeight = 23;
+            this.cmbClients.Location = new System.Drawing.Point(16, 14);
+            this.cmbClients.Name = "cmbClients";
+            this.cmbClients.Size = new System.Drawing.Size(159, 29);
+            this.cmbClients.TabIndex = 9;
+            this.cmbClients.UseSelectable = true;
             // 
             // btnDeleteSaff
             // 
@@ -209,6 +208,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnDeleteSaff.Text = "Delete Client";
             this.btnDeleteSaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDeleteSaff.UseVisualStyleBackColor = true;
+            this.btnDeleteSaff.Click += new System.EventHandler(this.btnDeleteSaff_Click);
             // 
             // ClientsDeleteForm
             // 
@@ -229,7 +229,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.pnlAddClient.ResumeLayout(false);
-            this.pnlAddClient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,7 +246,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Timer tmrTime;
         private System.Windows.Forms.Panel pnlAddClient;
-        private System.Windows.Forms.TextBox txtClientID;
         private System.Windows.Forms.Button btnDeleteSaff;
+        private MetroFramework.Controls.MetroComboBox cmbClients;
     }
 }
