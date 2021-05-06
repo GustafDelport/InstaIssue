@@ -309,5 +309,56 @@ namespace Authentication
 
             return flag;
         }
+
+        public Boolean validateProductsCreation(Panel panel)
+        {
+            Boolean flag = false;
+            Boolean[] flagArr = new Boolean[4];
+            int n = 0;
+
+            foreach (Control item in panel.Controls)
+            {
+                if (item is TextBox || item is DateTimePicker)
+                {
+                    flagArr[n] = validateText(item.Text);
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox box = (ComboBox)item;
+
+                    if (box.SelectedIndex == -1)
+                    {
+                        flagArr[n] = false;
+                        n++;
+                    }
+                    else
+                    {
+                        flagArr[n] = true;
+                        n++;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+
+            }
+            foreach (var item in flagArr)
+            {
+                if (!item)
+                {
+                    //Our final flag to count as one singular status check
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    flag = true;
+
+                }
+            }
+
+            return flag;
+        }
     }
 }

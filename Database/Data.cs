@@ -281,7 +281,7 @@ namespace Database
         }
 
         //Add Product
-        public Boolean AddProduct(string productID, string clientID,string name, string serialNumber, DateTime warantyExpireDate)
+        public Boolean AddProduct(string productID, string clientID,string contractID,string name ,string serialNumber, DateTime warantyExpireDate)
         {
             try
             {
@@ -289,14 +289,14 @@ namespace Database
                 if (CheckExist(productID, "tblproducts", "productID"))
                 {
                     // Run update user code
-                    connection.RunCommand($"UPDATE tblusers SET productID ='{productID}', clientID = '{clientID}', name = '{name}', serialNumber = '{serialNumber}',warintyExpireDate = '{warantyExpireDate}' WHERE productID = '{productID}'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblusers SET productID ='{productID}', clientID = '{clientID}',contractID = '{contractID}', name = '{name}', serialNumber = '{serialNumber}',warintyExpireDate = '{warantyExpireDate}' WHERE productID = '{productID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add user code
-                    connection.RunCommand($"INSERT INTO dbo.tblproducts VALUES('{productID}','{clientID}','{name}','{serialNumber}','{warantyExpireDate}')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblproducts VALUES('{productID}','{clientID}','{contractID}','{name}','{serialNumber}','{warantyExpireDate}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }

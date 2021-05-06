@@ -19,8 +19,9 @@ namespace InstaIssue.CallCenter.UILayer
         private bool flag;
         private List<String> SLAlist;
         private readonly Validations validations = new Validations();
-        private List<AdminCenter.DomainLayer.Jobs> jobs;
-        private List<Products> products;
+        private List<Jobs> jobs;
+        private List<Products> products; 
+        private List<Contracts> contracts;
 
         public CallCenterForm()
         {
@@ -198,6 +199,23 @@ namespace InstaIssue.CallCenter.UILayer
         {
             txtAddress.Text = "";
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            pnlNewProd.Visible = true;
+            activePanel = pnlNewProd;
+        }
+
+        private void txtProdName_Click(object sender, EventArgs e)
+        {
+            txtProdName.Text = "";
+        }
+
+        private void txtSerial_Click(object sender, EventArgs e)
+        {
+            txtSerial.Text = "";
+        }
         #endregion
 
         //Button Clicks
@@ -244,6 +262,12 @@ namespace InstaIssue.CallCenter.UILayer
             foreach (var item in jobs)
             {
                 cmbJobs.Items.Add(item.Service);
+            }
+            contracts = new ClientTracker().GetClientContracts(client.ClientID);
+
+            foreach (var item in contracts)
+            {
+                cmbNewCont.Items.Add(item.ContractID + " " + item.SLAID1);
             }
         }
 
@@ -349,6 +373,46 @@ namespace InstaIssue.CallCenter.UILayer
 
         }
 
+        private void btnAddNewProd_Click(object sender, EventArgs e)
+        {
+            Panel ProductsPanel = pnlNewProd;
+
+            //Major validations happen here
+            flag = validations.validateReqCreation(ProductsPanel);
+
+            String name = txtProdName.Text;
+            String serial = txtSerial.Text;
+
+            String[] arr = cmbNewCont.Text.Split(' ');
+
+            String contractID = arr[0];
+            string slaID = arr[1];
+
+            DateTime ExpDate = dtpWarDate.Value;
+
+            flag = true;
+
+            if (flag)
+            {
+                flag = new GeneralHandler().CreateProd(name, serial, contractID, client.ClientID, ExpDate);
+                if (flag)
+                {
+                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetBoxes();
+                }
+
+            }
+            else
+            {
+                ResetBoxes();
+                MessageBox.Show("A mistake was made when entering details please try again", "Syntax Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnTrackJob_Click(object sender, EventArgs e)
         {
             //Track Job
@@ -377,12 +441,5 @@ namespace InstaIssue.CallCenter.UILayer
             lblTime.Text = DateTime.Now.ToString("T");
         }
         #endregion
-
-        private void btnProducts_Click(object sender, EventArgs e)
-        {
-            activePanel.Visible = false;
-            pnlNewProd.Visible = true;
-            activePanel = pnlNewProd;
-        }
     }
 }
