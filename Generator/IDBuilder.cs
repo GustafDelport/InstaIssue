@@ -295,12 +295,6 @@ namespace Generator
             return indicator+type+number;
         }
 
-        public String GenerateReviewID()
-        {
-            //JJ weet nie of jy die gaan gebruik nie ?
-            return "";
-        }
-
         public String GenerateJobID(string clientID)
         {
             //JB00001A00000004
