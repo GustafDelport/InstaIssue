@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 // CSS
 import './App.css';
 import './styles/colors.css';
-import 'rsuite/dist/styles/rsuite-dark.css'
+import 'rsuite/dist/styles/rsuite-dark.css';
 
 // Components
 import LandingComponent from "./components/pages/landing/landing.component";
