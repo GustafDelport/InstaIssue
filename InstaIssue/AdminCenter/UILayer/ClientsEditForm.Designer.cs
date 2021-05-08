@@ -59,7 +59,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.cmbData = new MetroFramework.Controls.MetroComboBox();
             this.pnlEditStaff = new System.Windows.Forms.Panel();
             this.cmbClientIDs = new MetroFramework.Controls.MetroComboBox();
-            this.btnFindClient = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -386,7 +385,6 @@ namespace InstaIssue.AdminCenter.UILayer
             // pnlEditStaff
             // 
             this.pnlEditStaff.Controls.Add(this.cmbClientIDs);
-            this.pnlEditStaff.Controls.Add(this.btnFindClient);
             this.pnlEditStaff.Location = new System.Drawing.Point(414, 87);
             this.pnlEditStaff.Name = "pnlEditStaff";
             this.pnlEditStaff.Size = new System.Drawing.Size(193, 139);
@@ -401,24 +399,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.cmbClientIDs.Size = new System.Drawing.Size(150, 29);
             this.cmbClientIDs.TabIndex = 9;
             this.cmbClientIDs.UseSelectable = true;
-            // 
-            // btnFindClient
-            // 
-            this.btnFindClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFindClient.FlatAppearance.BorderSize = 0;
-            this.btnFindClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnFindClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnFindClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFindClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnFindClient.Image = global::InstaIssue.Properties.Resources.TrackB;
-            this.btnFindClient.Location = new System.Drawing.Point(16, 49);
-            this.btnFindClient.Name = "btnFindClient";
-            this.btnFindClient.Size = new System.Drawing.Size(159, 82);
-            this.btnFindClient.TabIndex = 8;
-            this.btnFindClient.Text = "Find Client";
-            this.btnFindClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnFindClient.UseVisualStyleBackColor = true;
             // 
             // ClientsEditForm
             // 
@@ -472,7 +452,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnEditClient;
         private MetroFramework.Controls.MetroComboBox cmbData;
         private System.Windows.Forms.Panel pnlEditStaff;
-        private System.Windows.Forms.Button btnFindClient;
         private MetroFramework.Controls.MetroComboBox cmbClientIDs;
         private System.Windows.Forms.Label lblAEmail;
         private System.Windows.Forms.Label lblEmail;
