@@ -357,7 +357,6 @@ namespace Authentication
 
                 }
             }
-
             return flag;
         }
     }

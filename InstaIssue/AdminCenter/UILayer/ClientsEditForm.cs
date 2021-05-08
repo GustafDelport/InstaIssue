@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InstaIssue.CallCenter.DomainLayer;
+using InstaIssue.CallCenter.LogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace InstaIssue.AdminCenter.UILayer
 {
     public partial class ClientsEditForm : Form
     {
+        private List<Clients> clients;
+
         public ClientsEditForm()
         {
             InitializeComponent();
@@ -21,6 +25,12 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
             lblID.Text = Globals.StaffID;
+            clients = new ClientTracker().GetClients();
+
+            foreach (Clients item in clients)
+            {
+                cmbClientIDs.Items.Add(item.ClientID + " " + item.Name);
+            }
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
