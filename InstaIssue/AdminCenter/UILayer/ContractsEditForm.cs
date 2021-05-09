@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InstaIssue.AdminCenter.DomainLayer;
+using InstaIssue.AdminCenter.LogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace InstaIssue.AdminCenter.UILayer
 {
     public partial class ContractsEditForm : Form
     {
+        private List<SLA> SLAs;
+        private SLA SLA;
+
         public ContractsEditForm()
         {
             InitializeComponent();
@@ -33,6 +38,14 @@ namespace InstaIssue.AdminCenter.UILayer
         {
             tmrTime.Start();
             lblID.Text = Globals.StaffID;
+
+            ContractsManagment contractsM = new ContractsManagment();
+            SLAs = contractsM.GetListSLAs();
+
+            foreach (var item in SLAs)
+            {
+                cmbSLAs.Items.Add(item.SLAID1 + " " + item.Name);
+            }
         }
 
         private void txtNewData_Click(object sender, EventArgs e)
@@ -43,6 +56,61 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ContractsEditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnFindSLA_Click(object sender, EventArgs e)
+        {
+            string slaID = cmbSLAs.Text.Split(' ')[0];
+
+            foreach (SLA item in SLAs)
+            {
+                if (item.SLAID1 == slaID)
+                {
+                    SLA = item;
+                }
+            }
+
+            lblAName.Text = SLA.Name;
+            lblADescription.Text = SLA.Description;
+            lblATarif.Text = SLA.Tarif;
+        }
+
+        private void btnEditSLA_Click(object sender, EventArgs e)
+        {
+            switch (cmbData.Text)
+            {
+                case "Name":
+                    {
+                        SLA.Name = txtNewData.Text;
+                    }
+                    break;
+                case "Description":
+                    {
+                        SLA.Description = txtNewData.Text;
+                    }
+                    break;
+                case "Tarif":
+                    {
+                        SLA.Tarif = txtNewData.Text;
+                    }
+                    break;
+                default:
+                    {
+                        MessageBox.Show("Please select data to edit in the drop down menu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+            }
+
+            bool flag = new ContractsManagment().EditSLA(SLA);
+
+            if (flag)
+            {
+                MessageBox.Show("New SLA data was registered", "Update Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("There was a error updating SLA data", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 using Generator;
+using System.Data;
 
 namespace InstaIssue.AdminCenter.LogicLayer
 {
@@ -15,12 +16,11 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public List<Staff> GetAllStaff()
         {
-
-            return null;
+            return new StaffDataHandler().GetAllStaff();
         }
-        public Staff GetStaff()
+        public DataTable GetStaff(string staffID)
         {
-            return null;
+            return new StaffDataHandler().GetStaff(staffID);
         }
 
         public Boolean AddStaff(string name, string surname,string skills, string address, string username, string password)
@@ -53,10 +53,13 @@ namespace InstaIssue.AdminCenter.LogicLayer
             }
             return flag;
         }
-        public Boolean EditStaff(String type, String newData)
+        public Boolean EditStaff(Staff staff)
         {
-            //All Fields later;
-            return false;
+            bool flag = false;
+            int a = -1;
+            flag = new Data().AddStaff(staff.StaffID, staff.Name, staff.Surname, staff.Status, staff.Skills, staff.Address, a);
+
+            return flag;
         }
     }
 }

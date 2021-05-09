@@ -42,7 +42,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pnlEditStaff = new System.Windows.Forms.Panel();
-            this.txtStaffID = new System.Windows.Forms.TextBox();
+            this.cmbStaff = new MetroFramework.Controls.MetroComboBox();
             this.btnFindStaff = new System.Windows.Forms.Button();
             this.pnlEdit = new System.Windows.Forms.Panel();
             this.lblAStatus = new System.Windows.Forms.Label();
@@ -186,23 +186,22 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlEditStaff
             // 
-            this.pnlEditStaff.Controls.Add(this.txtStaffID);
+            this.pnlEditStaff.Controls.Add(this.cmbStaff);
             this.pnlEditStaff.Controls.Add(this.btnFindStaff);
             this.pnlEditStaff.Location = new System.Drawing.Point(419, 87);
             this.pnlEditStaff.Name = "pnlEditStaff";
             this.pnlEditStaff.Size = new System.Drawing.Size(193, 139);
             this.pnlEditStaff.TabIndex = 10;
             // 
-            // txtStaffID
+            // cmbStaff
             // 
-            this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStaffID.Location = new System.Drawing.Point(16, 21);
-            this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(159, 22);
-            this.txtStaffID.TabIndex = 7;
-            this.txtStaffID.Text = "Staff ID";
-            this.txtStaffID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtStaffID.Click += new System.EventHandler(this.txtStaffID_Click);
+            this.cmbStaff.FormattingEnabled = true;
+            this.cmbStaff.ItemHeight = 23;
+            this.cmbStaff.Location = new System.Drawing.Point(16, 14);
+            this.cmbStaff.Name = "cmbStaff";
+            this.cmbStaff.Size = new System.Drawing.Size(159, 29);
+            this.cmbStaff.TabIndex = 9;
+            this.cmbStaff.UseSelectable = true;
             // 
             // btnFindStaff
             // 
@@ -221,6 +220,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnFindStaff.Text = "Find Staff";
             this.btnFindStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFindStaff.UseVisualStyleBackColor = true;
+            this.btnFindStaff.Click += new System.EventHandler(this.btnFindStaff_Click);
             // 
             // pnlEdit
             // 
@@ -353,6 +353,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditStaff.Text = "Edit Staff";
             this.btnEditStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditStaff.UseVisualStyleBackColor = true;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
             // 
             // cmbData
             // 
@@ -389,7 +390,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.pnlEditStaff.ResumeLayout(false);
-            this.pnlEditStaff.PerformLayout();
             this.pnlEdit.ResumeLayout(false);
             this.pnlEdit.PerformLayout();
             this.ResumeLayout(false);
@@ -409,7 +409,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Timer tmrTime;
         private System.Windows.Forms.Panel pnlEditStaff;
-        private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Button btnFindStaff;
         private System.Windows.Forms.Panel pnlEdit;
         private System.Windows.Forms.Button btnEditStaff;
@@ -423,5 +422,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblAStatus;
         private System.Windows.Forms.Label lblASurname;
         private System.Windows.Forms.Label lblAName;
+        private MetroFramework.Controls.MetroComboBox cmbStaff;
     }
 }

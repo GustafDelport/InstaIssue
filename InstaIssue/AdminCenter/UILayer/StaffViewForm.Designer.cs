@@ -45,7 +45,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.btnViewAllStaff = new System.Windows.Forms.Button();
             this.btnViewIDStaff = new System.Windows.Forms.Button();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbStaffAll = new MetroFramework.Controls.MetroComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.chbAvailable = new MetroFramework.Controls.MetroCheckBox();
             this.pnlCheckB = new System.Windows.Forms.Panel();
@@ -215,6 +215,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewAllStaff.Text = "View All Staff";
             this.btnViewAllStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnViewAllStaff.UseVisualStyleBackColor = true;
+            this.btnViewAllStaff.Click += new System.EventHandler(this.btnViewAllStaff_Click);
             // 
             // btnViewIDStaff
             // 
@@ -233,16 +234,17 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewIDStaff.Text = "View Staff By ID";
             this.btnViewIDStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnViewIDStaff.UseVisualStyleBackColor = true;
+            this.btnViewIDStaff.Click += new System.EventHandler(this.btnViewIDStaff_Click);
             // 
-            // metroComboBox1
+            // cmbStaffAll
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(167, 205);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(138, 29);
-            this.metroComboBox1.TabIndex = 14;
-            this.metroComboBox1.UseSelectable = true;
+            this.cmbStaffAll.FormattingEnabled = true;
+            this.cmbStaffAll.ItemHeight = 23;
+            this.cmbStaffAll.Location = new System.Drawing.Point(167, 205);
+            this.cmbStaffAll.Name = "cmbStaffAll";
+            this.cmbStaffAll.Size = new System.Drawing.Size(138, 29);
+            this.cmbStaffAll.TabIndex = 14;
+            this.cmbStaffAll.UseSelectable = true;
             // 
             // button1
             // 
@@ -261,6 +263,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.button1.Text = "View Staff By Status";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // chbAvailable
             // 
@@ -289,7 +292,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.ClientSize = new System.Drawing.Size(926, 512);
             this.Controls.Add(this.pnlCheckB);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.cmbStaffAll);
             this.Controls.Add(this.btnViewIDStaff);
             this.Controls.Add(this.btnViewAllStaff);
             this.Controls.Add(this.dgvStaff);
@@ -327,7 +330,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.Button btnViewAllStaff;
         private System.Windows.Forms.Button btnViewIDStaff;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cmbStaffAll;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroCheckBox chbBusy;
         private MetroFramework.Controls.MetroCheckBox chbAvailable;

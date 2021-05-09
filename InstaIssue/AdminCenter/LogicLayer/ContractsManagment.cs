@@ -20,49 +20,16 @@ namespace InstaIssue.AdminCenter.LogicLayer
             connection.Connect();
         }
 
-        public List<Contracts> GetContract()
+        public DataTable GetContracts()
         {
-            List<Contracts> contracts = new List<Contracts>();
-            try
-            {
-                connection.database.Open();
-
-                String Q = $"SELECT * FROM tblcontracts";
-                SqlConnection con = connection.GetSqlConnection();
-
-                SqlDataAdapter reader = new SqlDataAdapter(Q, con);
-                DataTable table = new DataTable();
-
-                reader.Fill(table);
-
-                String[] arr = new string[4];
-                foreach (DataRow row in table.Rows)
-                {
-                    arr[0] = row["contractID"].ToString();
-                    arr[1] = row["dateSigned"].ToString();
-                    arr[2] = row["clientID"].ToString();
-                    arr[3] = row["slaID"].ToString();
-
-                    contracts.Add(new Contracts(arr[0], DateTime.Parse(arr[1]), arr[2], arr[3]));
-                }
-                connection.database.Close();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            return contracts;
+            DataTable table = new DataTable();
+            table.Load(new Data().FindAll("tblcontracts"));
+            return table;
         }
 
-        internal bool AddSLA(string name, string descrip, string tarif, string code)
+        public List<SLA> GetListSLAs()
         {
-            String slaID = new IDBuilder().GenerateSlaID(code);
-            return data.AddSLA(slaID,name,descrip,Double.Parse(tarif));
-        }
-
-        public List<SLA> GetSLAs()
-        {
-            List<SLA> slas = new List<SLA>();
+            List<SLA> SLAs = new List<SLA>();
             try
             {
                 connection.database.Open();
@@ -78,20 +45,35 @@ namespace InstaIssue.AdminCenter.LogicLayer
                 String[] arr = new string[4];
                 foreach (DataRow row in table.Rows)
                 {
+
                     arr[0] = row["slaID"].ToString();
                     arr[1] = row["name"].ToString();
                     arr[2] = row["description"].ToString();
                     arr[3] = row["tarif"].ToString();
 
-                    slas.Add(new SLA(arr[0], arr[1], arr[2], arr[3]));
+                    SLAs.Add(new SLA(arr[0], arr[1], arr[2], arr[3]));
                 }
+
                 connection.database.Close();
             }
             catch (Exception e)
             {
                 throw e;
             }
-            return slas;
+            return SLAs;
+        }
+
+        internal bool AddSLA(string name, string descrip, string tarif, string code)
+        {
+            String slaID = new IDBuilder().GenerateSlaID(code);
+            return data.AddSLA(slaID,name,descrip,Double.Parse(tarif));
+        }
+
+        public DataTable GetSLAs()
+        {
+            DataTable table = new DataTable();
+            table.Load(new Data().FindAll("tblsla"));
+            return table;
         }
 
         public Boolean AddContract(String contractID, DateTime dateSigned, String clientID, String SlaID)
@@ -138,11 +120,11 @@ namespace InstaIssue.AdminCenter.LogicLayer
             }
             return true;
         }
-        public Boolean EditSLA(String type, String newData)
+        public Boolean EditSLA(SLA sla)
         {
             try
             {
-                //data.AddSLA();
+                data.AddSLA(sla.SLAID1, sla.Name, sla.Description, double.Parse(sla.Tarif));
             }
             catch (Exception e)
             {

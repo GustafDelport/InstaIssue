@@ -188,6 +188,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewContracts.Text = "View All Contracts";
             this.btnViewContracts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnViewContracts.UseVisualStyleBackColor = true;
+            this.btnViewContracts.Click += new System.EventHandler(this.btnViewContracts_Click);
             // 
             // dgvSContracts
             // 
@@ -215,6 +216,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewSLA.Text = "View All SLA\'s";
             this.btnViewSLA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnViewSLA.UseVisualStyleBackColor = true;
+            this.btnViewSLA.Click += new System.EventHandler(this.btnViewSLA_Click);
             // 
             // ContractsViewForm
             // 
