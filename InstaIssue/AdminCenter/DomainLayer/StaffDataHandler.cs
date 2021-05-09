@@ -16,18 +16,12 @@ namespace InstaIssue.AdminCenter.DomainLayer
 
         public List<Staff> GetAllStaff()
         {
-            return null;
-        }
-
-        //Effective still working on
-        public Staff GetStaff(String staffID)
-        {
-            Staff staff = new Staff();
+            List<Staff> staff = new List<Staff>();
             try
             {
                 connection.database.Open();
 
-                String Q = $"SELECT * FROM tblstaff WHERE staffID = {staffID}";
+                String Q = $"SELECT * FROM tblstaff";
                 SqlConnection con = connection.GetSqlConnection();
 
                 SqlDataAdapter reader = new SqlDataAdapter(Q, con);
@@ -35,16 +29,39 @@ namespace InstaIssue.AdminCenter.DomainLayer
 
                 reader.Fill(table);
 
+                String[] arr = new string[7];
                 foreach (DataRow row in table.Rows)
                 {
-                    //Returning a basic staff member
-                    staff.StaffID = row["staffID"].ToString();
-                    staff.Name = row["name"].ToString();
-                    staff.Surname = row["surname"].ToString();
+
+                    arr[0] = row["staffID"].ToString();
+                    arr[1] = row["userID"].ToString();
+                    arr[2] = row["name"].ToString();
+                    arr[3] = row["surname"].ToString();
+                    arr[4] = row["status"].ToString();
+                    arr[5] = row["skills"].ToString();
+                    arr[6] = row["address"].ToString();
+
+                    staff.Add(new Staff(arr[0],arr[2],arr[3],arr[4],arr[5],arr[6],"NA"));
                 }
 
                 connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return staff;
+        }
 
+        //Effective still working on
+        public DataTable GetStaff(String staffID)
+        {
+            DataTable staff = new DataTable();
+            SqlDataReader reader;
+            try
+            {
+                reader = new Data().FindEntry(staffID,"tblstaff","clientID");
+                staff.Load(reader);
             }
             catch (Exception e)
             {

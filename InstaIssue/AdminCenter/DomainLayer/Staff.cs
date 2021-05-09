@@ -13,14 +13,14 @@ namespace InstaIssue.AdminCenter.DomainLayer
         private String surname;
         private String username;
         private String status;
-        private String[] skills;
+        private String skills;
         private String address;
 
         public Staff()
         {
         }
 
-        public Staff(string staffID, string name, string surname, string status, string[] skills, string address,String username)
+        public Staff(string staffID, string name, string surname, string status, string skills, string address,String username)
         {
             this.staffID = staffID;
             this.name = name;
@@ -35,7 +35,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
         public string Status { get => status; set => status = value; }
-        public string[] Skills { get => skills; set => skills = value; }
+        public string Skills { get => skills; set => skills = value; }
         public string Address { get => address; set => address = value; }
         public string Username { get => username; set => username = value; }
     }

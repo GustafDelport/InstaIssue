@@ -315,6 +315,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditSLA.Text = "Edit SLA";
             this.btnEditSLA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditSLA.UseVisualStyleBackColor = true;
+            this.btnEditSLA.Click += new System.EventHandler(this.btnEditSLA_Click);
             // 
             // cmbData
             // 
@@ -366,6 +367,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnFindSLA.Text = "Find SLA";
             this.btnFindSLA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFindSLA.UseVisualStyleBackColor = true;
+            this.btnFindSLA.Click += new System.EventHandler(this.btnFindSLA_Click);
             // 
             // ContractsEditForm
             // 

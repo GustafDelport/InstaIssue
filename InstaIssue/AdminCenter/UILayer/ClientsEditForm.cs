@@ -124,5 +124,10 @@ namespace InstaIssue.AdminCenter.UILayer
                 MessageBox.Show("There was a error updating client data", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtNewData_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

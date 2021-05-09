@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstaIssue.AdminCenter.LogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,16 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ContractsViewForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnViewContracts_Click(object sender, EventArgs e)
+        {
+            dgvSContracts.DataSource = new ContractsManagment().GetContracts();
+        }
+
+        private void btnViewSLA_Click(object sender, EventArgs e)
+        {
+            dgvSContracts.DataSource = new ContractsManagment().GetSLAs();
         }
     }
 }

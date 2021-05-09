@@ -349,6 +349,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtNewData.Text = "New Data";
             this.txtNewData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNewData.Click += new System.EventHandler(this.txtNewData_Click);
+            this.txtNewData.TextChanged += new System.EventHandler(this.txtNewData_TextChanged);
             // 
             // btnEditClient
             // 
