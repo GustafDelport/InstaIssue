@@ -31,7 +31,6 @@ namespace InstaIssue
             Globals.clientsEditForm = new ClientsEditForm();
             Globals.clientsViewForm = new ClientsViewForm();
             Globals.contractsAddForm = new ContractsAddForm();
-            Globals.contractsDeleteForm = new ContractsDeleteForm();
             Globals.contractsEditForm = new ContractsEditForm();
             Globals.contractsViewForm = new ContractsViewForm();
             Globals.staffAddForm = new StaffAddForm();

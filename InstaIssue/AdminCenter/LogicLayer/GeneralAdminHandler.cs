@@ -2,6 +2,7 @@
 using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,15 @@ namespace InstaIssue.AdminCenter.LogicLayer
             flag = new Data().AddClient(client.ClientID, client.Name, client.Surname, client.NationalID, client.PhoneNumber, client.EMail, client.Address, -1);
 
             return flag;
+        }
+
+        public DataTable GetViewClients()
+        {
+            DataTable table = new DataTable();
+
+            table.Load(new Data().FindAll("tblclients"));
+
+            return table;
         }
     }
 }

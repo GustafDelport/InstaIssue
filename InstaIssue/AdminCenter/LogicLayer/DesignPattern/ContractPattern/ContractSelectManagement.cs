@@ -33,11 +33,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
                         context = new ContractContext(new ContractView());
                     }
                     break;
-                case "Delete":
-                    {
-                        context = new ContractContext(new ContractDelete());
-                    }
-                    break;
                 case "Add":
                     {
                         context = new ContractContext(new ContractAdd());
@@ -60,10 +55,6 @@ namespace InstaIssue.AdminCenter.LogicLayer.DesignPattern
                         Globals.contractsEditForm.Show();
                     }
                     break;
-                case "Delete":
-                    {
-                        Globals.contractsDeleteForm.Show();
-                    }
                     break;
                 case "Add":
                     {

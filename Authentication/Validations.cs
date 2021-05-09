@@ -88,6 +88,73 @@ namespace Authentication
             return flag;
         }
 
+        public Boolean ValidateStaffRegister(Panel panel)
+        {
+            Boolean[] flagArr = new Boolean[6];
+            Boolean flag = false;
+            int n = 0;
+
+            foreach (Control item in panel.Controls)
+            {
+                if (item is TextBox)
+                {
+                    if (!(item.Name == "txtPassword"))
+                    {
+                        flagArr[n] = validateCustomText(item.Text);
+                        n++;
+                    }
+                    else if (!(item.Name == "txtUsername"))
+                    {
+                        flagArr[n] = validateCustomText(item.Text);
+                        n++;
+                    }
+                    else
+                    {
+                        flagArr[n] = validateEmail(item.Text);
+                        n++;
+                    }
+                    
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox box = (ComboBox)item;
+
+                    if (box.SelectedIndex == -1)
+                    {
+                        flagArr[n] = false;
+                        n++;
+                    }
+                    else
+                    {
+                        flagArr[n] = true;
+                        n++;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+
+            }
+
+            foreach (var item in flagArr)
+            {
+                if (!item)
+                {
+                    //Our final flag to count as one singular status check
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    flag = true;
+
+                }
+            }
+
+            return flag;
+        }
+
         public Boolean ValidateID(String data)
         {
             Boolean flag = false;
@@ -135,6 +202,18 @@ namespace Authentication
             Boolean flag = true;
 
             if (!String.IsNullOrEmpty(data) && !Regex.IsMatch(data, "^[0-9]+$"))
+            {
+                flag = true;
+            }
+            else flag = false;
+
+            return flag;
+        }
+        public Boolean validateCustomText(String data)
+        {
+            Boolean flag = true;
+
+            if (!String.IsNullOrEmpty(data))
             {
                 flag = true;
             }
