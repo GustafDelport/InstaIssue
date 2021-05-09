@@ -373,8 +373,7 @@ namespace Database
                 if (CheckExist(clientID, "tblclients", "clientID"))
                 {
                     // Run update client code
-                    connection.RunCommand("UPDATE tblclients SET clientID = \'" + clientID + "\', name = \'" + name + "\', surname = \'" + surname + "\', nationalID = " +
-                                          nationalID + "\', phoneNumber = \'" + phoneNumber + "\', email = \'" + email + "\', address = \'" + address + "\' WHERE clientID = \'" + clientID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblclients SET clientID = '{clientID}', name = '{name}', surname = '{surname}', nationalID = '{nationalID}', phoneNumber = '{phoneNumber}', email = '{email}', address = '{address}' WHERE clientID = '{clientID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -383,9 +382,7 @@ namespace Database
                     // Run add client code
                     if (userID != -1)
                     {
-                        connection.RunCommand("INSERT INTO dbo.tblclients VALUES(\'" + clientID + "\'," + userID + ",\'" +
-                                              name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
-                                              phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                        connection.RunCommand($"INSERT INTO dbo.tblclients VALUES('{clientID}',{userID},'{name}','{surname}','{nationalID}','{phoneNumber}','{email}','{address}'").ExecuteNonQuery();
                     }
                     else
                     {

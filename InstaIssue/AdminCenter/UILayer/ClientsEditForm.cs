@@ -64,6 +64,12 @@ namespace InstaIssue.AdminCenter.UILayer
                     client = item;
                 }
             }
+
+            lblAAdress.Text = client.Address;
+            lblAEmail.Text = client.EMail;
+            lblAName.Text = client.Name;
+            lblASurname.Text = client.Surname;
+            lblAPhone.Text = client.PhoneNumber;
         }
 
         private void txtNewData_Click(object sender, EventArgs e)

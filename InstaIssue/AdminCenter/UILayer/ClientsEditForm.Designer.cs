@@ -207,7 +207,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlEdit.Controls.Add(this.cmbData);
             this.pnlEdit.Location = new System.Drawing.Point(322, 232);
             this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(376, 268);
+            this.pnlEdit.Size = new System.Drawing.Size(376, 280);
             this.pnlEdit.TabIndex = 13;
             // 
             // lblAAdress
@@ -360,9 +360,9 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditClient.Image = global::InstaIssue.Properties.Resources.TrackB;
-            this.btnEditClient.Location = new System.Drawing.Point(208, 177);
+            this.btnEditClient.Location = new System.Drawing.Point(117, 216);
             this.btnEditClient.Name = "btnEditClient";
-            this.btnEditClient.Size = new System.Drawing.Size(159, 82);
+            this.btnEditClient.Size = new System.Drawing.Size(159, 56);
             this.btnEditClient.TabIndex = 9;
             this.btnEditClient.Text = "Edit Client";
             this.btnEditClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
