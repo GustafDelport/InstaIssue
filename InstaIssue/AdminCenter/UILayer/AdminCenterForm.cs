@@ -117,11 +117,6 @@ namespace InstaIssue.AdminCenter.UILayer
             new ContractSelectManagement("Edit").doWork();
         }
 
-        private void btnDeleteCont_Click(object sender, EventArgs e)
-        {
-            new ContractSelectManagement("Delete").doWork();
-        }
-
         private void AdminCenterForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

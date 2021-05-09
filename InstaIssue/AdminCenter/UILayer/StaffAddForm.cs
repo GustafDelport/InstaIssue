@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Authentication;
+using InstaIssue.AdminCenter.LogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,11 +59,34 @@ namespace InstaIssue.AdminCenter.UILayer
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
 
+            bool flag = new Validations().ValidateStaffRegister(pnlAddStaff);
+            if (flag)
+            {
+                flag = new StaffManagment().AddStaff(txtName.Text, txtSurname.Text, cmbSkills.Text, txtAddress.Text, txtUsername.Text, txtPassword.Text);
+                if (flag)
+                {
+                    MessageBox.Show("Staff was added succesfully", "Addition Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Staff was not added succesfully", "Addition Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void StaffAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
         }
     }
 }

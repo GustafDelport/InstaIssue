@@ -41,8 +41,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tmrTyd = new System.Windows.Forms.Timer(this.components);
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.btnViewByCont = new System.Windows.Forms.Button();
             this.btnViewAllClients = new System.Windows.Forms.Button();
             this.dgvClients = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
@@ -172,34 +170,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTyd.Interval = 1000;
             this.tmrTyd.Tick += new System.EventHandler(this.tmrTyd_Tick);
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(167, 205);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(138, 29);
-            this.metroComboBox1.TabIndex = 18;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // btnViewByCont
-            // 
-            this.btnViewByCont.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewByCont.FlatAppearance.BorderSize = 0;
-            this.btnViewByCont.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnViewByCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnViewByCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewByCont.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnViewByCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnViewByCont.Image = global::InstaIssue.Properties.Resources.StaffS;
-            this.btnViewByCont.Location = new System.Drawing.Point(165, 240);
-            this.btnViewByCont.Name = "btnViewByCont";
-            this.btnViewByCont.Size = new System.Drawing.Size(140, 85);
-            this.btnViewByCont.TabIndex = 17;
-            this.btnViewByCont.Text = "View Clients By SLA";
-            this.btnViewByCont.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnViewByCont.UseVisualStyleBackColor = true;
-            // 
             // btnViewAllClients
             // 
             this.btnViewAllClients.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -217,6 +187,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewAllClients.Text = "View All Clients";
             this.btnViewAllClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnViewAllClients.UseVisualStyleBackColor = true;
+            this.btnViewAllClients.Click += new System.EventHandler(this.btnViewAllClients_Click);
             // 
             // dgvClients
             // 
@@ -233,8 +204,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(926, 512);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.btnViewByCont);
             this.Controls.Add(this.btnViewAllClients);
             this.Controls.Add(this.dgvClients);
             this.Controls.Add(this.panel2);
@@ -266,8 +235,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Timer tmrTyd;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.Button btnViewByCont;
         private System.Windows.Forms.Button btnViewAllClients;
         private System.Windows.Forms.DataGridView dgvClients;
     }

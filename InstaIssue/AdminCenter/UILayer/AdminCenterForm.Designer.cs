@@ -51,7 +51,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnViewStaff = new System.Windows.Forms.Button();
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.pnlContracts = new System.Windows.Forms.Panel();
-            this.btnDeleteCont = new System.Windows.Forms.Button();
             this.btnEditCont = new System.Windows.Forms.Button();
             this.btnViewCont = new System.Windows.Forms.Button();
             this.btnAddCont = new System.Windows.Forms.Button();
@@ -330,7 +329,6 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlContracts
             // 
-            this.pnlContracts.Controls.Add(this.btnDeleteCont);
             this.pnlContracts.Controls.Add(this.btnEditCont);
             this.pnlContracts.Controls.Add(this.btnViewCont);
             this.pnlContracts.Controls.Add(this.btnAddCont);
@@ -339,25 +337,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlContracts.Size = new System.Drawing.Size(737, 413);
             this.pnlContracts.TabIndex = 5;
             this.pnlContracts.Visible = false;
-            // 
-            // btnDeleteCont
-            // 
-            this.btnDeleteCont.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteCont.FlatAppearance.BorderSize = 0;
-            this.btnDeleteCont.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
-            this.btnDeleteCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.btnDeleteCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDeleteCont.Image = global::InstaIssue.Properties.Resources.DeleteB;
-            this.btnDeleteCont.Location = new System.Drawing.Point(367, 209);
-            this.btnDeleteCont.Name = "btnDeleteCont";
-            this.btnDeleteCont.Size = new System.Drawing.Size(240, 147);
-            this.btnDeleteCont.TabIndex = 21;
-            this.btnDeleteCont.Text = "Delete Contract";
-            this.btnDeleteCont.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDeleteCont.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDeleteCont.UseVisualStyleBackColor = true;
-            this.btnDeleteCont.Click += new System.EventHandler(this.btnDeleteCont_Click);
             // 
             // btnEditCont
             // 
@@ -368,7 +347,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditCont.Image = global::InstaIssue.Properties.Resources.EditB;
-            this.btnEditCont.Location = new System.Drawing.Point(121, 209);
+            this.btnEditCont.Location = new System.Drawing.Point(247, 209);
             this.btnEditCont.Name = "btnEditCont";
             this.btnEditCont.Size = new System.Drawing.Size(240, 147);
             this.btnEditCont.TabIndex = 20;
@@ -568,7 +547,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnEditClient;
         private System.Windows.Forms.Button btnViewClient;
         private System.Windows.Forms.Button btnAddClient;
-        private System.Windows.Forms.Button btnDeleteCont;
         private System.Windows.Forms.Button btnEditCont;
         private System.Windows.Forms.Button btnViewCont;
         private System.Windows.Forms.Button btnAddCont;

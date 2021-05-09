@@ -295,6 +295,13 @@ namespace Generator
             return indicator+type+number;
         }
 
+        public int GenerateUserID()
+        {
+            int ID = new Data().GetUserLastID();
+            ID++;
+            return ID;
+        }
+
         public String GenerateJobID(string clientID)
         {
             //JB00001A00000004

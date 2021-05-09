@@ -203,6 +203,25 @@ namespace Database
             return lastID;
         }
 
+        public int GetUserLastID()
+        {
+            int ID;
+            try
+            {
+                string buildCommand = $"SELECT TOP 1 id FROM dbo.tblusers ORDER BY id DESC";
+                connection.database.Open();
+                ID = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            return ID;
+        }
+
+
         // Check whether an ID already exists in the given table & col
         public Boolean CheckExist(string id, string tblName, string idCol)
         {
@@ -218,7 +237,7 @@ namespace Database
             {
                 try
                 {
-                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol}] = '{id}'";
+                    string buildCommand = $"SELECT COUNT(*) FROM {tblName} WHERE {idCol} = '{id}'";
                     int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
                     if (Exist > 1)
                     {
@@ -336,34 +355,6 @@ namespace Database
             }
         }
 
-        // Add login user
-        public Boolean AddUser(string username, string password)
-        {
-            try
-            {
-                // Check if user exists, if exist then update, otherwise add
-                if (CheckExist(username, "tblusers", "username"))
-                {
-                    // Run update user code
-                    connection.RunCommand($"UPDATE tblusers SET username ='{username}', password = '{password}', updatedAt = '{DateTime.Now}' WHERE username = '{username}'").ExecuteNonQuery();
-                    connection.database.Close();
-                    return true;
-                }
-                else
-                {
-                    // Run add user code
-                    connection.RunCommand($"INSERT INTO dbo.tblusers(username, password, createdAt, updatedAt) VALUES('{username}','{password}','{DateTime.Now}','{DateTime.Now}')").ExecuteNonQuery();
-                    connection.database.Close();
-                    return true;
-                }
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
         // Add client user
         public Boolean AddClient(string clientID, string name, string surname, string nationalID, string phoneNumber, string email, string address, int userID = -1)
         {
@@ -373,8 +364,7 @@ namespace Database
                 if (CheckExist(clientID, "tblclients", "clientID"))
                 {
                     // Run update client code
-                    connection.RunCommand("UPDATE tblclients SET clientID = \'" + clientID + "\', name = \'" + name + "\', surname = \'" + surname + "\', nationalID = " +
-                                          nationalID + "\', phoneNumber = \'" + phoneNumber + "\', email = \'" + email + "\', address = \'" + address + "\' WHERE clientID = \'" + clientID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblclients SET clientID = '{clientID}', name = '{name}', surname = '{surname}', nationalID = '{nationalID}', phoneNumber = '{phoneNumber}', email = '{email}', address = '{address}' WHERE clientID = '{clientID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -383,9 +373,7 @@ namespace Database
                     // Run add client code
                     if (userID != -1)
                     {
-                        connection.RunCommand("INSERT INTO dbo.tblclients VALUES(\'" + clientID + "\'," + userID + ",\'" +
-                                              name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
-                                              phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                        connection.RunCommand($"INSERT INTO dbo.tblclients VALUES('{clientID}',{userID},'{name}','{surname}','{nationalID}','{phoneNumber}','{email}','{address}'").ExecuteNonQuery();
                     }
                     else
                     {
@@ -420,6 +408,36 @@ namespace Database
                 throw ;
             }
     }
+        //Add User 
+        public Boolean AddUser(int ID, string username, string password)
+        {
+            try
+            {
+                // Check if staff exists, if exist then update, otherwise add
+                if (CheckExist(ID.ToString(), "tblusers", "id"))
+                {
+                    // Run update staff code
+                    connection.RunCommand($"UPDATE tbluser SET id = {ID}, username = '{username}', password = '{password}', updated = '{DateTime.Now}' WHERE id = {ID}").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+
+
+                }
+                else
+                {
+                    // Run add staff code
+                    connection.RunCommand($"INSERT INTO dbo.tblusers VALUES({ID},'{username}','{password}','{DateTime.Now}','{DateTime.Now}')").ExecuteNonQuery();
+                    connection.database.Close();
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         // Add staff user
         public Boolean AddStaff(string staffID, string name, string surname, string status, string skills, string address, int userID = -1)
         {
@@ -429,8 +447,7 @@ namespace Database
                 if (CheckExist(staffID, "tblstaff", "staffID"))
                 {
                     // Run update staff code
-                    connection.RunCommand("UPDATE tblstaff SET staffID = \'" + staffID + "\', name = \'" + name + "\', surname = \'" + surname + "\', status = \'" +
-                                          status + "\', skills = \'" + skills + "\', address = \'" + address + "\' WHERE staffID = \'" + staffID + "\'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblstaff SET staffID = '{staffID}', name = '{name}', surname = '{surname}', status = '{status}', skills = '{skills}', address = '{address}' WHERE staffID = '{staffID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
 
@@ -441,16 +458,11 @@ namespace Database
                     // Run add staff code
                     if (userID != -1)
                     {
-                        connection.RunCommand("INSERT INTO dbo.tblstaff VALUES(\'" + staffID + "\'," + userID + ",\'" +
-                                              name + "\',\'" + surname + "\',\'" + status + "\',\'" +
-                                              skills + "\',\'" + address + "\')").ExecuteNonQuery();
+                        connection.RunCommand($"INSERT INTO dbo.tblstaff VALUES('{staffID}',{userID},'{name}','{surname}','{status}','{skills}','{address}')").ExecuteNonQuery();
                     }
                     else
                     {
-                        connection.RunCommand(
-                            "INSERT INTO dbo.tblstaff(staffID, name, surname, status, skills, address) " +
-                            "VALUES(\'" + staffID + "\',\'" + name + "\',\'" + surname + "\',\'" + status + "\',\'" +
-                            skills + "\',\'" + address + "\')").ExecuteNonQuery();
+                        connection.RunCommand($"INSERT INTO dbo.tblstaff(staffID, name, surname, status, skills, address) VALUES('{staffID}','{name}',\'{surname}','{status}','{skills}','{address}')").ExecuteNonQuery();
                     }
                     connection.database.Close();
                     return true;

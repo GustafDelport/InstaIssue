@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Database;
+using Generator;
 
 namespace InstaIssue.AdminCenter.LogicLayer
 {
@@ -22,11 +23,35 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return null;
         }
 
-        public Boolean AddStaff(String staffID, int userid, String name, String surname, String status, String skills, String adress)
+        public Boolean AddStaff(string name, string surname,string skills, string address, string username, string password)
         {
-            StaffDataHandler staffDataHandler = new StaffDataHandler();
-            staffDataHandler.addStaff(staffID, userid, name, surname, status, skills, adress);
-            return true;
+            bool[] flagArr = new bool[2];
+            bool flag = true;
+
+            StaffDataHandler handler = new StaffDataHandler();
+
+            //Build ID etc
+            int userID = new IDBuilder().GenerateUserID();
+            string staffID = new IDBuilder().GenerateStaffID(skills);
+
+            //Add the user first
+            flagArr[0] = handler.addUser(userID, username, password);
+
+            //Add staff last
+            flagArr[1] = handler.addStaff(staffID, userID, name, surname, "Active", skills, address);
+
+            foreach (bool item in flagArr)
+            {
+                if (!item)
+                {
+                    flag = false;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return flag;
         }
         public Boolean EditStaff(String type, String newData)
         {

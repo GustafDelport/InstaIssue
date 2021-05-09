@@ -1,4 +1,7 @@
-﻿using System;
+﻿using InstaIssue.AdminCenter.LogicLayer;
+using InstaIssue.CallCenter.DomainLayer;
+using InstaIssue.Handlers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +41,12 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ClientsViewForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnViewAllClients_Click(object sender, EventArgs e)
+        {
+            dgvClients.AutoGenerateColumns = true;
+            dgvClients.DataSource = new GeneralAdminHandler().GetViewClients();
         }
     }
 }

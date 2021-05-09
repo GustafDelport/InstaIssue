@@ -76,10 +76,16 @@ namespace InstaIssue.AdminCenter.DomainLayer
 
         public Boolean addStaff(String staffID, int userid, String name, String surname, String status,String skills, String adress)
         {
-            Data data = new Data();
-            data.AddStaff(staffID,name,surname,status,skills,adress);
-            return true;
+            Data data = new Data();       
+            return data.AddStaff(staffID, name, surname, status, skills, adress, userid);
         }
+
+        public Boolean addUser(int ID,string username, string password)
+        {
+            Data data = new Data();
+            return data.AddUser(ID,username, password);
+        }
+
         public Boolean EditStaff(String type, String newData)
         {
             return false;

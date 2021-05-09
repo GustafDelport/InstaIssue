@@ -27,7 +27,6 @@ namespace InstaIssue
         public static ClientsEditForm clientsEditForm;
         public static ClientsViewForm clientsViewForm;
         public static ContractsAddForm contractsAddForm;
-        public static ContractsDeleteForm contractsDeleteForm;
         public static ContractsEditForm contractsEditForm;
         public static ContractsViewForm contractsViewForm;
         public static StaffAddForm staffAddForm;
