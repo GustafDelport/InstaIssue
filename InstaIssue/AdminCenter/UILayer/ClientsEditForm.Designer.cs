@@ -58,6 +58,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditClient = new System.Windows.Forms.Button();
             this.cmbData = new MetroFramework.Controls.MetroComboBox();
             this.pnlEditStaff = new System.Windows.Forms.Panel();
+            this.btnSetClient = new System.Windows.Forms.Button();
             this.cmbClientIDs = new MetroFramework.Controls.MetroComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -227,9 +228,9 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblAddress.Location = new System.Drawing.Point(13, 177);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(51, 21);
+            this.lblAddress.Size = new System.Drawing.Size(72, 21);
             this.lblAddress.TabIndex = 25;
-            this.lblAddress.Text = "Email";
+            this.lblAddress.Text = "Address";
             // 
             // lblAEmail
             // 
@@ -347,6 +348,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtNewData.TabIndex = 10;
             this.txtNewData.Text = "New Data";
             this.txtNewData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNewData.Click += new System.EventHandler(this.txtNewData_Click);
             // 
             // btnEditClient
             // 
@@ -365,9 +367,15 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnEditClient.Text = "Edit Client";
             this.btnEditClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditClient.UseVisualStyleBackColor = true;
+            this.btnEditClient.Click += new System.EventHandler(this.btnEditClient_Click);
             // 
             // cmbData
             // 
+            this.cmbData.AutoCompleteCustomSource.AddRange(new string[] {
+            "Name",
+            "Surname",
+            "Phone",
+            "Email"});
             this.cmbData.FormattingEnabled = true;
             this.cmbData.ItemHeight = 23;
             this.cmbData.Items.AddRange(new object[] {
@@ -384,11 +392,31 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlEditStaff
             // 
+            this.pnlEditStaff.Controls.Add(this.btnSetClient);
             this.pnlEditStaff.Controls.Add(this.cmbClientIDs);
             this.pnlEditStaff.Location = new System.Drawing.Point(414, 87);
             this.pnlEditStaff.Name = "pnlEditStaff";
             this.pnlEditStaff.Size = new System.Drawing.Size(193, 139);
             this.pnlEditStaff.TabIndex = 12;
+            // 
+            // btnSetClient
+            // 
+            this.btnSetClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSetClient.FlatAppearance.BorderSize = 0;
+            this.btnSetClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(51)))));
+            this.btnSetClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.btnSetClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSetClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSetClient.Image = global::InstaIssue.Properties.Resources.ClientJobS;
+            this.btnSetClient.Location = new System.Drawing.Point(25, 49);
+            this.btnSetClient.Name = "btnSetClient";
+            this.btnSetClient.Size = new System.Drawing.Size(150, 82);
+            this.btnSetClient.TabIndex = 12;
+            this.btnSetClient.Text = "Set as Client";
+            this.btnSetClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSetClient.UseVisualStyleBackColor = true;
+            this.btnSetClient.Click += new System.EventHandler(this.btnSetClient_Click);
             // 
             // cmbClientIDs
             // 
@@ -457,5 +485,6 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblAAdress;
         private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Button btnSetClient;
     }
 }

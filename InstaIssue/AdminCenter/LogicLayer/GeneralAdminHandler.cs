@@ -1,4 +1,5 @@
 ﻿using Database;
+using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,15 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
                 }
             }
+            return flag;
+        }
+
+        public Boolean EditClient(Clients client)
+        {
+            bool flag = false;
+
+            flag = new Data().AddClient(client.ClientID, client.Name, client.Surname, client.NationalID, client.PhoneNumber, client.EMail, client.Address, -1);
+
             return flag;
         }
     }
