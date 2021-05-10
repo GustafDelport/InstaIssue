@@ -325,7 +325,7 @@ namespace Generator
             string number = "";
             string cID = clientID;
 
-            String lastID = data.GetLastID("tbljobs", "productID");
+            String lastID = data.GetLastID("tbljobs", "jobID");
 
             number = lastID.Substring(2, 3);
             int newNumber = int.Parse(number);

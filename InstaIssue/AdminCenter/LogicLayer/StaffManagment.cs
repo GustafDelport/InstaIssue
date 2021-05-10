@@ -14,9 +14,13 @@ namespace InstaIssue.AdminCenter.LogicLayer
     {
         public StaffManagment() { }
 
-        public List<Staff> GetAllStaff()
+        public DataTable GetAllStaff()
         {
-            return new StaffDataHandler().GetAllStaff();
+            return new StaffDataHandler().getAllStaff();
+        }
+        public List<Staff> GetLstaff()
+        {
+            return new StaffDataHandler().GetLAllStaff();
         }
         public DataTable GetStaff(string staffID)
         {

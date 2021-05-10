@@ -330,6 +330,7 @@ namespace Database
 
         public Boolean DeleteAllEntries(string tblName)
         {
+            connection.database.Open();
             string buildCommand = $"DELETE FROM {tblName}";
             connection.RunCommand(buildCommand).ExecuteNonQuery();
             connection.database.Close();
@@ -612,7 +613,7 @@ namespace Database
         }
 
         // Add Job
-        public Boolean AddJob(string jobID, DateTime scheduledDate, string service, string status, string staffID)
+        public Boolean AddJob(string jobID, DateTime scheduledDate, string service, string status, string staffID, string clientID)
         {
             try
             {
@@ -627,7 +628,7 @@ namespace Database
                 else
                 {
                     // Run add Job code
-                    connection.RunCommand($"INSERT INTO dbo.tbljobs VALUES('{jobID}','{scheduledDate}','{service}','{status}','{staffID}'").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tbljobs VALUES('{jobID}','{clientID}','{staffID}','{scheduledDate}','{service}','{status}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }

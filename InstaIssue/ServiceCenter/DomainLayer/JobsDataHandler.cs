@@ -60,11 +60,11 @@ namespace InstaIssue.AdminCenter.DomainLayer
             return false;
         }
 
-        public Boolean AddJob(String jobID, DateTime scheduledDate, String service, String status, String staffID)
-        {
-            Data data = new Data();
-            data.AddJob(jobID,scheduledDate,service,status,staffID);
-            return true;
-        }
+        //public Boolean AddJob(String jobID, DateTime scheduledDate, String service, String status, String staffID)
+        //{
+        //    Data data = new Data();
+        //    data.AddJob(jobID,scheduledDate,service,status,staffID);
+        //    return true;
+        //}
     }
 }

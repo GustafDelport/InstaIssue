@@ -73,7 +73,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(159, 512);
+            this.panel1.Size = new System.Drawing.Size(159, 505);
             this.panel1.TabIndex = 0;
             // 
             // btnJobs
@@ -142,7 +142,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(159, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(766, 81);
+            this.panel2.Size = new System.Drawing.Size(765, 81);
             this.panel2.TabIndex = 1;
             // 
             // pnlSeperator
@@ -200,7 +200,6 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlRequests
             // 
-            this.pnlRequests.Controls.Add(this.pnlJobs);
             this.pnlRequests.Controls.Add(this.cmbAllClients);
             this.pnlRequests.Controls.Add(this.btnAReq);
             this.pnlRequests.Controls.Add(this.btnCReq);
@@ -299,7 +298,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // dtpDate
             // 
             this.dtpDate.Location = new System.Drawing.Point(14, 38);
-            this.dtpDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDate.MinimumSize = new System.Drawing.Size(4, 29);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(159, 29);
             this.dtpDate.TabIndex = 14;
@@ -317,7 +316,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlJobs.Controls.Add(this.btnSchedJobs);
             this.pnlJobs.Controls.Add(this.btnViewJobs);
             this.pnlJobs.Controls.Add(this.dgvJobs);
-            this.pnlJobs.Location = new System.Drawing.Point(0, 0);
+            this.pnlJobs.Location = new System.Drawing.Point(165, 87);
             this.pnlJobs.Name = "pnlJobs";
             this.pnlJobs.Size = new System.Drawing.Size(750, 411);
             this.pnlJobs.TabIndex = 3;
@@ -373,19 +372,20 @@ namespace InstaIssue.AdminCenter.UILayer
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
-            // ServiceCenter
+            // ServiceCenterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(925, 512);
+            this.ClientSize = new System.Drawing.Size(924, 505);
+            this.Controls.Add(this.pnlJobs);
             this.Controls.Add(this.pnlRequests);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ServiceCenter";
+            this.Name = "ServiceCenterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiceCenter";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ServiceCenter_FormClosed);

@@ -41,7 +41,7 @@ namespace InstaIssue.AdminCenter.UILayer
             tmrTime.Start();
             lblID.Text = Globals.StaffID;
             StaffManagment staffM = new StaffManagment();
-            Lstaff = staffM.GetAllStaff();
+            Lstaff = staffM.GetLstaff();
             foreach (var item in Lstaff)
             {
                 cmbStaff.Items.Add(item.StaffID + " " + item.Name);

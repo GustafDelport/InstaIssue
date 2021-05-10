@@ -56,28 +56,28 @@ namespace InstaIssue.AdminCenter.DomainLayer
             
             List<RequestData> requests = new List<RequestData>();
             List<Staff> staff = new List<Staff>();
-            string[] staffNotBusy = new string[staff.Count];
+            List<string> staffNotBusy = new List<string>();
 
             int n = 0;
+            staff = new StaffDataHandler().GetLAllStaff();
 
             foreach (Staff item in staff)
             {
-                if (item.Status == "Active")
+                if (item.Status == "Active" && item.StaffID.Substring(0,2) == "SM")
                 {
-                    staffNotBusy[n] = item.StaffID;
+                    staffNotBusy.Add(item.StaffID);
                 }
                 else
                 {
                     continue;
                 }
-                n++;
             }
 
             requests = GetLRequests();
-            staff = new StaffDataHandler().GetAllStaff();
+            
 
             int a = 0;
-            if (requests.Count > staffNotBusy.Length)
+            if (requests.Count > staffNotBusy.Count)
             {
                 MessageBox.Show("There is not enough staff to fill the requests","Staff Shortage",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
@@ -88,7 +88,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
                 {
 
                     jobID = builder.GenerateJobID(item.ClientID);
-                    boolList.Add(data.AddJob(jobID, item.PlannedDate, item.Service, "Busy", staffNotBusy[a]));
+                    boolList.Add(data.AddJob(jobID, item.PlannedDate, item.Service, "Busy", staffNotBusy[a], item.ClientID));
                     a++;
                 }
 
