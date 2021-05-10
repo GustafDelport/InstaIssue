@@ -22,9 +22,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public DataTable GetContracts()
         {
-            DataTable table = new DataTable();
-            table.Load(new Data().FindAll("tblcontracts"));
-            return table;
+            return new Data().FindAll("tblcontracts");
         }
 
         public List<SLA> GetListSLAs()
@@ -71,9 +69,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public DataTable GetSLAs()
         {
-            DataTable table = new DataTable();
-            table.Load(new Data().FindAll("tblsla"));
-            return table;
+            return new Data().FindAll("tblsla");
         }
 
         public Boolean AddContract(String contractID, DateTime dateSigned, String clientID, String SlaID)

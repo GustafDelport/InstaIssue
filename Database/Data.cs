@@ -203,6 +203,32 @@ namespace Database
             return lastID;
         }
 
+        public DataTable GetLastEntry(String tblName,String idCol)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                string buildCommand = $"SELECT TOP 1 * FROM {tblName} ORDER BY '{idCol}' DESC";
+                connection.database.Open();
+                IDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+                
+
+                while (!reader.IsClosed)
+                {
+                    table.Load(reader);
+                }
+
+                reader.Close();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            return table;
+        }
+
         public int GetUserLastID()
         {
             int ID;
@@ -302,14 +328,24 @@ namespace Database
         }
         
         // Check if specific entry exists in database in specified table and return SQLDataReader object
-        public SqlDataReader FindEntry(string id, string tblName, string idCol)
+        public DataTable FindEntry(string id, string tblName, string idCol)
         {
+            DataTable table = new DataTable();
+
             if (CheckExist(id, tblName, idCol))
             {
                 string buildCommand = $"SELECT * FROM {tblName} WHERE {idCol} = '{id}'";
-                SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+                IDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+
+                while (!reader.IsClosed)
+                {
+                    table.Load(reader);
+                }
+
                 connection.database.Close();
-                return reader;
+                reader.Close();
+
+                return table;
             }
             else
             {
@@ -318,13 +354,22 @@ namespace Database
         }
         
         // Find all entries in specified table and return SQLDataReader object
-        public SqlDataReader FindAll(string tblName)
+        public DataTable FindAll(string tblName)
         {
             connection.database.Open();
-            string buildCommand = $"SELECT * FROM {tblName}";
-            SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+            string buildCommand = $"SELECT * FROM dbo.{tblName}";
+            IDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+            DataTable table = new DataTable();
+
+            while (!reader.IsClosed)
+            {
+                table.Load(reader);
+            }
+
+            reader.Close();
             connection.database.Close();
-            return reader;
+
+            return table;
         }
 
         //Add Product

@@ -39,25 +39,15 @@ namespace InstaIssue.CallCenter.UILayer
         
         public void SeeIssues(string clietID)
         {
-            reader = new GeneralHandler().GetData(clietID, "tblissues", "clientID");
-            //Read dat from here
-            DataTable table = new DataTable();
-            table.Load(reader);
-
             dgvData.AutoGenerateColumns = true;
-            dgvData.DataSource = table;
+            dgvData.DataSource = new GeneralHandler().GetData(clietID, "tblissues", "clientID");
             dgvData.Refresh();
         }
 
         public void SeeJobs(string clietID)
         {
-            reader = new GeneralHandler().GetData(clietID, "tbljobs", "clientID");
-            //Read dat from here
-            DataTable table = new DataTable();
-            table.Load(reader);
-
             dgvData.AutoGenerateColumns = true;
-            dgvData.DataSource = table;
+            dgvData.DataSource = new GeneralHandler().GetData(clietID, "tblissues", "clientID");
             dgvData.Refresh();
         }
 

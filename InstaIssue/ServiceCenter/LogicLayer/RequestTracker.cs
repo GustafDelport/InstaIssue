@@ -1,6 +1,7 @@
 ﻿using InstaIssue.AdminCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,24 +16,24 @@ namespace InstaIssue.AdminCenter.LogicLayer
         {
         }
 
-        public List<RequestData> GetAllRequests()
+        public DataTable GetRequests()
         {
-            return null;
+            return new RequestDataHandler().GetRequests();
         }
 
-        public List<RequestData> GetRequests(String nationalID)
+        public DataTable GetRequestsOnDate(DateTime date)
         {
-            return null;
+            return new RequestDataHandler().GetRequestsOnDate(date);
         }
 
-        public RequestData GetLatestRequests()
+        public DataTable GetLatestRequests()
         {
-            return null;
+            return new RequestDataHandler().GetLatestRequests();
         }
 
-        public List<RequestData> GetRequestsOnDate(DateTime date)
+        public DataTable GetRequestsByClient(string clientID)
         {
-            return null;
+            return new RequestDataHandler().GetRequestsByClient(clientID);
         }
     }
 }

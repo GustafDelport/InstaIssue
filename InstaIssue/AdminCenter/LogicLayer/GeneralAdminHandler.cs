@@ -61,11 +61,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
 
         public DataTable GetViewClients()
         {
-            DataTable table = new DataTable();
-
-            table.Load(new Data().FindAll("tblclients"));
-
-            return table;
+            return new Data().FindAll("tblclients");
         }
     }
 }

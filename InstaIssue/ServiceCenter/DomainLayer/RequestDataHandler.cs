@@ -1,6 +1,9 @@
-﻿using InstaIssue.CallCenter.DomainLayer;
+﻿using Database;
+using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,29 +19,24 @@ namespace InstaIssue.AdminCenter.DomainLayer
         {
         }
 
-        public Boolean SetRequest(Clients client, DateTime plannedDate, DateTime deadLineDate)
-        {   
-            return false;
+        public DataTable GetRequests()
+        {
+            return new Data().FindAll("tblrequestData");
         }
 
-        public List<RequestData> GetAllRequests()
+        public DataTable GetRequestsOnDate(DateTime date)
         {
-            return null;
+            return new Data().FindEntry(date.ToString(), "tblrequestData","plannedDate");
         }
 
-        public List<RequestData> GetRequests(String nationalID)
+        public DataTable GetLatestRequests()
         {
-            return null;
+            return new Data().GetLastEntry("tblrequestData","requestID");
         }
 
-        public RequestData GetLatestRequests()
+        public DataTable GetRequestsByClient(string clientID)
         {
-            return null;
-        }
-
-        public List<RequestData> GetRequestsOnDate(DateTime date)
-        {
-            return null;
+            return new Data().FindEntry(clientID, "tblrequestData", "clientID");
         }
     }
 }
