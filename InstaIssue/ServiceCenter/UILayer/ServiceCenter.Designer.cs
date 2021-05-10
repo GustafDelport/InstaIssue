@@ -43,9 +43,9 @@ namespace InstaIssue.AdminCenter.UILayer
             this.lblCID = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlRequests = new System.Windows.Forms.Panel();
+            this.cmbAllClients = new MetroFramework.Controls.MetroComboBox();
             this.btnAReq = new System.Windows.Forms.Button();
             this.btnCReq = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnLatestReq = new System.Windows.Forms.Button();
             this.btnROD = new System.Windows.Forms.Button();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
@@ -200,9 +200,9 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlRequests
             // 
+            this.pnlRequests.Controls.Add(this.cmbAllClients);
             this.pnlRequests.Controls.Add(this.btnAReq);
             this.pnlRequests.Controls.Add(this.btnCReq);
-            this.pnlRequests.Controls.Add(this.textBox1);
             this.pnlRequests.Controls.Add(this.btnLatestReq);
             this.pnlRequests.Controls.Add(this.btnROD);
             this.pnlRequests.Controls.Add(this.metroDateTime1);
@@ -213,6 +213,16 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlRequests.TabIndex = 2;
             this.pnlRequests.Visible = false;
             // 
+            // cmbAllClients
+            // 
+            this.cmbAllClients.FormattingEnabled = true;
+            this.cmbAllClients.ItemHeight = 23;
+            this.cmbAllClients.Location = new System.Drawing.Point(14, 243);
+            this.cmbAllClients.Name = "cmbAllClients";
+            this.cmbAllClients.Size = new System.Drawing.Size(159, 29);
+            this.cmbAllClients.TabIndex = 20;
+            this.cmbAllClients.UseSelectable = true;
+            // 
             // btnAReq
             // 
             this.btnAReq.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -222,7 +232,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAReq.Image = global::InstaIssue.Properties.Resources.RequestsS;
-            this.btnAReq.Location = new System.Drawing.Point(16, 341);
+            this.btnAReq.Location = new System.Drawing.Point(16, 344);
             this.btnAReq.Name = "btnAReq";
             this.btnAReq.Size = new System.Drawing.Size(159, 57);
             this.btnAReq.TabIndex = 19;
@@ -248,15 +258,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnCReq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCReq.UseVisualStyleBackColor = true;
             this.btnCReq.Click += new System.EventHandler(this.btnCReq_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(14, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 27);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.Text = "National ID";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLatestReq
             // 
@@ -297,7 +298,7 @@ namespace InstaIssue.AdminCenter.UILayer
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(14, 38);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(159, 29);
             this.metroDateTime1.TabIndex = 14;
@@ -315,12 +316,11 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlJobs.Controls.Add(this.btnSchedJobs);
             this.pnlJobs.Controls.Add(this.btnViewJobs);
             this.pnlJobs.Controls.Add(this.dgvJobs);
-            this.pnlJobs.Location = new System.Drawing.Point(167, 87);
+            this.pnlJobs.Location = new System.Drawing.Point(167, 90);
             this.pnlJobs.Name = "pnlJobs";
             this.pnlJobs.Size = new System.Drawing.Size(750, 411);
             this.pnlJobs.TabIndex = 3;
             this.pnlJobs.Visible = false;
-            this.pnlJobs.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlJobs_Paint);
             // 
             // btnSchedJobs
             // 
@@ -396,7 +396,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlRequests.ResumeLayout(false);
-            this.pnlRequests.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).EndInit();
             this.pnlJobs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobs)).EndInit();
@@ -424,11 +423,11 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnROD;
         private System.Windows.Forms.Button btnLatestReq;
         private System.Windows.Forms.Button btnCReq;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAReq;
         private System.Windows.Forms.DataGridView dgvJobs;
         private System.Windows.Forms.Button btnViewJobs;
         private System.Windows.Forms.Button btnSchedJobs;
         private System.Windows.Forms.Timer tmrTime;
+        private MetroFramework.Controls.MetroComboBox cmbAllClients;
     }
 }

@@ -318,13 +318,22 @@ namespace Database
         }
         
         // Find all entries in specified table and return SQLDataReader object
-        public SqlDataReader FindAll(string tblName)
+        public DataTable FindAll(string tblName)
         {
             connection.database.Open();
-            string buildCommand = $"SELECT * FROM {tblName}";
-            SqlDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+            string buildCommand = $"SELECT * FROM dbo.{tblName}";
+            IDataReader reader = connection.RunCommand(buildCommand).ExecuteReader();
+            DataTable table = new DataTable();
+
+            while (!reader.IsClosed)
+            {
+                table.Load(reader);
+            }
+
+            reader.Close();
             connection.database.Close();
-            return reader;
+
+            return table;
         }
 
         //Add Product

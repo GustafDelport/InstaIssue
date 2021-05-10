@@ -1,6 +1,7 @@
 ﻿using InstaIssue.AdminCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,19 @@ namespace InstaIssue.AdminCenter.LogicLayer
             return null;
 
         }
-        public List<Jobs> GetJobs()
+        public List<Jobs> GetLJobs()
         {
                 return null;
+        }
+
+        public DataTable GetJobs()
+        {
+            return new JobsDataHandler().GetJobs();
+        }
+
+        public DataTable GetRequests()
+        {
+            return new JobsDataHandler().GetRequests();
         }
     }
 }
