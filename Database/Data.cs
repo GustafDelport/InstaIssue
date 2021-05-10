@@ -196,8 +196,9 @@ namespace Database
             }
             catch (Exception e)
             {
-
-                throw e;
+                return null;
+                connection.database.Close();
+                //throw e;
             }
             String lastID = ID;
             return lastID;
@@ -325,6 +326,15 @@ namespace Database
             {
                 return false;
             }
+        }
+
+        public Boolean DeleteAllEntries(string tblName)
+        {
+            connection.database.Open();
+            string buildCommand = $"DELETE FROM {tblName}";
+            connection.RunCommand(buildCommand).ExecuteNonQuery();
+            connection.database.Close();
+            return true;
         }
         
         // Check if specific entry exists in database in specified table and return SQLDataReader object
@@ -576,7 +586,7 @@ namespace Database
         }
 
         // Add Request
-        public Boolean AddRequest(string requestID, string clientID, DateTime plannedDate, DateTime deadlineDate)
+        public Boolean AddRequest(string requestID, string clientID, DateTime plannedDate, DateTime deadlineDate,string service)
         {
             try
             {
@@ -584,14 +594,14 @@ namespace Database
                 if (CheckExist(requestID, "tblrequestData", "requestID"))
                 {
                     // Run update Request code
-                    connection.RunCommand($"UPDATE tblrequestData SET requestID = '{requestID}', clientID = '{clientID}', plannedDate = '{plannedDate}', deadlineDate = '{deadlineDate}' WHERE requestID = '{requestID}'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblrequestData SET requestID = '{requestID}', clientID = '{clientID}', plannedDate = '{plannedDate}', deadlineDate = '{deadlineDate}', service = '{service}' WHERE requestID = '{requestID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add request code
-                    connection.RunCommand($"INSERT INTO dbo.tblrequestData VALUES('{requestID}','{clientID}','{plannedDate}','{deadlineDate}')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblrequestData VALUES('{requestID}','{clientID}','{plannedDate}','{deadlineDate}','{service}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
@@ -603,7 +613,7 @@ namespace Database
         }
 
         // Add Job
-        public Boolean AddJob(string jobID, DateTime scheduledDate, string service, string status, string staffID)
+        public Boolean AddJob(string jobID, DateTime scheduledDate, string service, string status, string staffID, string clientID)
         {
             try
             {
@@ -618,7 +628,7 @@ namespace Database
                 else
                 {
                     // Run add Job code
-                    connection.RunCommand($"INSERT INTO dbo.tbljobs VALUES('{jobID}','{scheduledDate}','{service}','{status}','{staffID}'").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tbljobs VALUES('{jobID}','{clientID}','{staffID}','{scheduledDate}','{service}','{status}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }

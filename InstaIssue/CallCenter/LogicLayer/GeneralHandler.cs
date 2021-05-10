@@ -19,12 +19,12 @@ namespace InstaIssue.CallCenter.LogicLayer
             connection.Connect();
         }
 
-        public Boolean CreateReq(string clientID, DateTime plannedDate, DateTime deadlineDate)
+        public Boolean CreateReq(string clientID, DateTime plannedDate, DateTime deadlineDate, string service)
         {
             //ID Builder
             String requestID = new IDBuilder().GenerateReqID();
 
-            Boolean flag = new Data().AddRequest(requestID, clientID, plannedDate, deadlineDate);
+            Boolean flag = new Data().AddRequest(requestID, clientID, plannedDate, deadlineDate, service);
             return flag;
         }
 

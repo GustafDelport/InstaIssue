@@ -38,7 +38,8 @@ namespace InstaIssue.AdminCenter.UILayer
             tmrTime.Start();
             lblID.Text = Globals.StaffID;
             StaffManagment staffM = new StaffManagment();
-            staff = staffM.GetAllStaff();
+
+            staff = staffM.GetLstaff();
             foreach (var item in staff)
             {
                 cmbStaffAll.Items.Add(item.StaffID + " " + item.Name);
@@ -59,16 +60,8 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void btnViewAllStaff_Click(object sender, EventArgs e)
         {
-            DataTable data = new DataTable();
-            List<Staff> staffs = new StaffManagment().GetAllStaff();
-
-            //Rework this
-            foreach (Staff item in staffs)
-            {
-                data.Rows.Add(item);
-            }
             dgvStaff.AutoGenerateColumns = true;
-            dgvStaff.DataSource = data;
+            dgvStaff.DataSource = new StaffManagment().GetAllStaff();
         }
 
         private void button1_Click(object sender, EventArgs e)

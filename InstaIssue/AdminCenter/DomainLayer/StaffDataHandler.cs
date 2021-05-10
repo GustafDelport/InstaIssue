@@ -14,7 +14,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
             connection.Connect();
         }
 
-        public List<Staff> GetAllStaff()
+        public List<Staff> GetLAllStaff()
         {
             List<Staff> staff = new List<Staff>();
             try
@@ -51,6 +51,11 @@ namespace InstaIssue.AdminCenter.DomainLayer
                 throw e;
             }
             return staff;
+        }
+
+        public DataTable getAllStaff()
+        {
+            return new Data().FindAll("tblstaff");
         }
 
         //Effective still working on

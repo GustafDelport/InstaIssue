@@ -3,7 +3,6 @@ using InstaIssue.CallCenter.UILayer;
 using Authentication;
 using System;
 using System.Windows.Forms;
-using Database;
 using InstaIssue.AdminCenter.DomainLayer;
 
 namespace InstaIssue
@@ -20,7 +19,7 @@ namespace InstaIssue
             //We Load A new instance of all the Forms here in a global class so we can use them without creating new instances
             Globals.loginForm = this;
 
-            Globals.serviceCenterForm = new ServiceCenter();
+            Globals.serviceCenterForm = new ServiceCenterForm();
 
             Globals.informationForm = new Information();
             Globals.callCenterForm = new CallCenterForm();

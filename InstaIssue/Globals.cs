@@ -1,12 +1,7 @@
-﻿using InstaIssue.AdminCenter.DomainLayer;
-using InstaIssue.AdminCenter.UILayer;
+﻿using InstaIssue.AdminCenter.UILayer;
 using InstaIssue.CallCenter.UILayer;
 using InstaIssue.Handlers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InstaIssue
 {
@@ -19,7 +14,7 @@ namespace InstaIssue
         public static CallCenterForm callCenterForm;
         public static Information informationForm;
 
-        public static ServiceCenter serviceCenterForm;
+        public static ServiceCenterForm serviceCenterForm;
 
         public static AdminCenterForm AdminCenterForm;
         public static ClientsAddForm clientsAddForm;

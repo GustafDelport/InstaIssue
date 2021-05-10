@@ -320,12 +320,13 @@ namespace InstaIssue.CallCenter.UILayer
             String name = txtName.Text;
             DateTime planedDate = dtpPlannedDate.Value;
             DateTime deadlineDate = dtpDeadlineDate.Value;
+            string service = cmbService.Text;
 
             flag = true;
 
             if (flag)
             {
-                flag = new GeneralHandler().CreateReq(client.ClientID, planedDate, deadlineDate);
+                flag = new GeneralHandler().CreateReq(client.ClientID, planedDate, deadlineDate,service);
                 if (flag)
                 {
                     MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
