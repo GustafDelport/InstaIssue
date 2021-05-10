@@ -197,38 +197,47 @@ namespace Generator
         {
             //Example REQ0000001
             String lastID = data.GetLastID("tblrequestData", "requestID");
-
-            //Now we check it and change it
             String identifier = lastID.Substring(0, 3);
             String number = lastID.Substring(3, 7);
+            string ID = "";
 
-            if (int.Parse(number) == 9999999)
+
+            //Now we check it and change it
+            if (lastID == null)
             {
-                int n = 1;
-                foreach (char item in Alphabet)
-                {
-                    if (Char.Parse(identifier) == item)
-                    {
-                        identifier = "REQ";
-                        number = "0000001";
-                        break;
-                    }
-                    n++;
-                }
+                identifier = "REQ";
+                number = "0000001";
+                return identifier + number;
             }
             else
             {
-                int newNumber = int.Parse(number);
-                newNumber++;
-                number = newNumber.ToString();
+                if (int.Parse(number) == 9999999)
+                {
+                    int n = 1;
+                    foreach (char item in Alphabet)
+                    {
+                        if (Char.Parse(identifier) == item)
+                        {
+                            identifier = "REQ";
+                            number = "0000001";
+                            break;
+                        }
+                        n++;
+                    }
+                }
+                else
+                {
+                    int newNumber = int.Parse(number);
+                    newNumber++;
+                    number = newNumber.ToString();
 
-                //My genius left pad replacement XDD DDD !!!!!!!!!
-                int tempNum = int.Parse(number);
-                number = tempNum.ToString($"D7");
+                    //My genius left pad replacement XDD DDD !!!!!!!!!
+                    int tempNum = int.Parse(number);
+                    number = tempNum.ToString($"D7");
+                }
+
+                ID = identifier + number;
             }
-
-            string ID = identifier + number;
-
             return ID;
         }
 

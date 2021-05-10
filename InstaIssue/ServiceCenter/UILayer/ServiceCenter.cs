@@ -2,6 +2,7 @@
 using InstaIssue.AdminCenter.LogicLayer;
 using InstaIssue.CallCenter.DomainLayer;
 using InstaIssue.CallCenter.LogicLayer;
+using InstaIssue.ServiceCenter.LogicLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,8 +39,11 @@ namespace InstaIssue.AdminCenter.UILayer
                 cmbAllClients.Items.Add(item.ClientID + " " + item.Name);
             }
         }
-    
+
         //Button clicks
+        #region
+
+        //Data Views
         #region
         private void btnROD_Click(object sender, EventArgs e)
         {
@@ -83,9 +87,21 @@ namespace InstaIssue.AdminCenter.UILayer
             dgvJobs.DataSource = table;
         }
 
+        #endregion
+
         private void btnSchedJobs_Click(object sender, EventArgs e)
         {
             //Schedule reqs
+            bool flag = new RequestScheduler().ScheduleRequests();
+
+            if (flag)
+            {
+                MessageBox.Show("All currect requests have been scheduled","Schedulation Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Either there are no requests or an unforseen error has occured", "Schedulation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -108,6 +124,7 @@ namespace InstaIssue.AdminCenter.UILayer
             //pnlRequests.Visible = false;
         }
         #endregion
+
         //Other
         #region
         private void tmrTime_Tick(object sender, EventArgs e)

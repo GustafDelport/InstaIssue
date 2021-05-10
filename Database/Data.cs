@@ -196,8 +196,9 @@ namespace Database
             }
             catch (Exception e)
             {
-
-                throw e;
+                return null;
+                connection.database.Close();
+                //throw e;
             }
             String lastID = ID;
             return lastID;
