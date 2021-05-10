@@ -5,23 +5,19 @@ using InstaIssue.CallCenter.LogicLayer;
 using InstaIssue.ServiceCenter.LogicLayer;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InstaIssue;
 
 namespace InstaIssue.AdminCenter.UILayer
 {
-    public partial class ServiceCenter : Form
+    public partial class ServiceCenterForm : Form
     {
         private Panel activePanel;
         private List<Jobs> jobs;
         private List<Clients> clients;
 
-        public ServiceCenter()
+        public ServiceCenterForm()
         {
             InitializeComponent();
         }

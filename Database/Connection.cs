@@ -19,7 +19,6 @@ namespace Database
             }
             catch (Exception e)
             {
-                
                 throw;
             }
             

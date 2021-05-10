@@ -1,7 +1,7 @@
 ﻿
 namespace InstaIssue.AdminCenter.UILayer
 {
-    partial class ServiceCenter
+    partial class ServiceCenterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceCenter));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceCenterForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnJobs = new System.Windows.Forms.Button();
             this.btnRequests = new System.Windows.Forms.Button();

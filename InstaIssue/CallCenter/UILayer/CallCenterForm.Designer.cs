@@ -107,6 +107,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblPContr = new System.Windows.Forms.Label();
             this.cmbNewCont = new MetroFramework.Controls.MetroComboBox();
             this.btnAddNewProd = new System.Windows.Forms.Button();
+            this.cmbService = new MetroFramework.Controls.MetroComboBox();
             this.pnlControls.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -629,6 +630,7 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlReqs
             // 
+            this.pnlReqs.Controls.Add(this.cmbService);
             this.pnlReqs.Controls.Add(this.label3);
             this.pnlReqs.Controls.Add(this.cmbProducts);
             this.pnlReqs.Controls.Add(this.label2);
@@ -1053,6 +1055,20 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddNewProd.UseVisualStyleBackColor = true;
             this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
             // 
+            // cmbService
+            // 
+            this.cmbService.FormattingEnabled = true;
+            this.cmbService.ItemHeight = 23;
+            this.cmbService.Items.AddRange(new object[] {
+            "Maintenance",
+            "Fix",
+            "Replace"});
+            this.cmbService.Location = new System.Drawing.Point(17, 200);
+            this.cmbService.Name = "cmbService";
+            this.cmbService.Size = new System.Drawing.Size(156, 29);
+            this.cmbService.TabIndex = 16;
+            this.cmbService.UseSelectable = true;
+            // 
             // CallCenterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1181,5 +1197,6 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.Label lblExpDate;
+        private MetroFramework.Controls.MetroComboBox cmbService;
     }
 }

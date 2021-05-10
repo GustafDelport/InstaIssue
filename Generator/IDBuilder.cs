@@ -197,8 +197,8 @@ namespace Generator
         {
             //Example REQ0000001
             String lastID = data.GetLastID("tblrequestData", "requestID");
-            String identifier = lastID.Substring(0, 3);
-            String number = lastID.Substring(3, 7);
+            String identifier = "";
+            String number = "";
             string ID = "";
 
 
@@ -211,6 +211,9 @@ namespace Generator
             }
             else
             {
+                identifier = lastID.Substring(0, 3);
+                number = lastID.Substring(3, 7);
+
                 if (int.Parse(number) == 9999999)
                 {
                     int n = 1;

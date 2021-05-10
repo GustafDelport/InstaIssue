@@ -327,6 +327,14 @@ namespace Database
                 return false;
             }
         }
+
+        public Boolean DeleteAllEntries(string tblName)
+        {
+            string buildCommand = $"DELETE FROM {tblName}";
+            connection.RunCommand(buildCommand).ExecuteNonQuery();
+            connection.database.Close();
+            return true;
+        }
         
         // Check if specific entry exists in database in specified table and return SQLDataReader object
         public DataTable FindEntry(string id, string tblName, string idCol)
@@ -577,7 +585,7 @@ namespace Database
         }
 
         // Add Request
-        public Boolean AddRequest(string requestID, string clientID, DateTime plannedDate, DateTime deadlineDate)
+        public Boolean AddRequest(string requestID, string clientID, DateTime plannedDate, DateTime deadlineDate,string service)
         {
             try
             {
@@ -585,14 +593,14 @@ namespace Database
                 if (CheckExist(requestID, "tblrequestData", "requestID"))
                 {
                     // Run update Request code
-                    connection.RunCommand($"UPDATE tblrequestData SET requestID = '{requestID}', clientID = '{clientID}', plannedDate = '{plannedDate}', deadlineDate = '{deadlineDate}' WHERE requestID = '{requestID}'").ExecuteNonQuery();
+                    connection.RunCommand($"UPDATE tblrequestData SET requestID = '{requestID}', clientID = '{clientID}', plannedDate = '{plannedDate}', deadlineDate = '{deadlineDate}', service = '{service}' WHERE requestID = '{requestID}'").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
                 else
                 {
                     // Run add request code
-                    connection.RunCommand($"INSERT INTO dbo.tblrequestData VALUES('{requestID}','{clientID}','{plannedDate}','{deadlineDate}')").ExecuteNonQuery();
+                    connection.RunCommand($"INSERT INTO dbo.tblrequestData VALUES('{requestID}','{clientID}','{plannedDate}','{deadlineDate}','{service}')").ExecuteNonQuery();
                     connection.database.Close();
                     return true;
                 }
