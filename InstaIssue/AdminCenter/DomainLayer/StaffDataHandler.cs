@@ -56,18 +56,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
         //Effective still working on
         public DataTable GetStaff(String staffID)
         {
-            DataTable staff = new DataTable();
-            SqlDataReader reader;
-            try
-            {
-                reader = new Data().FindEntry(staffID,"tblstaff","clientID");
-                staff.Load(reader);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            return staff;
+            return new Data().FindEntry(staffID, "tblstaff", "clientID");
         }
 
         //Done

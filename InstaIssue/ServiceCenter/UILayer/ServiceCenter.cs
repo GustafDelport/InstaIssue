@@ -44,24 +44,35 @@ namespace InstaIssue.AdminCenter.UILayer
         private void btnROD_Click(object sender, EventArgs e)
         {
             //Request on date
-
+            DateTime date = dtpDate.Value;
+            DataTable table = new RequestTracker().GetRequestsOnDate(date);
+            dgvRequests.AutoGenerateColumns = true;
+            dgvRequests.DataSource = table;
         }
 
         private void btnLatestReq_Click(object sender, EventArgs e)
         {
             //Latest Req
-
+            DataTable table = new RequestTracker().GetLatestRequests();
+            dgvRequests.AutoGenerateColumns = true;
+            dgvRequests.DataSource = table;
         }
 
         private void btnCReq_Click(object sender, EventArgs e)
         {
             //CLient Req
+            string clientID = cmbAllClients.Text.Split(' ')[0];
 
+            DataTable table = new RequestTracker().GetRequestsByClient(clientID);
+            dgvRequests.AutoGenerateColumns = true;
+            dgvRequests.DataSource = table;
         }
 
         private void btnAReq_Click(object sender, EventArgs e)
         {
-            //All Reqs
+            DataTable table = new RequestTracker().GetRequests();
+            dgvRequests.AutoGenerateColumns = true;
+            dgvRequests.DataSource = table;
         }
 
         private void btnViewJobs_Click(object sender, EventArgs e)
@@ -74,9 +85,7 @@ namespace InstaIssue.AdminCenter.UILayer
 
         private void btnSchedJobs_Click(object sender, EventArgs e)
         {
-            DataTable table = new JobsCenter().GetRequests();
-            dgvJobs.AutoGenerateColumns = true;
-            dgvJobs.DataSource = table;
+            //Schedule reqs
         }
 
         #endregion

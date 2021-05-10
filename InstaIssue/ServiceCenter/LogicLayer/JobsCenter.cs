@@ -37,10 +37,5 @@ namespace InstaIssue.AdminCenter.LogicLayer
         {
             return new JobsDataHandler().GetJobs();
         }
-
-        public DataTable GetRequests()
-        {
-            return new JobsDataHandler().GetRequests();
-        }
     }
 }

@@ -2,6 +2,7 @@
 using Generator;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,7 @@ namespace InstaIssue.CallCenter.LogicLayer
             return flag;
         }
 
-        public SqlDataReader GetData(string clientID,String tblname,string idCol)
+        public DataTable GetData(string clientID,String tblname,string idCol)
         {
             return new Data().FindEntry(clientID, tblname, idCol);
         }

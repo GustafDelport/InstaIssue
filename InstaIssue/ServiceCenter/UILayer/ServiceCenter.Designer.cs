@@ -48,7 +48,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnCReq = new System.Windows.Forms.Button();
             this.btnLatestReq = new System.Windows.Forms.Button();
             this.btnROD = new System.Windows.Forms.Button();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.dtpDate = new MetroFramework.Controls.MetroDateTime();
             this.dgvRequests = new System.Windows.Forms.DataGridView();
             this.pnlJobs = new System.Windows.Forms.Panel();
             this.btnSchedJobs = new System.Windows.Forms.Button();
@@ -200,12 +200,13 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlRequests
             // 
+            this.pnlRequests.Controls.Add(this.pnlJobs);
             this.pnlRequests.Controls.Add(this.cmbAllClients);
             this.pnlRequests.Controls.Add(this.btnAReq);
             this.pnlRequests.Controls.Add(this.btnCReq);
             this.pnlRequests.Controls.Add(this.btnLatestReq);
             this.pnlRequests.Controls.Add(this.btnROD);
-            this.pnlRequests.Controls.Add(this.metroDateTime1);
+            this.pnlRequests.Controls.Add(this.dtpDate);
             this.pnlRequests.Controls.Add(this.dgvRequests);
             this.pnlRequests.Location = new System.Drawing.Point(167, 90);
             this.pnlRequests.Name = "pnlRequests";
@@ -295,13 +296,13 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnROD.UseVisualStyleBackColor = true;
             this.btnROD.Click += new System.EventHandler(this.btnROD_Click);
             // 
-            // metroDateTime1
+            // dtpDate
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(14, 38);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(159, 29);
-            this.metroDateTime1.TabIndex = 14;
+            this.dtpDate.Location = new System.Drawing.Point(14, 38);
+            this.dtpDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(159, 29);
+            this.dtpDate.TabIndex = 14;
             // 
             // dgvRequests
             // 
@@ -316,7 +317,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.pnlJobs.Controls.Add(this.btnSchedJobs);
             this.pnlJobs.Controls.Add(this.btnViewJobs);
             this.pnlJobs.Controls.Add(this.dgvJobs);
-            this.pnlJobs.Location = new System.Drawing.Point(167, 90);
+            this.pnlJobs.Location = new System.Drawing.Point(0, 0);
             this.pnlJobs.Name = "pnlJobs";
             this.pnlJobs.Size = new System.Drawing.Size(750, 411);
             this.pnlJobs.TabIndex = 3;
@@ -378,7 +379,6 @@ namespace InstaIssue.AdminCenter.UILayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(925, 512);
-            this.Controls.Add(this.pnlJobs);
             this.Controls.Add(this.pnlRequests);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -418,7 +418,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Button btnRequests;
         private System.Windows.Forms.Panel pnlRequests;
         private System.Windows.Forms.Panel pnlJobs;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime dtpDate;
         private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.Button btnROD;
         private System.Windows.Forms.Button btnLatestReq;
