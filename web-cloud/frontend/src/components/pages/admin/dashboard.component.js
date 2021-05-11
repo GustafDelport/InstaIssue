@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {
     Container,
     Content, Divider,
-    Header
+    Header, Rate
 } from "rsuite";
 import { Helmet } from "react-helmet";
 
@@ -38,7 +38,8 @@ export default class DashboardComponent extends Component {
                         </Header>
                         <Content>
                             <div className="content-inner">
-                                <p>Content here</p>
+                                <h4>Average rating:</h4>
+                                <Rate defaultValue={4.5} size="xs" allowHalf readOnly />
                             </div>
                         </Content>
                         <FooterComponent />
@@ -61,7 +62,10 @@ export default class DashboardComponent extends Component {
                         </Header>
                         <Content>
                             <div className="content-inner">
-                                <p>Content here</p>
+                                <h4>Average rating:</h4>
+                                <p style={{marginTop: 5}}>
+                                    <Rate defaultValue={4.5} size="sm" allowHalf readOnly /> <strong><span style={{fontSize: '1.5rem'}}>4.5</span></strong>
+                                </p>
                             </div>
                         </Content>
                         <FooterComponent />

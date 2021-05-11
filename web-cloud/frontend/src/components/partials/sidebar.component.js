@@ -54,7 +54,11 @@ export default class SidebarComponent extends Component {
             >
                 <Sidenav.Header>
                     <ButtonToolbar>
-                        <Button appearance="link" href="/"><Icon icon="arrow-circle-left" /> Return Home</Button>
+                        {!expand ? (
+                            <Button appearance="link" href="/"><Icon icon="arrow-circle-left" /></Button>
+                        ) : (
+                            <Button appearance="link" href="/"><Icon icon="arrow-circle-left" /> Return Home</Button>
+                        )}
                     </ButtonToolbar>
                 </Sidenav.Header>
                 <Sidenav
