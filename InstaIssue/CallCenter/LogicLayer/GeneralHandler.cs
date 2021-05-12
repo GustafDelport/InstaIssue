@@ -37,6 +37,14 @@ namespace InstaIssue.CallCenter.LogicLayer
             return flag;
         }
 
+        public Boolean CreateCallLog(string clientID,string staffID, DateTime startStamp, DateTime endStamp)
+        {
+            bool flag = false;
+            string ID = new IDBuilder().GenerateCallRecordID(clientID);
+            flag = new Data().AddCall(ID, clientID, startStamp, endStamp, staffID);
+            return flag;
+        }
+
         public DataTable GetData(string clientID,String tblname,string idCol)
         {
             return new Data().FindEntry(clientID, tblname, idCol);
