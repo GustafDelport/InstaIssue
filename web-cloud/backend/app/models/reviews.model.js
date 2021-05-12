@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         clientID: {
             type: Sequelize.STRING
         },
-        reviewDate: {
+        Timestamp: {
             type: Sequelize.DATE
         },
         rating: {

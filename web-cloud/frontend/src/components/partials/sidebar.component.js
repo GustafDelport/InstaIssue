@@ -71,5 +71,4 @@ export default class SidebarComponent extends Component {
             </Sidebar>
         )
     }
-
 }
