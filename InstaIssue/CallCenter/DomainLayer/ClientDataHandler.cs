@@ -132,36 +132,6 @@ namespace InstaIssue.CallCenter.DomainLayer
             return callRecords;
         }
 
-        public List<JobRecords> GetJobRecords(String nationalID)
-        {
-            List<JobRecords> jobRecords = new List<JobRecords>();
-
-            String Q = $"SELECT * FROM tblCallRecords";
-            SqlConnection con = connection.GetSqlConnection();
-
-            SqlDataAdapter reader = new SqlDataAdapter(Q, con);
-            DataTable table = new DataTable();
-
-            reader.Fill(table);
-
-            String[] arr = new string[7];
-            foreach (DataRow row in table.Rows)
-            {
-
-                arr[0] = row["jobrecordID"].ToString();
-                arr[1] = row["clientID"].ToString();
-                arr[2] = row["callrecordID"].ToString();
-                arr[3] = row["description"].ToString();
-                arr[4] = row["status"].ToString();
-
-                jobRecords.Add(new JobRecords(arr[0],arr[1],arr[2],arr[3],arr[4]));
-            }
-
-            connection.database.Close();
-
-            return jobRecords;
-        }
-
         public List<Products> GetClientProducts(string clientID)
         {
             List<Products> products = new List<Products>();

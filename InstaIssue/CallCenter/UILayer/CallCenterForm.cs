@@ -22,6 +22,8 @@ namespace InstaIssue.CallCenter.UILayer
         private List<Jobs> jobs;
         private List<Products> products; 
         private List<Contracts> contracts;
+        private DateTime beginCallStamp;
+        private DateTime endCallStamp;
 
         public CallCenterForm()
         {
@@ -51,6 +53,26 @@ namespace InstaIssue.CallCenter.UILayer
         #region
         private void picPhoneButton_Click(object sender, EventArgs e)
         {
+            //Set timestamps here
+            if (!callStatus)
+            {
+                string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                beginCallStamp = DateTime.Parse(time);
+            }
+            else
+            {
+                string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                endCallStamp = DateTime.Parse(time);
+                bool tFlag = new GeneralHandler().CreateCallLog(client.ClientID, Globals.StaffID, beginCallStamp, endCallStamp);
+                if (tFlag)
+                {
+                    MessageBox.Show("The Call was logged", "Log Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("The Call was not logged", "Log Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             CallTest();
         }
 
@@ -329,11 +351,11 @@ namespace InstaIssue.CallCenter.UILayer
                 flag = new GeneralHandler().CreateReq(client.ClientID, planedDate, deadlineDate,service);
                 if (flag)
                 {
-                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("A new request was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add request", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ResetBoxes();
                 }
 
@@ -398,11 +420,11 @@ namespace InstaIssue.CallCenter.UILayer
                 flag = new GeneralHandler().CreateProd(name, serial, contractID, client.ClientID, ExpDate);
                 if (flag)
                 {
-                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("A new client product was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add client product", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ResetBoxes();
                 }
 

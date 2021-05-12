@@ -376,7 +376,7 @@ namespace Generator
 
             String lastID = data.GetLastID("tblcallRecords", "callRecordID");
 
-            number = lastID.Substring(2, 3);
+            number = lastID.Substring(2, 4);
             int newNumber = int.Parse(number);
             newNumber++;
             number = newNumber.ToString();

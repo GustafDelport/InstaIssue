@@ -117,7 +117,7 @@ namespace InstaIssue.AdminCenter.UILayer
 
             if (flag)
             {
-                MessageBox.Show("New client data was registered", "Update Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("New client data was edited", "Update Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

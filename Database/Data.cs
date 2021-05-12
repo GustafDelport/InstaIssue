@@ -18,7 +18,7 @@ namespace Database
         public List<string> checkClientEntries(string clientID) 
         {
             connection.database.Open();
-            string[] clientAssociationsTables = new string[] { "tblrequestData", "tblproducts", "tbljobs", "tbljobRecords","tblcontracts", "tblissues","tblclients", "tblcallRecords" };
+            string[] clientAssociationsTables = new string[] { "tblrequestData", "tblproducts", "tbljobs","tblcontracts", "tblissues","tblclients", "tblcallRecords" };
             List<string> tbls = new List<string>();
             try
             {
@@ -640,34 +640,6 @@ namespace Database
             }
         }
 
-        // Add Job Record
-        public Boolean AddJobRecord(string jobRecordID, string clientID, string callRecordID, string description, string status)
-        {
-            try
-            {
-                // Check if job record exists, if exist then update, otherwise add
-                if (CheckExist(jobRecordID, "tbljobRecords", "jobRecordID"))
-                {
-                    // Run update Job code
-                    connection.RunCommand($"UPDATE tbljobRecords SET jobRecordID = '{jobRecordID}', clientID = '{clientID}', callRecordID = '{callRecordID}', description = '{description}', status = '{status}' WHERE jobRecordID = '{jobRecordID}'").ExecuteNonQuery();
-                    connection.database.Close();
-                    return true;
-                }
-                else
-                {
-                    // Run add Job Record code
-                    connection.RunCommand($"INSERT INTO dbo.tbljobRecords VALUES('{jobRecordID}','{clientID}','{callRecordID}','{description}','{status}'").ExecuteNonQuery();
-                    connection.database.Close();
-                    return true;
-                }
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
         // Add Issue
         public Boolean AddIssue(string issueID, DateTime reportedDate, string clientID, string status, string staffID, string description)
         {
@@ -729,22 +701,9 @@ namespace Database
         {
             try
             {
-                // Check if call record exists, if exist then update, otherwise add
-                if (CheckExist(callRecordID, "tblcallRecords", "callRecordID"))
-                {
-                    // Run update Call Record code
-                    connection.RunCommand($"UPDATE tblcallRecords SET callRecordID = '{callRecordID}', clientID = '{clientID}', startTimestamp = '{startTimestamp}', endTimestamp = '{endTimestamp}', staffID = '{staffID}' WHERE callRecordID = '{callRecordID}'").ExecuteNonQuery();
-                    connection.database.Close();
-                    return true;
-                }
-                else
-                {
-                    // Run add Call Record code
-                    connection.RunCommand($"INSERT INTO dbo.tblcallRecords VALUES('{callRecordID}','{clientID}','{startTimestamp}','{endTimestamp}','{staffID}')").ExecuteNonQuery();
-                    connection.database.Close();
-                }
-
-                
+                connection.database.Open();
+                connection.RunCommand($"INSERT INTO dbo.tblcallRecords VALUES('{callRecordID}','{clientID}','{startTimestamp}','{endTimestamp}','{staffID}')").ExecuteNonQuery();
+                connection.database.Close();
                 return true;
             }
             catch (Exception e)
