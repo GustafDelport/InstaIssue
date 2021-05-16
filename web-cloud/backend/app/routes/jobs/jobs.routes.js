@@ -4,7 +4,7 @@ module.exports = app => {
     const router = require('express').Router();
 
     // Get all jobs
-    router.get("/all", controller.findALl);
+    router.get("/", controller.findAll);
 
     // Fetch data for a specific jobID
     router.get("/:jobID", controller.findJob);

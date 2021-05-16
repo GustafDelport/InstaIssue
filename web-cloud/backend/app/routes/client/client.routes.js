@@ -4,7 +4,7 @@ module.exports = app => {
     const router = require('express').Router();
 
     // Get all clients
-    router.get("/clients", controller.findAll);
+    router.get("/", controller.findAll);
 
     // Fetch data for a specific clientID
     router.get("/:clientID", controller.findClient);

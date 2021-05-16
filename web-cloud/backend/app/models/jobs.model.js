@@ -20,6 +20,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         }
     },{
-        tableName: 'tbljobs'
+        tableName: 'tbljobs',
+        timestamps: false
     })
 }

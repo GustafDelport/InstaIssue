@@ -23,6 +23,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         }
     },{
-        tableName: 'tblreviewRecords'
+        tableName: 'tblreviewRecords',
+        timestamps: false
     })
 }

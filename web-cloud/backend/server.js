@@ -20,7 +20,10 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-// = Call routes from routes directory
+require('./app/routes/authentication/auth.routes')(app);
+require('./app/routes/client/client.routes')(app);
+require('./app/routes/jobs/jobs.routes')(app);
+require('./app/routes/jobs/reviews.routes')(app);
 
 // Set port & listen for requests
 const PORT = process.env.PORT || 8080;
