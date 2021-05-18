@@ -428,14 +428,11 @@ namespace Database
                     // Run add client code
                     if (userID != -1)
                     {
-                        connection.RunCommand($"INSERT INTO dbo.tblclients VALUES('{clientID}',{userID},'{name}','{surname}','{nationalID}','{phoneNumber}','{email}','{address}'").ExecuteNonQuery();
+                        connection.RunCommand($"INSERT INTO dbo.tblclients VALUES('{clientID}',{userID},'{name}','{surname}','{nationalID}','{phoneNumber}','{email}','{address}')").ExecuteNonQuery();
                     }
                     else
                     {
-                        connection.RunCommand(
-                            "INSERT INTO dbo.tblclients(clientID, name, surname, nationalID, phoneNumber, email, address) " +
-                            "VALUES(\'" + clientID + "\',\'" + name + "\',\'" + surname + "\',\'" + nationalID + "\',\'" +
-                            phoneNumber + "\',\'" + email + "\',\'" + address + "\')").ExecuteNonQuery();
+                        connection.RunCommand($"INSERT INTO dbo.tblclients(clientID, name, surname, nationalID, phoneNumber, email, address) VALUES('{clientID}' ,'{name}','{surname},'{nationalID}','{phoneNumber}','{email}','{address}')").ExecuteNonQuery();
                     }
                     connection.database.Close();
                     return true;

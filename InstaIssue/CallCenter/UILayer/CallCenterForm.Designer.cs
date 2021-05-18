@@ -72,6 +72,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.label6 = new System.Windows.Forms.Label();
             this.btnTrackJob = new System.Windows.Forms.Button();
             this.pnlReqs = new System.Windows.Forms.Panel();
+            this.cmbService = new MetroFramework.Controls.MetroComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbProducts = new MetroFramework.Controls.MetroComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -107,7 +108,8 @@ namespace InstaIssue.CallCenter.UILayer
             this.lblPContr = new System.Windows.Forms.Label();
             this.cmbNewCont = new MetroFramework.Controls.MetroComboBox();
             this.btnAddNewProd = new System.Windows.Forms.Button();
-            this.cmbService = new MetroFramework.Controls.MetroComboBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.pnlControls.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -643,6 +645,20 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlReqs.Size = new System.Drawing.Size(193, 324);
             this.pnlReqs.TabIndex = 14;
             // 
+            // cmbService
+            // 
+            this.cmbService.FormattingEnabled = true;
+            this.cmbService.ItemHeight = 23;
+            this.cmbService.Items.AddRange(new object[] {
+            "Maintenance",
+            "Fix",
+            "Replace"});
+            this.cmbService.Location = new System.Drawing.Point(17, 200);
+            this.cmbService.Name = "cmbService";
+            this.cmbService.Size = new System.Drawing.Size(156, 29);
+            this.cmbService.TabIndex = 16;
+            this.cmbService.UseSelectable = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -722,6 +738,8 @@ namespace InstaIssue.CallCenter.UILayer
             // 
             // pnlAddClient
             // 
+            this.pnlAddClient.Controls.Add(this.txtUsername);
+            this.pnlAddClient.Controls.Add(this.txtPassword);
             this.pnlAddClient.Controls.Add(this.cmbContractsC);
             this.pnlAddClient.Controls.Add(this.txtNatID);
             this.pnlAddClient.Controls.Add(this.txtAddress);
@@ -738,7 +756,7 @@ namespace InstaIssue.CallCenter.UILayer
             // cmbContractsC
             // 
             this.cmbContractsC.FormattingEnabled = true;
-            this.cmbContractsC.Location = new System.Drawing.Point(17, 207);
+            this.cmbContractsC.Location = new System.Drawing.Point(17, 214);
             this.cmbContractsC.Name = "cmbContractsC";
             this.cmbContractsC.Size = new System.Drawing.Size(159, 28);
             this.cmbContractsC.TabIndex = 15;
@@ -746,7 +764,7 @@ namespace InstaIssue.CallCenter.UILayer
             // txtNatID
             // 
             this.txtNatID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNatID.Location = new System.Drawing.Point(17, 78);
+            this.txtNatID.Location = new System.Drawing.Point(17, 64);
             this.txtNatID.Name = "txtNatID";
             this.txtNatID.Size = new System.Drawing.Size(159, 22);
             this.txtNatID.TabIndex = 14;
@@ -757,7 +775,7 @@ namespace InstaIssue.CallCenter.UILayer
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddress.Location = new System.Drawing.Point(17, 174);
+            this.txtAddress.Location = new System.Drawing.Point(17, 139);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(159, 22);
             this.txtAddress.TabIndex = 12;
@@ -768,7 +786,7 @@ namespace InstaIssue.CallCenter.UILayer
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(17, 142);
+            this.txtEmail.Location = new System.Drawing.Point(17, 114);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(159, 22);
             this.txtEmail.TabIndex = 13;
@@ -779,7 +797,7 @@ namespace InstaIssue.CallCenter.UILayer
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhone.Location = new System.Drawing.Point(17, 110);
+            this.txtPhone.Location = new System.Drawing.Point(17, 89);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(159, 22);
             this.txtPhone.TabIndex = 11;
@@ -790,7 +808,7 @@ namespace InstaIssue.CallCenter.UILayer
             // txtSurname
             // 
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSurname.Location = new System.Drawing.Point(17, 46);
+            this.txtSurname.Location = new System.Drawing.Point(17, 39);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(159, 22);
             this.txtSurname.TabIndex = 9;
@@ -818,9 +836,9 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddClient.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.btnAddClient.Location = new System.Drawing.Point(17, 238);
+            this.btnAddClient.Location = new System.Drawing.Point(17, 245);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(159, 82);
+            this.btnAddClient.Size = new System.Drawing.Size(159, 75);
             this.btnAddClient.TabIndex = 8;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -833,7 +851,7 @@ namespace InstaIssue.CallCenter.UILayer
             this.pnlIssues.Controls.Add(this.pnlCreateIss);
             this.pnlIssues.Controls.Add(this.btnTopTrackIss);
             this.pnlIssues.Controls.Add(this.pnlTrackIssue);
-            this.pnlIssues.Location = new System.Drawing.Point(165, 87);
+            this.pnlIssues.Location = new System.Drawing.Point(164, 87);
             this.pnlIssues.Name = "pnlIssues";
             this.pnlIssues.Size = new System.Drawing.Size(756, 416);
             this.pnlIssues.TabIndex = 5;
@@ -1055,19 +1073,27 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnAddNewProd.UseVisualStyleBackColor = true;
             this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
             // 
-            // cmbService
+            // txtUsername
             // 
-            this.cmbService.FormattingEnabled = true;
-            this.cmbService.ItemHeight = 23;
-            this.cmbService.Items.AddRange(new object[] {
-            "Maintenance",
-            "Fix",
-            "Replace"});
-            this.cmbService.Location = new System.Drawing.Point(17, 200);
-            this.cmbService.Name = "cmbService";
-            this.cmbService.Size = new System.Drawing.Size(156, 29);
-            this.cmbService.TabIndex = 16;
-            this.cmbService.UseSelectable = true;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Location = new System.Drawing.Point(17, 164);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(159, 22);
+            this.txtUsername.TabIndex = 17;
+            this.txtUsername.Text = "Username";
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Location = new System.Drawing.Point(17, 189);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(159, 22);
+            this.txtPassword.TabIndex = 16;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // CallCenterForm
             // 
@@ -1198,5 +1224,7 @@ namespace InstaIssue.CallCenter.UILayer
         private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.Label lblExpDate;
         private MetroFramework.Controls.MetroComboBox cmbService;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }

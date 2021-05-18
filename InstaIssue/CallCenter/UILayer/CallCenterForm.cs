@@ -207,6 +207,11 @@ namespace InstaIssue.CallCenter.UILayer
             txtNatID.Text = "";
         }
 
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+        }
+
         private void txtPhone_Click(object sender, EventArgs e)
         {
             txtPhone.Text = "";
@@ -220,6 +225,11 @@ namespace InstaIssue.CallCenter.UILayer
         private void txtAddress_Click(object sender, EventArgs e)
         {
             txtAddress.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -308,12 +318,14 @@ namespace InstaIssue.CallCenter.UILayer
             String eMail = txtEmail.Text;
             String address = txtAddress.Text;
             String SLA = cmbContractsC.Text;
+            String username = txtUsername.Text;
+            String password = txtPassword.Text;
 
             flag = true;
 
             if (flag)
             {
-                flag = new RegisterClient().RegisterNewClient(name, surname, natID, phone, eMail, address, SLA);
+                flag = new RegisterClient().RegisterNewClient(name, surname, natID, phone, eMail, address, SLA, username, password);
                 if (flag)
                 {
                     MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

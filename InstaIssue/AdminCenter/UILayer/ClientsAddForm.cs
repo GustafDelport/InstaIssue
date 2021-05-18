@@ -97,12 +97,14 @@ namespace InstaIssue.AdminCenter.UILayer
             String eMail = txtEmail.Text;
             String address = txtAddress.Text;
             String SLA = cmbContracts.Text;
+            String username = txtUsername.Text;
+            String password = txtPassword.Text;
 
             flag = true;
 
             if (flag)
             {
-                flag = new RegisterClient().RegisterNewClient(name, surname, natID, phone, eMail, address, SLA);
+                flag = new RegisterClient().RegisterNewClient(name, surname, natID, phone, eMail, address, SLA, username, password);
                 if (flag)
                 {
                     MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,6 +135,16 @@ namespace InstaIssue.AdminCenter.UILayer
         private void ClientsAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
         }
     }
 }
