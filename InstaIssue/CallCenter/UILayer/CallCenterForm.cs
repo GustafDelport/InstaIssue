@@ -316,11 +316,11 @@ namespace InstaIssue.CallCenter.UILayer
                 flag = new RegisterClient().RegisterNewClient(name, surname, natID, phone, eMail, address, SLA);
                 if (flag)
                 {
-                    MessageBox.Show("A new client was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("A new client was registered", "Addition Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add client", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add client", "Addition Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ResetBoxes();
                 }
                 
@@ -351,11 +351,11 @@ namespace InstaIssue.CallCenter.UILayer
                 flag = new GeneralHandler().CreateReq(client.ClientID, planedDate, deadlineDate,service);
                 if (flag)
                 {
-                    MessageBox.Show("A new request was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("A new request was registered", "Addition Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add request", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add request", "Addition Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ResetBoxes();
                 }
 
@@ -420,11 +420,11 @@ namespace InstaIssue.CallCenter.UILayer
                 flag = new GeneralHandler().CreateProd(name, serial, contractID, client.ClientID, ExpDate);
                 if (flag)
                 {
-                    MessageBox.Show("A new client product was registered", "Addidtion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("A new client product was registered", "Addition Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add client product", "Addidtion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add client product", "Addition Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ResetBoxes();
                 }
 

@@ -72,7 +72,6 @@ namespace InstaIssue.CallCenter.UILayer
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDashboard.Image = global::InstaIssue.Properties.Resources.Home;
             this.btnDashboard.Location = new System.Drawing.Point(0, 115);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(159, 82);
@@ -95,7 +94,6 @@ namespace InstaIssue.CallCenter.UILayer
             // imgLogo
             // 
             this.imgLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.imgLogo.Image = global::InstaIssue.Properties.Resources.LogoGreen;
             this.imgLogo.Location = new System.Drawing.Point(40, 1);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(78, 78);
