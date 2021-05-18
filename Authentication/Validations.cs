@@ -12,7 +12,7 @@ namespace Authentication
     {
         public Boolean ValidateRegisterClient(Panel panel)
         {
-            Boolean[] flagArr = new Boolean[7];
+            Boolean[] flagArr = new Boolean[9];
             Boolean flag = false;
             int n = 0;
 
@@ -37,6 +37,18 @@ namespace Authentication
                         case "txtEmail":
                             {
                                 flagArr[n] = validateEmail(item.Text);
+                                n++;
+                            }
+                            break;
+                        case "txtPassword":
+                            {
+                                flagArr[n] = validateCustomText(item.Text);
+                                n++;
+                            }
+                            break;
+                        case "txtUsername":
+                            {
+                                flagArr[n] = validateCustomText(item.Text);
                                 n++;
                             }
                             break;

@@ -50,6 +50,8 @@ namespace InstaIssue.AdminCenter.UILayer
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -173,17 +175,19 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             // pnlAddClient
             // 
+            this.pnlAddClient.Controls.Add(this.txtPassword);
             this.pnlAddClient.Controls.Add(this.cmbContracts);
             this.pnlAddClient.Controls.Add(this.txtNatID);
+            this.pnlAddClient.Controls.Add(this.txtUsername);
             this.pnlAddClient.Controls.Add(this.txtAddress);
             this.pnlAddClient.Controls.Add(this.txtEmail);
             this.pnlAddClient.Controls.Add(this.txtPhone);
             this.pnlAddClient.Controls.Add(this.txtSurname);
             this.pnlAddClient.Controls.Add(this.txtName);
             this.pnlAddClient.Controls.Add(this.btnAddClient);
-            this.pnlAddClient.Location = new System.Drawing.Point(429, 145);
+            this.pnlAddClient.Location = new System.Drawing.Point(429, 104);
             this.pnlAddClient.Name = "pnlAddClient";
-            this.pnlAddClient.Size = new System.Drawing.Size(193, 332);
+            this.pnlAddClient.Size = new System.Drawing.Size(193, 396);
             this.pnlAddClient.TabIndex = 8;
             // 
             // cmbContracts
@@ -192,7 +196,7 @@ namespace InstaIssue.AdminCenter.UILayer
             "Diamond Plus"});
             this.cmbContracts.FormattingEnabled = true;
             this.cmbContracts.ItemHeight = 23;
-            this.cmbContracts.Location = new System.Drawing.Point(17, 206);
+            this.cmbContracts.Location = new System.Drawing.Point(17, 273);
             this.cmbContracts.Name = "cmbContracts";
             this.cmbContracts.Size = new System.Drawing.Size(159, 29);
             this.cmbContracts.TabIndex = 15;
@@ -273,7 +277,7 @@ namespace InstaIssue.AdminCenter.UILayer
             this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddClient.Image = global::InstaIssue.Properties.Resources.ClientAddS;
-            this.btnAddClient.Location = new System.Drawing.Point(17, 241);
+            this.btnAddClient.Location = new System.Drawing.Point(17, 308);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(159, 82);
             this.btnAddClient.TabIndex = 8;
@@ -286,6 +290,28 @@ namespace InstaIssue.AdminCenter.UILayer
             // 
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Location = new System.Drawing.Point(17, 240);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(159, 23);
+            this.txtPassword.TabIndex = 16;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Location = new System.Drawing.Point(17, 208);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(159, 23);
+            this.txtUsername.TabIndex = 17;
+            this.txtUsername.Text = "Username";
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // ClientsAddForm
             // 
@@ -336,5 +362,7 @@ namespace InstaIssue.AdminCenter.UILayer
         private System.Windows.Forms.Label lblCID;
         private System.Windows.Forms.Timer tmrTime;
         private MetroFramework.Controls.MetroComboBox cmbContracts;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }
