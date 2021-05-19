@@ -15,25 +15,59 @@ namespace Database
             connection.Connect();
         }
 
+        public int GetClientUserID(string clientID)
+        {
+            int ID;
+            try
+            {
+                string buildCommand = $"SELECT slaID FROM tblsla WHERE name = '{clientID}'";
+                connection.database.Open();
+                ID = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                connection.database.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return ID;
+        }
+
         public List<string> checkClientEntries(string clientID) 
         {
             connection.database.Open();
-            string[] clientAssociationsTables = new string[] { "tblrequestData", "tblproducts", "tbljobs","tblcontracts", "tblissues","tblclients", "tblcallRecords" };
+            string[] clientAssociationsTables = new string[] { "tblrequestData", "tblproducts", "tbljobs","tblcontracts", "tblissues","tblclients", "tblcallRecords", "tblusers" };
             List<string> tbls = new List<string>();
             try
             {
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 8; i++)
                 {
-                    string buildCommand = $"SELECT COUNT(*) FROM {clientAssociationsTables[i]} WHERE clientID = '{clientID}'";
-                    int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
-                    if (Exist >= 1)
+                    if (i == 8)
                     {
-                        tbls.Add(clientAssociationsTables[i]);
+                        string buildCommand = $"SELECT COUNT(*) FROM tblusers A JOIN tblclients B ON A.id = B.userID WHERE B.clientID = '{clientID}'";
+                        int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                        if (Exist >= 1)
+                        {
+                            tbls.Add(clientAssociationsTables[i]);
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
                     else
                     {
-                        continue;
+                        string buildCommand = $"SELECT COUNT(*) FROM {clientAssociationsTables[i]} WHERE clientID = '{clientID}'";
+                        int Exist = (int)connection.RunCommand(buildCommand).ExecuteScalar();
+                        if (Exist >= 1)
+                        {
+                            tbls.Add(clientAssociationsTables[i]);
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
+                    
                 }
                 connection.database.Close();
             }

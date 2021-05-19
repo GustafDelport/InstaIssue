@@ -56,6 +56,7 @@ namespace InstaIssue.AdminCenter.UILayer
             string clientID = split[0];
 
             bool flag = new GeneralAdminHandler().DeleteClient(clientID);
+
             if (flag)
             {
                 MessageBox.Show("Client was deleted", "Delete Success", MessageBoxButtons.OK, MessageBoxIcon.Error);

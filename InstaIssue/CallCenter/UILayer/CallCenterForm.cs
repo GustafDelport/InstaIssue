@@ -96,6 +96,11 @@ namespace InstaIssue.CallCenter.UILayer
             activePanel.Visible = false;
             pnlDash.Visible = true;
             activePanel = pnlDash;
+
+            if (client != null)
+            {
+                Refresher();
+            }
         }
 
         private void btnClients_Click(object sender, EventArgs e)
@@ -103,6 +108,11 @@ namespace InstaIssue.CallCenter.UILayer
             activePanel.Visible = false;
             pnlClients.Visible = true;
             activePanel = pnlClients;
+
+            if (client != null)
+            {
+                Refresher();
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -110,6 +120,11 @@ namespace InstaIssue.CallCenter.UILayer
             activePanel.Visible = false;
             pnlIssues.Visible = true;
             activePanel = pnlIssues;
+
+            if (client != null)
+            {
+                Refresher();
+            }
         }
 
         public void CallTest()
@@ -237,6 +252,11 @@ namespace InstaIssue.CallCenter.UILayer
             activePanel.Visible = false;
             pnlNewProd.Visible = true;
             activePanel = pnlNewProd;
+
+            if (client != null)
+            {
+                Refresher();
+            }
         }
 
         private void txtProdName_Click(object sender, EventArgs e)
@@ -480,6 +500,31 @@ namespace InstaIssue.CallCenter.UILayer
         private void CallCenterForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        public void Refresher()
+        {
+            cmbProducts.Items.Clear();
+            cmbJobs.Items.Clear();
+            cmbNewCont.Items.Clear();
+
+            products = new ClientTracker().GetClientProducts(client.ClientID);
+            foreach (var item in products)
+            {
+                cmbProducts.Items.Add(item.Name);
+            }
+
+            jobs = new ClientTracker().GetClientJobs(client.ClientID);
+            foreach (var item in jobs)
+            {
+                cmbJobs.Items.Add(item.Service);
+            }
+
+            contracts = new ClientTracker().GetClientContracts(client.ClientID);
+            foreach (var item in contracts)
+            {
+                cmbNewCont.Items.Add(item.ContractID + " " + item.SLAID1);
+            }
         }
     }
 }
