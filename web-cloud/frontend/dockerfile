@@ -1,6 +1,6 @@
 FROM node:14-slim
 
-WORKDIR /frontend/src/app
+WORKDIR /frontend/
 
 COPY ./package.json ./
 COPY ./yarn.lock ./
