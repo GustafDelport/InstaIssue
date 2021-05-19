@@ -31,6 +31,7 @@ export default class FeedbackComponent extends Component {
 
     componentDidMount() {
         // Get job
+        console.log(this.state.jobID);
         JobsService.get(this.state.jobID)
             .then(res => {
                 this.setState({

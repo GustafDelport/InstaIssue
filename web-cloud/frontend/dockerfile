@@ -1,13 +1,15 @@
 FROM node:14-slim
 
-WORKDIR /frontend/src/app
+WORKDIR /frontend/
+
+ENV PATH /app/node_modules/.bin:$PATH
 
 COPY ./package.json ./
 COPY ./yarn.lock ./
 
 RUN yarn install
 
-COPY . .
+COPY . ./
 
 EXPOSE 3000
 

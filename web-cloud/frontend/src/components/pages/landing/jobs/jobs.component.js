@@ -22,7 +22,7 @@ export default class JobsComponent extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // Get the user account
         const user = AuthService.getCurrentUser();
 
@@ -33,7 +33,10 @@ export default class JobsComponent extends Component {
         }
 
         // Get the client
-        const client = ClientService.getClient(user.id);
+        let client = undefined;
+        await ClientService.getClient(user.id).then(res => {
+            client = res.data[0];
+        })
 
         if (client) {
             this.setState({
