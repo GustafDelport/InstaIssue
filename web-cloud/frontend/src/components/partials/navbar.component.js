@@ -4,15 +4,43 @@ import {
     Navbar,
     Icon
 } from "rsuite";
-import {Link} from "react-router-dom";
+
+// Data
+import AuthService from '../../services/authentication/auth.service';
+import RoleLib from "../../lib/role.lib";
 
 export default class NavbarComponent extends Component {
     constructor(props) {
         super(props);
+        this.logOut = this.logOut.bind(this);
 
         this.state = {
-            user: {},
+            user: undefined,
+            isClient: false,
+            isStaff: false
         }
+    }
+
+    componentDidMount() {
+        // Get the user account
+        const user = AuthService.getCurrentUser();
+
+        if (user) {
+            const isClient = RoleLib.isClient(user.id);
+            const isStaff = RoleLib.isStaff(user.id);
+            this.setState({
+                user: user,
+                isClient: isClient,
+                isStaff: isStaff
+            })
+        }
+    }
+
+    logOut() {
+        AuthService.logout();
+        this.setState({
+            user: undefined
+        })
     }
 
     render() {
@@ -29,9 +57,11 @@ export default class NavbarComponent extends Component {
                         )}
                     </Nav>
                     <Nav pullRight>
-                        <Nav.Item href="/admin">Admin</Nav.Item>
+                        {this.state.isStaff ? (
+                            <Nav.Item href="/admin">Admin</Nav.Item>
+                        ) : null}
                         {user ? (
-                            <Nav.Item>Logout</Nav.Item>
+                            <Nav.Item href="/login" onSelect={this.logOut}>Logout</Nav.Item>
                         ) : (
                             <Nav.Item href="/login">Sign-in</Nav.Item>
                         )}

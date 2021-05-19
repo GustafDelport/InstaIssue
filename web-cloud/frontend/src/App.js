@@ -13,6 +13,8 @@ import LoginComponent from "./components/pages/login/login.component";
 import JobReviewComponent from "./components/pages/reviews/jobreview.component";
 import DashboardComponent from "./components/pages/admin/dashboard.component";
 import JobsComponent from "./components/pages/admin/jobs/jobs.component";
+import ClientsComponent from "./components/pages/admin/clients/clients.component";
+import FeedbackComponent from "./components/pages/admin/jobs/feedback.component";
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +34,8 @@ class App extends Component {
             <Route path={["/job/:id"]} component={JobReviewComponent} />
             <Route exact path={["/admin", "/dashboard"]} component={DashboardComponent} />
             <Route exact path={["/admin/jobs", "/dashboard/jobs"]} component={JobsComponent} />
+            <Route exact path={["/admin/clients", "/dashboard/clients"]} component={ClientsComponent} />
+            <Route exact path={["/admin/feedback/:id", "/dashboard/feedback/:id"]} component={FeedbackComponent} />
             <Route component={NotfoundComponent} />
           </Switch>
         </div>

@@ -25,3 +25,17 @@ exports.findClient = (req, res) => {
             res.status(500).send({ message: e.message });
         })
 }
+
+exports.findClientUser = (req, res) => {
+    clients.findAll({
+        where: {
+            userID: req.params.id
+        }
+    })
+        .then(client => {
+            res.status(200).send(client);
+        })
+        .catch(e => {
+            res.status(500).send({ message: e.message });
+        })
+}

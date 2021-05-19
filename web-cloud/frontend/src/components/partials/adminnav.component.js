@@ -16,6 +16,7 @@ export default class AdminNavComponent extends Component {
                 <Nav>
                     <Nav.Item icon={<Icon icon="dashboard" />} href="/admin">Dashboard</Nav.Item>
                     <Nav.Item icon={<Icon icon="suitcase" />} href="/admin/jobs">Jobs</Nav.Item>
+                    <Nav.Item icon={<Icon icon="profile" />} href="/admin/clients">Clients</Nav.Item>
                 </Nav>
             </Sidenav.Body>
         )

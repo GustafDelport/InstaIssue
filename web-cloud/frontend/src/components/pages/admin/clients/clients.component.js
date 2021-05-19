@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import {
     Container,
     Content, Divider,
-    Header, Rate
+    Header
 } from "rsuite";
 import { Helmet } from "react-helmet";
 
 // Components
-import NavbarComponent from "../../partials/navbar.component";
-import FooterComponent from "../../partials/footer.component";
-import SidebarComponent from "../../partials/sidebar.component";
-import ReviewedJobsComponent from "./jobs/reviewedjobs.component";
-import ListClientsComponent from "./clients/components/listClients.component";
+import NavbarComponent from "../../../partials/navbar.component";
+import FooterComponent from "../../../partials/footer.component";
+import SidebarComponent from "../../../partials/sidebar.component";
+import ListClientsComponent from "./components/listClients.component";
 
-export default class DashboardComponent extends Component {
+export default class ClientsComponent extends Component {
     constructor(props) {
         super(props);
 
@@ -28,20 +27,19 @@ export default class DashboardComponent extends Component {
             return (
                 <Container>
                     <Helmet>
-                        <title>InstaIssue | Dashboard</title>
+                        <title>InstaIssue | Clients</title>
                     </Helmet>
                     <NavbarComponent />
                     <SidebarComponent />
 
                     <Container className="container-content">
                         <Header>
-                            <h2>Dashboard</h2>
+                            <h2>Clients</h2>
                             <Divider />
                         </Header>
                         <Content>
                             <div className="content-inner">
-                                <h4>Average rating:</h4>
-                                <Rate defaultValue={4.5} size="xs" allowHalf readOnly />
+                                <ListClientsComponent />
                             </div>
                         </Content>
                         <FooterComponent />
@@ -53,22 +51,17 @@ export default class DashboardComponent extends Component {
             return (
                 <Container>
                     <Helmet>
-                        <title>InstaIssue | Dashboard</title>
+                        <title>InstaIssue | Clients</title>
                     </Helmet>
                     <SidebarComponent />
 
                     <Container className="container-content">
                         <Header>
-                            <h2>Dashboard</h2>
+                            <h2>Clients</h2>
                             <Divider />
                         </Header>
                         <Content>
                             <div className="content-inner">
-                                <h3>Reviewed Jobs:</h3>
-                                <Divider />
-                                <ReviewedJobsComponent />
-                                <h3>Clients:</h3>
-                                <Divider />
                                 <ListClientsComponent />
                             </div>
                         </Content>
