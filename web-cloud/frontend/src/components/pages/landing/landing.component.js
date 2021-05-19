@@ -30,20 +30,21 @@ export default class LandingComponent extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // Get the user account
         const user = AuthService.getCurrentUser();
 
         if (user) {
-            const isClient = RoleLib.isClient(user.id);
-            const isStaff = RoleLib.isStaff(user.id);
+            const isClient = await RoleLib.isClient(user.id);
+            console.log(`Client ${isClient}`);
+            const isStaff = await RoleLib.isStaff(user.id);
+            console.log(`Staff ${isStaff}`);
             this.setState({
                 user: user,
                 isClient: isClient,
                 isStaff: isStaff
             })
         }
-        console.log(user);
     }
 
     render() {
