@@ -29,5 +29,6 @@ db.user = require('../models/user.model')(sequelize, Sequelize);
 db.job = require('../models/jobs.model')(sequelize, Sequelize);
 db.review = require('../models/reviews.model')(sequelize, Sequelize);
 db.client = require('../models/client.model')(sequelize, Sequelize);
+db.staff = require('../models/staff.model')(sequelize, Sequelize);
 
 module.exports = db;

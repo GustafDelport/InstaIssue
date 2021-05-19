@@ -1,7 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+
+const corsOptions = {
+    origin: process.env.ORIGIN || "http://localhost:3000"
+};
+
+// Enable CORS
+app.use(cors(corsOptions));
 
 // Parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -24,6 +32,8 @@ require('./app/routes/authentication/auth.routes')(app);
 require('./app/routes/client/client.routes')(app);
 require('./app/routes/jobs/jobs.routes')(app);
 require('./app/routes/jobs/reviews.routes')(app);
+require('./app/routes/user/user.routes')(app);
+require('./app/routes/staff/staff.routes')(app);
 
 // Set port & listen for requests
 const PORT = process.env.PORT || 8080;

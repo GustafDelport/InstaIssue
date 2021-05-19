@@ -77,7 +77,7 @@ export default class LoginComponent extends Component {
             AuthService.login(formValue.username, formValue.password)
                 .then(() => {
                         console.log("Success!")
-                        this.props.history.push("/dashboard");
+                        this.props.history.push("/");
                         window.location.reload();
                     },
                     error => {
