@@ -1,8 +1,10 @@
-﻿using Generator;
+﻿using Database;
+using Generator;
 using InstaIssue.AdminCenter.DomainLayer;
 using InstaIssue.CallCenter.DomainLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +21,9 @@ namespace InstaIssue.AdminCenter.LogicLayer
         {
         }
 
-        public List<Issues> GetIssues()
+        public DataTable GetIssues()
         {
-            return null;
-        }
-        public Issues GetClientIssues(String nationalID)
-        {
-            return null;
+            return new Data().FindAll("tblIssues");
         }
 
         public Boolean CreateIssue(Clients clients, DateTime reportedDate, String staffID, String status,String description)

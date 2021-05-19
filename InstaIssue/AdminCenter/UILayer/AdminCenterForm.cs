@@ -1,4 +1,5 @@
-﻿using InstaIssue.AdminCenter.LogicLayer.DesignPattern;
+﻿using InstaIssue.AdminCenter.LogicLayer;
+using InstaIssue.AdminCenter.LogicLayer.DesignPattern;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,6 +59,8 @@ namespace InstaIssue.AdminCenter.UILayer
             activePanel.Visible = false;
             pnlIssues.Visible = true;
             activePanel = pnlIssues;
+
+            dgvIssues.DataSource = new IssuesCenter().GetIssues();
         }
         #endregion
 
