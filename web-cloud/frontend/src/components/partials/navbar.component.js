@@ -11,7 +11,7 @@ export default class NavbarComponent extends Component {
         super(props);
 
         this.state = {
-            user: undefined,
+            user: {},
         }
     }
 
@@ -29,6 +29,7 @@ export default class NavbarComponent extends Component {
                         )}
                     </Nav>
                     <Nav pullRight>
+                        <Nav.Item href="/admin">Admin</Nav.Item>
                         {user ? (
                             <Nav.Item>Logout</Nav.Item>
                         ) : (

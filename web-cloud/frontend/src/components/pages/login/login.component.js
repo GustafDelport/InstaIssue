@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+    Alert,
     Button,
     ButtonToolbar,
     Col,
@@ -12,7 +13,8 @@ import {
     HelpBlock, Loader,
     Navbar,
     Panel,
-    Schema
+    Schema,
+    Notification
 } from "rsuite";
 
 // Authentication

@@ -4,6 +4,12 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             primaryKey: true
         },
+        clientID: {
+            type: Sequelize.STRING
+        },
+        staffID: {
+            type: Sequelize.STRING
+        },
         scheduledDate: {
             type: Sequelize.DATE
         },
@@ -12,11 +18,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         status: {
             type: Sequelize.STRING
-        },
-        staffID: {
-            type: Sequelize.STRING
         }
     },{
-        tableName: 'tbljobs'
+        tableName: 'tbljobs',
+        timestamps: false
     })
 }

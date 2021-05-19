@@ -1,29 +1,32 @@
 module.exports = (sequelize, Sequelize) => {
-    return sequelize.define("tblreviewRecords", {
-        reviewID: {
+    return sequelize.define("tblclients", {
+        clientID: {
             type: Sequelize.STRING,
             primaryKey: true
         },
-        clientID: {
+        userID: {
             type: Sequelize.STRING
         },
-        Timestamp: {
-            type: Sequelize.DATE
-        },
-        rating: {
-            type: Sequelize.FLOAT
-        },
-        description: {
+        name: {
             type: Sequelize.STRING
         },
-        staffID: {
+        surname: {
             type: Sequelize.STRING
         },
-        jobID: {
+        nationalID: {
+            type: Sequelize.STRING
+        },
+        phoneNumber: {
+            type: Sequelize.STRING
+        },
+        email: {
+            type: Sequelize.STRING
+        },
+        address: {
             type: Sequelize.STRING
         }
     },{
-        tableName: 'tblreviewRecords',
+        tableName: 'tblclients',
         timestamps: false
     })
 }
