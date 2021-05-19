@@ -6,6 +6,9 @@ module.exports = app => {
     // Get all clients
     router.get("/", controller.findAll);
 
+    // Get client based on userID
+    router.get("/user/:id", controller.findClientUser);
+
     // Fetch data for a specific clientID
     router.get("/:clientID", controller.findClient);
 

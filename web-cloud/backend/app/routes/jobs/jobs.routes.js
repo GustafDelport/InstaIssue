@@ -6,6 +6,9 @@ module.exports = app => {
     // Get all jobs
     router.get("/", controller.findAll);
 
+    // Get all jobs for a specific client
+    router.get("/client/:clientID", controller.findClientJobs);
+
     // Fetch data for a specific jobID
     router.get("/:jobID", controller.findJob);
 

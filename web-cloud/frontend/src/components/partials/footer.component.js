@@ -7,7 +7,7 @@ export default class FooterComponent extends Component {
 
     render() {
         return (
-            <Footer style={{textAlign: 'center'}}>Footer</Footer>
+            <Footer style={{textAlign: 'center'}}>Copyright © {new Date().getFullYear()}</Footer>
         )
     }
 

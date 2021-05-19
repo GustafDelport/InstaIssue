@@ -24,3 +24,17 @@ exports.findJob = (req, res) => {
             res.status(500).send({ message: e.message });
         })
 }
+
+exports.findClientJobs = (req, res) => {
+    jobs.findAll({
+        where: {
+            clientID: req.params.clientID
+        }
+    })
+        .then(job => {
+            res.status(200).send(job);
+        })
+        .catch(e => {
+            res.status(500).send({ message: e.message });
+        })
+}
