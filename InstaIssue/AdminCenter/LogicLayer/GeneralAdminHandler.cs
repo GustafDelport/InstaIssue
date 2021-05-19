@@ -27,10 +27,19 @@ namespace InstaIssue.AdminCenter.LogicLayer
             List<string> tblsOfClient = new Data().checkClientEntries(clientID);
             List<bool> flagList = new();
             bool flag = false;
+            int userID = 1;
 
             foreach (var item in tblsOfClient)
             {
-                flagList.Add(new Data().DeleteEntry(clientID, item, "clientID"));
+                if (item == "tblusers")
+                {
+                    flagList.Add(new Data().DeleteEntry(userID.ToString(), item, "id"));
+                }
+                else
+                {
+                    flagList.Add(new Data().DeleteEntry(clientID, item, "clientID"));
+                }
+                
             }
 
             foreach (bool item in flagList)
