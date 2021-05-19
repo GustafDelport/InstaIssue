@@ -5,6 +5,10 @@ class StaffService {
         return http.get(`/staff/${id}`);
     }
 
+    getUser(id) {
+        return http.get(`/staff/user/${id}`);
+    }
+
     getAll() {
         return http.get(`/staff/`);
     }

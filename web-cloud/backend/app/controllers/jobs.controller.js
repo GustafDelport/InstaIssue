@@ -32,6 +32,7 @@ exports.findClientJobs = (req, res) => {
         }
     })
         .then(job => {
+            console.log(job);
             res.status(200).send(job);
         })
         .catch(e => {

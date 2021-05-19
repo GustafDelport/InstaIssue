@@ -1,8 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
     return sequelize.define("tblusers", {
-        username: {
-            type: Sequelize.STRING,
+        id: {
+            type: Sequelize.INTEGER,
             primaryKey: true
+        },
+        username: {
+            type: Sequelize.STRING
         },
         password: {
             type: Sequelize.STRING

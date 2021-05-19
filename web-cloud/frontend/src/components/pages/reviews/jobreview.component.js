@@ -26,8 +26,6 @@ export default class JobReviewComponent extends Component {
     constructor(props) {
         super(props);
         this.setJob = this.setJob.bind(this);
-        this.handleRatingChange = this.handleRatingChange.bind(this);
-        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.submitRating = this.submitRating.bind(this);
 
@@ -49,6 +47,7 @@ export default class JobReviewComponent extends Component {
                 rating: 0.0,
                 description: ""
             },
+            rating: 0.0,
             submitted: false
         }
     }
@@ -87,20 +86,11 @@ export default class JobReviewComponent extends Component {
         console.log(this.state.job)
     }
 
-    handleRatingChange = e => {
-        const { value } = e.target;
-        this.review.rating = value;
-    }
-
-    handleDescriptionChange = e => {
-        const { value } = e.target;
-        this.review.description = value;
-    }
-
     handleSubmit = () => {
         const { formValue } = this.state;
         this.review.rating = formValue.rating;
         this.review.description = formValue.description;
+        this.submitRating();
     }
 
     submitRating = () => {
@@ -156,7 +146,8 @@ export default class JobReviewComponent extends Component {
                                         <h2>Review - {this.state.job ? this.state.job.jobID : 'Undefined'}</h2>
                                         <Divider />
                                         <Form fluid ref={ref => (this.form = ref)} onChange={formValue => {this.setState({ formValue });}} formValue={formValue}>
-                                            <Rate defaultValue={0} value={formValue.rating} onChange={value => {formValue.rating = value;}} allowHalf />
+                                            <Rate defaultValue={0} value={this.state.rating} onChange={value => {formValue.rating = value;
+                                                console.log(value); this.setState({rating: value})}} allowHalf />
                                             <FormGroup style={{marginTop: '1rem'}}>
                                                 <ControlLabel>Anything else?</ControlLabel>
                                                 <FormControl rows={5} name="description" componentClass="textarea" />
