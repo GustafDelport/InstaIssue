@@ -61,7 +61,7 @@ namespace InstaIssue.AdminCenter.DomainLayer
         //Effective still working on
         public DataTable GetStaff(String staffID)
         {
-            return new Data().FindEntry(staffID, "tblstaff", "clientID");
+            return new Data().FindEntry(staffID, "tblstaff", "staffID");
         }
 
         //Done
