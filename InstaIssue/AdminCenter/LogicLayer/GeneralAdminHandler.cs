@@ -27,7 +27,7 @@ namespace InstaIssue.AdminCenter.LogicLayer
             List<string> tblsOfClient = new Data().checkClientEntries(clientID);
             List<bool> flagList = new();
             bool flag = false;
-            int userID = 1;
+            int userID = new Data().GetClientUserID(clientID);
 
             foreach (var item in tblsOfClient)
             {
